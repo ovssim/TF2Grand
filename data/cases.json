@@ -1,14 +1,14 @@
 {
   "cases": [
         {
-      "id": "hauntsme1",
-      "name": "Haunted Forever (Medium)",
-      "price": 1789.43,
-      "image": "images/cases/haunted.png",
+      "id": "first",
+      "name": "Hard Workers",
+      "price": 0.24,
+      "image": "images/cases/hardworkers.png",
       "items": [
-        { "name": "Silver Serenade Pocket Purrer", "rarity": "mythical", "price": 43.12, "weight": 9000, "image": "images/items/ssppur.png" },
-        { "name": "Strange Searing Plasma Sightseer", "rarity": "mythical", "price": 910.00, "weight": 9000, "image": "images/items/sspseer.png" },
-        { "name": "Baron's Cherished Chaplet Toy Soldier", "rarity": "mythical", "price": 1235.00, "weight": 9378, "image": "images/items/bccts.png" },
+        { "name": "Milkman", "rarity": "legendary", "price": 0.03, "weight": 1, "image": "images/items/milkman.png" },
+        { "name": "Strange Mad Milk", "rarity": "strange", "price": 4.60, "weight": 1, "image": "images/items/madmilk.png" },
+        { "name": "p", "rarity": "mythical", "price": 1235.00, "weight": 9378, "image": "images/items/bccts.png" },
         { "name": "Hard Carry Nasty Norsemann", "rarity": "mythical", "price": 36.00, "weight": 7000, "image": "images/items/hcnn.png" },
         { "name": "Vintage Nether Trail Parasight", "rarity": "mythical", "price": 1272.00, "weight": 9328, "image": "images/items/ntp.png" },
         { "name": "Terrestrial Favor Boxcar Bomber", "rarity": "mythical", "price": 3242.00, "weight": 1000, "image": "images/items/tfbb.png" },
