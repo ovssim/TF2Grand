@@ -326,10 +326,6 @@ h1 {
 
   background: rgba(20, 20, 25, 0.85);
 
-  /*
-    8-point polygon creates a hexagon-like
-    vertical item shape.
-  */
   clip-path: polygon(
     25% 0%,
     75% 0%,
@@ -994,7 +990,9 @@ h1 {
 }
 
 
-/* ================= UPGRADER ================= */
+/* =========================================================
+   ===================== UPGRADER ==========================
+   ========================================================= */
 
 #upgrader-section {
   margin: 50px auto;
@@ -1178,71 +1176,15 @@ h1 {
 }
 
 
-/* ================= UPGRADE CIRCLE ================= */
+/* =========================================================
+   ================= UPGRADE CIRCLE ========================
+   ========================================================= */
 
-.upgrade-circle {
-  width: 140px;
-  height: 140px;
-
-  border-radius: 50%;
-
-  background: #111;
-
-  position: relative;
-
-  margin: 15px auto;
-
-  box-shadow: 0 0 10px #000;
-
-  overflow: hidden;
-}
-
-#upgrade-circle-fill {
-  position: absolute;
-
-  bottom: 0;
-
-  width: 100%;
-
-  height: 0%;
-
-  background: #ff9999;
-
-  transition:
-    height 2s ease,
-    background 0.4s ease;
-
-  filter: blur(1px);
-
-  border-radius: 50%;
-
-  opacity: 0.9;
-}
-
-#upgrade-circle-text {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-weight: bold;
-
-  color: white;
-
-  z-index: 2;
-
-  font-size: 20px;
-
-  text-shadow: 0 0 10px black;
-}
-
-
-/* ================= UPGRADE CIRCLE MAIN ================= */
+/*
+  The fill is placed behind the text.
+  The circle clips the fill so it cannot
+  extend outside the circular shape.
+*/
 
 #upgrade-circle {
   width: 200px;
@@ -1271,7 +1213,76 @@ h1 {
     box-shadow 0.3s ease;
 
   margin: 20px auto;
+
+  /* Keeps the fill inside the circle */
+  overflow: hidden;
+
+  /* Creates a clean stacking layer */
+  z-index: 1;
 }
+
+
+/* ================= CIRCLE FILL ================= */
+
+#upgrade-circle-fill {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 0%;
+
+  background: #ff9999;
+
+  border-radius: 50%;
+
+  opacity: 0.9;
+
+  filter: blur(1px);
+
+  transition:
+    height 2s ease,
+    background 0.4s ease;
+
+  /*
+    Fill is behind the text.
+  */
+  z-index: 0;
+}
+
+
+/* ================= CIRCLE TEXT ================= */
+
+#upgrade-circle-text {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  text-shadow:
+    0 0 10px black;
+
+  /*
+    Text stays above the fill.
+  */
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* ================= CIRCLE STATES ================= */
 
 #upgrade-circle.neutral {
   box-shadow:
@@ -1289,22 +1300,6 @@ h1 {
   box-shadow:
     0 0 25px rgba(255,60,60,0.8),
     0 0 80px rgba(255,60,60,0.4);
-}
-
-
-/* ================= UPGRADE CIRCLE TEXT ================= */
-
-#upgrade-circle-text {
-  position: absolute;
-
-  color: white;
-
-  font-size: 22px;
-
-  font-weight: bold;
-
-  text-shadow:
-    0 0 10px black;
 }
 
 
