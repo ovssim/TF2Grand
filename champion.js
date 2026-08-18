@@ -234,17 +234,51 @@ const CHAMPION_MISS_PHRASES = [
 
 const Champion = {
 
+    /*
+        Current wager selections.
+    */
+
     coinWager: 0,
 
     selectedItems: [],
+
+
+    /*
+        IMPORTANT:
+
+        These store copies of the player's wager
+        before the wager is removed from inventory.
+
+        If the player wins, these are returned.
+        If the player loses, they are NOT returned.
+    */
+
+    playerWageredItems: [],
+
+    playerWageredCoins: 0,
+
+
+    /*
+        FishBot wager.
+    */
 
     botItems: [],
 
     botCoins: 0,
 
+
+    /*
+        Total wager values.
+    */
+
     totalPlayerWager: 0,
 
     totalBotWager: 0,
+
+
+    /*
+        Battle state.
+    */
 
     battleRunning: false,
 
@@ -570,7 +604,6 @@ function renderChampionItemList() {
                         alreadySelected
                             ? "✓"
                             : "+"
-
                     }
 
                 </div>
@@ -641,8 +674,7 @@ function refreshChampionInventory() {
 
 
     /*
-        Update main inventory if the functions
-        exist in script.js.
+        Update main inventory.
     */
 
     if (
@@ -1087,7 +1119,8 @@ function createBotWager(playerWager) {
 
 
     /*
-        Pick a target between 70% and 300%.
+        Pick a target between the configured
+        minimum and maximum multipliers.
     */
 
     const multiplier =
@@ -1186,10 +1219,6 @@ function createBotWager(playerWager) {
                 target
             ) {
 
-                /*
-                    Random chance to include item.
-                */
-
                 if (
                     Math.random() < 0.70
                 ) {
@@ -1243,7 +1272,7 @@ function createBotWager(playerWager) {
 
 
     /*
-        Try individual items to improve the result.
+        Try individual items to improve result.
     */
 
     for (
@@ -1298,8 +1327,7 @@ function createBotWager(playerWager) {
 
 
     /*
-        Use bot coins to fill the remaining
-        amount.
+        Use bot coins to fill remaining amount.
     */
 
     let botCoins =
@@ -1547,7 +1575,7 @@ function startChampionBattle() {
 
 
     /*
-        Create bot wager before removing
+        Create bot wager BEFORE removing
         player's items.
     */
 
@@ -1570,9 +1598,9 @@ function startChampionBattle() {
     }
 
 
-    /*
-        Store battle wager.
-    */
+    /* =====================================================
+       STORE BATTLE WAGER
+       ===================================================== */
 
     Champion.totalPlayerWager =
         Number(
@@ -1585,6 +1613,56 @@ function startChampionBattle() {
             botWager.total.toFixed(2)
         );
 
+
+    /*
+        IMPORTANT:
+
+        Save player's coin wager so it can be
+        returned if the player wins.
+    */
+
+    Champion.playerWageredCoins =
+        Number(
+            Champion.coinWager || 0
+        );
+
+
+    /*
+        IMPORTANT:
+
+        Save copies of all player's wagered items
+        before deleting them from inventory.
+
+        These are used to return the items
+        if the player wins.
+    */
+
+    Champion.playerWageredItems =
+        Champion.selectedItems
+            .map(
+                (index) => {
+
+                    const item =
+                        inventory[index];
+
+                    if (!item) {
+                        return null;
+                    }
+
+                    return {
+                        ...item
+                    };
+
+                }
+            )
+            .filter(
+                (item) => item !== null
+            );
+
+
+    /*
+        Save FishBot's wager.
+    */
 
     Champion.botItems =
         botWager.items.map(
@@ -1600,9 +1678,9 @@ function startChampionBattle() {
         );
 
 
-    /*
-        Remove player's coin wager.
-    */
+    /* =====================================================
+       REMOVE PLAYER'S COIN WAGER
+       ===================================================== */
 
     if (
         Champion.coinWager > 0
@@ -1623,9 +1701,11 @@ function startChampionBattle() {
     }
 
 
-    /*
-        Remove item wagers.
+    /* =====================================================
+       REMOVE PLAYER'S ITEM WAGERS
+       ===================================================== */
 
+    /*
         Backwards order prevents index shifting.
     */
 
@@ -1699,7 +1779,11 @@ function startChampionBattle() {
 
 
     /*
-        Clear current wager.
+        Clear current wager selections.
+
+        The actual wager is safely stored in:
+        Champion.playerWageredItems
+        Champion.playerWageredCoins
     */
 
     Champion.selectedItems = [];
@@ -2501,11 +2585,8 @@ function finishChampionBattle() {
 
 
     /*
-        If both are somehow zero,
-        use the final attacker's result.
-
-        Normally this won't happen because the
-        battle checks immediately after attacks.
+        Player wins only if FishBot is dead
+        and the player is still alive.
     */
 
     if (
@@ -2556,9 +2637,41 @@ function finishChampionWin() {
         );
 
 
-    /*
-        Give bot coins.
-    */
+    /* =====================================================
+       RETURN PLAYER'S COINS
+       ===================================================== */
+
+    if (
+        Champion.playerWageredCoins > 0
+    ) {
+
+        coins +=
+            Champion.playerWageredCoins;
+
+    }
+
+
+    /* =====================================================
+       RETURN PLAYER'S ITEMS
+       ===================================================== */
+
+    Champion.playerWageredItems.forEach(
+        (item) => {
+
+            if (!item) return;
+
+
+            inventory.push({
+                ...item
+            });
+
+        }
+    );
+
+
+    /* =====================================================
+       GIVE FISHBOT'S COINS
+       ===================================================== */
 
     if (
         Champion.botCoins > 0
@@ -2567,21 +2680,18 @@ function finishChampionWin() {
         coins +=
             Champion.botCoins;
 
-
-        coins =
-            Number(
-                coins.toFixed(2)
-            );
-
     }
 
 
-    /*
-        Give bot items.
-    */
+    /* =====================================================
+       GIVE FISHBOT'S ITEMS
+       ===================================================== */
 
     Champion.botItems.forEach(
         (item) => {
+
+            if (!item) return;
+
 
             inventory.push({
                 ...item
@@ -2592,14 +2702,28 @@ function finishChampionWin() {
 
 
     /*
-        Save.
+        Round coins.
     */
+
+    coins =
+        Number(
+            coins.toFixed(2)
+        );
+
+
+    /* =====================================================
+       SAVE
+       ===================================================== */
 
     saveInventory();
 
 
     updateCoins();
 
+
+    /* =====================================================
+       UPDATE MAIN SITE
+       ===================================================== */
 
     if (
         typeof renderInventory ===
@@ -2631,9 +2755,9 @@ function finishChampionWin() {
     }
 
 
-    /*
-        Battle log.
-    */
+    /* =====================================================
+       BATTLE LOG
+       ===================================================== */
 
     addChampionLog(
         "🏆 <strong>VICTORY!</strong>"
@@ -2641,11 +2765,18 @@ function finishChampionWin() {
 
 
     addChampionLog(
-        `You defeated FishBot and won ${
-            Champion.totalBotWager.toFixed(2)
+        `You defeated FishBot and won the entire pot of ${
+            (
+                Champion.totalPlayerWager +
+                Champion.totalBotWager
+            ).toFixed(2)
         } ⛃!`
     );
 
+
+    /* =====================================================
+       RESULT SCREEN
+       ===================================================== */
 
     if (title) {
 
@@ -2658,7 +2789,7 @@ function finishChampionWin() {
     if (message) {
 
         message.textContent =
-            "FishBot has been defeated!";
+            "FishBot has been defeated! You won the entire pot!";
 
     }
 
@@ -2712,10 +2843,17 @@ function finishChampionLoss() {
 
 
     /*
+        IMPORTANT:
+
         The player's wager was already removed
         when the battle started.
 
-        Therefore nothing is returned.
+        We deliberately DO NOT return:
+
+        Champion.playerWageredCoins
+        Champion.playerWageredItems
+
+        because the player lost.
     */
 
     addChampionLog(
@@ -2756,10 +2894,12 @@ function finishChampionLoss() {
                 You lost:
 
                 <strong>
+
                     ${
                         Champion.totalPlayerWager
                             .toFixed(2)
                     } ⛃
+
                 </strong>
 
             </div>
@@ -2788,8 +2928,12 @@ function buildWinningsHTML() {
     let html = "";
 
 
+    /* =====================================================
+       PLAYER'S RETURNED COINS
+       ===================================================== */
+
     if (
-        Champion.botCoins > 0
+        Champion.playerWageredCoins > 0
     ) {
 
         html += `
@@ -2797,15 +2941,16 @@ function buildWinningsHTML() {
             <div
                 class="champion-winning-entry">
 
-                🪙
+                🔄
 
                 <strong>
 
                     ${
-                        Champion.botCoins
+                        Champion.playerWageredCoins
                             .toFixed(2)
                     }
-                    coins
+
+                    coins returned
 
                 </strong>
 
@@ -2816,13 +2961,22 @@ function buildWinningsHTML() {
     }
 
 
-    Champion.botItems.forEach(
+    /* =====================================================
+       PLAYER'S RETURNED ITEMS
+       ===================================================== */
+
+    Champion.playerWageredItems.forEach(
         (item) => {
+
+            if (!item) return;
+
 
             html += `
 
                 <div
                     class="champion-winning-entry">
+
+                    🔄
 
                     <img
                         src="${escapeChampionAttribute(
@@ -2841,7 +2995,92 @@ function buildWinningsHTML() {
 
                             ${
                                 Number(
-                                    item.price
+                                    item.price || 0
+                                ).toFixed(2)
+                            } ⛃
+
+                            returned
+
+                        </small>
+
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /* =====================================================
+       FISHBOT'S COINS
+       ===================================================== */
+
+    if (
+        Champion.botCoins > 0
+    ) {
+
+        html += `
+
+            <div
+                class="champion-winning-entry">
+
+                🪙
+
+                <strong>
+
+                    ${
+                        Champion.botCoins
+                            .toFixed(2)
+                    }
+
+                    FishBot coins
+
+                </strong>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       FISHBOT'S ITEMS
+       ===================================================== */
+
+    Champion.botItems.forEach(
+        (item) => {
+
+            if (!item) return;
+
+
+            html += `
+
+                <div
+                    class="champion-winning-entry">
+
+                    🏆
+
+                    <img
+                        src="${escapeChampionAttribute(
+                            item.image || ""
+                        )}"
+                        alt=""
+                    >
+
+                    <span>
+
+                        ${escapeChampionHTML(
+                            item.name
+                        )}
+
+                        <small>
+
+                            ${
+                                Number(
+                                    item.price || 0
                                 ).toFixed(2)
                             } ⛃
 
@@ -2856,6 +3095,10 @@ function buildWinningsHTML() {
         }
     );
 
+
+    /* =====================================================
+       NOTHING
+       ===================================================== */
 
     if (!html) {
 
@@ -2887,17 +3130,49 @@ function resetChampion() {
     }
 
 
+    /*
+        Reset wagers.
+    */
+
     Champion.coinWager = 0;
 
     Champion.selectedItems = [];
+
+
+    /*
+        Clear saved player's wager.
+
+        At this point the battle is over,
+        so the returned items/coins have
+        already been added if the player won.
+    */
+
+    Champion.playerWageredItems = [];
+
+    Champion.playerWageredCoins = 0;
+
+
+    /*
+        Clear FishBot wager.
+    */
 
     Champion.botItems = [];
 
     Champion.botCoins = 0;
 
+
+    /*
+        Clear totals.
+    */
+
     Champion.totalPlayerWager = 0;
 
     Champion.totalBotWager = 0;
+
+
+    /*
+        Reset battle.
+    */
 
     Champion.playerHP =
         CHAMPION_MAX_HP;
@@ -2917,6 +3192,10 @@ function resetChampion() {
     Champion.battleTimer =
         null;
 
+
+    /*
+        DOM.
+    */
 
     const menu =
         document.getElementById(
@@ -2973,6 +3252,10 @@ function resetChampion() {
 
     }
 
+
+    /*
+        Refresh Champion UI.
+    */
 
     renderChampionItemList();
 
