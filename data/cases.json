@@ -185,8 +185,8 @@
       ]
     },
       {
-      "id": "hunter",
-      "name": "Hunters (Medium)",
+      "id": "movienight",
+      "name": "Movie Night (Medium)",
       "price": 32.00,
       "image": "images/cases/hunter.png",
       "items": [
