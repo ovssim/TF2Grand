@@ -2,6 +2,24 @@
    CHAMPION MODE
    ========================================================= */
 
+/*
+    Champion Mode uses variables/functions from script.js:
+
+    coins
+    inventory
+    cases
+    saveInventory()
+    updateCoins()
+    renderInventory()
+    populateCoinflipDropdown()
+    updateBackpackValue()
+*/
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
 const CHAMPION_MAX_HP = 1000;
 
 const CHAMPION_CRIT_CHANCE = 0.24;
@@ -12,10 +30,33 @@ const CHAMPION_MISS_CHANCE = 0.15;
 const CHAMPION_MINI_CRIT_CHANCE = 0.16;
 const CHAMPION_MINI_CRIT_MULTIPLIER = 2;
 
+
+/*
+    FishBot wager range.
+
+    Minimum: 70%
+    Maximum: 300%
+*/
+
 const BOT_MIN_MULTIPLIER = 0.70;
 const BOT_MAX_MULTIPLIER = 3.00;
 
+
+/*
+    Battle speed.
+
+    Lower = faster
+    Higher = slower
+*/
+
 const CHAMPION_TURN_DELAY = 1200;
+
+
+/*
+    Maximum number of battle-log messages
+    displayed at once.
+*/
+
 const MAX_BATTLE_LOG_ENTRIES = 5;
 
 
@@ -24,6 +65,7 @@ const MAX_BATTLE_LOG_ENTRIES = 5;
    ========================================================= */
 
 const CHAMPION_WEAPONS = [
+
     "Force-a-Nature",
     "Shortstop",
     "Minigun",
@@ -45,6 +87,7 @@ const CHAMPION_WEAPONS = [
     "Direct Hit",
     "✨Golden Frying Pan",
     "Holy Mackerel"
+
 ];
 
 
@@ -149,27 +192,38 @@ const CHAMPION_DAMAGE_PHRASES = {
     "✨Golden Frying Pan": [
         "✨ OBLITERATES reality for"
     ]
+
 };
 
 
+/* =========================================================
+   SPECIAL PHRASES
+   ========================================================= */
+
 const CHAMPION_CRIT_PHRASES = [
+
     "💥 DEVASTATING CRIT!!!",
     "💥 MASSIVE CRITICAL HIT!!!",
     "💥 CRITICAL HIT!!!"
+
 ];
 
 
 const CHAMPION_MINI_CRIT_PHRASES = [
+
     "⚡ MINI-CRIT!",
     "⚡ MINI CRITICAL HIT!"
+
 ];
 
 
 const CHAMPION_MISS_PHRASES = [
+
     "completely whiffs the shot!",
     "fires wildly and misses!",
     "forgot to reload!",
     "didn't know how to use their weapon!"
+
 ];
 
 
@@ -202,11 +256,12 @@ const Champion = {
     round: 1,
 
     battleTimer: null
+
 };
 
 
 /* =========================================================
-   STARTUP
+   DOM READY
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -215,6 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+/* =========================================================
+   SETUP
+   ========================================================= */
 
 function setupChampion() {
 
@@ -248,30 +307,24 @@ function setupChampion() {
 
     if (addCoinButton) {
 
-        addCoinButton.addEventListener(
-            "click",
-            addChampionCoins
-        );
+        addCoinButton.onclick =
+            addChampionCoins;
 
     }
 
 
     if (startButton) {
 
-        startButton.addEventListener(
-            "click",
-            startChampionBattle
-        );
+        startButton.onclick =
+            startChampionBattle;
 
     }
 
 
     if (closeResultButton) {
 
-        closeResultButton.addEventListener(
-            "click",
-            resetChampion
-        );
+        closeResultButton.onclick =
+            resetChampion;
 
     }
 
@@ -284,17 +337,91 @@ function setupChampion() {
 
 
 /* =========================================================
-   ITEM POOL
+   CHECK CASE DATA
+   ========================================================= */
+
+function championCasesReady() {
+
+    /*
+        Supported structures:
+
+        cases = [...]
+
+        OR
+
+        cases = {
+            cases: [...]
+        }
+    */
+
+
+    if (Array.isArray(cases)) {
+
+        return cases.length > 0;
+
+    }
+
+
+    if (
+        cases &&
+        Array.isArray(cases.cases)
+    ) {
+
+        return cases.cases.length > 0;
+
+    }
+
+
+    return false;
+
+}
+
+
+/* =========================================================
+   GET CASE ARRAY
+   ========================================================= */
+
+function getChampionCases() {
+
+    if (Array.isArray(cases)) {
+
+        return cases;
+
+    }
+
+
+    if (
+        cases &&
+        Array.isArray(cases.cases)
+    ) {
+
+        return cases.cases;
+
+    }
+
+
+    return [];
+
+}
+
+
+/* =========================================================
+   GET ALL CASE ITEMS
    ========================================================= */
 
 function getChampionItemPool() {
 
     const pool = [];
 
-    if (!Array.isArray(cases)) {
+    const caseList =
+        getChampionCases();
+
+
+    if (!caseList.length) {
 
         console.error(
-            "Champion Mode: cases is not loaded."
+            "Champion Mode: No cases are available.",
+            cases
         );
 
         return pool;
@@ -302,13 +429,15 @@ function getChampionItemPool() {
     }
 
 
-    cases.forEach(gameCase => {
+    caseList.forEach(gameCase => {
 
         if (
             !gameCase ||
             !Array.isArray(gameCase.items)
         ) {
+
             return;
+
         }
 
 
@@ -325,17 +454,27 @@ function getChampionItemPool() {
                 !Number.isFinite(price) ||
                 price <= 0
             ) {
+
                 return;
+
             }
 
 
             pool.push({
 
-                name: item.name,
+                name:
+                    String(
+                        item.name ||
+                        "Unknown Item"
+                    ),
 
-                rarity: item.rarity,
+                rarity:
+                    String(
+                        item.rarity ||
+                        "common"
+                    ),
 
-                price: price,
+                price,
 
                 weight:
                     Number(item.weight) || 1,
@@ -350,13 +489,18 @@ function getChampionItemPool() {
     });
 
 
+    console.log(
+        `Champion Mode: Found ${pool.length} possible bot items.`
+    );
+
+
     return pool;
 
 }
 
 
 /* =========================================================
-   PLAYER INVENTORY
+   RENDER PLAYER ITEM LIST
    ========================================================= */
 
 function renderChampionItemList() {
@@ -379,9 +523,11 @@ function renderChampionItemList() {
     ) {
 
         container.innerHTML = `
+
             <div class="champion-empty">
                 Your backpack has no items.
             </div>
+
         `;
 
         return;
@@ -394,7 +540,7 @@ function renderChampionItemList() {
         if (!item) return;
 
 
-        const selected =
+        const alreadySelected =
             Champion.selectedItems.includes(index);
 
 
@@ -404,7 +550,11 @@ function renderChampionItemList() {
 
         div.className =
             "champion-wager-item" +
-            (selected ? " selected" : "");
+            (
+                alreadySelected
+                    ? " selected"
+                    : ""
+            );
 
 
         div.innerHTML = `
@@ -412,33 +562,40 @@ function renderChampionItemList() {
             <img
                 src="${item.image || ""}"
                 alt=""
-                class="champion-item-image"
             >
 
             <div class="champion-wager-item-info">
 
-                <strong>
-                    ${escapeChampionHTML(item.name)}
-                </strong>
-
                 <span>
-                    ${Number(item.price || 0).toFixed(2)} ⛃
+                    ${escapeChampionHTML(item.name)}
                 </span>
+
+                <small>
+                    ${Number(
+                        item.price || 0
+                    ).toFixed(2)} ⛃
+                </small>
 
             </div>
 
             <div class="champion-item-check">
 
-                ${selected ? "✓" : "+"}
+                ${
+                    alreadySelected
+                        ? "✓"
+                        : "+"
+                }
 
             </div>
+
         `;
 
 
-        div.addEventListener(
-            "click",
-            () => toggleChampionItem(index)
-        );
+        div.onclick = () => {
+
+            toggleChampionItem(index);
+
+        };
 
 
         container.appendChild(div);
@@ -449,7 +606,7 @@ function renderChampionItemList() {
 
 
 /* =========================================================
-   SELECT / DESELECT ITEM
+   TOGGLE ITEM
    ========================================================= */
 
 function toggleChampionItem(index) {
@@ -457,18 +614,11 @@ function toggleChampionItem(index) {
     if (Champion.battleRunning) return;
 
 
-    if (
-        !inventory[index]
-    ) {
-        return;
-    }
-
-
     const position =
         Champion.selectedItems.indexOf(index);
 
 
-    if (position !== -1) {
+    if (position >= 0) {
 
         Champion.selectedItems.splice(
             position,
@@ -490,7 +640,7 @@ function toggleChampionItem(index) {
 
 
 /* =========================================================
-   COIN WAGER
+   ADD COINS TO WAGER
    ========================================================= */
 
 function addChampionCoins() {
@@ -525,10 +675,10 @@ function addChampionCoins() {
     }
 
 
-    if (amount > Number(coins)) {
+    if (amount > coins) {
 
         alert(
-            `You only have ${Number(coins).toFixed(2)} coins.`
+            `You only have ${coins.toFixed(2)} coins.`
         );
 
         return;
@@ -537,7 +687,9 @@ function addChampionCoins() {
 
 
     Champion.coinWager =
-        Number(amount.toFixed(2));
+        Number(
+            amount.toFixed(2)
+        );
 
 
     input.value = "";
@@ -549,13 +701,22 @@ function addChampionCoins() {
 
 
 /* =========================================================
-   PLAYER WAGER VALUE
+   CALCULATE PLAYER WAGER
    ========================================================= */
 
 function calculatePlayerWager() {
 
     let total =
-        Number(Champion.coinWager) || 0;
+        Number(
+            Champion.coinWager || 0
+        );
+
+
+    if (!Array.isArray(inventory)) {
+
+        return total;
+
+    }
 
 
     Champion.selectedItems.forEach(index => {
@@ -567,8 +728,18 @@ function calculatePlayerWager() {
         if (!item) return;
 
 
-        total +=
-            Number(item.price) || 0;
+        const price =
+            Number(item.price);
+
+
+        if (
+            Number.isFinite(price) &&
+            price > 0
+        ) {
+
+            total += price;
+
+        }
 
     });
 
@@ -581,18 +752,18 @@ function calculatePlayerWager() {
 
 
 /* =========================================================
-   PLAYER WAGER DISPLAY
+   UPDATE WAGER DISPLAY
    ========================================================= */
 
 function updateChampionWagerDisplay() {
 
-    const value =
+    const valueBox =
         document.getElementById(
             "champion-wager-value"
         );
 
 
-    const selected =
+    const selectedBox =
         document.getElementById(
             "champion-selected-items"
         );
@@ -602,46 +773,56 @@ function updateChampionWagerDisplay() {
         calculatePlayerWager();
 
 
-    if (value) {
+    if (valueBox) {
 
-        value.textContent =
+        valueBox.textContent =
             `Wager: ${total.toFixed(2)} ⛃`;
 
     }
 
 
-    if (!selected) return;
+    if (!selectedBox) return;
 
 
-    selected.innerHTML = "";
+    selectedBox.innerHTML = "";
 
 
-    /* COINS */
+    /*
+        COINS
+    */
 
     if (Champion.coinWager > 0) {
 
-        const div =
+        const coinDiv =
             document.createElement("div");
 
 
-        div.className =
+        coinDiv.className =
             "champion-selected-entry";
 
 
-        div.innerHTML = `
+        coinDiv.innerHTML = `
+
+            🪙
 
             <span>
-                🪙 ${Champion.coinWager.toFixed(2)} coins
+                ${Champion.coinWager.toFixed(2)}
+                coins
             </span>
 
-            <button type="button">
+            <button
+                type="button"
+                class="champion-remove-wager">
+
                 ✖
+
             </button>
 
         `;
 
 
-        div.querySelector("button")
+        coinDiv
+            .querySelector("button")
             .onclick = () => {
 
                 Champion.coinWager = 0;
@@ -651,12 +832,16 @@ function updateChampionWagerDisplay() {
             };
 
 
-        selected.appendChild(div);
+        selectedBox.appendChild(
+            coinDiv
+        );
 
     }
 
 
-    /* ITEMS */
+    /*
+        ITEMS
+    */
 
     Champion.selectedItems.forEach(index => {
 
@@ -683,26 +868,39 @@ function updateChampionWagerDisplay() {
             >
 
             <span>
+
                 ${escapeChampionHTML(item.name)}
+
                 -
-                ${Number(item.price).toFixed(2)} ⛃
+
+                ${Number(
+                    item.price || 0
+                ).toFixed(2)} ⛃
+
             </span>
 
-            <button type="button">
+            <button
+                type="button"
+                class="champion-remove-wager">
+
                 ✖
+
             </button>
 
         `;
 
 
-        div.querySelector("button")
+        div
+            .querySelector("button")
             .onclick = () => {
 
                 const position =
-                    Champion.selectedItems.indexOf(index);
+                    Champion.selectedItems.indexOf(
+                        index
+                    );
 
 
-                if (position !== -1) {
+                if (position >= 0) {
 
                     Champion.selectedItems.splice(
                         position,
@@ -719,82 +917,29 @@ function updateChampionWagerDisplay() {
             };
 
 
-        selected.appendChild(div);
+        selectedBox.appendChild(div);
 
     });
 
+
+    /*
+        EMPTY
+    */
 
     if (
         Champion.coinWager <= 0 &&
         Champion.selectedItems.length === 0
     ) {
 
-        selected.innerHTML = `
+        selectedBox.innerHTML = `
+
             <div class="champion-empty">
                 No wager selected.
             </div>
+
         `;
 
     }
-
-}
-
-
-/* =========================================================
-   RANDOM BOT ITEM
-   ========================================================= */
-
-function chooseRandomBotItem(pool) {
-
-    if (!pool.length) {
-        return null;
-    }
-
-
-    /*
-        Use the existing case weight system
-        when choosing an item.
-    */
-
-    const totalWeight =
-        pool.reduce(
-            (sum, item) =>
-                sum + Math.max(0, Number(item.weight) || 1),
-            0
-        );
-
-
-    let random =
-        Math.random() * totalWeight;
-
-
-    for (const item of pool) {
-
-        random -=
-            Math.max(
-                0,
-                Number(item.weight) || 1
-            );
-
-
-        if (random <= 0) {
-
-            return {
-                ...item
-            };
-
-        }
-
-    }
-
-
-    return {
-        ...pool[
-            Math.floor(
-                Math.random() * pool.length
-            )
-        ]
-    };
 
 }
 
@@ -809,30 +954,33 @@ function createBotWager(playerWager) {
         getChampionItemPool();
 
 
-    if (
-        !pool.length ||
-        playerWager <= 0
-    ) {
+    /*
+        Don't create a fake wager if the
+        item pool isn't available.
+    */
+
+    if (!pool.length) {
+
+        console.error(
+            "Champion Mode: FishBot has no available items."
+        );
+
 
         return {
-            items: [],
+
             coins: 0,
+
+            items: [],
+
             total: 0
+
         };
 
     }
 
 
     /*
-        Decide the bot's wager percentage.
-
-        Example:
-
-        Player = 10
-
-        Random multiplier = 2.37
-
-        Bot target = 23.70
+        Random multiplier from 70% to 300%.
     */
 
     const multiplier =
@@ -844,70 +992,42 @@ function createBotWager(playerWager) {
         );
 
 
-    const target =
-        Number(
-            (
-                playerWager *
-                multiplier
-            ).toFixed(2)
-        );
-
-
-    const maxAllowed =
-        Number(
-            (
-                playerWager *
-                BOT_MAX_MULTIPLIER
-            ).toFixed(2)
-        );
+    const desiredValue =
+        playerWager * multiplier;
 
 
     /*
-        Only use items that fit under
-        the maximum allowed value.
-    */
-
-    const usableItems =
-        pool.filter(
-            item =>
-                Number(item.price) <= maxAllowed
-        );
-
-
-    if (!usableItems.length) {
-
-        return {
-            items: [],
-            coins: 0,
-            total: 0
-        };
-
-    }
-
-
-    /*
-        Randomize the pool.
+        Shuffle items.
     */
 
     const shuffled =
-        [...usableItems].sort(
+        [...pool].sort(
             () => Math.random() - 0.5
         );
 
 
     /*
-        Sort by price, largest first.
-
-        This allows combinations such as:
-
-        $8 + $4 + $2
-        instead of only one $8 item.
+        Only consider items that don't
+        exceed the target.
     */
 
-    shuffled.sort(
+    const affordable =
+        shuffled.filter(item => {
+
+            return (
+                item.price <= desiredValue
+            );
+
+        });
+
+
+    /*
+        Largest first.
+    */
+
+    affordable.sort(
         (a, b) =>
-            Number(b.price) -
-            Number(a.price)
+            b.price - a.price
     );
 
 
@@ -917,67 +1037,23 @@ function createBotWager(playerWager) {
 
 
     /*
-        Build a collection close to the target.
+        Build wager from multiple items.
     */
 
-    for (const item of shuffled) {
-
-        const price =
-            Number(item.price);
-
+    for (const item of affordable) {
 
         if (
-            total + price <= target
-        ) {
-
-            selected.push({
-                ...item
-            });
-
-
-            total += price;
-
-        }
-
-
-        if (
-            total >= target * 0.90
+            total >= desiredValue
         ) {
 
             break;
 
         }
 
-    }
-
-
-    /*
-        Try random additional items
-        if we're still below target.
-    */
-
-    for (
-        let i = 0;
-        i < 50 &&
-        total < target * 0.90;
-        i++
-    ) {
-
-        const item =
-            chooseRandomBotItem(
-                usableItems
-            );
-
-
-        if (!item) continue;
-
-
-        const price =
-            Number(item.price);
-
 
         if (
-            total + price <= target
+            total + item.price
+            <= desiredValue
         ) {
 
             selected.push({
@@ -985,41 +1061,7 @@ function createBotWager(playerWager) {
             });
 
 
-            total += price;
-
-        }
-
-    }
-
-
-    /*
-        If we somehow didn't find anything,
-        choose one valid random item.
-    */
-
-    if (!selected.length) {
-
-        const candidates =
-            usableItems.filter(
-                item =>
-                    Number(item.price) <= maxAllowed
-            );
-
-
-        if (candidates.length) {
-
-            const item =
-                chooseRandomBotItem(
-                    candidates
-                );
-
-
-            selected.push({
-                ...item
-            });
-
-
-            total =
+            total +=
                 Number(item.price);
 
         }
@@ -1028,25 +1070,181 @@ function createBotWager(playerWager) {
 
 
     /*
-        IMPORTANT:
-
-        We are NOT using the bot's coins
-        to artificially inflate the wager.
-
-        The bot wager consists of actual items.
+        Find the single closest item.
     */
+
+    let bestSingle = null;
+
+    let bestDifference =
+        Infinity;
+
+
+    pool.forEach(item => {
+
+        const difference =
+            Math.abs(
+                item.price -
+                desiredValue
+            );
+
+
+        if (
+            difference <
+            bestDifference
+        ) {
+
+            bestDifference =
+                difference;
+
+            bestSingle =
+                item;
+
+        }
+
+    });
+
+
+    /*
+        Use the single item if it is
+        closer to the target.
+    */
+
+    if (
+        bestSingle &&
+        bestDifference <
+        Math.abs(
+            total -
+            desiredValue
+        )
+    ) {
+
+        selected.length = 0;
+
+
+        selected.push({
+            ...bestSingle
+        });
+
+
+        total =
+            Number(
+                bestSingle.price
+            );
+
+    }
+
+
+    /*
+        Maximum allowed wager.
+    */
+
+    const maxAllowed =
+        playerWager *
+        BOT_MAX_MULTIPLIER;
+
+
+    /*
+        Remove items if somehow
+        over the maximum.
+    */
+
+    while (
+        total > maxAllowed &&
+        selected.length > 0
+    ) {
+
+        selected.pop();
+
+
+        total =
+            selected.reduce(
+                (sum, item) =>
+                    sum +
+                    Number(item.price),
+                0
+            );
+
+    }
+
+
+    /*
+        Fill the remaining target
+        with FishBot coins.
+    */
+
+    let botCoins = 0;
+
+
+    const remaining =
+        desiredValue -
+        total;
+
+
+    if (
+        remaining > 0.01
+    ) {
+
+        botCoins =
+            Number(
+                Math.min(
+                    remaining,
+                    desiredValue
+                ).toFixed(2)
+            );
+
+
+        total += botCoins;
+
+    }
+
+
+    /*
+        Final safety clamp.
+    */
+
+    if (
+        total > maxAllowed
+    ) {
+
+        const itemTotal =
+            selected.reduce(
+                (sum, item) =>
+                    sum +
+                    Number(item.price),
+                0
+            );
+
+
+        botCoins =
+            Math.max(
+                0,
+                Number(
+                    (
+                        maxAllowed -
+                        itemTotal
+                    ).toFixed(2)
+                )
+            );
+
+
+        total =
+            itemTotal +
+            botCoins;
+
+    }
+
 
     return {
 
-        items: selected,
+        coins: Number(
+            botCoins.toFixed(2)
+        ),
 
-        coins: 0,
+        items: selected,
 
         total: Number(
             total.toFixed(2)
-        ),
-
-        multiplier
+        )
 
     };
 
@@ -1088,7 +1286,7 @@ function displayBotWager(botWager) {
     if (value) {
 
         value.textContent =
-            `FishBot Wager: ${botWager.total.toFixed(2)} ⛃`;
+            `Bot Wager: ${botWager.total.toFixed(2)} ⛃`;
 
     }
 
@@ -1098,6 +1296,33 @@ function displayBotWager(botWager) {
 
     items.innerHTML = "";
 
+
+    /*
+        BOT COINS
+    */
+
+    if (botWager.coins > 0) {
+
+        const div =
+            document.createElement("div");
+
+
+        div.className =
+            "champion-bot-entry";
+
+
+        div.innerHTML =
+            `🪙 ${botWager.coins.toFixed(2)} coins`;
+
+
+        items.appendChild(div);
+
+    }
+
+
+    /*
+        BOT ITEMS
+    */
 
     botWager.items.forEach(item => {
 
@@ -1114,20 +1339,17 @@ function displayBotWager(botWager) {
             <img
                 src="${item.image || ""}"
                 alt=""
-                class="champion-bot-item-image"
             >
 
-            <div>
+            <span>
+                ${escapeChampionHTML(item.name)}
+            </span>
 
-                <strong>
-                    ${escapeChampionHTML(item.name)}
-                </strong>
-
-                <small>
-                    ${Number(item.price).toFixed(2)} ⛃
-                </small>
-
-            </div>
+            <small>
+                ${Number(
+                    item.price
+                ).toFixed(2)} ⛃
+            </small>
 
         `;
 
@@ -1140,25 +1362,30 @@ function displayBotWager(botWager) {
 
 
 /* =========================================================
-   START BATTLE
+   START CHAMPION BATTLE
    ========================================================= */
 
 function startChampionBattle() {
 
-    if (Champion.battleRunning) {
-        return;
-    }
+    if (Champion.battleRunning) return;
 
 
-    const playerWager =
-        calculatePlayerWager();
+    /*
+        Make sure case data has loaded.
+    */
 
-
-    if (playerWager <= 0) {
+    if (!championCasesReady()) {
 
         alert(
-            "You need to wager coins or items first."
+            "Cases are still loading. Please wait a moment and try again."
         );
+
+
+        console.warn(
+            "Champion Mode: Cases are not ready.",
+            cases
+        );
+
 
         return;
 
@@ -1166,26 +1393,48 @@ function startChampionBattle() {
 
 
     /*
-        Validate item indexes BEFORE
-        doing anything destructive.
+        Clean invalid inventory indexes
+        BEFORE calculating the wager.
     */
 
     Champion.selectedItems =
-        Champion.selectedItems.filter(
-            index =>
+        Champion.selectedItems.filter(index => {
+
+            return (
+
+                Number.isInteger(index) &&
+
                 inventory[index] &&
-                Number(inventory[index].price) > 0
-        );
+
+                Number.isFinite(
+                    Number(
+                        inventory[index].price
+                    )
+                ) &&
+
+                Number(
+                    inventory[index].price
+                ) >= 0
+
+            );
+
+        });
 
 
-    const actualWager =
+    /*
+        Calculate actual wager.
+    */
+
+    const actualPlayerWager =
         calculatePlayerWager();
 
 
-    if (actualWager <= 0) {
+    if (
+        actualPlayerWager <= 0
+    ) {
 
         alert(
-            "Your wager is empty."
+            "You must wager coins or at least one item."
         );
 
         return;
@@ -1194,25 +1443,55 @@ function startChampionBattle() {
 
 
     /*
-        Make FishBot's wager first.
+        Make sure player has enough coins.
+    */
 
-        NOTHING has been removed yet.
+    if (
+        Champion.coinWager > coins
+    ) {
+
+        alert(
+            `You only have ${coins.toFixed(2)} coins.`
+        );
+
+        return;
+
+    }
+
+
+    /*
+        Create FishBot wager BEFORE
+        changing player inventory.
     */
 
     const botWager =
         createBotWager(
-            actualWager
+            actualPlayerWager
         );
 
 
+    /*
+        Make sure FishBot has a valid wager.
+    */
+
     if (
-        !botWager.items.length ||
-        botWager.total <= 0
+        botWager.total <= 0 ||
+        (
+            botWager.items.length === 0 &&
+            botWager.coins <= 0
+        )
     ) {
 
         alert(
-            "FishBot could not create a valid item wager."
+            "FishBot couldn't create a valid wager. Make sure your cases have items with valid prices."
         );
+
+
+        console.error(
+            "Champion Mode: Invalid FishBot wager.",
+            botWager
+        );
+
 
         return;
 
@@ -1220,40 +1499,40 @@ function startChampionBattle() {
 
 
     /*
-        Store the battle wagers.
+        Save battle values.
     */
 
     Champion.totalPlayerWager =
-        actualWager;
-
-
-    Champion.totalBotWager =
-        botWager.total;
-
-
-    Champion.botItems =
-        botWager.items.map(
-            item => ({ ...item })
+        Number(
+            actualPlayerWager.toFixed(2)
         );
 
 
-    Champion.botCoins = 0;
+    Champion.totalBotWager =
+        Number(
+            botWager.total.toFixed(2)
+        );
+
+
+    Champion.botItems =
+        botWager.items.map(item => ({
+            ...item
+        }));
+
+
+    Champion.botCoins =
+        Number(
+            botWager.coins || 0
+        );
 
 
     /*
-        SHOW BOT WAGER BEFORE STARTING.
+        Remove player's coin wager.
     */
 
-    displayBotWager(
-        botWager
-    );
-
-
-    /*
-        TAKE PLAYER COINS.
-    */
-
-    if (Champion.coinWager > 0) {
+    if (
+        Champion.coinWager > 0
+    ) {
 
         coins -=
             Champion.coinWager;
@@ -1271,21 +1550,20 @@ function startChampionBattle() {
 
 
     /*
-        TAKE PLAYER ITEMS.
+        Remove selected inventory items.
 
-        Reverse order is important because
-        inventory indexes change when splice()
-        is used.
+        Highest indexes first so the indexes
+        don't shift.
     */
 
-    const indexes =
+    const indexesToRemove =
         [...Champion.selectedItems]
             .sort(
                 (a, b) => b - a
             );
 
 
-    indexes.forEach(index => {
+    indexesToRemove.forEach(index => {
 
         if (
             index >= 0 &&
@@ -1302,6 +1580,10 @@ function startChampionBattle() {
     });
 
 
+    /*
+        Save inventory.
+    */
+
     saveInventory();
 
     renderInventory();
@@ -1312,12 +1594,12 @@ function startChampionBattle() {
 
 
     /*
-        Clear wager selection.
+        Clear current wager.
     */
 
-    Champion.coinWager = 0;
-
     Champion.selectedItems = [];
+
+    Champion.coinWager = 0;
 
 
     renderChampionItemList();
@@ -1326,7 +1608,16 @@ function startChampionBattle() {
 
 
     /*
-        Start the actual battle.
+        Display FishBot wager.
+    */
+
+    displayBotWager(
+        botWager
+    );
+
+
+    /*
+        Start battle.
     */
 
     beginChampionBattle();
@@ -1340,16 +1631,21 @@ function startChampionBattle() {
 
 function beginChampionBattle() {
 
-    Champion.battleRunning = true;
+    Champion.battleRunning =
+        true;
+
 
     Champion.playerHP =
         CHAMPION_MAX_HP;
 
+
     Champion.botHP =
         CHAMPION_MAX_HP;
 
+
     Champion.turn =
         "player";
+
 
     Champion.round =
         1;
@@ -1404,39 +1700,66 @@ function beginChampionBattle() {
     updateChampionStatus();
 
 
+    const status =
+        document.getElementById(
+            "champion-battle-status"
+        );
+
+
+    if (status) {
+
+        status.textContent =
+            "⚔️ Battle starting...";
+
+    }
+
+
     addChampionLog(
         "⚔️ Champion Mode has begun!"
     );
 
 
     addChampionLog(
-        `🏆 Your wager: ${Champion.totalPlayerWager.toFixed(2)} ⛃`
+        `Your wager: ${Champion.totalPlayerWager.toFixed(2)} ⛃`
     );
 
 
     addChampionLog(
-        `🐟 FishBot wager: ${Champion.totalBotWager.toFixed(2)} ⛃`
+        `FishBot wager: ${Champion.totalBotWager.toFixed(2)} ⛃`
     );
 
 
-    setTimeout(
-        championTurn,
-        900
-    );
+    /*
+        Start battle.
+    */
+
+    setTimeout(() => {
+
+        championTurn();
+
+    }, 900);
 
 }
 
 
 /* =========================================================
-   TURN
+   BATTLE TURN
    ========================================================= */
 
 function championTurn() {
 
-    if (!Champion.battleRunning) {
+    if (
+        !Champion.battleRunning
+    ) {
+
         return;
+
     }
 
+
+    /*
+        Check for death.
+    */
 
     if (
         Champion.playerHP <= 0 ||
@@ -1450,9 +1773,21 @@ function championTurn() {
     }
 
 
-    championAttack(
-        Champion.turn
-    );
+    if (
+        Champion.turn === "player"
+    ) {
+
+        championAttack(
+            "player"
+        );
+
+    } else {
+
+        championAttack(
+            "bot"
+        );
+
+    }
 
 }
 
@@ -1463,10 +1798,18 @@ function championTurn() {
 
 function championAttack(attacker) {
 
-    if (!Champion.battleRunning) {
+    if (
+        !Champion.battleRunning
+    ) {
+
         return;
+
     }
 
+
+    /*
+        Choose random weapon.
+    */
 
     const weapon =
         CHAMPION_WEAPONS[
@@ -1475,18 +1818,6 @@ function championAttack(attacker) {
                 CHAMPION_WEAPONS.length
             )
         ];
-
-
-    const attackerName =
-        attacker === "player"
-            ? "🏆 Champion"
-            : "🐟 FishBot";
-
-
-    const targetName =
-        attacker === "player"
-            ? "FishBot"
-            : "Champion";
 
 
     /*
@@ -1507,12 +1838,24 @@ function championAttack(attacker) {
             ];
 
 
-        addChampionLog(
-            `${attackerName} uses ${weapon}, but ${phrase}`
-        );
+        if (
+            attacker === "player"
+        ) {
+
+            addChampionLog(
+                `🏆 Champion uses ${weapon}, but ${phrase}`
+            );
+
+        } else {
+
+            addChampionLog(
+                `🐟 FishBot uses ${weapon}, but ${phrase}`
+            );
+
+        }
 
 
-        finishChampionTurn(
+        finishTurn(
             attacker
         );
 
@@ -1523,7 +1866,7 @@ function championAttack(attacker) {
 
 
     /*
-        DAMAGE
+        BASE DAMAGE
     */
 
     const baseDamage =
@@ -1542,12 +1885,17 @@ function championAttack(attacker) {
     let miniCrit = false;
 
 
+    /*
+        CRIT
+    */
+
     if (
         Math.random() <
         CHAMPION_CRIT_CHANCE
     ) {
 
         crit = true;
+
 
         damage =
             baseDamage *
@@ -1556,12 +1904,17 @@ function championAttack(attacker) {
     }
 
 
+    /*
+        MINI CRIT
+    */
+
     else if (
         Math.random() <
         CHAMPION_MINI_CRIT_CHANCE
     ) {
 
         miniCrit = true;
+
 
         damage =
             baseDamage *
@@ -1571,19 +1924,34 @@ function championAttack(attacker) {
 
 
     damage =
-        Math.floor(damage);
+        Math.floor(
+            damage
+        );
+
+
+    /*
+        Get phrase.
+    */
+
+    const phrase =
+        getChampionDamagePhrase(
+            weapon
+        );
 
 
     /*
         APPLY DAMAGE
     */
 
-    if (attacker === "player") {
+    if (
+        attacker === "player"
+    ) {
 
         Champion.botHP =
             Math.max(
                 0,
-                Champion.botHP - damage
+                Champion.botHP -
+                damage
             );
 
     } else {
@@ -1591,7 +1959,8 @@ function championAttack(attacker) {
         Champion.playerHP =
             Math.max(
                 0,
-                Champion.playerHP - damage
+                Champion.playerHP -
+                damage
             );
 
     }
@@ -1608,6 +1977,10 @@ function championAttack(attacker) {
 
         addChampionLog(
             `💥 ${
+                attacker === "player"
+                    ? "Champion"
+                    : "FishBot"
+            } — ${
                 CHAMPION_CRIT_PHRASES[
                     Math.floor(
                         Math.random() *
@@ -1620,10 +1993,18 @@ function championAttack(attacker) {
     }
 
 
-    if (miniCrit) {
+    /*
+        MINI CRIT MESSAGE
+    */
+
+    else if (miniCrit) {
 
         addChampionLog(
             `⚡ ${
+                attacker === "player"
+                    ? "Champion"
+                    : "FishBot"
+            } — ${
                 CHAMPION_MINI_CRIT_PHRASES[
                     Math.floor(
                         Math.random() *
@@ -1636,10 +2017,20 @@ function championAttack(attacker) {
     }
 
 
-    const phrase =
-        getChampionDamagePhrase(
-            weapon
-        );
+    /*
+        ATTACK MESSAGE
+    */
+
+    const attackerName =
+        attacker === "player"
+            ? "🏆 Champion"
+            : "🐟 FishBot";
+
+
+    const targetName =
+        attacker === "player"
+            ? "FishBot"
+            : "Champion";
 
 
     addChampionLog(
@@ -1648,25 +2039,27 @@ function championAttack(attacker) {
 
 
     /*
-        DEAD?
+        CHECK DEATH.
     */
 
     if (
-        Champion.playerHP <= 0 ||
-        Champion.botHP <= 0
+        Champion.botHP <= 0 ||
+        Champion.playerHP <= 0
     ) {
 
-        setTimeout(
-            finishChampionBattle,
-            800
-        );
+        setTimeout(() => {
+
+            finishChampionBattle();
+
+        }, 800);
+
 
         return;
 
     }
 
 
-    finishChampionTurn(
+    finishTurn(
         attacker
     );
 
@@ -1674,12 +2067,28 @@ function championAttack(attacker) {
 
 
 /* =========================================================
-   NEXT TURN
+   FINISH TURN
    ========================================================= */
 
-function finishChampionTurn(attacker) {
+function finishTurn(attacker) {
 
-    if (attacker === "player") {
+    if (
+        !Champion.battleRunning
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+        Player -> Bot
+        Bot -> Player
+    */
+
+    if (
+        attacker === "player"
+    ) {
 
         Champion.turn =
             "bot";
@@ -1689,6 +2098,7 @@ function finishChampionTurn(attacker) {
         Champion.turn =
             "player";
 
+
         Champion.round++;
 
     }
@@ -1697,17 +2107,17 @@ function finishChampionTurn(attacker) {
     updateChampionStatus();
 
 
-    Champion.battleTimer =
-        setTimeout(
-            championTurn,
-            CHAMPION_TURN_DELAY
-        );
+    setTimeout(() => {
+
+        championTurn();
+
+    }, CHAMPION_TURN_DELAY);
 
 }
 
 
 /* =========================================================
-   STATUS
+   UPDATE STATUS
    ========================================================= */
 
 function updateChampionStatus() {
@@ -1726,12 +2136,12 @@ function updateChampionStatus() {
     ) {
 
         status.textContent =
-            `🏆 Champion's turn • Round ${Champion.round}`;
+            `🏆 Your turn — Round ${Champion.round}`;
 
     } else {
 
         status.textContent =
-            `🐟 FishBot's turn • Round ${Champion.round}`;
+            `🐟 FishBot's turn — Round ${Champion.round}`;
 
     }
 
@@ -1739,7 +2149,7 @@ function updateChampionStatus() {
 
 
 /* =========================================================
-   HP
+   UPDATE HP
    ========================================================= */
 
 function updateChampionHP() {
@@ -1773,9 +2183,10 @@ function updateChampionHP() {
             0,
             Math.min(
                 100,
-                Champion.playerHP /
-                CHAMPION_MAX_HP *
-                100
+                (
+                    Champion.playerHP /
+                    CHAMPION_MAX_HP
+                ) * 100
             )
         );
 
@@ -1785,9 +2196,10 @@ function updateChampionHP() {
             0,
             Math.min(
                 100,
-                Champion.botHP /
-                CHAMPION_MAX_HP *
-                100
+                (
+                    Champion.botHP /
+                    CHAMPION_MAX_HP
+                ) * 100
             )
         );
 
@@ -1838,14 +2250,17 @@ function clearChampionBattleLog() {
         );
 
 
-    if (log) {
+    if (!log) return;
 
-        log.innerHTML = "";
 
-    }
+    log.innerHTML = "";
 
 }
 
+
+/* =========================================================
+   ADD BATTLE LOG
+   ========================================================= */
 
 function addChampionLog(message) {
 
@@ -1870,10 +2285,12 @@ function addChampionLog(message) {
         message;
 
 
-    log.appendChild(
-        entry
-    );
+    log.appendChild(entry);
 
+
+    /*
+        Keep log small.
+    */
 
     while (
         log.children.length >
@@ -1887,6 +2304,10 @@ function addChampionLog(message) {
     }
 
 
+    /*
+        Scroll to newest message.
+    */
+
     log.scrollTop =
         log.scrollHeight;
 
@@ -1899,25 +2320,17 @@ function addChampionLog(message) {
 
 function finishChampionBattle() {
 
-    if (!Champion.battleRunning) {
+    if (
+        !Champion.battleRunning
+    ) {
+
         return;
+
     }
 
 
     Champion.battleRunning =
         false;
-
-
-    if (Champion.battleTimer) {
-
-        clearTimeout(
-            Champion.battleTimer
-        );
-
-        Champion.battleTimer =
-            null;
-
-    }
 
 
     if (
@@ -1936,7 +2349,7 @@ function finishChampionBattle() {
 
 
 /* =========================================================
-   WIN
+   PLAYER WIN
    ========================================================= */
 
 function finishChampionWin() {
@@ -1966,17 +2379,27 @@ function finishChampionWin() {
 
 
     /*
-        Give the exact items FishBot wagered.
+        Give FishBot's coins.
+    */
+
+    if (
+        Champion.botCoins > 0
+    ) {
+
+        coins +=
+            Champion.botCoins;
+
+    }
+
+
+    /*
+        Give FishBot's items.
     */
 
     Champion.botItems.forEach(item => {
 
         inventory.push({
-            name: item.name,
-            rarity: item.rarity,
-            price: Number(item.price),
-            weight: Number(item.weight) || 1,
-            image: item.image || ""
+            ...item
         });
 
     });
@@ -1988,14 +2411,18 @@ function finishChampionWin() {
 
     saveInventory();
 
+    updateCoins();
+
     renderInventory();
 
     populateCoinflipDropdown();
 
     updateBackpackValue();
 
-    updateChampionWagerDisplay();
 
+    /*
+        Battle messages.
+    */
 
     addChampionLog(
         "🏆 <strong>VICTORY!</strong>"
@@ -2003,7 +2430,7 @@ function finishChampionWin() {
 
 
     addChampionLog(
-        `You won ${Champion.totalBotWager.toFixed(2)} ⛃ worth of items!`
+        `You defeated FishBot and won ${Champion.totalBotWager.toFixed(2)} ⛃!`
     );
 
 
@@ -2042,7 +2469,7 @@ function finishChampionWin() {
 
 
 /* =========================================================
-   LOSS
+   PLAYER LOSS
    ========================================================= */
 
 function finishChampionLoss() {
@@ -2070,6 +2497,13 @@ function finishChampionLoss() {
             "champion-result-winnings"
         );
 
+
+    /*
+        The player's wager was already removed
+        when the battle started.
+
+        Therefore nothing is returned.
+    */
 
     addChampionLog(
         "🔪 <strong>DEFEAT!</strong>"
@@ -2127,22 +2561,45 @@ function finishChampionLoss() {
 
 
 /* =========================================================
-   WINNINGS
+   WINNINGS HTML
    ========================================================= */
 
 function buildWinningsHTML() {
 
+    let html = "";
+
+
+    /*
+        COINS
+    */
+
     if (
-        !Champion.botItems.length
+        Champion.botCoins > 0
     ) {
 
-        return "Nothing was won.";
+        html += `
+
+            <div class="champion-winning-entry">
+
+                🪙
+
+                <strong>
+
+                    ${Champion.botCoins.toFixed(2)}
+                    coins
+
+                </strong>
+
+            </div>
+
+        `;
 
     }
 
 
-    let html = "";
-
+    /*
+        ITEMS
+    */
 
     Champion.botItems.forEach(item => {
 
@@ -2155,17 +2612,19 @@ function buildWinningsHTML() {
                     alt=""
                 >
 
-                <div>
+                <span>
 
-                    <strong>
-                        ${escapeChampionHTML(item.name)}
-                    </strong>
+                    ${escapeChampionHTML(item.name)}
 
                     <small>
-                        ${Number(item.price).toFixed(2)} ⛃
+
+                        ${Number(
+                            item.price
+                        ).toFixed(2)} ⛃
+
                     </small>
 
-                </div>
+                </span>
 
             </div>
 
@@ -2174,54 +2633,90 @@ function buildWinningsHTML() {
     });
 
 
+    if (!html) {
+
+        html =
+            "Nothing was won.";
+
+    }
+
+
     return html;
 
 }
 
 
 /* =========================================================
-   RESET
+   RESET CHAMPION
    ========================================================= */
 
 function resetChampion() {
 
-    if (Champion.battleTimer) {
+    /*
+        Stop battle.
+    */
+
+    Champion.battleRunning =
+        false;
+
+
+    Champion.coinWager =
+        0;
+
+
+    Champion.selectedItems =
+        [];
+
+
+    Champion.botItems =
+        [];
+
+
+    Champion.botCoins =
+        0;
+
+
+    Champion.totalPlayerWager =
+        0;
+
+
+    Champion.totalBotWager =
+        0;
+
+
+    Champion.playerHP =
+        CHAMPION_MAX_HP;
+
+
+    Champion.botHP =
+        CHAMPION_MAX_HP;
+
+
+    Champion.turn =
+        "player";
+
+
+    Champion.round =
+        1;
+
+
+    /*
+        Clear any pending timer.
+    */
+
+    if (
+        Champion.battleTimer
+    ) {
 
         clearTimeout(
             Champion.battleTimer
         );
 
+
         Champion.battleTimer =
             null;
 
     }
-
-
-    Champion.coinWager = 0;
-
-    Champion.selectedItems = [];
-
-    Champion.botItems = [];
-
-    Champion.botCoins = 0;
-
-    Champion.totalPlayerWager = 0;
-
-    Champion.totalBotWager = 0;
-
-    Champion.battleRunning = false;
-
-    Champion.playerHP =
-        CHAMPION_MAX_HP;
-
-    Champion.botHP =
-        CHAMPION_MAX_HP;
-
-    Champion.turn =
-        "player";
-
-    Champion.round =
-        1;
 
 
     const menu =
@@ -2242,7 +2737,7 @@ function resetChampion() {
         );
 
 
-    const preview =
+    const botPreview =
         document.getElementById(
             "champion-bot-preview"
         );
@@ -2272,9 +2767,9 @@ function resetChampion() {
     }
 
 
-    if (preview) {
+    if (botPreview) {
 
-        preview.style.display =
+        botPreview.style.display =
             "none";
 
     }
@@ -2290,7 +2785,7 @@ function resetChampion() {
 
 
 /* =========================================================
-   HELPERS
+   RANDOM INTEGER
    ========================================================= */
 
 function randomInteger(min, max) {
@@ -2303,6 +2798,10 @@ function randomInteger(min, max) {
 }
 
 
+/* =========================================================
+   DAMAGE PHRASE
+   ========================================================= */
+
 function getChampionDamagePhrase(weapon) {
 
     const phrases =
@@ -2313,7 +2812,7 @@ function getChampionDamagePhrase(weapon) {
 
     if (
         !phrases ||
-        !phrases.length
+        phrases.length === 0
     ) {
 
         return "hits the enemy for";
@@ -2330,6 +2829,10 @@ function getChampionDamagePhrase(weapon) {
 
 }
 
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
 
 function escapeChampionHTML(value) {
 
