@@ -235,7 +235,7 @@ const CHAMPION_MISS_PHRASES = [
 const Champion = {
 
     /*
-        Current wager selections.
+        Current wager selected by player.
     */
 
     coinWager: 0,
@@ -244,18 +244,17 @@ const Champion = {
 
 
     /*
-        IMPORTANT:
+        Player's ORIGINAL wager.
 
-        These store copies of the player's wager
-        before the wager is removed from inventory.
+        This is stored separately because the inventory
+        items are removed when the battle begins.
 
-        If the player wins, these are returned.
-        If the player loses, they are NOT returned.
+        If the player wins, these exact items are returned.
     */
 
-    playerWageredItems: [],
+    playerWagerItems: [],
 
-    playerWageredCoins: 0,
+    playerWagerCoins: 0,
 
 
     /*
@@ -268,7 +267,7 @@ const Champion = {
 
 
     /*
-        Total wager values.
+        Total values.
     */
 
     totalPlayerWager: 0,
@@ -604,6 +603,7 @@ function renderChampionItemList() {
                         alreadySelected
                             ? "✓"
                             : "+"
+
                     }
 
                 </div>
@@ -674,7 +674,8 @@ function refreshChampionInventory() {
 
 
     /*
-        Update main inventory.
+        Update main inventory if the functions
+        exist in script.js.
     */
 
     if (
@@ -1086,6 +1087,18 @@ function updateChampionWagerDisplay() {
    CREATE FISHBOT WAGER
    ========================================================= */
 
+/*
+    FishBot now strongly favors higher-value items.
+
+    Instead of randomly choosing from the entire item pool
+    equally, the pool is sorted from most expensive to
+    cheapest and expensive items receive a much higher
+    chance of being selected.
+
+    This helps prevent FishBot from making wagers containing
+    dozens of tiny cheap items.
+*/
+
 function createBotWager(playerWager) {
 
     const pool =
@@ -1119,8 +1132,8 @@ function createBotWager(playerWager) {
 
 
     /*
-        Pick a target between the configured
-        minimum and maximum multipliers.
+        Pick a target between the minimum
+        and maximum multiplier.
     */
 
     const multiplier =
@@ -1171,40 +1184,93 @@ function createBotWager(playerWager) {
 
 
     /*
-        Randomize.
+        Sort expensive items first.
+
+        FishBot will therefore try to use valuable
+        items before filling the remaining amount
+        with cheap items.
     */
 
     validItems.sort(
-        () => Math.random() - 0.5
+        (a, b) =>
+            Number(b.price) -
+            Number(a.price)
     );
 
-
-    /*
-        We attempt multiple combinations
-        to get close to the target.
-    */
 
     let bestItems = [];
 
     let bestTotal = 0;
 
 
+    /*
+        Try many combinations.
+
+        Expensive items are deliberately favored.
+    */
+
     for (
         let attempt = 0;
-        attempt < 100;
+        attempt < 150;
         attempt++
     ) {
 
+        /*
+            Make a copy and slightly randomize it.
+
+            We keep the expensive items near the
+            front of the list while still allowing
+            some randomness.
+        */
+
         const attemptPool =
-            [...validItems].sort(
-                () => Math.random() - 0.5
-            );
+            [...validItems];
+
+
+        attemptPool.sort(
+            (a, b) => {
+
+                const priceDifference =
+                    Number(b.price) -
+                    Number(a.price);
+
+
+                /*
+                    Strong bias toward expensive
+                    items, but not completely fixed.
+                */
+
+                const randomBias =
+                    (
+                        Math.random() -
+                        0.5
+                    ) *
+                    Math.max(
+                        1,
+                        Math.abs(
+                            priceDifference
+                        ) *
+                        0.15
+                    );
+
+
+                return (
+                    priceDifference +
+                    randomBias
+                );
+
+            }
+        );
 
 
         const attemptItems = [];
 
         let attemptTotal = 0;
 
+
+        /*
+            Try adding expensive items first.
+        */
 
         for (
             const item of attemptPool
@@ -1215,21 +1281,133 @@ function createBotWager(playerWager) {
 
 
             if (
-                attemptTotal + price <=
+                attemptTotal + price >
                 target
             ) {
 
-                if (
-                    Math.random() < 0.70
-                ) {
+                continue;
 
-                    attemptItems.push({
-                        ...item
-                    });
+            }
 
-                    attemptTotal += price;
 
-                }
+            /*
+                Expensive items get a much higher
+                selection chance.
+
+                Cheap items are only added when they
+                help fill the remaining amount.
+            */
+
+            const normalizedPrice =
+                Math.min(
+                    1,
+                    price /
+                    Math.max(
+                        1,
+                        target
+                    )
+                );
+
+
+            const selectionChance =
+                0.45 +
+                (
+                    normalizedPrice *
+                    0.55
+                );
+
+
+            if (
+                Math.random() <
+                selectionChance
+            ) {
+
+                attemptItems.push({
+                    ...item
+                });
+
+                attemptTotal += price;
+
+            }
+
+
+            /*
+                If we're extremely close,
+                stop.
+            */
+
+            if (
+                Math.abs(
+                    target -
+                    attemptTotal
+                ) <= 0.01
+            ) {
+
+                break;
+
+            }
+
+        }
+
+
+        /*
+            Try to improve the combination using
+            expensive items first.
+        */
+
+        const improvementPool =
+            [...validItems].sort(
+                (a, b) =>
+                    Number(b.price) -
+                    Number(a.price)
+            );
+
+
+        for (
+            const item of improvementPool
+        ) {
+
+            const price =
+                Number(item.price);
+
+
+            if (
+                attemptTotal + price >
+                target
+            ) {
+
+                continue;
+
+            }
+
+
+            const newDifference =
+                Math.abs(
+                    target -
+                    (
+                        attemptTotal +
+                        price
+                    )
+                );
+
+
+            const oldDifference =
+                Math.abs(
+                    target -
+                    attemptTotal
+                );
+
+
+            if (
+                newDifference <
+                oldDifference
+            ) {
+
+                attemptItems.push({
+                    ...item
+                });
+
+                attemptTotal += price;
 
             }
 
@@ -1247,6 +1425,10 @@ function createBotWager(playerWager) {
 
         }
 
+
+        /*
+            Keep the best combination.
+        */
 
         if (
             Math.abs(
@@ -1272,11 +1454,21 @@ function createBotWager(playerWager) {
 
 
     /*
-        Try individual items to improve result.
+        Final improvement pass.
+
+        Again, expensive items are checked first.
     */
 
+    const finalPool =
+        [...validItems].sort(
+            (a, b) =>
+                Number(b.price) -
+                Number(a.price)
+        );
+
+
     for (
-        const item of validItems
+        const item of finalPool
     ) {
 
         const price =
@@ -1293,13 +1485,15 @@ function createBotWager(playerWager) {
         }
 
 
+        const newTotal =
+            bestTotal +
+            price;
+
+
         const newDifference =
             Math.abs(
                 target -
-                (
-                    bestTotal +
-                    price
-                )
+                newTotal
             );
 
 
@@ -1319,7 +1513,20 @@ function createBotWager(playerWager) {
                 ...item
             });
 
-            bestTotal += price;
+            bestTotal =
+                newTotal;
+
+        }
+
+
+        if (
+            Math.abs(
+                target -
+                bestTotal
+            ) <= 0.01
+        ) {
+
+            break;
 
         }
 
@@ -1327,7 +1534,8 @@ function createBotWager(playerWager) {
 
 
     /*
-        Use bot coins to fill remaining amount.
+        Use bot coins to fill the remaining
+        amount.
     */
 
     let botCoins =
@@ -1462,9 +1670,19 @@ function displayBotWager(botWager) {
 
     /*
         Bot items.
+
+        Display expensive items first.
     */
 
-    botWager.items.forEach(
+    const sortedBotItems =
+        [...botWager.items].sort(
+            (a, b) =>
+                Number(b.price || 0) -
+                Number(a.price || 0)
+        );
+
+
+    sortedBotItems.forEach(
         (item) => {
 
             const div =
@@ -1575,7 +1793,7 @@ function startChampionBattle() {
 
 
     /*
-        Create bot wager BEFORE removing
+        Create FishBot wager before removing
         player's items.
     */
 
@@ -1598,46 +1816,22 @@ function startChampionBattle() {
     }
 
 
-    /* =====================================================
-       STORE BATTLE WAGER
-       ===================================================== */
-
-    Champion.totalPlayerWager =
-        Number(
-            playerWager.toFixed(2)
-        );
-
-
-    Champion.totalBotWager =
-        Number(
-            botWager.total.toFixed(2)
-        );
-
-
     /*
-        IMPORTANT:
+        =====================================================
+        SAVE PLAYER'S ORIGINAL WAGER
+        =====================================================
 
-        Save player's coin wager so it can be
-        returned if the player wins.
+        This is the important part for returning
+        the wager when the player wins.
     */
 
-    Champion.playerWageredCoins =
+    Champion.playerWagerCoins =
         Number(
-            Champion.coinWager || 0
+            Champion.coinWager.toFixed(2)
         );
 
 
-    /*
-        IMPORTANT:
-
-        Save copies of all player's wagered items
-        before deleting them from inventory.
-
-        These are used to return the items
-        if the player wins.
-    */
-
-    Champion.playerWageredItems =
+    Champion.playerWagerItems =
         Champion.selectedItems
             .map(
                 (index) => {
@@ -1645,9 +1839,16 @@ function startChampionBattle() {
                     const item =
                         inventory[index];
 
+
                     if (!item) {
                         return null;
                     }
+
+
+                    /*
+                        Clone the item so it remains
+                        available after inventory.splice().
+                    */
 
                     return {
                         ...item
@@ -1661,8 +1862,20 @@ function startChampionBattle() {
 
 
     /*
-        Save FishBot's wager.
+        Store battle wager.
     */
+
+    Champion.totalPlayerWager =
+        Number(
+            playerWager.toFixed(2)
+        );
+
+
+    Champion.totalBotWager =
+        Number(
+            botWager.total.toFixed(2)
+        );
+
 
     Champion.botItems =
         botWager.items.map(
@@ -1678,9 +1891,11 @@ function startChampionBattle() {
         );
 
 
-    /* =====================================================
-       REMOVE PLAYER'S COIN WAGER
-       ===================================================== */
+    /*
+        =====================================================
+        REMOVE PLAYER COIN WAGER
+        =====================================================
+    */
 
     if (
         Champion.coinWager > 0
@@ -1701,12 +1916,12 @@ function startChampionBattle() {
     }
 
 
-    /* =====================================================
-       REMOVE PLAYER'S ITEM WAGERS
-       ===================================================== */
-
     /*
-        Backwards order prevents index shifting.
+        =====================================================
+        REMOVE PLAYER ITEM WAGERS
+        =====================================================
+
+        Remove backwards so indexes don't shift.
     */
 
     const indexesToRemove =
@@ -1779,11 +1994,11 @@ function startChampionBattle() {
 
 
     /*
-        Clear current wager selections.
+        Clear currently selected wager.
 
-        The actual wager is safely stored in:
-        Champion.playerWageredItems
-        Champion.playerWageredCoins
+        The ORIGINAL wager is safely stored in
+        Champion.playerWagerItems and
+        Champion.playerWagerCoins.
     */
 
     Champion.selectedItems = [];
@@ -2331,6 +2546,15 @@ function updateChampionStatus() {
 
 function updateChampionHP() {
 
+    /*
+        Your HTML should contain:
+
+        <div id="champion-player-hp-bar"></div>
+        <div id="champion-bot-hp-bar"></div>
+
+        These are the █ / ░ bars.
+    */
+
     const playerBar =
         document.getElementById(
             "champion-player-hp-bar"
@@ -2585,8 +2809,8 @@ function finishChampionBattle() {
 
 
     /*
-        Player wins only if FishBot is dead
-        and the player is still alive.
+        Player wins when FishBot reaches zero
+        while the player is still alive.
     */
 
     if (
@@ -2637,57 +2861,38 @@ function finishChampionWin() {
         );
 
 
-    /* =====================================================
-       RETURN PLAYER'S COINS
-       ===================================================== */
+    /*
+        =====================================================
+        RETURN PLAYER'S ORIGINAL COINS
+        =====================================================
+    */
 
     if (
-        Champion.playerWageredCoins > 0
+        Champion.playerWagerCoins > 0
     ) {
 
         coins +=
-            Champion.playerWageredCoins;
+            Champion.playerWagerCoins;
+
+
+        coins =
+            Number(
+                coins.toFixed(2)
+            );
 
     }
 
 
-    /* =====================================================
-       RETURN PLAYER'S ITEMS
-       ===================================================== */
+    /*
+        =====================================================
+        RETURN PLAYER'S ORIGINAL ITEMS
+        =====================================================
 
-    Champion.playerWageredItems.forEach(
-        (item) => {
+        These are the exact cloned items that were
+        saved when the battle began.
+    */
 
-            if (!item) return;
-
-
-            inventory.push({
-                ...item
-            });
-
-        }
-    );
-
-
-    /* =====================================================
-       GIVE FISHBOT'S COINS
-       ===================================================== */
-
-    if (
-        Champion.botCoins > 0
-    ) {
-
-        coins +=
-            Champion.botCoins;
-
-    }
-
-
-    /* =====================================================
-       GIVE FISHBOT'S ITEMS
-       ===================================================== */
-
-    Champion.botItems.forEach(
+    Champion.playerWagerItems.forEach(
         (item) => {
 
             if (!item) return;
@@ -2702,28 +2907,71 @@ function finishChampionWin() {
 
 
     /*
-        Round coins.
+        =====================================================
+        GIVE FISHBOT'S COINS
+        =====================================================
     */
 
-    coins =
-        Number(
-            coins.toFixed(2)
+    if (
+        Champion.botCoins > 0
+    ) {
+
+        coins +=
+            Champion.botCoins;
+
+
+        coins =
+            Number(
+                coins.toFixed(2)
+            );
+
+    }
+
+
+    /*
+        =====================================================
+        GIVE FISHBOT'S ITEMS
+        =====================================================
+
+        Higher-value FishBot items are added first.
+    */
+
+    const sortedBotItems =
+        [...Champion.botItems].sort(
+            (a, b) =>
+                Number(b.price || 0) -
+                Number(a.price || 0)
         );
 
 
-    /* =====================================================
-       SAVE
-       ===================================================== */
+    sortedBotItems.forEach(
+        (item) => {
+
+            if (!item) return;
+
+
+            inventory.push({
+                ...item
+            });
+
+        }
+    );
+
+
+    /*
+        =====================================================
+        SAVE EVERYTHING
+        =====================================================
+    */
 
     saveInventory();
-
 
     updateCoins();
 
 
-    /* =====================================================
-       UPDATE MAIN SITE
-       ===================================================== */
+    /*
+        Update main inventory.
+    */
 
     if (
         typeof renderInventory ===
@@ -2755,9 +3003,9 @@ function finishChampionWin() {
     }
 
 
-    /* =====================================================
-       BATTLE LOG
-       ===================================================== */
+    /*
+        Battle log.
+    */
 
     addChampionLog(
         "🏆 <strong>VICTORY!</strong>"
@@ -2765,18 +3013,18 @@ function finishChampionWin() {
 
 
     addChampionLog(
-        `You defeated FishBot and won the entire pot of ${
-            (
-                Champion.totalPlayerWager +
-                Champion.totalBotWager
-            ).toFixed(2)
+        `You defeated FishBot and won ${
+            Champion.totalBotWager.toFixed(2)
         } ⛃!`
     );
 
 
-    /* =====================================================
-       RESULT SCREEN
-       ===================================================== */
+    addChampionLog(
+        `Your ${
+            Champion.totalPlayerWager.toFixed(2)
+        } ⛃ wager was returned!`
+    );
+
 
     if (title) {
 
@@ -2789,7 +3037,7 @@ function finishChampionWin() {
     if (message) {
 
         message.textContent =
-            "FishBot has been defeated! You won the entire pot!";
+            "FishBot has been defeated! Your wager was returned, and you won FishBot's wager.";
 
     }
 
@@ -2843,17 +3091,10 @@ function finishChampionLoss() {
 
 
     /*
-        IMPORTANT:
-
         The player's wager was already removed
         when the battle started.
 
-        We deliberately DO NOT return:
-
-        Champion.playerWageredCoins
-        Champion.playerWageredItems
-
-        because the player lost.
+        Therefore nothing is returned on a loss.
     */
 
     addChampionLog(
@@ -2894,12 +3135,10 @@ function finishChampionLoss() {
                 You lost:
 
                 <strong>
-
                     ${
                         Champion.totalPlayerWager
                             .toFixed(2)
                     } ⛃
-
                 </strong>
 
             </div>
@@ -2928,12 +3167,14 @@ function buildWinningsHTML() {
     let html = "";
 
 
-    /* =====================================================
-       PLAYER'S RETURNED COINS
-       ===================================================== */
+    /*
+        =====================================================
+        PLAYER WAGER RETURN
+        =====================================================
+    */
 
     if (
-        Champion.playerWageredCoins > 0
+        Champion.playerWagerCoins > 0
     ) {
 
         html += `
@@ -2941,16 +3182,14 @@ function buildWinningsHTML() {
             <div
                 class="champion-winning-entry">
 
-                🔄
+                ↩️
 
                 <strong>
 
-                    ${
-                        Champion.playerWageredCoins
+                    Your ${
+                        Champion.playerWagerCoins
                             .toFixed(2)
-                    }
-
-                    coins returned
+                    } coins returned
 
                 </strong>
 
@@ -2961,22 +3200,27 @@ function buildWinningsHTML() {
     }
 
 
-    /* =====================================================
-       PLAYER'S RETURNED ITEMS
-       ===================================================== */
+    /*
+        Player's returned items.
+    */
 
-    Champion.playerWageredItems.forEach(
+    const sortedReturnedItems =
+        [...Champion.playerWagerItems].sort(
+            (a, b) =>
+                Number(b.price || 0) -
+                Number(a.price || 0)
+        );
+
+
+    sortedReturnedItems.forEach(
         (item) => {
-
-            if (!item) return;
-
 
             html += `
 
                 <div
                     class="champion-winning-entry">
 
-                    🔄
+                    ↩️
 
                     <img
                         src="${escapeChampionAttribute(
@@ -2987,6 +3231,8 @@ function buildWinningsHTML() {
 
                     <span>
 
+                        Your wager returned:
+
                         ${escapeChampionHTML(
                             item.name
                         )}
@@ -2995,11 +3241,9 @@ function buildWinningsHTML() {
 
                             ${
                                 Number(
-                                    item.price || 0
+                                    item.price
                                 ).toFixed(2)
                             } ⛃
-
-                            returned
 
                         </small>
 
@@ -3013,9 +3257,11 @@ function buildWinningsHTML() {
     );
 
 
-    /* =====================================================
-       FISHBOT'S COINS
-       ===================================================== */
+    /*
+        =====================================================
+        FISHBOT COINS
+        =====================================================
+    */
 
     if (
         Champion.botCoins > 0
@@ -3034,7 +3280,6 @@ function buildWinningsHTML() {
                         Champion.botCoins
                             .toFixed(2)
                     }
-
                     FishBot coins
 
                 </strong>
@@ -3046,22 +3291,29 @@ function buildWinningsHTML() {
     }
 
 
-    /* =====================================================
-       FISHBOT'S ITEMS
-       ===================================================== */
+    /*
+        =====================================================
+        FISHBOT ITEMS
+        =====================================================
+    */
 
-    Champion.botItems.forEach(
+    const sortedBotItems =
+        [...Champion.botItems].sort(
+            (a, b) =>
+                Number(b.price || 0) -
+                Number(a.price || 0)
+        );
+
+
+    sortedBotItems.forEach(
         (item) => {
-
-            if (!item) return;
-
 
             html += `
 
                 <div
                     class="champion-winning-entry">
 
-                    🏆
+                    🎁
 
                     <img
                         src="${escapeChampionAttribute(
@@ -3080,7 +3332,7 @@ function buildWinningsHTML() {
 
                             ${
                                 Number(
-                                    item.price || 0
+                                    item.price
                                 ).toFixed(2)
                             } ⛃
 
@@ -3095,10 +3347,6 @@ function buildWinningsHTML() {
         }
     );
 
-
-    /* =====================================================
-       NOTHING
-       ===================================================== */
 
     if (!html) {
 
@@ -3130,49 +3378,21 @@ function resetChampion() {
     }
 
 
-    /*
-        Reset wagers.
-    */
-
     Champion.coinWager = 0;
 
     Champion.selectedItems = [];
 
+    Champion.playerWagerItems = [];
 
-    /*
-        Clear saved player's wager.
-
-        At this point the battle is over,
-        so the returned items/coins have
-        already been added if the player won.
-    */
-
-    Champion.playerWageredItems = [];
-
-    Champion.playerWageredCoins = 0;
-
-
-    /*
-        Clear FishBot wager.
-    */
+    Champion.playerWagerCoins = 0;
 
     Champion.botItems = [];
 
     Champion.botCoins = 0;
 
-
-    /*
-        Clear totals.
-    */
-
     Champion.totalPlayerWager = 0;
 
     Champion.totalBotWager = 0;
-
-
-    /*
-        Reset battle.
-    */
 
     Champion.playerHP =
         CHAMPION_MAX_HP;
@@ -3192,10 +3412,6 @@ function resetChampion() {
     Champion.battleTimer =
         null;
 
-
-    /*
-        DOM.
-    */
 
     const menu =
         document.getElementById(
@@ -3252,10 +3468,6 @@ function resetChampion() {
 
     }
 
-
-    /*
-        Refresh Champion UI.
-    */
 
     renderChampionItemList();
 
