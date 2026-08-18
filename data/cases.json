@@ -18,7 +18,7 @@
         { "name": "Detective", "rarity": "legendary", "price": 0.14, "weight": 10000, "image": "images/items/detective.png" },
         { "name": "Underminer's Overcoat", "rarity": "legendary", "price": 1.53, "weight": 1000, "image": "images/items/undercoat.png" },
         { "name": "Cop Caller", "rarity": "legendary", "price": 2.85, "weight": 500, "image": "images/items/copcall.png" },
-        { "name": "Water Waders", "rarity": "strange", "price": 3.19, "weight": 500, "image": "images/items/waterwad.png" },
+        { "name": "Water Waders", "rarity": "legendary", "price": 3.19, "weight": 500, "image": "images/items/waterwad.png" },
         { "name": "Strange Mad Milk", "rarity": "strange", "price": 4.52, "weight": 500, "image": "images/items/madmilk.png" },
         { "name": "Holstered Heaters", "rarity": "legendary", "price": 6.63, "weight": 500, "image": "images/items/holstered.png" },
         { "name": "Steaming Katyusha", "rarity": "mythical", "price": 20.00, "weight": 50, "image": "images/items/steamkaty.png" },
