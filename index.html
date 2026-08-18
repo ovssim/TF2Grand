@@ -1,170 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>OVFF's Sim</title>
 
-<link rel="stylesheet" href="style.css">
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
 </head>
+
 
 <body>
 
+
+<!-- ===================================================== -->
+<!-- ================= HEADER ============================ -->
+<!-- ===================================================== -->
+
 <h1>OVFF's Sim</h1>
 
-<!-- ================= BANNERS ================= -->
 
-<div id="neon-banner">Version 3.1</div>
-<div id="neon-banner">Upgrader</div>
+<div id="neon-banner">
+    Version 3.1
+</div>
 
 
-<!-- ================= CONTROLS ================= -->
+<div id="neon-banner">
+    Upgrader
+</div>
+
+
+<!-- ===================================================== -->
+<!-- ================= CONTROLS ========================== -->
+<!-- ===================================================== -->
 
 <div id="controls">
 
-  <button class="theme-btn" id="toggle-inv-btn">
-    devving
-  </button>
+    <button
+        class="theme-btn"
+        id="toggle-inv-btn"
+        type="button"
+    >
+        devving
+    </button>
 
-  <button class="theme-btn" id="add-coins-btn">
-    50 Deposit
-  </button>
 
-  <button class="theme-btn" id="remove-coins-btn">
-    50 Withdraw
-  </button>
+    <button
+        class="theme-btn"
+        id="add-coins-btn"
+        type="button"
+    >
+        50 Deposit
+    </button>
 
-  <button class="theme-btn" id="admin-give-btn">
-    Trade Panel
-  </button>
+
+    <button
+        class="theme-btn"
+        id="remove-coins-btn"
+        type="button"
+    >
+        50 Withdraw
+    </button>
+
+
+    <button
+        class="theme-btn"
+        id="admin-give-btn"
+        type="button"
+    >
+        Trade Panel
+    </button>
 
 </div>
 
 
-<!-- ================= COINFLIP ================= -->
+<!-- ===================================================== -->
+<!-- ================= COINFLIP ========================== -->
+<!-- ===================================================== -->
 
 <div id="coinflip-section">
 
-  <h2>Coinflip</h2>
+    <h2>Coinflip</h2>
 
-  <select id="coinflip-select"></select>
 
-  <button id="coinflip-btn" class="theme-btn">
-    Flip Coin
-  </button>
+    <select id="coinflip-select"></select>
 
-  <div id="coin-container">
 
-    <div id="coin">
+    <button
+        id="coinflip-btn"
+        class="theme-btn"
+        type="button"
+    >
+        Flip Coin
+    </button>
 
-      <div class="head"></div>
-      <div class="tail"></div>
+
+    <div id="coin-container">
+
+        <div id="coin">
+
+            <div class="head"></div>
+
+            <div class="tail"></div>
+
+        </div>
 
     </div>
-
-  </div>
 
 </div>
 
 
-<!-- ================= COINS ================= -->
+<!-- ===================================================== -->
+<!-- ================= COINS ============================= -->
+<!-- ===================================================== -->
 
 <div id="coins"></div>
 
 
-<!-- ================= CASE DROPDOWN ================= -->
+<!-- ===================================================== -->
+<!-- ================= CASE DROPDOWN ===================== -->
+<!-- ===================================================== -->
 
 <div class="custom-dropdown">
 
-  <div id="case-select-display"></div>
+    <div id="case-select-display"></div>
 
-  <div id="case-select-options"></div>
+    <div id="case-select-options"></div>
 
 </div>
 
 
-<!-- ================= CASE SECTION ================= -->
+<!-- ===================================================== -->
+<!-- ================= CASE SECTION ====================== -->
+<!-- ===================================================== -->
 
 <div id="case-section">
 
-  <div class="case-left">
+    <div class="case-left">
 
-    <img
-      id="case-image"
-      src=""
-      alt="Case Image"
-    >
+        <img
+            id="case-image"
+            src=""
+            alt="Case Image"
+        >
 
-  </div>
+    </div>
 
 
-  <div class="case-right">
+    <div class="case-right">
 
-    <h2 id="case-name"></h2>
+        <h2 id="case-name"></h2>
 
-    <button
-      class="theme-btn"
-      id="open-btn">
-    </button>
 
-    <button
-      class="theme-btn"
-      id="show-case-items-btn">
-      Show Potential Drops
-    </button>
+        <button
+            class="theme-btn"
+            id="open-btn"
+            type="button"
+        ></button>
 
-    <div id="case-items-list"></div>
 
-  </div>
+        <button
+            class="theme-btn"
+            id="show-case-items-btn"
+            type="button"
+        >
+            Show Potential Drops
+        </button>
+
+
+        <div id="case-items-list"></div>
+
+    </div>
 
 </div>
 
 
-<!-- ================= WINNER ================= -->
+<!-- ===================================================== -->
+<!-- ================= WINNER ============================ -->
+<!-- ===================================================== -->
 
 <div id="winner-name"></div>
 
 
-<!-- ================= SPINNER ================= -->
+<!-- ===================================================== -->
+<!-- ================= SPINNER =========================== -->
+<!-- ===================================================== -->
 
 <div id="spinner-wrapper">
 
-  <div id="spinner-container">
+    <div id="spinner-container">
 
-    <div id="spinner-strip"></div>
+        <div id="spinner-strip"></div>
 
-  </div>
+    </div>
 
 </div>
 
 
-<!-- ================= INVENTORY SORT ================= -->
+<!-- ===================================================== -->
+<!-- ================= INVENTORY ========================= -->
+<!-- ===================================================== -->
 
 <button
-  id="sort-inv-btn"
-  class="theme-btn cyan-btn">
-
-  Sort: High → Low
-
+    id="sort-inv-btn"
+    class="theme-btn cyan-btn"
+    type="button"
+>
+    Sort: High → Low
 </button>
 
 
-<!-- ================= BACKPACK ================= -->
-
 <div class="inventory-header">
 
-  <h2>Backpack</h2>
+    <h2>
+        Backpack
+    </h2>
 
-  <button
-    id="sell-all-btn"
-    class="theme-btn">
 
-    Scrap Backpack
+    <button
+        id="refresh-inventory-btn"
+        class="theme-btn"
+        type="button"
+    >
+        🔄 Refresh Inventory
+    </button>
 
-  </button>
+
+    <button
+        id="sell-all-btn"
+        class="theme-btn"
+        type="button"
+    >
+        Scrap Backpack
+    </button>
 
 </div>
+
 
 <div id="inventory"></div>
 
@@ -175,333 +256,464 @@
 
 <section id="champion-section">
 
-  <div class="champion-header">
 
-    <h2>🏆 Champion Mode</h2>
+    <div class="champion-header">
 
-    <p class="champion-subtitle">
-      Wager your coins or items against FishBot.
-    </p>
-
-  </div>
+        <h2>
+            🏆 Champion Mode
+        </h2>
 
 
-  <!-- ================= CHAMPION MENU ================= -->
+        <p class="champion-subtitle">
+            Wager your coins or items against FishBot.
+        </p>
 
-  <div id="champion-menu">
-
-    <div class="champion-wager-box">
-
-      <h3>Your Wager</h3>
-
-      <div id="champion-wager-value">
-        Wager: 0.00 ⛃
-      </div>
+    </div>
 
 
-      <!-- Coin wager -->
+    <!-- ================================================= -->
+    <!-- ================= CHAMPION MENU ================= -->
+    <!-- ================================================= -->
 
-      <div class="champion-coin-wager">
+    <div id="champion-menu">
 
-        <input
-          type="number"
-          id="champion-coin-input"
-          min="0"
-          step="0.01"
-          placeholder="Coin amount"
+
+        <!-- ================= PLAYER WAGER =============== -->
+
+        <div class="champion-wager-box">
+
+            <h3>
+                Your Wager
+            </h3>
+
+
+            <div id="champion-wager-value">
+
+                Wager: 0.00 ⛃
+
+            </div>
+
+
+            <!-- ================= COINS ================== -->
+
+            <div class="champion-coin-wager">
+
+                <input
+                    type="number"
+                    id="champion-coin-input"
+                    min="0"
+                    step="0.01"
+                    placeholder="Coin amount"
+                >
+
+
+                <button
+                    id="champion-add-coins"
+                    class="theme-btn"
+                    type="button"
+                >
+                    Add Coins
+                </button>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- ================= ITEMS ================= -->
+            <!-- ========================================= -->
+
+            <div class="champion-item-wager">
+
+                <div
+                    class="champion-item-header"
+                >
+
+                    <h4>
+                        Item Wager
+                    </h4>
+
+
+                    <button
+                        id="champion-refresh-inventory"
+                        class="theme-btn"
+                        type="button"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+
+                <!--
+                    Scrollable item area.
+                    Your CSS can control the exact height.
+                -->
+
+                <div
+                    id="champion-item-list"
+                    class="champion-scroll-area"
+                >
+
+                    <div class="champion-empty">
+                        Loading inventory...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- ============ SELECTED WAGER ============= -->
+            <!-- ========================================= -->
+
+            <div
+                id="champion-selected-wager"
+            >
+
+                <h4>
+                    Selected Wager
+                </h4>
+
+
+                <div
+                    id="champion-selected-items"
+                >
+
+                    <div class="champion-empty">
+                        No wager selected.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- ============== START ===================== -->
+            <!-- ========================================= -->
+
+            <button
+                id="champion-start-btn"
+                class="theme-btn champion-start-btn"
+                type="button"
+            >
+                ⚔️ Challenge FishBot
+            </button>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- ================= BOT WAGER ==================== -->
+        <!-- ================================================= -->
+
+        <div
+            id="champion-bot-preview"
+            style="display:none;"
         >
 
-        <button
-          id="champion-add-coins"
-          class="theme-btn">
-
-          Add Coins
-
-        </button>
-
-      </div>
+            <h3>
+                🐟 FishBot's Wager
+            </h3>
 
 
-      <!-- Item wager -->
+            <div id="champion-bot-value">
 
-      <div class="champion-item-wager">
+                Bot Wager: 0.00 ⛃
 
-        <h4>Item Wager</h4>
+            </div>
 
-        <div id="champion-item-list">
 
-          <!-- Champion JS fills this -->
+            <div
+                id="champion-bot-items"
+                class="champion-scroll-area"
+            ></div>
 
         </div>
-
-      </div>
-
-
-      <!-- Selected wager -->
-
-      <div id="champion-selected-wager">
-
-        <h4>Selected Wager</h4>
-
-        <div id="champion-selected-items"></div>
-
-      </div>
-
-
-      <button
-        id="champion-start-btn"
-        class="theme-btn">
-
-        ⚔️ Challenge FishBot
-
-      </button>
 
     </div>
 
 
-    <!-- ================= BOT WAGER PREVIEW ================= -->
+    <!-- ================================================= -->
+    <!-- ================= BATTLE ======================== -->
+    <!-- ================================================= -->
 
     <div
-      id="champion-bot-preview"
-      style="display:none;">
-
-      <h3>🐟 FishBot's Wager</h3>
-
-      <div id="champion-bot-value">
-        Bot Wager: 0.00 ⛃
-      </div>
-
-      <div id="champion-bot-items"></div>
-
-    </div>
-
-  </div>
+        id="champion-battle"
+        style="display:none;"
+    >
 
 
-  <!-- ================================================= -->
-  <!-- ================= BATTLE ======================== -->
-  <!-- ================================================= -->
+        <!-- ============================================= -->
+        <!-- ================= FIGHTERS ================== -->
+        <!-- ============================================= -->
 
-  <div
-    id="champion-battle"
-    style="display:none;">
-
-    <div class="champion-fighters">
+        <div class="champion-fighters">
 
 
-      <!-- PLAYER -->
+            <!-- ================= PLAYER ================ -->
 
-      <div class="champion-fighter champion-player">
+            <div
+                class="champion-fighter champion-player"
+            >
 
-        <h3>🏆 Champion</h3>
+                <h3>
+                    🏆 Champion
+                </h3>
 
-        <div class="champion-hp">
 
-          <div
-            id="champion-player-hp-fill"
-            class="champion-hp-fill">
-          </div>
+                <!--
+                    Health is represented with:
+                    █ = remaining HP
+                    ░ = missing HP
+                -->
 
-          <span id="champion-player-hp-text">
-            1000 / 1000
-          </span>
+                <div
+                    class="champion-hp-text"
+                    id="champion-player-hp-bar"
+                >
+                    ████████████████████
+                </div>
+
+
+                <div
+                    id="champion-player-hp-text"
+                    class="champion-hp-number"
+                >
+                    1000 / 1000
+                </div>
+
+            </div>
+
+
+            <!-- ================= VS =================== -->
+
+            <div class="champion-vs">
+
+                VS
+
+            </div>
+
+
+            <!-- ================= BOT ================== -->
+
+            <div
+                class="champion-fighter champion-bot"
+            >
+
+                <h3>
+                    🐟 FishBot
+                </h3>
+
+
+                <div
+                    class="champion-hp-text"
+                    id="champion-bot-hp-bar"
+                >
+                    ████████████████████
+                </div>
+
+
+                <div
+                    id="champion-bot-hp-text"
+                    class="champion-hp-number"
+                >
+                    1000 / 1000
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
 
+        <!-- ================================================= -->
+        <!-- ================= BATTLE LOG =================== -->
+        <!-- ================================================= -->
 
-      <!-- VS -->
+        <div id="champion-battle-log">
 
-      <div class="champion-vs">
-        VS
-      </div>
-
-
-      <!-- BOT -->
-
-      <div class="champion-fighter champion-bot">
-
-        <h3>🐟 FishBot</h3>
-
-        <div class="champion-hp">
-
-          <div
-            id="champion-bot-hp-fill"
-            class="champion-hp-fill">
-          </div>
-
-          <span id="champion-bot-hp-text">
-            1000 / 1000
-          </span>
+            <div class="champion-log-placeholder">
+                Battle starting...
+            </div>
 
         </div>
 
-      </div>
+
+        <!-- ================================================= -->
+        <!-- ================= STATUS ======================= -->
+        <!-- ================================================= -->
+
+        <div id="champion-battle-status">
+
+            Preparing battle...
+
+        </div>
 
     </div>
 
 
-    <!-- ================= BATTLE LOG ================= -->
+    <!-- ================================================= -->
+    <!-- ================= RESULT ======================== -->
+    <!-- ================================================= -->
 
-    <div id="champion-battle-log">
+    <div
+        id="champion-result"
+        style="display:none;"
+    >
 
-      <div class="champion-log-placeholder">
-        Battle starting...
-      </div>
+
+        <div id="champion-result-title">
+
+            🏆 VICTORY!
+
+        </div>
+
+
+        <div id="champion-result-message"></div>
+
+
+        <div
+            id="champion-result-winnings"
+        ></div>
+
+
+        <button
+            id="champion-close-result"
+            class="theme-btn"
+            type="button"
+        >
+            Continue
+        </button>
 
     </div>
-
-
-    <!-- ================= BATTLE STATUS ================= -->
-
-    <div id="champion-battle-status">
-      Preparing battle...
-    </div>
-
-  </div>
-
-
-  <!-- ================================================= -->
-  <!-- ================= RESULT ======================== -->
-  <!-- ================================================= -->
-
-  <div
-    id="champion-result"
-    style="display:none;">
-
-    <div id="champion-result-title">
-      🏆 VICTORY!
-    </div>
-
-    <div id="champion-result-message"></div>
-
-    <div id="champion-result-winnings"></div>
-
-    <button
-      id="champion-close-result"
-      class="theme-btn">
-
-      Continue
-
-    </button>
-
-  </div>
 
 </section>
 
 
 <!-- ===================================================== -->
-<!-- ================= UPGADER ========================== -->
+<!-- ================= UPGRADER ========================== -->
 <!-- ===================================================== -->
 
 <div id="upgrader-section">
 
-  <h2>Upgrader</h2>
+    <h2>
+        Upgrader
+    </h2>
 
 
-  <div id="upgrader-ui">
+    <div id="upgrader-ui">
 
 
-    <!-- WAGER -->
+        <div class="upgrader-side">
 
-    <div class="upgrader-side">
+            <h3>
+                Wager
+            </h3>
 
-      <h3>Wager</h3>
 
-      <div id="wager-list"></div>
+            <div id="wager-list"></div>
+
+        </div>
+
+
+        <div class="upgrader-side">
+
+            <h3>
+                Target
+            </h3>
+
+
+            <div id="target-list"></div>
+
+        </div>
 
     </div>
 
 
-    <!-- TARGET -->
+    <!-- ================= UPGRADE BAR ================= -->
 
-    <div class="upgrader-side">
+    <div id="upgrade-bar">
 
-      <h3>Target</h3>
-
-      <div id="target-list"></div>
+        <div id="upgrade-fill"></div>
 
     </div>
 
-  </div>
+
+    <!-- ================= INFO ========================= -->
+
+    <div id="upgrade-info">
+
+        <div id="upgrade-chance">
+            Chance: 0%
+        </div>
 
 
-  <!-- ================= UPGRADE BAR ================= -->
+        <div id="upgrade-value">
+            0 ⛃ → 0 ⛃
+        </div>
 
-  <div id="upgrade-bar">
-
-    <div id="upgrade-fill"></div>
-
-  </div>
-
-
-  <!-- ================= UPGRADE INFO ================= -->
-
-  <div id="upgrade-info">
-
-    <div id="upgrade-chance">
-      Chance: 0%
     </div>
 
-    <div id="upgrade-value">
-      0 ⛃ → 0 ⛃
+
+    <!-- ================= CHANCE BAR =================== -->
+
+    <div id="chance-bar">
+
+        <div id="chance-fill"></div>
+
     </div>
 
-  </div>
+
+    <!-- ================= CIRCLE ======================= -->
+
+    <div
+        id="upgrade-circle"
+        class="upgrade-circle"
+    >
+
+        <div id="upgrade-circle-fill"></div>
 
 
-  <!-- ================= CHANCE BAR ================= -->
+        <div id="upgrade-circle-text">
+            0%
+        </div>
 
-  <div id="chance-bar">
-
-    <div id="chance-fill"></div>
-
-  </div>
-
-
-  <!-- ================= UPGRADE CIRCLE ================= -->
-
-  <div
-    id="upgrade-circle"
-    class="upgrade-circle">
-
-    <div id="upgrade-circle-fill"></div>
-
-    <div id="upgrade-circle-text">
-      0%
     </div>
 
-  </div>
+
+    <!-- ================= WHEEL ======================== -->
+
+    <div id="upgrade-wheel-wrapper">
+
+        <canvas
+            id="upgrade-wheel"
+        ></canvas>
+
+    </div>
 
 
-  <!-- ================= UPGRADE WHEEL ================= -->
+    <!-- ================= BUTTON ======================= -->
 
-  <div id="upgrade-wheel-wrapper">
-
-    <canvas id="upgrade-wheel"></canvas>
-
-  </div>
-
-
-  <!-- ================= UPGRADE BUTTON ================= -->
-
-  <button
-    id="upgrade-btn"
-    class="theme-btn">
-
-    Upgrade
-
-  </button>
+    <button
+        id="upgrade-btn"
+        class="theme-btn"
+        type="button"
+    >
+        Upgrade
+    </button>
 
 </div>
 
 
-<!-- ================= TOP DROPS ================= -->
+<!-- ===================================================== -->
+<!-- ================= TOP DROPS ======================== -->
+<!-- ===================================================== -->
 
 <h2 class="top-title">
-  • Latest TOP Drops
+    • Latest TOP Drops
 </h2>
+
 
 <div id="top-drops"></div>
 
@@ -511,37 +723,49 @@
 <!-- ===================================================== -->
 
 <div
-  id="admin-give-panel"
-  style="display:none;">
+    id="admin-give-panel"
+    style="display:none;"
+>
 
-  <div id="admin-give-header">
 
-    <span>
-      Trading Mode
-    </span>
+    <div id="admin-give-header">
 
-    <button id="admin-give-close">
-      ✖
-    </button>
+        <span>
+            Trading Mode
+        </span>
 
-  </div>
 
-  <div id="admin-give-items"></div>
+        <button
+            id="admin-give-close"
+            type="button"
+        >
+            ✖
+        </button>
+
+    </div>
+
+
+    <div id="admin-give-items"></div>
 
 </div>
 
 
-<!-- ================= CONTRIBUTORS ================= -->
+<!-- ===================================================== -->
+<!-- ================= CONTRIBUTORS ===================== -->
+<!-- ===================================================== -->
 
 <div id="contributors">
 
-  <h2>Contributors</h2>
+    <h2>
+        Contributors
+    </h2>
 
-  <textarea readonly>
+
+    <textarea readonly>
 ovff - Creator / Developer
 
 More Info!
-  </textarea>
+    </textarea>
 
 </div>
 
@@ -550,10 +774,14 @@ More Info!
 <!-- ================= JAVASCRIPT ======================= -->
 <!-- ===================================================== -->
 
-<!-- Main site JS -->
+<!--
+    IMPORTANT:
+    script.js MUST load first because champion.js
+    uses variables/functions from it.
+-->
+
 <script src="script.js"></script>
 
-<!-- Champion Mode -->
 <script src="champion.js"></script>
 
 
