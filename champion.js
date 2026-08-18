@@ -21,7 +21,7 @@
    SETTINGS
    ========================================================= */
 
-const CHAMPION_MAX_HP = 1000;
+const CHAMPION_MAX_HP = 1111;
 
 const CHAMPION_CRIT_CHANCE = 0.16;
 const CHAMPION_CRIT_MULTIPLIER = 3;
@@ -47,7 +47,7 @@ const BOT_MAX_MULTIPLIER = 2.00;
     Time between attacks.
 */
 
-const CHAMPION_TURN_DELAY = 2000;
+const CHAMPION_TURN_DELAY = 2500;
 
 
 /*
@@ -80,7 +80,7 @@ const CHAMPION_HP_BAR_LENGTH = 20;
 
 const BOT_ITEM_SEARCH_ATTEMPTS = 250;
 
-const BOT_MAX_ITEMS = 4;
+const BOT_MAX_ITEMS = 6;
 
 
 /*
