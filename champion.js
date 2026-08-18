@@ -47,7 +47,7 @@ const BOT_MAX_MULTIPLIER = 2.00;
     Time between attacks.
 */
 
-const CHAMPION_TURN_DELAY = 2200;
+const CHAMPION_TURN_DELAY = 2000;
 
 
 /*
@@ -186,19 +186,23 @@ const CHAMPION_DAMAGE_PHRASES = {
     ],
 
     "Syringe Gun": [
-        "fills the enemy with needles for"
+        "fills the enemy with needles for",
+        "shoots fent dealing"
     ],
 
     "Loose Cannon": [
-        "fires an exploding cannonball for"
+        "fires an exploding cannonball for",
+        "double donks the enemy for"
     ],
 
     "Frontier Justice": [
-        "fires a vengeful blast for"
+        "fires a vengeful blast for",
+        "retaliates for"
     ],
 
     "Awper Hand": [
-        "headshots for"
+        "headshots for",
+        "fires a charged shot for"
     ],
 
     "Cow Mangler 5000": [
@@ -207,11 +211,13 @@ const CHAMPION_DAMAGE_PHRASES = {
     ],
 
     "Cleaner's Carbine": [
-        "sprays bullets for"
+        "sprays bullets for",
+        "empties a mag into the enemy for"
     ],
 
     "Ambassador": [
-        "lands a flawless headshot for"
+        "lands a flawless headshot for",
+        "fires a perfect shot for"
     ],
 
     "Lugermorph": [
@@ -225,15 +231,18 @@ const CHAMPION_DAMAGE_PHRASES = {
     ],
 
     "Iron Curtain": [
-        "unleashes a wall of bullets for"
+        "unleashes a wall of bullets for",
+        "riddles the enemy with bullets for"
     ],
 
     "Horseless Headless Horsemann's Headtaker": [
-        "decapitates the enemy for"
+        "decapitates the enemy for",
+        "chops the enemy for"
     ],
 
     "Direct Hit": [
-        "lands a direct rocket hit for"
+        "lands a direct rocket hit for",
+        "airshots the enemy for"
     ],
 
     "✨Golden Frying Pan": [
@@ -251,6 +260,7 @@ const CHAMPION_CRIT_PHRASES = [
 
     "💥 DEVASTATING CRIT!!!",
     "💥 MASSIVE CRITICAL HIT!!!",
+    "💥 HEAVY CRITICAL HIT!!!",
     "💥 CRITICAL HIT!!!"
 
 ];
