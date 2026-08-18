@@ -34,6 +34,9 @@ const CHAMPION_MINI_CRIT_MULTIPLIER = 2;
 
 /*
     FishBot wager range.
+
+    FishBot's total wager will be between these
+    multipliers of the player's wager.
 */
 
 const BOT_MIN_MULTIPLIER = 0.20;
@@ -59,6 +62,49 @@ const MAX_BATTLE_LOG_ENTRIES = 5;
 */
 
 const CHAMPION_HP_BAR_LENGTH = 20;
+
+
+/*
+    =========================================================
+    FISHBOT ITEM SETTINGS
+    =========================================================
+
+    FishBot prefers fewer, more expensive items.
+
+    Increasing BOT_ITEM_SEARCH_ATTEMPTS gives FishBot
+    more opportunities to find a better combination.
+
+    BOT_MAX_ITEMS prevents FishBot from filling its
+    wager with a huge number of cheap items.
+*/
+
+const BOT_ITEM_SEARCH_ATTEMPTS = 250;
+
+const BOT_MAX_ITEMS = 4;
+
+
+/*
+    How close the item portion should try to get
+    to the target before using coins.
+
+    0.01 means within one cent.
+*/
+
+const BOT_TARGET_TOLERANCE = 0.01;
+
+
+/*
+    FishBot has a preference for expensive items.
+
+    Higher values make it favor expensive items even
+    more strongly.
+
+    1.00 = normal
+    1.50 = strong
+    2.00 = very strong
+*/
+
+const BOT_EXPENSIVE_ITEM_BIAS = 1.75;
 
 
 /* =========================================================
@@ -246,10 +292,10 @@ const Champion = {
     /*
         Player's ORIGINAL wager.
 
-        This is stored separately because the inventory
-        items are removed when the battle begins.
+        These are cloned BEFORE the items are removed
+        from inventory.
 
-        If the player wins, these exact items are returned.
+        On victory these exact objects are returned.
     */
 
     playerWagerItems: [],
@@ -289,7 +335,15 @@ const Champion = {
 
     round: 1,
 
-    battleTimer: null
+    battleTimer: null,
+
+
+    /*
+        Prevents the victory payout from being
+        accidentally processed twice.
+    */
+
+    payoutComplete: false
 
 };
 
@@ -1088,16 +1142,42 @@ function updateChampionWagerDisplay() {
    ========================================================= */
 
 /*
-    FishBot now strongly favors higher-value items.
+    FishBot's new wager algorithm.
 
-    Instead of randomly choosing from the entire item pool
-    equally, the pool is sorted from most expensive to
-    cheapest and expensive items receive a much higher
-    chance of being selected.
+    IMPORTANT:
 
-    This helps prevent FishBot from making wagers containing
-    dozens of tiny cheap items.
+    The old algorithm tried to randomly build a
+    combination and could easily end up with:
+
+        $1 item
+        $1 item
+        $2 item
+        $1 item
+        $2 item
+        $1 item
+        ...
+
+    even when a $10 or $15 item would have fit.
+
+    The new algorithm instead:
+
+        1. Calculates a random target inside the
+           0.20x - 2.00x range.
+
+        2. Finds combinations of expensive items
+           that stay underneath that target.
+
+        3. Strongly prefers fewer items.
+
+        4. Strongly prefers higher-value items.
+
+        5. Adds coins to fill whatever value is
+           left over.
+
+    This prevents FishBot from clogging the player's
+    inventory with tons of tiny items.
 */
+
 
 function createBotWager(playerWager) {
 
@@ -1107,7 +1187,7 @@ function createBotWager(playerWager) {
 
     /*
         If there are no case items,
-        FishBot simply uses coins.
+        FishBot uses coins.
     */
 
     if (!pool.length) {
@@ -1132,8 +1212,8 @@ function createBotWager(playerWager) {
 
 
     /*
-        Pick a target between the minimum
-        and maximum multiplier.
+        Pick a random target between the
+        minimum and maximum multiplier.
     */
 
     const multiplier =
@@ -1164,31 +1244,55 @@ function createBotWager(playerWager) {
 
 
     /*
-        Remove invalid items.
+        Clean the item pool.
     */
 
     const validItems =
         pool.filter(
             (item) => {
 
+                const price =
+                    Number(
+                        item &&
+                        item.price
+                    );
+
+
                 return (
                     item &&
-                    Number.isFinite(
-                        Number(item.price)
-                    ) &&
-                    Number(item.price) > 0
+                    Number.isFinite(price) &&
+                    price > 0
                 );
 
             }
         );
 
 
-    /*
-        Sort expensive items first.
+    if (!validItems.length) {
 
-        FishBot will therefore try to use valuable
-        items before filling the remaining amount
-        with cheap items.
+        return {
+
+            coins:
+                Number(
+                    target.toFixed(2)
+                ),
+
+            items: [],
+
+            total:
+                Number(
+                    target.toFixed(2)
+                )
+
+        };
+
+    }
+
+
+    /*
+        Sort by price descending.
+
+        Expensive items are at the front.
     */
 
     validItems.sort(
@@ -1198,90 +1302,206 @@ function createBotWager(playerWager) {
     );
 
 
-    let bestItems = [];
+    /*
+        =====================================================
+        HELPER: SCORE A COMBINATION
+        =====================================================
 
-    let bestTotal = 0;
+        We want:
+
+        1. High total value.
+        2. Few items.
+        3. Expensive individual items.
+        4. A little randomness.
+
+        The score is NOT just total value.
+
+        Otherwise FishBot could select 10 cheap items
+        that happen to equal the target.
+    */
+
+    function scoreCombination(
+        items,
+        total
+    ) {
+
+        if (
+            !Array.isArray(items) ||
+            total <= 0
+        ) {
+
+            return -Infinity;
+
+        }
+
+
+        const difference =
+            Math.abs(
+                target -
+                total
+            );
+
+
+        /*
+            Higher value gets a large score.
+        */
+
+        let score =
+            total * 100;
+
+
+        /*
+            Being close to the target is valuable.
+        */
+
+        score -=
+            difference * 250;
+
+
+        /*
+            Strong penalty for each additional item.
+
+            This is what prevents the bot from
+            choosing many cheap items.
+        */
+
+        score -=
+            items.length * 80;
+
+
+        /*
+            Reward expensive average item value.
+        */
+
+        const averagePrice =
+            total /
+            items.length;
+
+
+        score +=
+            averagePrice *
+            40 *
+            BOT_EXPENSIVE_ITEM_BIAS;
+
+
+        /*
+            Small random variation so FishBot does
+            not always make the exact same wager.
+        */
+
+        score +=
+            Math.random() * 25;
+
+
+        return score;
+
+    }
 
 
     /*
-        Try many combinations.
-
-        Expensive items are deliberately favored.
+        =====================================================
+        HELPER: TRY RANDOM EXPENSIVE COMBINATION
+        =====================================================
     */
 
-    for (
-        let attempt = 0;
-        attempt < 150;
-        attempt++
-    ) {
+    function createCandidate() {
 
         /*
-            Make a copy and slightly randomize it.
+            Shuffle the items while heavily favoring
+            expensive items.
 
-            We keep the expensive items near the
-            front of the list while still allowing
-            some randomness.
+            We calculate a weighted random score for
+            each item.
         */
 
-        const attemptPool =
-            [...validItems];
+        const randomized =
+            validItems
+                .map(
+                    (item) => {
+
+                        const price =
+                            Number(
+                                item.price
+                            );
 
 
-        attemptPool.sort(
-            (a, b) => {
+                        /*
+                            Bigger prices receive a
+                            larger weight.
 
-                const priceDifference =
-                    Number(b.price) -
-                    Number(a.price);
+                            random value is divided by
+                            the price bias so expensive
+                            items rise toward the front.
+                        */
 
-
-                /*
-                    Strong bias toward expensive
-                    items, but not completely fixed.
-                */
-
-                const randomBias =
-                    (
-                        Math.random() -
-                        0.5
-                    ) *
-                    Math.max(
-                        1,
-                        Math.abs(
-                            priceDifference
-                        ) *
-                        0.15
-                    );
+                        const weight =
+                            Math.pow(
+                                Math.max(
+                                    0.01,
+                                    price
+                                ),
+                                BOT_EXPENSIVE_ITEM_BIAS
+                            );
 
 
-                return (
-                    priceDifference +
-                    randomBias
+                        return {
+
+                            item:
+                                item,
+
+                            sortValue:
+                                Math.random() /
+                                weight
+
+                        };
+
+                    }
+                )
+                .sort(
+                    (a, b) =>
+                        a.sortValue -
+                        b.sortValue
+                )
+                .map(
+                    (entry) =>
+                        entry.item
                 );
 
-            }
-        );
 
+        const candidate = [];
 
-        const attemptItems = [];
-
-        let attemptTotal = 0;
+        let total = 0;
 
 
         /*
-            Try adding expensive items first.
+            First pass:
+
+            Try expensive items from the randomized
+            expensive-biased order.
         */
 
         for (
-            const item of attemptPool
+            const item of randomized
         ) {
 
+            if (
+                candidate.length >=
+                BOT_MAX_ITEMS
+            ) {
+
+                break;
+
+            }
+
+
             const price =
-                Number(item.price);
+                Number(
+                    item.price
+                );
 
 
             if (
-                attemptTotal + price >
+                total + price >
                 target
             ) {
 
@@ -1291,14 +1511,11 @@ function createBotWager(playerWager) {
 
 
             /*
-                Expensive items get a much higher
-                selection chance.
-
-                Cheap items are only added when they
-                help fill the remaining amount.
+                Expensive items have a higher
+                probability of being accepted.
             */
 
-            const normalizedPrice =
+            const normalized =
                 Math.min(
                     1,
                     price /
@@ -1309,38 +1526,34 @@ function createBotWager(playerWager) {
                 );
 
 
-            const selectionChance =
-                0.45 +
+            const chance =
+                0.25 +
                 (
-                    normalizedPrice *
-                    0.55
+                    normalized *
+                    0.75
                 );
 
 
             if (
                 Math.random() <
-                selectionChance
+                chance
             ) {
 
-                attemptItems.push({
+                candidate.push({
                     ...item
                 });
 
-                attemptTotal += price;
+                total += price;
 
             }
 
 
-            /*
-                If we're extremely close,
-                stop.
-            */
-
             if (
                 Math.abs(
                     target -
-                    attemptTotal
-                ) <= 0.01
+                    total
+                ) <=
+                BOT_TARGET_TOLERANCE
             ) {
 
                 break;
@@ -1351,11 +1564,13 @@ function createBotWager(playerWager) {
 
 
         /*
-            Try to improve the combination using
-            expensive items first.
+            Second pass:
+
+            Try to improve the candidate with
+            the most expensive fitting items.
         */
 
-        const improvementPool =
+        const expensiveFirst =
             [...validItems].sort(
                 (a, b) =>
                     Number(b.price) -
@@ -1364,15 +1579,27 @@ function createBotWager(playerWager) {
 
 
         for (
-            const item of improvementPool
+            const item of expensiveFirst
         ) {
 
+            if (
+                candidate.length >=
+                BOT_MAX_ITEMS
+            ) {
+
+                break;
+
+            }
+
+
             const price =
-                Number(item.price);
+                Number(
+                    item.price
+                );
 
 
             if (
-                attemptTotal + price >
+                total + price >
                 target
             ) {
 
@@ -1381,33 +1608,78 @@ function createBotWager(playerWager) {
             }
 
 
+            /*
+                Avoid using the exact same item
+                object multiple times in one wager
+                unless the case pool itself contains
+                duplicate entries.
+            */
+
+            const alreadyUsed =
+                candidate.some(
+                    (existing) => {
+
+                        return (
+                            existing.name ===
+                                item.name &&
+                            Number(
+                                existing.price
+                            ) ===
+                                Number(
+                                    item.price
+                                ) &&
+                            existing.image ===
+                                item.image
+                        );
+
+                    }
+                );
+
+
+            if (alreadyUsed) {
+
+                continue;
+
+            }
+
+
+            const newTotal =
+                total +
+                price;
+
+
+            const currentDifference =
+                Math.abs(
+                    target -
+                    total
+                );
+
+
             const newDifference =
                 Math.abs(
                     target -
-                    (
-                        attemptTotal +
-                        price
-                    )
+                    newTotal
                 );
 
 
-            const oldDifference =
-                Math.abs(
-                    target -
-                    attemptTotal
-                );
-
+            /*
+                Add the item if it improves the
+                target or if the candidate is still
+                quite small.
+            */
 
             if (
                 newDifference <
-                oldDifference
+                    currentDifference ||
+                candidate.length === 0
             ) {
 
-                attemptItems.push({
+                candidate.push({
                     ...item
                 });
 
-                attemptTotal += price;
+                total =
+                    newTotal;
 
             }
 
@@ -1415,8 +1687,9 @@ function createBotWager(playerWager) {
             if (
                 Math.abs(
                     target -
-                    attemptTotal
-                ) <= 0.01
+                    total
+                ) <=
+                BOT_TARGET_TOLERANCE
             ) {
 
                 break;
@@ -1426,104 +1699,87 @@ function createBotWager(playerWager) {
         }
 
 
-        /*
-            Keep the best combination.
-        */
+        return {
 
-        if (
-            Math.abs(
-                target -
-                attemptTotal
-            )
-            <
-            Math.abs(
-                target -
-                bestTotal
-            )
-        ) {
+            items:
+                candidate,
 
-            bestItems =
-                attemptItems;
+            total:
+                Number(
+                    total.toFixed(2)
+                )
 
-            bestTotal =
-                attemptTotal;
-
-        }
+        };
 
     }
 
 
     /*
-        Final improvement pass.
-
-        Again, expensive items are checked first.
+        =====================================================
+        SEARCH FOR THE BEST COMBINATION
+        =====================================================
     */
 
-    const finalPool =
-        [...validItems].sort(
-            (a, b) =>
-                Number(b.price) -
-                Number(a.price)
-        );
+    let bestItems = [];
+
+    let bestTotal = 0;
+
+    let bestScore = -Infinity;
 
 
     for (
-        const item of finalPool
+        let attempt = 0;
+        attempt < BOT_ITEM_SEARCH_ATTEMPTS;
+        attempt++
     ) {
 
-        const price =
-            Number(item.price);
+        const candidate =
+            createCandidate();
 
 
-        if (
-            bestTotal + price >
-            target
-        ) {
-
-            continue;
-
-        }
-
-
-        const newTotal =
-            bestTotal +
-            price;
-
-
-        const newDifference =
-            Math.abs(
-                target -
-                newTotal
-            );
-
-
-        const oldDifference =
-            Math.abs(
-                target -
-                bestTotal
+        const score =
+            scoreCombination(
+                candidate.items,
+                candidate.total
             );
 
 
         if (
-            newDifference <
-            oldDifference
+            score >
+            bestScore
         ) {
 
-            bestItems.push({
-                ...item
-            });
+            bestScore =
+                score;
+
+            bestItems =
+                candidate.items.map(
+                    (item) => ({
+                        ...item
+                    })
+                );
 
             bestTotal =
-                newTotal;
+                candidate.total;
 
         }
 
+
+        /*
+            Perfect enough.
+
+            No reason to keep searching if the bot
+            has a high-value combination that is
+            within one cent of the target.
+        */
 
         if (
             Math.abs(
                 target -
                 bestTotal
-            ) <= 0.01
+            ) <=
+            BOT_TARGET_TOLERANCE &&
+            bestItems.length <= 2
         ) {
 
             break;
@@ -1534,8 +1790,91 @@ function createBotWager(playerWager) {
 
 
     /*
-        Use bot coins to fill the remaining
-        amount.
+        =====================================================
+        FALLBACK: MOST EXPENSIVE FITTING ITEM
+        =====================================================
+
+        If the randomized search somehow failed,
+        pick the most expensive item that fits.
+    */
+
+    if (
+        bestItems.length === 0
+    ) {
+
+        const fittingItems =
+            validItems.filter(
+                (item) => {
+
+                    return (
+                        Number(item.price) <=
+                        target
+                    );
+
+                }
+            );
+
+
+        if (
+            fittingItems.length > 0
+        ) {
+
+            fittingItems.sort(
+                (a, b) =>
+                    Number(b.price) -
+                    Number(a.price)
+            );
+
+
+            /*
+                Choose randomly from the top few
+                expensive fitting items.
+            */
+
+            const topCount =
+                Math.min(
+                    5,
+                    fittingItems.length
+                );
+
+
+            const selected =
+                fittingItems[
+                    Math.floor(
+                        Math.random() *
+                        topCount
+                    )
+                ];
+
+
+            bestItems = [
+                {
+                    ...selected
+                }
+            ];
+
+
+            bestTotal =
+                Number(
+                    selected.price
+                );
+
+        }
+
+    }
+
+
+    /*
+        =====================================================
+        ADD COINS TO FILL REMAINING VALUE
+        =====================================================
+
+        This is important.
+
+        FishBot doesn't need to add a bunch of
+        cheap items just to reach the target.
+
+        Instead, coins make up the difference.
     */
 
     let botCoins =
@@ -1550,6 +1889,8 @@ function createBotWager(playerWager) {
 
     /*
         Safety limit.
+
+        Never exceed the maximum allowed wager.
     */
 
     if (
@@ -1569,6 +1910,10 @@ function createBotWager(playerWager) {
 
     }
 
+
+    /*
+        Final total.
+    */
 
     const total =
         Number(
@@ -1818,11 +2163,18 @@ function startChampionBattle() {
 
     /*
         =====================================================
-        SAVE PLAYER'S ORIGINAL WAGER
+        RESET PAYOUT FLAG
         =====================================================
+    */
 
-        This is the important part for returning
-        the wager when the player wins.
+    Champion.payoutComplete =
+        false;
+
+
+    /*
+        =====================================================
+        SAVE PLAYER'S ORIGINAL COIN WAGER
+        =====================================================
     */
 
     Champion.playerWagerCoins =
@@ -1830,6 +2182,20 @@ function startChampionBattle() {
             Champion.coinWager.toFixed(2)
         );
 
+
+    /*
+        =====================================================
+        SAVE PLAYER'S ORIGINAL ITEMS
+        =====================================================
+
+        IMPORTANT:
+
+        We clone every item BEFORE inventory.splice()
+        removes it from the inventory.
+
+        This means the actual item data survives
+        the battle.
+    */
 
     Champion.playerWagerItems =
         Champion.selectedItems
@@ -1841,14 +2207,11 @@ function startChampionBattle() {
 
 
                     if (!item) {
+
                         return null;
+
                     }
 
-
-                    /*
-                        Clone the item so it remains
-                        available after inventory.splice().
-                    */
 
                     return {
                         ...item
@@ -1857,7 +2220,8 @@ function startChampionBattle() {
                 }
             )
             .filter(
-                (item) => item !== null
+                (item) =>
+                    item !== null
             );
 
 
@@ -1921,7 +2285,8 @@ function startChampionBattle() {
         REMOVE PLAYER ITEM WAGERS
         =====================================================
 
-        Remove backwards so indexes don't shift.
+        Remove backwards so inventory indexes
+        do not shift.
     */
 
     const indexesToRemove =
@@ -1929,7 +2294,8 @@ function startChampionBattle() {
             ...Champion.selectedItems
         ]
         .sort(
-            (a, b) => b - a
+            (a, b) =>
+                b - a
         );
 
 
@@ -1937,6 +2303,7 @@ function startChampionBattle() {
         (index) => {
 
             if (
+                Array.isArray(inventory) &&
                 index >= 0 &&
                 index < inventory.length
             ) {
@@ -1953,7 +2320,7 @@ function startChampionBattle() {
 
 
     /*
-        Save inventory.
+        Save the inventory after removing wagers.
     */
 
     saveInventory();
@@ -1996,9 +2363,10 @@ function startChampionBattle() {
     /*
         Clear currently selected wager.
 
-        The ORIGINAL wager is safely stored in
-        Champion.playerWagerItems and
-        Champion.playerWagerCoins.
+        The ORIGINAL wager is still safely stored in:
+
+            Champion.playerWagerItems
+            Champion.playerWagerCoins
     */
 
     Champion.selectedItems = [];
@@ -2148,7 +2516,9 @@ function beginChampionBattle() {
 function championTurn() {
 
     if (!Champion.battleRunning) {
+
         return;
+
     }
 
 
@@ -2193,7 +2563,9 @@ function championAttack(
 ) {
 
     if (!Champion.battleRunning) {
+
         return;
+
     }
 
 
@@ -2546,15 +2918,6 @@ function updateChampionStatus() {
 
 function updateChampionHP() {
 
-    /*
-        Your HTML should contain:
-
-        <div id="champion-player-hp-bar"></div>
-        <div id="champion-bot-hp-bar"></div>
-
-        These are the █ / ░ bars.
-    */
-
     const playerBar =
         document.getElementById(
             "champion-player-hp-bar"
@@ -2832,38 +3195,35 @@ function finishChampionBattle() {
 
 
 /* =========================================================
-   PLAYER WIN
+   RETURN PLAYER WAGER
    ========================================================= */
 
-function finishChampionWin() {
+/*
+    This function handles the player's original
+    wager separately from the FishBot winnings.
 
-    const result =
-        document.getElementById(
-            "champion-result"
-        );
+    It exists specifically to make sure the player's
+    wagered items are NEVER accidentally forgotten.
+*/
 
+function returnPlayerWager() {
 
-    const title =
-        document.getElementById(
-            "champion-result-title"
-        );
+    /*
+        Never pay the same wager twice.
+    */
 
+    if (
+        Champion.payoutComplete
+    ) {
 
-    const message =
-        document.getElementById(
-            "champion-result-message"
-        );
+        return;
 
-
-    const winnings =
-        document.getElementById(
-            "champion-result-winnings"
-        );
+    }
 
 
     /*
         =====================================================
-        RETURN PLAYER'S ORIGINAL COINS
+        RETURN PLAYER COINS
         =====================================================
     */
 
@@ -2872,8 +3232,9 @@ function finishChampionWin() {
     ) {
 
         coins +=
-            Champion.playerWagerCoins;
-
+            Number(
+                Champion.playerWagerCoins
+            );
 
         coins =
             Number(
@@ -2885,30 +3246,62 @@ function finishChampionWin() {
 
     /*
         =====================================================
-        RETURN PLAYER'S ORIGINAL ITEMS
+        RETURN PLAYER ITEMS
         =====================================================
-
-        These are the exact cloned items that were
-        saved when the battle began.
     */
 
-    Champion.playerWagerItems.forEach(
-        (item) => {
+    if (
+        Array.isArray(
+            Champion.playerWagerItems
+        )
+    ) {
 
-            if (!item) return;
+        Champion.playerWagerItems.forEach(
+            (item) => {
+
+                if (!item) return;
 
 
-            inventory.push({
-                ...item
-            });
+                /*
+                    Create a fresh copy.
 
-        }
-    );
+                    This prevents references from the
+                    temporary battle state being shared
+                    with the inventory.
+                */
 
+                inventory.push({
+                    ...item
+                });
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   GIVE BOT WINNINGS
+   ========================================================= */
+
+/*
+    Gives the FishBot wager to the player.
+
+    Items are sorted from highest value to lowest value
+    before being added to inventory.
+
+    The bot itself already selected a small number of
+    higher-value items, so this should keep the inventory
+    much cleaner.
+*/
+
+function giveBotWinnings() {
 
     /*
         =====================================================
-        GIVE FISHBOT'S COINS
+        BOT COINS
         =====================================================
     */
 
@@ -2917,8 +3310,9 @@ function finishChampionWin() {
     ) {
 
         coins +=
-            Champion.botCoins;
-
+            Number(
+                Champion.botCoins
+            );
 
         coins =
             Number(
@@ -2930,18 +3324,24 @@ function finishChampionWin() {
 
     /*
         =====================================================
-        GIVE FISHBOT'S ITEMS
+        BOT ITEMS
         =====================================================
-
-        Higher-value FishBot items are added first.
     */
 
     const sortedBotItems =
-        [...Champion.botItems].sort(
-            (a, b) =>
-                Number(b.price || 0) -
-                Number(a.price || 0)
-        );
+        Array.isArray(
+            Champion.botItems
+        )
+            ? [...Champion.botItems].sort(
+                (a, b) =>
+                    Number(
+                        b.price || 0
+                    ) -
+                    Number(
+                        a.price || 0
+                    )
+            )
+            : [];
 
 
     sortedBotItems.forEach(
@@ -2957,21 +3357,31 @@ function finishChampionWin() {
         }
     );
 
+}
+
+
+/* =========================================================
+   SAVE CHAMPION PAYOUT
+   ========================================================= */
+
+function saveChampionPayout() {
 
     /*
-        =====================================================
-        SAVE EVERYTHING
-        =====================================================
+        Save inventory and all related UI.
     */
 
     saveInventory();
 
-    updateCoins();
 
+    if (
+        typeof updateCoins ===
+        "function"
+    ) {
 
-    /*
-        Update main inventory.
-    */
+        updateCoins();
+
+    }
+
 
     if (
         typeof renderInventory ===
@@ -3002,6 +3412,89 @@ function finishChampionWin() {
 
     }
 
+}
+
+
+/* =========================================================
+   PLAYER WIN
+   ========================================================= */
+
+function finishChampionWin() {
+
+    /*
+        Do not allow a second payout.
+    */
+
+    if (
+        Champion.payoutComplete
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+        =====================================================
+        RETURN PLAYER'S ORIGINAL WAGER
+        =====================================================
+    */
+
+    returnPlayerWager();
+
+
+    /*
+        =====================================================
+        GIVE FISHBOT'S WAGER
+        =====================================================
+    */
+
+    giveBotWinnings();
+
+
+    /*
+        Mark payout complete BEFORE saving.
+
+        This protects against accidental duplicate
+        calls to finishChampionWin().
+    */
+
+    Champion.payoutComplete =
+        true;
+
+
+    /*
+        =====================================================
+        SAVE EVERYTHING
+        =====================================================
+    */
+
+    saveChampionPayout();
+
+
+    const result =
+        document.getElementById(
+            "champion-result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "champion-result-title"
+        );
+
+
+    const message =
+        document.getElementById(
+            "champion-result-message"
+        );
+
+
+    const winnings =
+        document.getElementById(
+            "champion-result-winnings"
+        );
+
 
     /*
         Battle log.
@@ -3026,6 +3519,10 @@ function finishChampionWin() {
     );
 
 
+    /*
+        Result title.
+    */
+
     if (title) {
 
         title.textContent =
@@ -3033,6 +3530,10 @@ function finishChampionWin() {
 
     }
 
+
+    /*
+        Result message.
+    */
 
     if (message) {
 
@@ -3042,6 +3543,10 @@ function finishChampionWin() {
     }
 
 
+    /*
+        Winnings display.
+    */
+
     if (winnings) {
 
         winnings.innerHTML =
@@ -3049,6 +3554,10 @@ function finishChampionWin() {
 
     }
 
+
+    /*
+        Show result.
+    */
 
     if (result) {
 
@@ -3095,6 +3604,9 @@ function finishChampionLoss() {
         when the battle started.
 
         Therefore nothing is returned on a loss.
+
+        FishBot's wager is also not added to the
+        player's inventory.
     */
 
     addChampionLog(
@@ -3411,6 +3923,9 @@ function resetChampion() {
 
     Champion.battleTimer =
         null;
+
+    Champion.payoutComplete =
+        false;
 
 
     const menu =
