@@ -3538,7 +3538,7 @@ function finishChampionWin() {
     if (message) {
 
         message.textContent =
-            "FishBot has been defeated! Your wager was returned, and you won FishBot's wager.";
+            "FishBot has been defeated! You won FishBot's vault!";
 
     }
 
