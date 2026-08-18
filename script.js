@@ -11,7 +11,7 @@ let isSpinning = false;
 
 // ===================== ADMIN PASSWORD =====================
 let adminMode = false;
-const ADMIN_PASSWORD = "Trading";
+const ADMIN_PASSWORD = "layla";
 
 
 // ===================== INIT =====================
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function checkAdminPassword() {
 
-  const password = prompt("Enter Trading passkey:");
+  const password = prompt("Enter Key:");
 
   if (password === null) {
     return false;
@@ -116,7 +116,7 @@ function addCoinsAdmin() {
 
   // Ask how many coins
   const amountInput = prompt(
-    "How many coins do you want to ADD?\n\nExamples: 10.88, 1983.73, 500, 0.25"
+    "Deposit Module"
   );
 
   // Cancel
@@ -152,7 +152,7 @@ function removeCoinsAdmin() {
 
   // Ask how many coins
   const amountInput = prompt(
-    "How many coins do you want to REMOVE?\n\nExamples: 10.88, 1983.73, 500, 0.25"
+    "Withdraw Module"
   );
 
   // Cancel
@@ -171,7 +171,7 @@ function removeCoinsAdmin() {
   // Prevent going below zero
   if (amount > coins) {
     alert(
-      `You cannot remove ${amount.toFixed(2)} coins.\n\n` +
+      `You cannot withdraw ${amount.toFixed(2)} coins.\n\n` +
       `You currently have ${coins.toFixed(2)} coins.`
     );
 
