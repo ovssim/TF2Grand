@@ -168,15 +168,34 @@ h1 { margin-bottom: 10px; font-weight: 600; }
 .spinner-item {
   flex: 0 0 auto;
   width: 110px;
-  height: 140px;
+  height: 130px;
   margin: 15px;
+
   background: #1a1a22;
-  border-radius: 14px;
+
+  /* Hexagon shape */
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
+
+  transition: transform 0.2s, filter 0.2s;
 }
+
+.spinner-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
 .spinner-item img { width: 70px; height: 70px; object-fit: contain; }
 .highlight-won { animation: glowScale 1.5s ease-in-out infinite alternate; z-index: 20; }
 @keyframes glowScale {
@@ -251,7 +270,110 @@ h1 { margin-bottom: 10px; font-weight: 600; }
   border-radius: 18px;
 }
 .top-drop img { width: 75px; height: 75px; object-fit: contain; }
+/* ================= SPINNER HEXAGON RARITY OUTLINES ================= */
 
+.spinner-item {
+  position: relative;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible;
+
+  clip-path: none;
+}
+
+/* Hexagon outer outline */
+.spinner-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+
+  background: #777;
+  z-index: 0;
+}
+
+/* Dark inner area */
+.spinner-item::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+
+  background: #1a1a22;
+  z-index: 1;
+}
+
+/* Put the item image above the hexagon */
+.spinner-item img {
+  position: relative;
+  z-index: 2;
+}
+.spinner-item.common::before {
+  background: #777;
+  box-shadow: 0 0 10px #777;
+}
+
+.spinner-item.rare::before {
+  background: #4aa3ff;
+  box-shadow: 0 0 14px #4aa3ff;
+}
+
+.spinner-item.strange::before {
+  background: orange;
+  box-shadow: 0 0 16px orange;
+}
+
+.spinner-item.unusual::before {
+  background: purple;
+  box-shadow: 0 0 18px purple;
+}
+
+.spinner-item.legendary::before {
+  background: gold;
+  box-shadow: 0 0 22px gold;
+}
+
+.spinner-item.mythical::before {
+  background: violet;
+  box-shadow: 0 0 24px violet;
+}
+
+.spinner-item.genuine::before {
+  background: #4D7455;
+  box-shadow: 0 0 16px #4D7455;
+}
+
+.spinner-item.vintage::before {
+  background: #476291;
+  box-shadow: 0 0 16px #476291;
+}
+
+.spinner-item.collector::before {
+  background: #AA0000;
+  box-shadow: 0 0 22px #AA0000;
+}
+
+.spinner-item.haunted::before {
+  background: #38F3AB;
+  box-shadow: 0 0 18px #38F3AB;
+}
 /* ================= RARITY SYSTEM ================= */
 .common     { border: 2px solid #777; box-shadow: 0 0 10px #777; color: #bbb; }
 .rare       { border: 2px solid #4aa3ff; box-shadow: 0 0 14px #4aa3ff; color: #4aa3ff; }
