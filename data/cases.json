@@ -99,7 +99,7 @@
         { "name": "Neutron Star Carribean Conqueror", "rarity": "mythical", "price": 101.35, "weight": 10, "image": "images/items/neutconqu.png" },
         { "name": "Circling Heart Neptune's Nightmare", "rarity": "mythical", "price": 212.41, "weight": 10, "image": "images/items/heartnep.png" },
         { "name": "Burning Flames Cranial Carcharodon", "rarity": "mythical", "price": 504.00, "weight": 10, "image": "images/items/bfccarach.png" },
-        { "name": "Hat of Undeniable Wealth and Respect", "rarity": "mythical", "price": 953.79, "weight": 10, "image": "images/items/houwar.png" }
+        { "name": "Hat of Undeniable Wealth and Respect", "rarity": "legendary", "price": 953.79, "weight": 10, "image": "images/items/houwar.png" }
       ]
      },
         {
