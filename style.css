@@ -1553,3 +1553,24 @@ h1 {
     width: 100%;
   }
 }
+
+/* =========================================================
+   CHAMPION RETURN / WON WAGER ITEMS
+   ========================================================= */
+
+/* Returned/won wager item */
+.champion-return-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Image inside returned/won wager item */
+.champion-return-item img {
+    width: 30px !important;
+    height: 30px !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+    object-fit: contain !important;
+    flex-shrink: 0;
+}
