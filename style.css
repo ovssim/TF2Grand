@@ -1524,3 +1524,31 @@ h1 {
     font-size: 13px;
     opacity: 0.8;
 }
+
+/* =========================================================
+   FORCE CHAMPION WINNING IMAGES TO STAY SMALL
+   ========================================================= */
+
+#champion-result-winnings .champion-winning-entry {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#champion-result-winnings .champion-winning-entry img {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    flex: 0 0 40px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
