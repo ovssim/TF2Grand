@@ -1553,24 +1553,14 @@ h1 {
     width: 100%;
   }
 }
+/* FORCE ALL CHAMPION WAGER IMAGES TO STAY SMALL */
 
-/* =========================================================
-   CHAMPION RETURN / WON WAGER ITEMS
-   ========================================================= */
-
-/* Returned/won wager item */
-.champion-return-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Image inside returned/won wager item */
-.champion-return-item img {
+.champion-item-wager img,
+.champion-item-wager > img,
+.champion-item-wager div img {
     width: 30px !important;
     height: 30px !important;
     max-width: 30px !important;
     max-height: 30px !important;
     object-fit: contain !important;
-    flex-shrink: 0;
 }
