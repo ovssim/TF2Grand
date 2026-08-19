@@ -222,22 +222,26 @@ h1 {
 
 /* ================= CHAMPION SELECTED ITEMS ============== */
 
+/*
+   These are the items returned after winning Champion.
+
+   Kept small so the returned wager does not become huge.
+*/
+
 .champion-selected-entry {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+
+  min-height: 35px;
 }
 
-/*
-   These are the items shown after winning in Champion.
-
-   They are intentionally kept at 48x48.
-   DO NOT use the old 25px !important rule here.
-*/
-
 .champion-selected-entry img {
-  width: 48px;
-  height: 48px;
+  width: 30px !important;
+  height: 30px !important;
+
+  max-width: 30px;
+  max-height: 30px;
 
   object-fit: contain;
 
@@ -683,13 +687,6 @@ h1 {
 .inv-item:hover {
   transform: translateY(-6px);
 }
-
-/*
-   INVENTORY IMAGE SIZE
-
-   These stay at 70x70.
-   Champion changes do NOT affect this.
-*/
 
 .inv-item img {
   width: 70px;
