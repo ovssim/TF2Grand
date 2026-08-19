@@ -216,194 +216,159 @@ h1 {
   border-radius: 4px;
 }
 
+
 /* =========================================================
-   CHAMPION ITEM WAGER
-   ========================================================= */
-/* =========================================================
-   CHAMPION SELECTED ITEMS
+   ================= CHAMPION ITEM WAGER ==================
    ========================================================= */
 
 .champion-selected-entry {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .champion-selected-entry img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .champion-item-wager {
-    width: 100%;
+  width: 100%;
 }
 
 
-/* Header containing Item Wager + Refresh */
+/* ================= WAGER HEADER ================= */
 
 .champion-item-wager-header {
+  display: flex;
 
-    display: flex;
+  align-items: center;
 
-    align-items: center;
+  justify-content: space-between;
 
-    justify-content: space-between;
+  gap: 10px;
 
-    gap: 10px;
-
-    margin-bottom: 10px;
-
+  margin-bottom: 10px;
 }
-
 
 .champion-item-wager-header h4 {
-
-    margin: 0;
-
+  margin: 0;
 }
 
 
-/* Scrollable inventory */
+/* ================= SCROLLABLE INVENTORY ================= */
 
 .champion-scroll-area {
+  width: 100%;
 
-    width: 100%;
+  max-height: 300px;
 
-    max-height: 300px;
+  overflow-y: auto;
 
-    overflow-y: auto;
+  overflow-x: hidden;
 
-    overflow-x: hidden;
+  padding: 8px;
 
-    padding: 8px;
+  box-sizing: border-box;
 
-    box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.15);
 
-    border: 1px solid rgba(255,255,255,0.15);
-
-    border-radius: 8px;
-
+  border-radius: 8px;
 }
 
 
-/* Scrollbar */
+/* ================= SCROLLBAR ================= */
 
 .champion-scroll-area::-webkit-scrollbar {
-
-    width: 8px;
-
+  width: 8px;
 }
-
 
 .champion-scroll-area::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.25);
 
-    background: rgba(0,0,0,0.25);
-
-    border-radius: 8px;
-
+  border-radius: 8px;
 }
-
 
 .champion-scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.35);
 
-    background: rgba(255,255,255,0.35);
-
-    border-radius: 8px;
-
+  border-radius: 8px;
 }
-
 
 .champion-scroll-area::-webkit-scrollbar-thumb:hover {
-
-    background: rgba(255,255,255,0.55);
-
+  background: rgba(255,255,255,0.55);
 }
 
 
-/* Make each wager item easier to click */
+/* ================= WAGER ITEMS ================= */
 
 .champion-wager-item {
+  display: flex;
 
-    display: flex;
+  align-items: center;
 
-    align-items: center;
+  gap: 10px;
 
-    gap: 10px;
+  width: 100%;
 
-    width: 100%;
+  box-sizing: border-box;
 
-    box-sizing: border-box;
+  padding: 8px;
 
-    padding: 8px;
+  margin-bottom: 6px;
 
-    margin-bottom: 6px;
+  cursor: pointer;
 
-    cursor: pointer;
-
-    border-radius: 6px;
-
+  border-radius: 6px;
 }
-
 
 .champion-wager-item img {
+  width: 35px;
+  height: 35px;
 
-    width: 45px;
+  object-fit: contain;
 
-    height: 45px;
-
-    object-fit: contain;
-
-    flex-shrink: 0;
-
+  flex-shrink: 0;
 }
-
 
 .champion-wager-item-info {
+  flex: 1;
 
-    flex: 1;
-
-    min-width: 0;
-
+  min-width: 0;
 }
-
 
 .champion-wager-item-info span {
+  display: block;
 
-    display: block;
+  overflow: hidden;
 
-    overflow: hidden;
+  text-overflow: ellipsis;
 
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
+  white-space: nowrap;
 }
-
 
 .champion-wager-item-info small {
+  display: block;
 
-    display: block;
-
-    opacity: 0.75;
-
+  opacity: 0.75;
 }
-
 
 .champion-item-check {
+  flex-shrink: 0;
 
-    flex-shrink: 0;
-
-    font-size: 20px;
-
+  font-size: 20px;
 }
+
 
 /* ================= CASE ITEM ODDS ================= */
 
 #case-items-list .inv-item small {
   display: block;
+
   font-size: 13px;
+
   color: #f0f0f0;
 }
 
@@ -412,6 +377,7 @@ h1 {
 
 #open-btn {
   margin-top: 10px;
+
   display: inline-block;
 }
 
@@ -420,7 +386,9 @@ h1 {
 
 #winner-name {
   font-size: 22px;
+
   font-weight: bold;
+
   margin: 20px 0;
 }
 
@@ -431,7 +399,9 @@ h1 {
 
 #spinner-wrapper {
   width: 1000px;
+
   max-width: 95%;
+
   margin: 20px auto;
 }
 
@@ -453,6 +423,7 @@ h1 {
 
 #spinner-strip {
   display: flex;
+
   align-items: center;
 
   transition:
@@ -474,6 +445,7 @@ h1 {
   top: 0;
 
   width: 4px;
+
   height: 100%;
 
   background: gold;
@@ -496,6 +468,7 @@ h1 {
   flex: 0 0 auto;
 
   width: 110px;
+
   height: 140px;
 
   margin: 15px;
@@ -503,7 +476,9 @@ h1 {
   position: relative;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: rgba(20, 20, 25, 0.85);
@@ -585,6 +560,7 @@ h1 {
 
 .spinner-item img {
   width: 70px;
+
   height: 70px;
 
   object-fit: contain;
@@ -653,19 +629,21 @@ h1 {
 
 .highlight-won {
   animation: glowScale 1.5s ease-in-out infinite alternate;
+
   z-index: 20;
 }
 
 @keyframes glowScale {
-
   0% {
     transform: scale(1);
+
     filter:
       drop-shadow(0 0 10px currentColor);
   }
 
   50% {
     transform: scale(1.25);
+
     filter:
       drop-shadow(0 0 25px currentColor)
       drop-shadow(0 0 40px currentColor);
@@ -673,16 +651,20 @@ h1 {
 
   100% {
     transform: scale(1);
+
     filter:
       drop-shadow(0 0 10px currentColor);
   }
 }
 
 
-/* ================= INVENTORY ================= */
+/* =========================================================
+   ===================== INVENTORY =========================
+   ========================================================= */
 
 #inventory {
   display: flex;
+
   flex-wrap: wrap;
 
   justify-content: center;
@@ -714,6 +696,7 @@ h1 {
 
 .inv-item img {
   width: 70px;
+
   height: 70px;
 
   object-fit: contain;
@@ -763,6 +746,7 @@ h1 {
   display: flex;
 
   justify-content: center;
+
   align-items: center;
 
   gap: 20px;
@@ -803,6 +787,7 @@ h1 {
 
 .top-drop img {
   width: 75px;
+
   height: 75px;
 
   object-fit: contain;
@@ -813,66 +798,88 @@ h1 {
 
 .common {
   border: 2px solid #777;
+
   box-shadow: 0 0 10px #777;
+
   color: #bbb;
 }
 
 .rare {
   border: 2px solid #4aa3ff;
+
   box-shadow: 0 0 14px #4aa3ff;
+
   color: #4aa3ff;
 }
 
 .strange {
   border: 2px solid orange;
+
   box-shadow: 0 0 16px orange;
+
   color: orange;
 }
 
 .unusual {
   border: 2px solid purple;
+
   box-shadow: 0 0 18px purple;
+
   color: purple;
 }
 
 .legendary {
   border: 2px solid gold;
+
   box-shadow: 0 0 22px gold;
+
   color: gold;
 }
 
 .mythical {
   border: 2px solid violet;
+
   box-shadow: 0 0 24px violet;
+
   color: violet;
 }
 
 .genuine {
   border: 2px solid #4D7455;
+
   box-shadow: 0 0 16px #4D7455;
+
   color: #4D7455;
 }
 
 .vintage {
   border: 2px solid #476291;
+
   box-shadow: 0 0 16px #476291;
+
   color: #476291;
 }
 
 .collector {
   border: 2px solid #AA0000;
+
   box-shadow: 0 0 22px #AA0000;
+
   color: #AA0000;
 }
 
 .haunted {
   border: 2px solid #38F3AB;
+
   box-shadow: 0 0 18px #38F3AB;
+
   color: #38F3AB;
 }
 
 
-/* ================= COINFLIP SECTION ================= */
+/* =========================================================
+   ===================== COINFLIP ==========================
+   ========================================================= */
 
 #coinflip-section {
   background: rgba(25,25,30,0.85);
@@ -919,6 +926,7 @@ h1 {
   perspective: 1000px;
 
   width: 100px;
+
   height: 100px;
 
   margin: 15px auto;
@@ -926,6 +934,7 @@ h1 {
 
 #coin {
   width: 100px;
+
   height: 100px;
 
   border-radius: 50%;
@@ -944,6 +953,7 @@ h1 {
   position: absolute;
 
   width: 100%;
+
   height: 100%;
 
   border-radius: 50%;
@@ -972,12 +982,15 @@ h1 {
 }
 
 
-/* ================= ADMIN GIVE PANEL ================= */
+/* =========================================================
+   ================= ADMIN GIVE PANEL =====================
+   ========================================================= */
 
 #admin-give-panel {
   position: fixed;
 
   top: 50px;
+
   left: 50%;
 
   transform: translateX(-50%);
@@ -1006,6 +1019,7 @@ h1 {
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   margin-bottom: 10px;
@@ -1051,6 +1065,7 @@ h1 {
 
 .admin-give-item img {
   width: 50px;
+
   height: 50px;
 
   border-radius: 6px;
@@ -1112,15 +1127,19 @@ h1 {
 }
 
 
-/* ================= CONTRIBUTORS ================= */
+/* =========================================================
+   ===================== CONTRIBUTORS ======================
+   ========================================================= */
 
 #contributors {
   margin: 40px auto;
+
   max-width: 500px;
 }
 
 #contributors textarea {
   width: 100%;
+
   height: 120px;
 
   background: rgba(20,20,25,0.9);
@@ -1161,7 +1180,9 @@ h1 {
 }
 
 
-/* ================= INACTIVE SPINNER ITEMS ================= */
+/* =========================================================
+   ================= INACTIVE SPINNER ITEMS ================
+   ========================================================= */
 
 .spinner-item.inactive img {
   filter:
@@ -1289,6 +1310,7 @@ h1 {
 
 .upgrader-side .upgrade-item img {
   width: 38px;
+
   height: 38px;
 
   object-fit: contain;
@@ -1362,14 +1384,9 @@ h1 {
    ================= UPGRADE CIRCLE ========================
    ========================================================= */
 
-/*
-  The fill is placed behind the text.
-  The circle clips the fill so it cannot
-  extend outside the circular shape.
-*/
-
 #upgrade-circle {
   width: 200px;
+
   height: 200px;
 
   border-radius: 50%;
@@ -1379,6 +1396,7 @@ h1 {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   background:
@@ -1396,10 +1414,8 @@ h1 {
 
   margin: 20px auto;
 
-  /* Keeps the fill inside the circle */
   overflow: hidden;
 
-  /* Creates a clean stacking layer */
   z-index: 1;
 }
 
@@ -1410,9 +1426,11 @@ h1 {
   position: absolute;
 
   bottom: 0;
+
   left: 0;
 
   width: 100%;
+
   height: 0%;
 
   background: #ff9999;
@@ -1427,9 +1445,6 @@ h1 {
     height 2s ease,
     background 0.4s ease;
 
-  /*
-    Fill is behind the text.
-  */
   z-index: 0;
 }
 
@@ -1444,6 +1459,7 @@ h1 {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   color: white;
@@ -1455,9 +1471,6 @@ h1 {
   text-shadow:
     0 0 10px black;
 
-  /*
-    Text stays above the fill.
-  */
   z-index: 2;
 
   pointer-events: none;
@@ -1485,7 +1498,50 @@ h1 {
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   ============== RETURNED / WON WAGER ITEMS ===============
+   ========================================================= */
+
+/*
+   These rules specifically target the items that are
+   returned after winning.
+
+   They override the normal .inv-item img size.
+*/
+
+#inventory .inv-item img,
+#returned-items .inv-item img,
+.returned-items .inv-item img,
+.won-items .inv-item img,
+.wager-return img {
+  width: 40px !important;
+  height: 40px !important;
+
+  max-width: 40px !important;
+  max-height: 40px !important;
+
+  object-fit: contain !important;
+}
+
+
+/* If the returned item itself has an image directly inside it */
+
+.returned-item img,
+.won-item img,
+.return-wager-item img {
+  width: 40px !important;
+  height: 40px !important;
+
+  max-width: 40px !important;
+  max-height: 40px !important;
+
+  object-fit: contain !important;
+}
+
+
+/* =========================================================
+   ===================== MOBILE ============================
+   ========================================================= */
 
 @media (max-width: 800px) {
 
@@ -1496,31 +1552,4 @@ h1 {
   .upgrader-side {
     width: 100%;
   }
-}
-.champion-wager-item img {
-
-  width: 35px;
-
-  height: 35px;
-
-}
-
-.champion-selected-entry img {
-
-  width: 38px;
-
-  height: 38px;
-
-}
-
-/* ================= RETURN WAGER IMAGES ================= */
-
-.champion-return-wager img,
-.return-wager img,
-#return-wager img {
-    width: 35px !important;
-    height: 35px !important;
-    max-width: 35px !important;
-    max-height: 35px !important;
-    object-fit: contain !important;
 }
