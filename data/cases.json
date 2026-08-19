@@ -367,7 +367,7 @@
         }, 
         {
       "id": "pyro",
-      "name": "Pyro (High)",
+      "name": " [U] Pyro (High)",
       "price": 7.15,
       "image": "images/cases/pyro.webp",
       "items": [
@@ -396,7 +396,7 @@
     },
     {
       "id": "doom",
-      "name": "Doom (Big)",
+      "name": "[U] Doom (Big)",
       "price": 8.00,
       "image": "images/cases/doom.webp",
       "items": [
