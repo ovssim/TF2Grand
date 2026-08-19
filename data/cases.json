@@ -332,6 +332,39 @@
         { "name": "Green Black Hole Hustler's Hallmark", "rarity": "mythical", "price": 675.00, "weight": 10, "image": "images/items/gbhhh.png" }
       ]
     },
+      {
+      "id": "foodwar",
+      "name": "Food Wars",
+      "price": 5.99,
+      "image": "images/cases/foodwar.webp",
+      "items": [
+        { "name": "Ham Shank", "rarity": "legendary", "price": 0.07, "weight": 750, "image": "images/items/hamshank.png" },
+        { "name": "Strange Yule Hog", "rarity": "strange", "price": 0.24, "weight": 1250, "image": "images/items/yulehog.png" },
+        { "name": "Mannvich", "rarity": "legendary", "price": 0.33, "weight": 1250, "image": "images/items/mannvich.png" },
+        { "name": "Strange Melted Mop", "rarity": "strange", "price": 0.37, "weight": 1500, "image": "images/items/meltedmop.png" },
+        { "name": "Momma Kiev", "rarity": "legendary", "price": 0.40, "weight": 1500, "image": "images/items/mommakiev.png" },
+        { "name": "Strange Hot Dogger", "rarity": "strange", "price": 0.57, "weight": 1750, "image": "images/items/hotdogger.png" },
+        { "name": "Fishcake", "rarity": "legendary", "price": 0.59, "weight": 2000, "image": "images/items/fishcake.png" },
+        { "name": "Strange Meal Dealer", "rarity": "strange", "price": 0.64, "weight": 2000, "image": "images/items/mealdealer.png" },
+        { "name": "Fast Food", "rarity": "legendary", "price": 0.75, "weight": 2500, "image": "images/items/fastfood.png" },
+        { "name": "Vintage Whoopee Cap", "rarity": "rare", "price": 0.80, "weight": 2500, "image": "images/items/whoopeecap.png" },
+        { "name": "Vintage Buffalo Steak Sandvich", "rarity": "rare", "price": 1.65, "weight": 3000, "image": "images/items/buffalo.png" },
+        { "name": "Strange Hat Chocolate", "rarity": "strange", "price": 1.97, "weight": 5000, "image": "images/items/hatchoco.png" },
+        { "name": "Strange Employee of the Mmmph", "rarity": "strange", "price": 2.63, "weight": 20000, "image": "images/items/employeeofthemmmph.png" },
+        { "name": "Festive Sandvich", "rarity": "legendary", "price": 3.48, "weight": 15000, "image": "images/items/festivesandvich.png" },
+        { "name": "Strange Dry Gulch Gulp", "rarity": "strange", "price": 4.12, "weight": 10000, "image": "images/items/drygulchgulp.png" },
+        { "name": "Festive Scattergun", "rarity": "legendary", "price": 5.99, "weight": 15000, "image": "images/items/festivescattergun.png" },
+        { "name": "Captain Cardbeard Cutthroat", "rarity": "legendary", "price": 7.68, "weight": 5000, "image": "images/items/captaincardbeardcutthroat.png" },
+        { "name": "Strange Sammy Cap", "rarity": "strange", "price": 8.38, "weight": 5000, "image": "images/items/sammycap.png" },
+        { "name": "Strange Bread Heads", "rarity": "strange", "price": 9.34, "weight": 2000, "image": "images/items/breadheads.png" },
+        { "name": "Strange Sandvich", "rarity": "strange", "price": 23.30, "weight": 1000, "image": "images/items/sandvich.png" },
+        { "name": "Iridescence Snack Stack", "rarity": "mythical", "price": 40.50, "weight": 1000, "image": "images/items/irdss.png" },
+        { "name": "Potassium Bonnet", "rarity": "legendary", "price": 65.53, "weight": 900, "image": "images/items/potassiumbonnet.png" },
+        { "name": "Collector's Sandvich", "rarity": "collector", "price": 120.53, "weight": 60, "image": "images/items/sandvich.png" },
+        { "name": "Purple Energy Bread Heads", "rarity": "mythical", "price": 900.00, "weight": 30, "image": "images/items/pebhs.png" },
+        { "name": "Bonzo the All-Gnawing Whoopee Cap", "rarity": "mythical", "price": 2250.00, "weight": 10, "image": "images/items/btagwc.png" }
+      ]
+    },
         {
       "id": "stakes",
       "name": "Grand Stakes (Big)",
