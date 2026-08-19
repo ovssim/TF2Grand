@@ -369,7 +369,7 @@
       "id": "placeholder",
       "name": "Placeholder",
       "price": 0.03,
-      "image": "images/cases/placeholder.webp",
+      "image": "images/cases/placeholder.png",
       "items": [
         { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 1, "image": "images/items/refined.png" }
       ]
