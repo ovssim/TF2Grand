@@ -1487,3 +1487,40 @@ h1 {
     width: 100%;
   }
 }
+
+/* =========================================================
+   CHAMPION RESULT / WINNINGS
+   ========================================================= */
+
+.champion-winning-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+.champion-winning-entry img {
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    min-width: 42px;
+    min-height: 42px;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+}
+
+.champion-winning-entry span {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.champion-winning-entry small {
+    font-size: 13px;
+    opacity: 0.8;
+}
