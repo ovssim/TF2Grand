@@ -172,7 +172,7 @@
         { "name": "Strange Deadbeats", "rarity": "strange", "price": 0.79, "weight": 8000, "image": "images/items/deadbeat.png" },
         { "name": "Strange Dressperado", "rarity": "strange", "price": 0.90, "weight": 2500, "image": "images/items/dresspa.png" },
         { "name": "Defragmenting Hard Hat 17%", "rarity": "legendary", "price": 1.31, "weight": 1230, "image": "images/items/defrag.png" },
-        { "name": "Gaelic Glutton", "rarity": "legendary", "price": 1.62, "weight": 2500, "image": "images/items/gaelicglutton.png" },
+        { "name": "Gaelic Glutton", "rarity": "legendary", "price": 1.62, "weight": 2500, "image": "images/items/gaelicglu.png" },
         { "name": "Strange Pyro in Chinatown", "rarity": "strange", "price": 1.79, "weight": 2500, "image": "images/items/pyroinchinatown.png" },
         { "name": "Strange Terror-Antula", "rarity": "strange", "price": 4.12, "weight": 1330, "image": "images/items/terroranchula.png" },
         { "name": "Strange Mr. Quackers", "rarity": "strange", "price": 7.03, "weight": 1330, "image": "images/items/mrquackers.png" },
