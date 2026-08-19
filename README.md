@@ -1,1 +1,31 @@
-# TF2Grand
+basefiller
+    {
+      "id": "f",
+      "name": "f",
+      "price": f,
+      "image": "images/cases/f.png",
+      "items": [
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" }
+      ]
+    },
