@@ -363,7 +363,7 @@
         { "name": "Collector's Sandvich", "rarity": "collector", "price": 120.53, "weight": 60, "image": "images/items/sandvich.png" },
         { "name": "Purple Energy Bread Heads", "rarity": "mythical", "price": 900.00, "weight": 30, "image": "images/items/pebhs.png" },
         { "name": "Bonzo the All-Gnawing Whoopee Cap", "rarity": "mythical", "price": 2250.00, "weight": 10, "image": "images/items/btagwc.png" }
-        }
+        ]
         }, 
         {
       "id": "placeholder",
