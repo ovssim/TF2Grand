@@ -1497,3 +1497,19 @@ h1 {
     width: 100%;
   }
 }
+.champion-wager-item img {
+
+  width: 35px;
+
+  height: 35px;
+
+}
+
+.champion-selected-entry img {
+
+  width: 38px;
+
+  height: 38px;
+
+}
+
