@@ -313,7 +313,7 @@
         { "name": "Strange Bottle", "rarity": "strange", "price": 0.94, "weight": 10000, "image": "images/items/bottle.png" },
         { "name": "Vintage Demoman's Fro", "rarity": "rare", "price": 1.88, "weight": 5000, "image": "images/items/afro.png" },
         { "name": "Taunt: Scotsmann's Stagger", "rarity": "legendary", "price": 2.00, "weight": 27000, "image": "images/items/scotsmannsstagger.png" },
-        { "name": "Strange Gaelic Glutton", "rarity": "legendary", "price": 3.75, "weight": 5000, "image": "images/items/gaelicglutton.png" },
+        { "name": "Strange Gaelic Glutton", "rarity": "strange", "price": 3.75, "weight": 5000, "image": "images/items/gaelicglu.png" },
         { "name": "Strange Bird-Man of Aberdeen", "rarity": "strange", "price": 5.02, "weight": 2000, "image": "images/items/birddemo.png" },
         { "name": "Blazing Beacon Taunt: Oblooterated", "rarity": "mythical", "price": 6.30, "weight": 2000, "image": "images/items/blazingbeaconto.png" },
         { "name": "Strange Legendary Lid", "rarity": "strange", "price": 7.63, "weight": 2000, "image": "images/items/legendarylid.png" },
