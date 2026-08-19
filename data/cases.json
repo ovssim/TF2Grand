@@ -393,7 +393,7 @@
         { "name": "Soulful Slice Seared Sorcerer", "rarity": "mythical", "price": 294.57, "weight": 150, "image": "images/items/sfsss.png" },
         { "name": "Burning Flames Flamboyant Flamenco", "rarity": "mythical", "price": 855.00, "weight": 50, "image": "images/items/burningflamesff.png" }
       ]
-        },
+    },
     {
       "id": "doom",
       "name": "Doom (Big)",
@@ -418,6 +418,7 @@
         { "name": "Green Energy Baseball Bill's Sport Shine", "rarity": "mythical", "price": 567.00, "weight": 100, "image": "images/items/gebbsp.png" }
       ]
     },
+
         {
       "id": "placeholder",
       "name": "Placeholder",
