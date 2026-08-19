@@ -1513,3 +1513,14 @@ h1 {
 
 }
 
+/* ================= RETURN WAGER IMAGES ================= */
+
+.champion-return-wager img,
+.return-wager img,
+#return-wager img {
+    width: 35px !important;
+    height: 35px !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+    object-fit: contain !important;
+}
