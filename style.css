@@ -219,6 +219,22 @@ h1 {
 /* =========================================================
    CHAMPION ITEM WAGER
    ========================================================= */
+/* =========================================================
+   CHAMPION SELECTED ITEMS
+   ========================================================= */
+
+.champion-selected-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.champion-selected-entry img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
 
 .champion-item-wager {
     width: 100%;
