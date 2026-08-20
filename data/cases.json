@@ -367,7 +367,7 @@
         }, 
         {
       "id": "pyro",
-      "name": " [U] Pyro (High)",
+      "name": " [Ü] Pyro (High)",
       "price": 7.15,
       "image": "images/cases/pyro.webp",
       "items": [
@@ -396,7 +396,7 @@
     },
     {
       "id": "doom",
-      "name": "[U] Doom (Big)",
+      "name": "[Ü] Doom (Big)",
       "price": 8.00,
       "image": "images/cases/doom.webp",
       "items": [
@@ -416,6 +416,86 @@
         { "name": "It's a Mystery to Everyone Hellmet", "rarity": "mythical", "price": 93.00, "weight": 750, "image": "images/items/tsamteh.png" },
         { "name": "Tesla Coil Peacenik's Ponytail", "rarity": "mythical", "price": 142.06, "weight": 200, "image": "images/items/teslacoilpeace.png" },
         { "name": "Green Energy Baseball Bill's Sport Shine", "rarity": "mythical", "price": 567.00, "weight": 100, "image": "images/items/gebbsp.png" }
+      ]
+    },
+  {
+      "id": "engineer",
+      "name": "[Ü] Engineer (High)",
+      "price": 8.45,
+      "image": "images/cases/engineer.webp",
+      "items": [
+        { "name": "Antarctic Researcher", "rarity": "legendary", "price": 0.23, "weight": 10000, "image": "images/items/antarcticresearcher.png" },
+        { "name": "Cuban Bristle Crisis", "rarity": "legendary", "price": 0.63, "weight": 5000, "image": "images/items/cubanbristlecrisis.png" },
+        { "name": "Level Three Chin", "rarity": "legendary", "price": 0.68, "weight": 5500, "image": "images/items/threechin.png" },
+        { "name": "Strange Aim Assistant", "rarity": "strange", "price": 1.97, "weight": 3500, "image": "images/items/aimass.png" },
+        { "name": "Dad Duds", "rarity": "legendary", "price": 2.30, "weight": 10000, "image": "images/items/daddud.png" },
+        { "name": "Mining Light", "rarity": "legendary", "price": 2.43, "weight": 7500, "image": "images/items/mininglight.png" },
+        { "name": "Flash of Inspiration", "rarity": "legendary", "price": 2.50, "weight": 15000, "image": "images/items/flashofinspiration.png" },
+        { "name": "Strange Lonesome Loafers", "rarity": "strange", "price": 4.52, "weight": 10500, "image": "images/items/lonesomeloafers.png" },
+        { "name": "Strange Data Mining Light", "rarity": "strange", "price": 4.82, "weight": 7500, "image": "images/items/datal.png" },
+        { "name": "Strange Underminer's Undercoat", "rarity": "strange", "price": 4.89, "weight": 5500, "image": "images/items/undercoat.png" },
+        { "name": "Strange Pocket Pyro", "rarity": "strange", "price": 9.38, "weight": 7500, "image": "images/items/pocketpyro.png" },
+        { "name": "Community Sparkle Trencher's Topper", "rarity": "mythical", "price": 14.53, "weight": 5000, "image": "images/items/cstt.png" },
+        { "name": "Strange Egghead Overalls", "rarity": "strange", "price": 19.89, "weight": 2500, "image": "images/items/egghead.png" },
+        { "name": "Beep Man", "rarity": "legendary", "price": 37.82, "weight": 1500, "image": "images/items/beepman.png" },
+        { "name": "Strange Australium Frontier Justice", "rarity": "strange", "price": 39.17, "weight": 1250, "image": "images/items/aussiefront.png" },
+        { "name": "Strange Australium Wrench", "rarity": "strange", "price": 64.28, "weight": 1100, "image": "images/items/aussiewrench.png" },
+        { "name": "Circling Heart Industrial Festivizer", "rarity": "mythical", "price": 72.48, "weight": 750, "image": "images/items/chif.png" },
+        { "name": "Strange Construction PDA", "rarity": "strange", "price": 186.81, "weight": 250, "image": "images/items/constuctionpda.png" },
+        { "name": "Roboactive Engineer Cap", "rarity": "mythical", "price": 360.00, "weight": 100, "image": "images/items/raec.png" },
+        { "name": "Morning Glory Texas Ten Gallon", "rarity": "mythical", "price": 792.00, "weight": 50, "image": "images/items/msttg.png" }
+      ]
+        },
+  {
+      "id": "scorched",
+      "name": "[Ü] Scorched (High)",
+      "price": 8.55,
+      "image": "images/cases/scorched.webp",
+      "items": [
+        { "name": "Strange Helmet without a Home", "rarity": "strange", "price": 0.87, "weight": 10000, "image": "images/items/helmetwithoutahome.png" },
+        { "name": "Strange Rainblower", "rarity": "strange", "price": 1.88, "weight": 7500, "image": "images/items/rainblower.png" },
+        { "name": "Strange Captain's Cpcktails", "rarity": "strange", "price": 2.06, "weight": 8500, "image": "images/items/captainscocktails.png" },
+        { "name": "Strange Balloonicorne", "rarity": "strange", "price": 2.31, "weight": 5000, "image": "images/items/balloonicorne.png" },
+        { "name": "Strange HazMat Headcase", "rarity": "strange", "price": 3.41, "weight": 6500, "image": "images/items/hazmatheadcase.png" },
+        { "name": "Strange Idea Tube", "rarity": "strange", "price": 4.22, "weight": 7500, "image": "images/items/ideatube.png" },
+        { "name": "Strange Gentleman's Ushanka", "rarity": "strange", "price": 4.62, "weight": 4500, "image": "images/items/gentlemansushanka.png" },
+        { "name": "Strange Bird-Man of Aberdeen", "rarity": "strange", "price": 5.02, "weight": 5000, "image": "images/items/birddemo.png" },
+        { "name": "Strange Fed-Fightin' Fedora", "rarity": "strange", "price": 6.13, "weight": 5000, "image": "images/items/fedfightinfedora.png" },
+        { "name": "Strange Liquidator's Lid", "rarity": "strange", "price": 7.14, "weight": 9500, "image": "images/items/liquidatorslid.png" },
+        { "name": "Strange Business Casual", "rarity": "strange", "price": 8.00, "weight": 5000, "image": "images/items/businesscasual.png" },
+        { "name": "Strange Apparatchik's Apparel", "rarity": "strange", "price": 9.14, "weight": 7500, "image": "images/items/apparatchiksapparel.png" },
+        { "name": "Strange Dillinger's Duffle", "rarity": "strange", "price": 9.14, "weight": 8000, "image": "images/items/dillingersduffle.png" },
+        { "name": "Strange Infernal Orchestrina", "rarity": "strange", "price": 14.75, "weight": 5000, "image": "images/items/infernalorchestrina.png" },
+        { "name": "Purple Confetti Coupe D'isaster", "rarity": "mythical", "price": 24.05, "weight": 2500, "image": "images/items/pccd.png" },
+        { "name": "Green Confetti Stainless Pot", "rarity": "mythical", "price": 35.32, "weight": 1500, "image": "images/items/gcsp.png" },
+        { "name": "Dead Presidents El Jefe", "rarity": "mythical", "price": 65.00, "weight": 1000, "image": "images/items/dpej.png" },
+        { "name": "Green Confetti Ritzy Rick's Hair Fixative", "rarity": "mythical", "price": 109.43, "weight": 250, "image": "images/items/gcrrhf.png" },
+        { "name": "Disco Beat Down Flamboyant Flamenco", "rarity": "mythical", "price": 167.75, "weight": 150, "image": "images/items/dbdff.png" },
+        { "name": "Burning Flames L'homme Burglerre", "rarity": "mythical", "price": 234.75, "weight": 100, "image": "images/items/bflhb.png" }
+      ]
+    },
+  {
+      "id": "freetoplay",
+      "name": "[Ü] Free to play (Low)",
+      "price": 9.00,
+      "image": "images/cases/ftp.webp",
+      "items": [
+        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 10960, "image": "images/items/refined.png" },
+        { "name": "Alien Swarm Parasite", "rarity": "legendary", "price": 0.30, "weight": 10000, "image": "images/items/alienswarmparasite.png" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 10000, "image": "images/items/ghastlierestgibus.png" },
+        { "name": "Mann Co. Supply Crate Key", "rarity": "legendary", "price": 2.25, "weight": 10000, "image": "images/items/key.png" },
+        { "name": "Upgrade to Premium Gift", "rarity": "legendary", "price": 5.00, "weight": 20000, "image": "images/items/utpg.png" },
+        { "name": "Bill's Hat", "rarity": "legendary", "price": 6.98, "weight": 20000, "image": "images/items/billshat.png" },
+        { "name": "Pyrovision Goggles", "rarity": "legendary", "price": 8.50, "weight": 5000, "image": "images/items/pyrovisiongoggles.png" },
+        { "name": "Strange Bruiser's Bandanna", "rarity": "strange", "price": 10.35, "weight": 5000, "image": "images/items/bruisersbandanna.png" },
+        { "name": "Earbuds", "rarity": "legendary", "price": 15.65, "weight": 3000, "image": "images/items/earbuds.png" },
+        { "name": "Tesla Coil Hustler's Hallmark", "rarity": "mythical", "price": 23.27, "weight": 3000, "image": "images/items/tchh.png" },
+        { "name": "Bubbling Reggaelator", "rarity": "mythical", "price": 50.02, "weight": 2000, "image": "images/items/br.png" },
+        { "name": "Icestruck Chill Chullo", "rarity": "mythical", "price": 100.26, "weight": 430, "image": "images/items/icc.png" },
+        { "name": "Green Energy Caribou Companion", "rarity": "mythical", "price": 171.00, "weight": 300, "image": "images/items/gecc.png" },
+        { "name": "Miami Nights Crome Dome", "rarity": "mythical", "price": 333.00, "weight": 200, "image": "images/items/mncd.png" },
+        { "name": "Burning Flames Galvanized Gibus", "rarity": "100", "price": 432.00, "weight": 100, "image": "images/items/bfgg.png" },
+        { "name": "Viridescent Peeper Patriot Peak", "rarity": "mythical", "price": 855.00, "weight": 10, "image": "images/items/vppp.png" }
       ]
     },
 
