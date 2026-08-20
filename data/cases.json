@@ -518,8 +518,8 @@
     },
     {
       "id": "crush",
-      "name": "[Ü] Crush",
-      "price": 14.90,
+      "name": "[Ü] Crush (Medium)",
+      "price": 16.60,
       "image": "images/cases/crush.webp",
       "items": [
         { "name": "Strange AWPer Hand", "rarity": "strange", "price": 64.28, "weight": 2000, "image": "images/items/awper.png" },
