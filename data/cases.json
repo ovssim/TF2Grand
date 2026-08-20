@@ -498,6 +498,39 @@
         { "name": "Viridescent Peeper Patriot Peak", "rarity": "mythical", "price": 855.00, "weight": 10, "image": "images/items/vppp.png" }
       ]
     },
+    {
+      "id": "cauldronbubble",
+      "name": "[Ü] Cauldronbubble (Big)",
+      "price": 10.50,
+      "image": "images/cases/cauldronbubble.webp",
+      "items": [
+        { "name": "Mann Co. Supply Crate Key", "rarity": "legendary", "price": 2.25, "weight": 95000, "image": "images/items/key.png" },
+        { "name": "Steaming Bloke's Bucket", "rarity": "mythical", "price": 21.64, "weight": 1400, "image": "images/items/sbb.png" },
+        { "name": "Sunbeams Elf Esteem", "rarity": "mythical", "price": 36.90, "weight": 1000, "image": "images/items/see.png" },
+        { "name": "Cloud 9 Hustler's Hallmark", "rarity": "mythical", "price": 81.00, "weight": 750, "image": "images/items/c9hh.png" },
+        { "name": "Circling TF Logo Brigade Helmet", "rarity": "mythical", "price": 130.00, "weight": 500, "image": "images/items/ctflbh.png" },
+        { "name": "Sunbeams a Rather Festive Tree", "rarity": "mythical", "price": 162.00, "weight": 500, "image": "images/items/sarft.png" },
+        { "name": "Molten Mallard Killer's Kabuto", "rarity": "mythical", "price": 270.00, "weight": 400, "image": "images/items/mmkk.png" },
+        { "name": "Catastrophic Companions", "rarity": "legendary", "price": 325.00, "weight": 250, "image": "images/items/catastrophiccompanions.png" },
+        { "name": "Cauldron Bubbles Salty Dog", "rarity": "mythical", "price": 810.00, "weight": 129, "image": "images/items/cbsd.png" },
+        { "name": "Frostbite Brotherhood of Arms", "rarity": "mythical", "price": 2250.00, "weight": 71, "image": "images/items/fbhoa.png" }
+      ]
+    },
+    {
+      "id": "crush",
+      "name": "[Ü] Crush",
+      "price": 14.90,
+      "image": "images/cases/crush.webp",
+      "items": [
+        { "name": "Strange AWPer Hand", "rarity": "strange", "price": 64.28, "weight": 2000, "image": "images/items/awper.png" },
+        { "name": "Über Blaze Battle Boonie", "rarity": "mythical", "price": 22.06, "weight": 2000, "image": "images/items/ubbb.png" },
+        { "name": "Ghosts of Smissmas Time Brain Interface", "rarity": "mythical", "price": 30.13, "weight": 5000, "image": "images/items/gostbi.png" },
+        { "name": "Shining Stag El Fiestibrero", "rarity": "mythical", "price": 33.34, "weight": 2000, "image": "images/items/ssef.png" },
+        { "name": "Audiophile Undercover Brolly", "rarity": "mythical", "price": 33.75, "weight": 2000, "image": "images/items/apub.png" },
+        { "name": "Mint Frost Citizen Cane", "rarity": "mythical", "price": 40.00, "weight": 2000, "image": "images/items/mfcc.png" },
+        { "name": "Strange Pop-Eyes", "rarity": "strange", "price": 11.05, "weight": 85000, "image": "images/items/popeyes.png" }
+      ]
+    },
 
         {
       "id": "placeholder",
