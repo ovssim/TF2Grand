@@ -531,7 +531,20 @@
         { "name": "Strange Pop-Eyes", "rarity": "strange", "price": 11.05, "weight": 85000, "image": "images/items/popeyes.png" }
       ]
     },
-
+  {
+      "id": "dime",
+      "name": "[Ü] Dime (Big)",
+      "price": 17.43,
+      "image": "images/cases/dime.webp",
+      "items": [
+        { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 10000, "image": "images/items/bedouinbandana.png" },
+        { "name": "Bruisers Bandanna", "rarity": "legendary", "price": 0.29, "weight": 70000, "image": "images/items/bruisersbandanna.png" },
+        { "name": "Genuine Doublecross Comm", "rarity": "genuine", "price": 6.12, "weight": 4500, "image": "images/items/doublecrosscomm.png" },
+        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 10000, "image": "images/items/villainsveil.png" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 5250, "image": "images/items/deadhead.png" },
+        { "name": "Northern Nights Bedouin Bandana", "rarity": "mythical", "price": 4200.00, "weight": 250, "image": "images/items/nnbb.png" }
+      ]
+    },
         {
       "id": "placeholder",
       "name": "Placeholder",
