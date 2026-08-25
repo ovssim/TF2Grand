@@ -1,25 +1,6 @@
-/* =========================================================
+/* 
    CHAMPION MODE
-   ========================================================= */
-
-/*
-    Champion Mode depends on these variables/functions
-    from script.js:
-
-    coins
-    inventory
-    cases
-    saveInventory()
-    updateCoins()
-    renderInventory()
-    populateCoinflipDropdown()
-    updateBackpackValue()
-*/
-
-
-/* =========================================================
-   SETTINGS
-   ========================================================= */
+ */
 
 const CHAMPION_MAX_HP = 1111;
 
@@ -32,84 +13,38 @@ const CHAMPION_MINI_CRIT_CHANCE = 0.24;
 const CHAMPION_MINI_CRIT_MULTIPLIER = 2;
 
 
-/*
-    FishBot wager range.
-
-    FishBot's total wager will be between these
-    multipliers of the player's wager.
-*/
 
 const BOT_MIN_MULTIPLIER = 0.20;
 const BOT_MAX_MULTIPLIER = 2.00;
 
 
-/*
-    Time between attacks.
-*/
+
 
 const CHAMPION_TURN_DELAY = 2500;
 
 
-/*
-    Number of battle log messages visible.
-*/
-
 const MAX_BATTLE_LOG_ENTRIES = 5;
 
 
-/*
-    Number of blocks in the HP bar.
-*/
 
 const CHAMPION_HP_BAR_LENGTH = 20;
 
 
-/*
-    =========================================================
-    FISHBOT ITEM SETTINGS
-    =========================================================
-
-    FishBot prefers fewer, more expensive items.
-
-    Increasing BOT_ITEM_SEARCH_ATTEMPTS gives FishBot
-    more opportunities to find a better combination.
-
-    BOT_MAX_ITEMS prevents FishBot from filling its
-    wager with a huge number of cheap items.
-*/
 
 const BOT_ITEM_SEARCH_ATTEMPTS = 250;
 
 const BOT_MAX_ITEMS = 6;
 
 
-/*
-    How close the item portion should try to get
-    to the target before using coins.
-
-    0.01 means within one cent.
-*/
 
 const BOT_TARGET_TOLERANCE = 0.01;
 
 
-/*
-    FishBot has a preference for expensive items.
 
-    Higher values make it favor expensive items even
-    more strongly.
-
-    1.00 = normal
-    1.50 = strong
-    2.00 = very strong
-*/
 
 const BOT_EXPENSIVE_ITEM_BIAS = 1.75;
 
 
-/* =========================================================
-   WEAPONS
-   ========================================================= */
 
 const CHAMPION_WEAPONS = [
 
@@ -138,9 +73,6 @@ const CHAMPION_WEAPONS = [
 ];
 
 
-/* =========================================================
-   DAMAGE PHRASES
-   ========================================================= */
 
 const CHAMPION_DAMAGE_PHRASES = {
 
@@ -252,9 +184,6 @@ const CHAMPION_DAMAGE_PHRASES = {
 };
 
 
-/* =========================================================
-   SPECIAL PHRASES
-   ========================================================= */
 
 const CHAMPION_CRIT_PHRASES = [
 
@@ -284,56 +213,32 @@ const CHAMPION_MISS_PHRASES = [
 ];
 
 
-/* =========================================================
-   CHAMPION STATE
-   ========================================================= */
 
 const Champion = {
 
-    /*
-        Current wager selected by player.
-    */
-
+    
     coinWager: 0,
 
     selectedItems: [],
 
-
-    /*
-        Player's ORIGINAL wager.
-
-        These are cloned BEFORE the items are removed
-        from inventory.
-
-        On victory these exact objects are returned.
-    */
 
     playerWagerItems: [],
 
     playerWagerCoins: 0,
 
 
-    /*
-        FishBot wager.
-    */
+    
 
     botItems: [],
 
     botCoins: 0,
 
 
-    /*
-        Total values.
-    */
 
     totalPlayerWager: 0,
 
     totalBotWager: 0,
 
-
-    /*
-        Battle state.
-    */
 
     battleRunning: false,
 
@@ -348,19 +253,12 @@ const Champion = {
     battleTimer: null,
 
 
-    /*
-        Prevents the victory payout from being
-        accidentally processed twice.
-    */
 
     payoutComplete: false
 
 };
 
 
-/* =========================================================
-   DOM READY
-   ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -372,9 +270,6 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   SETUP
-   ========================================================= */
 
 function setupChampion() {
 
@@ -408,9 +303,6 @@ function setupChampion() {
         );
 
 
-    /* -----------------------------------------
-       COIN INPUT
-       ----------------------------------------- */
 
     if (coinInput) {
 
@@ -430,9 +322,6 @@ function setupChampion() {
     }
 
 
-    /* -----------------------------------------
-       ADD COINS
-       ----------------------------------------- */
 
     if (addCoinButton) {
 
@@ -442,9 +331,6 @@ function setupChampion() {
     }
 
 
-    /* -----------------------------------------
-       START BATTLE
-       ----------------------------------------- */
 
     if (startButton) {
 
@@ -454,9 +340,6 @@ function setupChampion() {
     }
 
 
-    /* -----------------------------------------
-       CLOSE RESULT
-       ----------------------------------------- */
 
     if (closeResultButton) {
 
@@ -466,9 +349,7 @@ function setupChampion() {
     }
 
 
-    /* -----------------------------------------
-       REFRESH INVENTORY
-       ----------------------------------------- */
+
 
     if (refreshInventoryButton) {
 
@@ -478,9 +359,7 @@ function setupChampion() {
     }
 
 
-    /*
-        Initial rendering.
-    */
+
 
     renderChampionItemList();
 
@@ -491,9 +370,7 @@ function setupChampion() {
 }
 
 
-/* =========================================================
-   GET CASE ITEM POOL
-   ========================================================= */
+
 
 function getChampionItemPool() {
 
@@ -571,9 +448,6 @@ function getChampionItemPool() {
 }
 
 
-/* =========================================================
-   RENDER PLAYER ITEM LIST
-   ========================================================= */
 
 function renderChampionItemList() {
 
@@ -690,9 +564,7 @@ function renderChampionItemList() {
 }
 
 
-/* =========================================================
-   REFRESH INVENTORY
-   ========================================================= */
+
 
 function refreshChampionInventory() {
 
