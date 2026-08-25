@@ -411,7 +411,7 @@
         { "name": "Duck Token", "rarity": "legendary", "price": 33.14, "weight": 1200, "image": "images/items/ducktoken.png" },
         { "name": "Haunted Ghosts Cyborg Stunt Mann", "rarity": "mythical", "price": 47.81, "weight": 1150, "image": "images/items/hgctm.png" },
         { "name": "Potassium Bonnet", "rarity": "legendary", "price": 65.53, "weight": 1000, "image": "images/items/potassiumbonnet.png" },
-        { "name": "Neutron Star Bloke's Bucket Hat", "rarity": "68.13", "price": 68.13, "weight": 950, "image": "images/items/nsbbh.png" },
+        { "name": "Neutron Star Bloke's Bucket Hat", "rarity": "mythical", "price": 68.13, "weight": 950, "image": "images/items/nsbbh.png" },
         { "name": "Circling TF Logo Merc's Mohawk", "rarity": "mythical", "price": 70.49, "weight": 900, "image": "images/items/ctflmm.png" },
         { "name": "It's a Mystery to Everyone Hellmet", "rarity": "mythical", "price": 93.00, "weight": 750, "image": "images/items/tsamteh.png" },
         { "name": "Tesla Coil Peacenik's Ponytail", "rarity": "mythical", "price": 142.06, "weight": 200, "image": "images/items/teslacoilpeace.png" },
@@ -435,7 +435,7 @@
         { "name": "Strange Data Mining Light", "rarity": "strange", "price": 4.82, "weight": 7500, "image": "images/items/datal.png" },
         { "name": "Strange Underminer's Undercoat", "rarity": "strange", "price": 4.89, "weight": 5500, "image": "images/items/undercoat.png" },
         { "name": "Strange Pocket Pyro", "rarity": "strange", "price": 9.38, "weight": 7500, "image": "images/items/pocketpyro.png" },
-        { "name": "Community Sparkle Trencher's Topper", "rarity": "mythical", "price": 14.53, "weight": 5000, "image": "images/items/cstt.png" },
+        { "name": "Community Sparkle Trencher's Topper", "rarity": "mythical", "price": 14.53, "weight": 5000, "image": "images/items/csttg.png" },
         { "name": "Strange Egghead Overalls", "rarity": "strange", "price": 19.89, "weight": 2500, "image": "images/items/egghead.png" },
         { "name": "Beep Man", "rarity": "legendary", "price": 37.82, "weight": 1500, "image": "images/items/beepman.png" },
         { "name": "Strange Australium Frontier Justice", "rarity": "strange", "price": 39.17, "weight": 1250, "image": "images/items/aussiefront.png" },
@@ -494,7 +494,7 @@
         { "name": "Icestruck Chill Chullo", "rarity": "mythical", "price": 100.26, "weight": 430, "image": "images/items/icc.png" },
         { "name": "Green Energy Caribou Companion", "rarity": "mythical", "price": 171.00, "weight": 300, "image": "images/items/gecc.png" },
         { "name": "Miami Nights Crome Dome", "rarity": "mythical", "price": 333.00, "weight": 200, "image": "images/items/mncd.png" },
-        { "name": "Burning Flames Galvanized Gibus", "rarity": "100", "price": 432.00, "weight": 100, "image": "images/items/bfgg.png" },
+        { "name": "Burning Flames Galvanized Gibus", "rarity": "mythical", "price": 432.00, "weight": 100, "image": "images/items/bfgg.png" },
         { "name": "Viridescent Peeper Patriot Peak", "rarity": "mythical", "price": 855.00, "weight": 10, "image": "images/items/vppp.png" }
       ]
     },
@@ -516,6 +516,30 @@
         { "name": "Frostbite Brotherhood of Arms", "rarity": "mythical", "price": 2250.00, "weight": 71, "image": "images/items/fbhoa.png" }
       ]
     },
+       {
+      "id": "egghunt",
+      "name": "[Ü] Egg Hunt (Medium)",
+      "price": 12.50,
+      "image": "images/cases/egghunt.webp",
+      "items": [
+        { "name": "Strange Gaelic Glutton", "rarity": "strange", "price": 3.75, "weight": 51000, "image": "images/items/gaelicglutton.png" },
+        { "name": "Rogue's Rabbit", "rarity": "legendary", "price": 6.07, "weight": 20000, "image": "images/items/roguesrabbit.png" },
+        { "name": "Strange Battle Bear", "rarity": "strange", "price": 7.54, "weight": 15000, "image": "images/items/battlebear.png" },
+        { "name": "Genuine Buck Turner All-Stars", "rarity": "genuine", "price": 11.15, "weight": 4000, "image": "images/items/buckturnersallstars.png" },
+        { "name": "Cat's Pajamas", "rarity": "legendary", "price": 13.75, "weight": 2000, "image": "images/items/catspajamas.png" },
+        { "name": "Horrifc Head of Hare", "rarity": "legendary", "price": 17.48, "weight": 1000, "image": "images/items/horrificheadofhare.png" },
+        { "name": "Strange Egghead's Overalls", "rarity": "strange", "price": 19.89, "weight": 1000, "image": "images/items/egghead.png" },
+        { "name": "Strange Level Three Chin", "rarity": "strange", "price": 28.12, "weight": 1000, "image": "images/items/threechin.png" },
+        { "name": "Duck Token", "rarity": "legendary", "price": 46.78, "weight": 1000, "image": "images/items/ducktoken.png" },
+        { "name": "Collector's Lollichop", "rarity": "collector", "price": 52.23, "weight": 1000, "image": "images/items/lollichop.png" },
+        { "name": "Max's Severed Head", "rarity": "legendary", "price": 71.43, "weight": 1000, "image": "images/items/maxhead.png" },
+        { "name": "Circling Heart Pyro's Beanie", "rarity": "mythical", "price": 97.75, "weight": 800, "image": "images/items/chpb.png" },
+        { "name": "Blizzardy Storm Chill Chullo", "rarity": "mythical", "price": 146.56, "weight": 600, "image": "images/items/bscc.png" },
+        { "name": "Nightmarrish Storm Reindoonibeanie", "rarity": "mythical", "price": 297.00, "weight": 400, "image": "images/items/nsrdh.png" },
+        { "name": "Hellspawned Horns Prehistoric Pullover", "rarity": "mythical", "price": 495.00, "weight": 200, "image": "images/items/hshpp.png" }
+      ]
+    },
+
     {
       "id": "crush",
       "name": "[Ü] Crush (Medium)",
