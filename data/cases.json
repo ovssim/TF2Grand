@@ -272,6 +272,19 @@
         { "name": "Scorching Flames Potassium Bonnet", "rarity": "mythical", "price": 4500.00, "weight": 10, "image": "images/items/sfpb.png" }
       ]
     },
+       {
+      "id": "confidential",
+      "name": " [X] Confidential Collection",
+      "price": 3.53,
+      "image": "images/cases/confidential.png",
+      "items": [
+        { "name": "Cadet Visor", "rarity": "legendary", "price": 1.32, "weight": 17922, "image": "images/items/cadetvisor.png" },
+        { "name": "Greylien", "rarity": "legendary", "price": 1.58, "weight": 15610, "image": "images/items/graylien.png" },
+        { "name": "A Head Full of Hot Air", "rarity": "legendary", "price": 1.61, "weight": 17490, "image": "images/items/aheadfullofhotair.png" },
+        { "name": "Space Diver", "rarity": "legendary", "price": 1.74, "weight": 17079, "image": "images/items/spacediver.png" }
+      ]
+    },
+
    {
       "id": "robo",
       "name": "Robo (High)",
