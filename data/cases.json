@@ -281,7 +281,6 @@
         { "name": "Cadet Visor", "rarity": "legendary", "price": 1.32, "weight": 17922, "image": "images/items/cadetvisor.png" },
         { "name": "Greylien", "rarity": "legendary", "price": 1.58, "weight": 15610, "image": "images/items/graylien.png" },
         { "name": "A Head Full of Hot Air", "rarity": "legendary", "price": 1.61, "weight": 17490, "image": "images/items/aheadfullofhotair.png" },
-        { "name": "Strange A Head Full of Hot Air", "rarity": "strange", "price": 5.42, "weight": 4000, "image": "images/items/aheadfullofhotair.png" },
         { "name": "Space Diver", "rarity": "legendary", "price": 1.74, "weight": 17079, "image": "images/items/spacediver.png" }
       ]
     },
@@ -414,7 +413,7 @@
       "price": 8.00,
       "image": "images/cases/doom.webp",
       "items": [
-        { "name": "Scariest Mask Ever", "rarity": "legendary", "price": 0.07, "weight": 42400, "image": "images/items/scariesrmaskever.png" },
+        { "name": "Scariest Mask EVER", "rarity": "legendary", "price": 0.07, "weight": 42400, "image": "images/items/scariesrmaskever.png" },
         { "name": "Electric Twanger", "rarity": "legendary", "price": 0.45, "weight": 15000, "image": "images/items/electrictwanger.png" },
         { "name": "Haunted Bozo's Bouffant", "rarity": "haunted", "price": 3.21, "weight": 10000, "image": "images/items/bozobouffant.png" },
         { "name": "Taunt: The Shred Alert", "rarity": "legendary", "price": 5.29, "weight": 8000, "image": "images/items/shredalert.png" },
@@ -578,9 +577,9 @@
         { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 17000, "image": "images/items/bedouinbandana.png" },
         { "name": "Bruisers Bandanna", "rarity": "legendary", "price": 0.29, "weight": 65000, "image": "images/items/bruisersbandanna.png" },
         { "name": "Genuine Doublecross Comm", "rarity": "genuine", "price": 6.12, "weight": 4500, "image": "images/items/doublecrosscomm.png" },
-        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 5000, "image": "images/items/villainsveil.png" },
-        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 8250, "image": "images/items/deadhead.png" },
-        { "name": "Northern Nights Bedouin Bandana", "rarity": "mythical", "price": 4200.00, "weight": 250, "image": "images/items/nnbb.png" }
+        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 4600, "image": "images/items/villainsveil.png" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 8450, "image": "images/items/deadhead.png" },
+        { "name": "Frostfire Bedouin Bandana", "rarity": "mythical", "price": 1085.00, "weight": 450, "image": "images/items/nnbb.png" }
       ]
     },
         {
