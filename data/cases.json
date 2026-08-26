@@ -272,20 +272,7 @@
         { "name": "Scorching Flames Potassium Bonnet", "rarity": "mythical", "price": 4500.00, "weight": 10, "image": "images/items/sfpb.png" }
       ]
     },
-       {
-      "id": "confidential",
-      "name": " [X] Confidential Collection",
-      "price": 3.53,
-      "image": "images/cases/confidential.png",
-      "items": [
-        { "name": "Cadet Visor", "rarity": "legendary", "price": 1.32, "weight": 17922, "image": "images/items/cadetvisor.png" },
-        { "name": "Greylien", "rarity": "legendary", "price": 1.58, "weight": 15610, "image": "images/items/graylien.png" },
-        { "name": "A Head Full of Hot Air", "rarity": "legendary", "price": 1.61, "weight": 17490, "image": "images/items/aheadfullofhotair.png" },
-        { "name": "Space Diver", "rarity": "legendary", "price": 1.74, "weight": 17079, "image": "images/items/spacediver.png" }
-      ]
-    },
-
-   {
+    {
       "id": "robo",
       "name": "Robo (High)",
       "price": 3.90,
@@ -387,12 +374,12 @@
         { "name": "Genuine Dead Cone", "rarity": "genuine", "price": 0.31, "weight": 7150, "image": "images/items/deadcone.png" },
         { "name": "Cremator's Consciousness", "rarity": "legendary", "price": 0.44, "weight": 11500, "image": "images/items/crematorsconsciousness.png" },
         { "name": "Seared Sorcerer", "rarity": "legendary", "price": 1.13, "weight": 7500, "image": "images/items/searedsorcerer.png" },
-        { "name": "Strange Balloonicorne", "rarity": "strange", "price": 2.31, "weight": 11000, "image": "images/items/balloonicorne.png" },
+        { "name": "Strange Balloonicorne", "rarity": "strange", "price": 2.31, "weight": 11000, "image": "images/items/balloonicorn.png" },
         { "name": "Festive Flare Gun", "rarity": "legendary", "price": 2.53, "weight": 5000, "image": "images/items/festiveflaregun.png" },
         { "name": "Mr. Quackers", "rarity": "legendary", "price": 2.75, "weight": 3650, "image": "images/items/mrquackers.png" },
         { "name": "Strange Wraith Wrap", "rarity": "strange", "price": 3.01, "weight": 5500, "image": "images/items/wraithwrap.png" },
         { "name": "Strange Killstreak Backburner", "rarity": "strange", "price": 3.44, "weight": 5500, "image": "images/items/backburner.png" },
-        { "name": "Genuine Bridage Helmet", "rarity": "genuine", "price": 3.52, "weight": 7500, "image": "images/items/bridageh.png" },
+        { "name": "Genuine Bridage Helmet", "rarity": "genuine", "price": 3.52, "weight": 7500, "image": "images/items/brigadeh.png" },
         { "name": "Taunt: Pool Party", "rarity": "legendary", "price": 4.46, "weight": 5750, "image": "images/items/poolparty.png" },
         { "name": "Strange Mishap Mercenary", "rarity": "strange", "price": 6.16, "weight": 10500, "image": "images/items/mishapmercenary.png" },
         { "name": "Macabre Mask", "rarity": "legendary", "price": 7.87, "weight": 7750, "image": "images/items/macabremask.png" },
@@ -468,7 +455,7 @@
         { "name": "Strange Helmet without a Home", "rarity": "strange", "price": 0.87, "weight": 10000, "image": "images/items/helmetwithoutahome.png" },
         { "name": "Strange Rainblower", "rarity": "strange", "price": 1.88, "weight": 7500, "image": "images/items/rainblower.png" },
         { "name": "Strange Captain's Cpcktails", "rarity": "strange", "price": 2.06, "weight": 8500, "image": "images/items/captainscocktails.png" },
-        { "name": "Strange Balloonicorne", "rarity": "strange", "price": 2.31, "weight": 5000, "image": "images/items/balloonicorne.png" },
+        { "name": "Strange Balloonicorne", "rarity": "strange", "price": 2.31, "weight": 5000, "image": "images/items/balloonicorn.png" },
         { "name": "Strange HazMat Headcase", "rarity": "strange", "price": 3.41, "weight": 6500, "image": "images/items/hazmatheadcase.png" },
         { "name": "Strange Idea Tube", "rarity": "strange", "price": 4.22, "weight": 7500, "image": "images/items/ideatube.png" },
         { "name": "Strange Gentleman's Ushanka", "rarity": "strange", "price": 4.62, "weight": 4500, "image": "images/items/gentlemansushanka.png" },
@@ -535,7 +522,7 @@
       "price": 12.50,
       "image": "images/cases/egghunt.webp",
       "items": [
-        { "name": "Strange Gaelic Glutton", "rarity": "strange", "price": 3.75, "weight": 51000, "image": "images/items/gaelicglutton.png" },
+        { "name": "Strange Gaelic Glutton", "rarity": "strange", "price": 3.75, "weight": 51000, "image": "images/items/gaelicglu.png" },
         { "name": "Rogue's Rabbit", "rarity": "legendary", "price": 6.07, "weight": 20000, "image": "images/items/roguesrabbit.png" },
         { "name": "Strange Battle Bear", "rarity": "strange", "price": 7.54, "weight": 15000, "image": "images/items/battlebear.png" },
         { "name": "Genuine Buck Turner All-Stars", "rarity": "genuine", "price": 11.15, "weight": 4000, "image": "images/items/buckturnersallstars.png" },
@@ -557,7 +544,7 @@
       "id": "crush",
       "name": "[Ü] Crush (Medium)",
       "price": 16.60,
-      "image": "images/cases/crush.webp",
+      "image": "images/cases/crush.png",
       "items": [
         { "name": "Strange AWPer Hand", "rarity": "strange", "price": 64.28, "weight": 2000, "image": "images/items/awper.png" },
         { "name": "Über Blaze Battle Boonie", "rarity": "mythical", "price": 22.06, "weight": 2000, "image": "images/items/ubbb.png" },
@@ -572,14 +559,36 @@
       "id": "dime",
       "name": "[Ü] Dime (Big)",
       "price": 17.43,
-      "image": "images/cases/dime.webp",
+      "image": "images/cases/dime.png",
       "items": [
         { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 17000, "image": "images/items/bedouinbandana.png" },
         { "name": "Bruisers Bandanna", "rarity": "legendary", "price": 0.29, "weight": 65000, "image": "images/items/bruisersbandanna.png" },
         { "name": "Genuine Doublecross Comm", "rarity": "genuine", "price": 6.12, "weight": 4500, "image": "images/items/doublecrosscomm.png" },
-        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 4600, "image": "images/items/villainsveil.png" },
+        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 4600, "image": "images/items/villainveil.png" },
         { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 8450, "image": "images/items/deadhead.png" },
         { "name": "Frostfire Bedouin Bandana", "rarity": "mythical", "price": 1085.00, "weight": 450, "image": "images/items/nnbb.png" }
+      ]
+    },
+        {
+      "id": "hellfire",
+      "name": "Hellfire (Big)",
+      "price": 77.70,
+      "image": "images/cases/hellfire.webp",
+      "items": [
+        { "name": "Haunted Bonedolier", "rarity": "haunted", "price": 1.08, "weight": 24650, "image": "images/items/bonedolier.png" },
+        { "name": "Gourd Grin", "rarity": "legendary", "price": 1.21, "weight": 15100, "image": "images/items/gourdgrin.png" },
+        { "name": "Cryptic Keepsake", "rarity": "legendary", "price": 5.56, "weight": 14450, "image": "images/items/cryptickeepsake.png" },
+        { "name": "Strange Skullcap", "rarity": "strange", "price": 14.26, "weight": 10400, "image": "images/items/skullcap.png" },
+        { "name": "Godlike Taunt: Flippin' Awesome", "rarity": "mythical", "price": 14.36, "weight": 8000, "image": "images/items/gltfa.png" },
+        { "name": "Voodoo Juju", "rarity": "legendary", "price": 23.41, "weight": 6000, "image": "images/items/voodoojuju.png" },
+        { "name": "Elemental Taunt: Conga", "rarity": "mythical", "price": 59.72, "weight": 5150, "image": "images/items/emttc.png" },
+        { "name": "Dragonflies' Lucent Taunt: Kazotsky Kick", "rarity": "mythical", "price": 90.00, "weight": 4650, "image": "images/items/dltkk.png" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 106.46, "weight": 3600, "image": "images/items/deadhead.png" },
+        { "name": "Galactic Dust Commonwealth Commando", "rarity": "mythical", "price": 198.00, "weight": 2900, "image": "images/items/gfcc.png" },
+        { "name": "Scorching Flames Thousand-Yard Stare", "rarity": "mythical", "price": 405.00, "weight": 2100, "image": "images/items/sftys.png" },
+        { "name": "Burning Flames Burning Question", "rarity": "mythical", "price": 900.00, "weight": 1520, "image": "images/items/bfbq.png" },
+        { "name": "Galactic Dust Cranial Cowl", "rarity": "mythical", "price": 1575.00, "weight": 1230, "image": "images/items/gdcc.png" },
+        { "name": "Burning Flames Pyromancer's Mask", "rarity": "mythical", "price": 2475.00, "weight": 250, "image": "images/items/bfpm.png" }
       ]
     },
         {
