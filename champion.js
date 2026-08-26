@@ -33,7 +33,7 @@ const CHAMPION_HP_BAR_LENGTH = 20;
 
 const BOT_ITEM_SEARCH_ATTEMPTS = 250;
 
-const BOT_MAX_ITEMS = 6;
+const BOT_MAX_ITEMS = 12;
 
 
 
