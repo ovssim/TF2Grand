@@ -55,7 +55,7 @@
       "price": 0.70,
       "image": "images/cases/cocofact.webp",
       "items": [
-        { "name": "Dalokohs Bar", "rarity": "legendary", "price": 0.01, "weight": 16359, "image": "images/items/cocbar.png" },
+        { "name": "Dalokohs Bar ", "rarity": "legendary", "price": 0.01, "weight": 16359, "image": "images/items/cocbar.png" },
         { "name": "Vinate Dalokohs Bar", "rarity": "rare", "price": 0.07, "weight": 12700, "image": "images/items/cocbar.png" },
         { "name": "Strange Dalokohs Bar", "rarity": "strange", "price": 0.11, "weight": 8190, "image": "images/items/cocbar.png" },
         { "name": "Egghead's Overalls", "rarity": "legendary", "price": 0.21, "weight": 4290, "image": "images/items/egghead.png" },
