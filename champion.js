@@ -2,7 +2,7 @@
    CHAMPION MODE
  */
 
-const CHAMPION_MAX_HP = 3333;
+const CHAMPION_MAX_HP = 555;
 
 const CHAMPION_CRIT_CHANCE = 0.16;
 const CHAMPION_CRIT_MULTIPLIER = 4;
@@ -2510,7 +2510,7 @@ function championAttack(
     const baseDamage =
         randomInteger(
             1,
-            888
+            999
         );
 
 
