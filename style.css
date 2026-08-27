@@ -212,6 +212,145 @@ h1 {
   border-radius: 4px;
 }
 
+/* ================= NEON CASE TEXT ================= */
+
+#case-select-display {
+  --case-neon-color: #ff4d4d;
+
+  color: var(--case-neon-color);
+
+  font-weight: bold;
+
+  text-shadow:
+    0 0 5px var(--case-neon-color),
+    0 0 10px var(--case-neon-color),
+    0 0 20px var(--case-neon-color),
+    0 0 30px var(--case-neon-color);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+/* Keep the case image normal */
+#case-select-display img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  filter: none;
+}
+#case-select-display {
+  --case-neon-color: #ff4d4d;
+
+  color: var(--case-neon-color);
+
+  font-weight: bold;
+
+  text-shadow:
+    0 0 5px var(--case-neon-color),
+    0 0 10px var(--case-neon-color),
+    0 0 20px var(--case-neon-color),
+    0 0 35px var(--case-neon-color);
+
+  animation: caseNeonPulse 1.5s ease-in-out infinite alternate;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+@keyframes caseNeonPulse {
+  0% {
+    text-shadow:
+      0 0 5px var(--case-neon-color),
+      0 0 10px var(--case-neon-color),
+      0 0 20px var(--case-neon-color);
+  }
+
+  100% {
+    text-shadow:
+      0 0 15px var(--case-neon-color),
+      0 0 30px var(--case-neon-color),
+      0 0 50px var(--case-neon-color);
+  }
+}
+/* ================= CASE INFO NEON TEXT ================= */
+
+/* Case title/name */
+.case-right h2 {
+  color: var(--case-neon-color, #ff4d4d);
+
+  text-shadow:
+    0 0 5px var(--case-neon-color, #ff4d4d),
+    0 0 10px var(--case-neon-color, #ff4d4d),
+    0 0 20px var(--case-neon-color, #ff4d4d),
+    0 0 35px var(--case-neon-color, #ff4d4d);
+
+  animation: caseTextPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Price / case information */
+.case-right p {
+  color: var(--case-neon-color, #ff4d4d);
+
+  text-shadow:
+    0 0 4px var(--case-neon-color, #ff4d4d),
+    0 0 8px var(--case-neon-color, #ff4d4d),
+    0 0 15px var(--case-neon-color, #ff4d4d);
+}
+
+/* Potential Drop heading */
+.case-right h3 {
+  color: var(--case-neon-color, #ff4d4d);
+
+  text-shadow:
+    0 0 5px var(--case-neon-color, #ff4d4d),
+    0 0 10px var(--case-neon-color, #ff4d4d),
+    0 0 20px var(--case-neon-color, #ff4d4d);
+}
+
+/* Case item names / drop information */
+#case-items-list {
+  color: var(--case-neon-color, #ff4d4d);
+}
+
+#case-items-list .inv-item {
+  color: var(--case-neon-color, #ff4d4d);
+
+  text-shadow:
+    0 0 4px var(--case-neon-color, #ff4d4d),
+    0 0 8px var(--case-neon-color, #ff4d4d);
+}
+
+/* Keep the odds readable */
+#case-items-list .inv-item small {
+  color: white;
+
+  text-shadow:
+    0 0 3px var(--case-neon-color, #ff4d4d);
+}
+
+/* ================= CASE NEON PULSE ================= */
+
+@keyframes caseTextPulse {
+  0% {
+    text-shadow:
+      0 0 5px var(--case-neon-color, #ff4d4d),
+      0 0 10px var(--case-neon-color, #ff4d4d),
+      0 0 20px var(--case-neon-color, #ff4d4d);
+  }
+
+  100% {
+    text-shadow:
+      0 0 10px var(--case-neon-color, #ff4d4d),
+      0 0 20px var(--case-neon-color, #ff4d4d),
+      0 0 35px var(--case-neon-color, #ff4d4d);
+  }
+}
 /* =========================================================
    ================= CHAMPION ITEM WAGER ===================
    ========================================================= */
