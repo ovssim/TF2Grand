@@ -334,7 +334,7 @@
     },
       {
       "id": "foodwar",
-      "name": "Food Wars",
+      "name": "Food Wars (High)",
       "price": 5.99,
       "image": "images/cases/foodwar.webp",
       "items": [
@@ -367,7 +367,7 @@
         }, 
         {
       "id": "pyro",
-      "name": " [Ü] Pyro (High)",
+      "name": "Pyro (High)",
       "price": 7.15,
       "image": "images/cases/pyro.webp",
       "items": [
@@ -396,7 +396,7 @@
     },
     {
       "id": "doom",
-      "name": "[Ü] Doom (Big)",
+      "name": "Doom (Big)",
       "price": 8.00,
       "image": "images/cases/doom.webp",
       "items": [
@@ -420,7 +420,7 @@
     },
   {
       "id": "engineer",
-      "name": "[Ü] Engineer (High)",
+      "name": "Engineer (High)",
       "price": 8.45,
       "image": "images/cases/engineer.webp",
       "items": [
@@ -448,7 +448,7 @@
         },
   {
       "id": "scorched",
-      "name": "[Ü] Scorched (High)",
+      "name": "Scorched (High)",
       "price": 8.55,
       "image": "images/cases/scorched.webp",
       "items": [
@@ -476,7 +476,7 @@
     },
   {
       "id": "freetoplay",
-      "name": "[Ü] Free to play (Low)",
+      "name": "Free to play (Low)",
       "price": 9.00,
       "image": "images/cases/ftp.webp",
       "items": [
@@ -500,7 +500,7 @@
     },
     {
       "id": "cauldronbubble",
-      "name": "[Ü] Cauldronbubble (Big)",
+      "name": "Cauldronbubble (Big)",
       "price": 10.50,
       "image": "images/cases/cauldronbubble.webp",
       "items": [
@@ -518,7 +518,7 @@
     },
        {
       "id": "egghunt",
-      "name": "[Ü] Egg Hunt (Medium)",
+      "name": "Egg Hunt (Medium)",
       "price": 12.50,
       "image": "images/cases/egghunt.webp",
       "items": [
@@ -542,7 +542,7 @@
 
     {
       "id": "crush",
-      "name": "[Ü] Crush (Medium)",
+      "name": "Crush (Medium)",
       "price": 16.60,
       "image": "images/cases/crush.png",
       "items": [
@@ -557,7 +557,7 @@
     },
   {
       "id": "dime",
-      "name": "[Ü] Dime (Big)",
+      "name": "Dime (Big)",
       "price": 17.43,
       "image": "images/cases/dime.png",
       "items": [
