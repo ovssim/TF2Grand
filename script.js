@@ -69,7 +69,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
   }
+function setRandomCaseNeonColor() {
+  const display = document.getElementById("case-select-display");
 
+  if (!display) return;
+
+  const colors = [
+    "#ff004c", // pink/red
+    "#ff4d00", // orange
+    "#ffd000", // yellow
+    "#00ff66", // green
+    "#00e5ff", // cyan
+    "#0088ff", // blue
+    "#7a00ff", // purple
+    "#ff00ff", // magenta
+    "#ff66cc", // pink
+    "#00ffcc"  // turquoise
+  ];
+
+  const randomColor =
+    colors[Math.floor(Math.random() * colors.length)];
+
+  display.style.setProperty(
+    "--case-neon-color",
+    randomColor
+  );
+}
   // ===================== OPEN CASE =====================
   const openBtn = document.getElementById("open-btn");
 
