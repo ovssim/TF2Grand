@@ -27,7 +27,7 @@ const MAX_BATTLE_LOG_ENTRIES = 5;
 
 
 
-const CHAMPION_HP_BAR_LENGTH = 20;
+const CHAMPION_HP_BAR_LENGTH = 30;
 
 
 
