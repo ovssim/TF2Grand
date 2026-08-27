@@ -2510,7 +2510,7 @@ function championAttack(
     const baseDamage =
         randomInteger(
             1,
-            333
+            888
         );
 
 
