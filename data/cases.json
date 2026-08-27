@@ -552,7 +552,7 @@
         { "name": "Shining Stag El Fiestibrero", "rarity": "mythical", "price": 33.34, "weight": 2000, "image": "images/items/ssef.png" },
         { "name": "Audiophile Undercover Brolly", "rarity": "mythical", "price": 33.75, "weight": 2000, "image": "images/items/apub.png" },
         { "name": "Mint Frost Citizen Cane", "rarity": "mythical", "price": 40.00, "weight": 2000, "image": "images/items/mfcc.png" },
-        { "name": "Strange Pop-Eyes", "rarity": "strange", "price": 11.05, "weight": 85000, "image": "images/items/popeyes.png" }
+        { "name": "Strange Pop-Eyes", "rarity": "strange", "price": 8.05, "weight": 85000, "image": "images/items/popeyes.png" }
       ]
     },
   {
