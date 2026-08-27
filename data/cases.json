@@ -564,7 +564,7 @@
         { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 17000, "image": "images/items/bedouinbandana.png" },
         { "name": "Bruisers Bandanna", "rarity": "legendary", "price": 0.29, "weight": 65000, "image": "images/items/bruisersbandanna.png" },
         { "name": "Genuine Doublecross Comm", "rarity": "genuine", "price": 6.12, "weight": 4500, "image": "images/items/doublecrosscomm.png" },
-        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 4600, "image": "images/items/villainveil.png" },
+        { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 4600, "image": "images/items/villainviel.png" },
         { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 8450, "image": "images/items/deadhead.png" },
         { "name": "Frostfire Bedouin Bandana", "rarity": "mythical", "price": 1085.00, "weight": 450, "image": "images/items/nnbb.png" }
       ]
@@ -633,7 +633,7 @@
         { "name": "Strange Summer Shades", "rarity": "strange", "price": 29.50, "weight": 8000, "image": "images/items/summershades.png" },
         { "name": "Magenta Monstrum Brimmed Bootlegger", "rarity": "mythical", "price": 49.58, "weight": 3350, "image": "images/items/mmbb.png" },
         { "name": "Summer Hat", "rarity": "legendary", "price": 60.62, "weight": 20000, "image": "images/items/summerhat.png" },
-        { "name": "Flip-Flops", "rarity": "legendary", "price": 67.08, "weight": 5000, "image": "images/items/flipflops.png" },
+        { "name": "Flip-Flops", "rarity": "legendary", "price": 67.08, "weight": 5000, "image": "images/items/flipflop.png" },
         { "name": "Cloud 9 Cranial Carcharodon", "rarity": "mythical", "price": 153.00, "weight": 1000, "image": "images/items/cninecc.png" },
         { "name": "Blazing Fireworks Hawaiian Hunter", "rarity": "mythical", "price": 200.00, "weight": 500, "image": "images/items/bfhh.png" },
         { "name": "Eyes of Molten Nasty Norsemann", "rarity": "mythical", "price": 540.00, "weight": 500, "image": "images/items/eomnn.png" },
