@@ -2,12 +2,12 @@
    CHAMPION MODE
  */
 
-const CHAMPION_MAX_HP = 5555;
+const CHAMPION_MAX_HP = 100;
 
 const CHAMPION_CRIT_CHANCE = 0.16;
-const CHAMPION_CRIT_MULTIPLIER = 4;
+const CHAMPION_CRIT_MULTIPLIER = 3;
 
-const CHAMPION_MISS_CHANCE = 0.15;
+const CHAMPION_MISS_CHANCE = 0.1;
 
 const CHAMPION_MINI_CRIT_CHANCE = 0.24;
 const CHAMPION_MINI_CRIT_MULTIPLIER = 2;
@@ -15,12 +15,12 @@ const CHAMPION_MINI_CRIT_MULTIPLIER = 2;
 
 
 const BOT_MIN_MULTIPLIER = 0.10;
-const BOT_MAX_MULTIPLIER = 3.00;
+const BOT_MAX_MULTIPLIER = 2.75;
 
 
 
 
-const CHAMPION_TURN_DELAY = 1000;
+const CHAMPION_TURN_DELAY = 1450;
 
 
 const MAX_BATTLE_LOG_ENTRIES = 5;
@@ -2509,8 +2509,8 @@ function championAttack(
 
     const baseDamage =
         randomInteger(
-            1,
-            999
+            10,
+            99
         );
 
 
