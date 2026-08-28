@@ -11,7 +11,7 @@ let isSpinning = false;
 
 // ===================== ADMIN PASSWORD =====================
 let adminMode = false;
-const ADMIN_PASSWORD = "royal";
+const ADMIN_PASSWORD = "Maker";
 
 
 // ===================== INIT =====================
