@@ -668,6 +668,30 @@
         { "name": "Misty Skull Grimm Hatte", "rarity": "mythical", "price": 1350.00, "weight": 74, "image": "images/items/ghms.png" }
       ]
     },
+        {
+      "id": "medic",
+      "name": "MEDIC!!!",
+      "price": 33.38,
+      "image": "images/cases/medic.webp",
+      "items": [
+        { "name": "Medi Gun", "rarity": "legendary", "price": 0.01, "weight": 20000, "image": "images/items/medigun.png" },
+        { "name": "Oktoberfester", "rarity": "legendary", "price": 0.08, "weight": 30330, "image": "images/items/oktoberfester.png" },
+        { "name": "Haunted Voodoo-Cursed Medic Soul", "rarity": "haunted", "price": 1.04, "weight": 8000, "image": "images/items/voodoocursedmedicsoul.png" },
+        { "name": "Coldfront Carapace", "rarity": "legendary", "price": 2.52, "weight": 5070, "image": "images/items/coldfrontcarapace.png" },
+        { "name": "Strange Crusader's Crossbow", "rarity": "strange", "price": 6.03, "weight": 5500, "image": "images/items/crusaderscrossbow.png" },
+        { "name": "Strange Medical Mystery", "rarity": "strange", "price": 7.90, "weight": 5300, "image": "images/items/medicalmystery.png" },
+        { "name": "Strange Australium Blutsauger", "rarity": "strange", "price": 14.37, "weight": 5200, "image": "images/items/aussieblut.png" },
+        { "name": "Arachne's Web Oktoberfester", "rarity": "mythical", "price": 25.65, "weight": 5000, "image": "images/items/awo.png" },
+        { "name": "Medimedes", "rarity": "legendary", "price": 36.69, "weight": 4500, "image": "images/items/medimedes.png" },
+        { "name": "Collector's Blutsauger", "rarity": "collector", "price": 54.24, "weight": 2000, "image": "images/items/blutsauger.png" },
+        { "name": "Dead Presidents Coldfront Commander", "rarity": "mythical", "price": 57.46, "weight": 2000, "image": "images/items/dpcc.png" },
+        { "name": "Ghastly Ghosts Taunt: Meet the Medic", "rarity": "mythical", "price": 126.00, "weight": 1500, "image": "images/items/ggtmtm.png" },
+        { "name": "Strange Kritzkrieg", "rarity": "strange", "price": 156.68, "weight": 3000, "image": "images/items/kritzkrieg.png" },
+        { "name": "Circling Heart Hong Kong Cone", "rarity": "mythical", "price": 387.00, "weight": 1400, "image": "images/items/chhkc.png" },
+        { "name": "Cloudy Moon Medic Cap", "rarity": "mythical", "price": 900.00, "weight": 1200, "image": "images/items/cmmc.png" }
+      ]
+    },
+
       {
       "id": "subclass",
       "name": "Sub-class (Big)",
