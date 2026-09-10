@@ -716,6 +716,30 @@
       ]
     },
         {
+      "id": "cityboysbelongings",
+      "name": "City Boy's Belongings (Big)",
+      "price": 60.50,
+      "image": "images/cases/cbb.webp",
+      "items": [
+        { "name": "Bonk Leadwear", "rarity": "legendary", "price": 0.05, "weight": 15500, "image": "images/items/bonkleadwear.png" },
+        { "name": "Festive Bonk! Cranberry", "rarity": "legendary", "price": 0.85, "weight": 15000, "image": "images/items/festivebonk.png" },
+        { "name": "Mann Co. Supply Crate Key", "rarity": "legendary", "price": 2.25, "weight": 10000, "image": "images/items/key.png" },
+        { "name": "Vintage Bonk Helm", "rarity": "rare", "price": 2.61, "weight": 10000, "image": "images/items/bonkhelm.png" },
+        { "name": "Blizzard Britches", "rarity": "legendary", "price": 5.00, "weight": 7500, "image": "images/items/blizzardbritches.png" },
+        { "name": "Strange Courtiers Collar", "rarity": "strange", "price": 8.24, "weight": 6500, "image": "images/items/courtierscollar.png" },
+        { "name": "Strange Macho Mann", "rarity": "strange", "price": 10.24, "weight": 6000, "image": "images/items/machomann.png" },
+        { "name": "Infernal Smoke Taunt: Deep Fried Batter", "rarity": "mythical", "price": 25.15, "weight": 5500, "image": "images/items/istdfb.png" },
+        { "name": "Strange Flapjack", "rarity": "strange", "price": 44.25, "weight": 4500, "image": "images/items/flapjack.png" },
+        { "name": "Strange Australium Scattergun", "rarity": "strange", "price": 90.39, "weight": 4000, "image": "images/items/aussiescatter.png" },
+        { "name": "Dead Presidents Death Racer", "rarity": "mythical", "price": 117.00, "weight": 3750, "image": "images/items/dpdr.png" },
+        { "name": "Pumpkin Moon Fried Batter", "rarity": "mythical", "price": 252.00, "weight": 3750, "image": "images/items/pmfb.png" },
+        { "name": "Bat", "rarity": "legendary", "price": 277.21, "weight": 3500, "image": "images/items/bat.png" },
+        { "name": "Pumpkin Moon Bottle Cap", "rarity": "mythical", "price": 396.00, "weight": 2500, "image": "images/items/pmbc.png" },
+        { "name": "Acidic Climate Brimmed Bootlegger", "rarity": "mythical", "price": 540.00, "weight": 2000, "image": "images/items/acbb.png" }
+      ]
+    },
+
+        {
       "id": "hellfire",
       "name": "Hellfire (Big)",
       "price": 77.70,
