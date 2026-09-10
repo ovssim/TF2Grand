@@ -542,8 +542,8 @@
 
     {
       "id": "crush",
-      "name": "Crush (Medium)",
-      "price": 16.60,
+      "name": "Crush (High)",
+      "price": 14.60,
       "image": "images/cases/crush.png",
       "items": [
         { "name": "Strange AWPer Hand", "rarity": "strange", "price": 64.28, "weight": 2000, "image": "images/items/awper.png" },
@@ -557,7 +557,7 @@
     },
   {
       "id": "dime",
-      "name": "Dime (Big)",
+      "name": "Dime (High)",
       "price": 17.43,
       "image": "images/cases/dime.png",
       "items": [
@@ -571,7 +571,7 @@
     },
         {
       "id": "fivejp",
-      "name": "5% Jackpot",
+      "name": "5% Jackpot (Big)",
       "price": 18.59,
       "image": "images/cases/fivejp.webp",
       "items": [
@@ -670,7 +670,7 @@
     },
         {
       "id": "medic",
-      "name": "MEDIC!!!",
+      "name": "MEDIC!!! (Big)",
       "price": 33.38,
       "image": "images/cases/medic.webp",
       "items": [
