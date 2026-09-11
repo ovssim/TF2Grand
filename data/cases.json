@@ -762,6 +762,29 @@
       ]
     },
         {
+      "id": "sully",
+      "name": "Sully (High)",
+      "price": 230.00,
+      "image": "images/cases/sully.webp",
+      "items": [
+        { "name": "Strange Colossal Cranium", "rarity": "strange", "price": 2.20, "weight": 12500, "image": "images/items/colossalcranium.png" },
+        { "name": "Strange Champ Stamp", "rarity": "strange", "price": 5.69, "weight": 3000, "image": "images/items/champstamp.png" },
+        { "name": "Strange Motley Sleeves", "rarity": "strange", "price": 12.72, "weight": 9550, "image": "images/items/motleysleeves.png" },
+        { "name": "Strange Level Three Chin", "rarity": "strange", "price": 40.12, "weight": 10450, "image": "images/items/threechin.png" },
+        { "name": "Haunted Ghosts Wavefinder", "rarity": "mythical", "price": 126.80, "weight": 13000, "image": "images/items/hgw.png" },
+        { "name": "Strange Ghastlierest Gibus", "rarity": "strange", "price": 236.55, "weight": 17000, "image": "images/items/ggibus.png" },
+        { "name": "Scorching Flames Crustaceous Cowl", "rarity": "mythical", "price": 287.93, "weight": 12000, "image": "images/items/sfccowl.png" },
+        { "name": "Haunted Ghosts Crown of the Old Kingdom", "rarity": "mythical", "price": 305.76, "weight":9000, "image": "images/items/hgcotok.png" },
+        { "name": "Strange Burly Beast", "rarity": "strange", "price": 325.00, "weight": 7000, "image": "images/items/burlybeast.png" },
+        { "name": "Haunted Ghosts Wandering Wraith", "rarity": "mythical", "price": 679.33, "weight": 4000, "image": "images/items/hgww.png" },
+        { "name": "Frostbite Swagman's Swatter", "rarity": "mythical", "price": 945.55, "weight": 2000, "image": "images/items/fsswatter.png" },
+        { "name": "Misty Skull Liquidators Lid", "rarity": "mythical", "price": 1652.00, "weight": 250, "image": "images/items/msll.png" },
+        { "name": "Nightmarish Storm Demonic Dome", "rarity": "mythical", "price": 3304.01, "weight": 150, "image": "images/items/nsdd.png" },
+        { "name": "Sunbeams Texas Slim Dome Shine", "rarity": "mythical", "price": 4599.25, "weight": 100, "image": "images/items/stsds.png" }
+      ]
+    },
+
+        {
       "id": "moonlight",
       "name": "Moonlight (Big)",
       "price": 650.00,
