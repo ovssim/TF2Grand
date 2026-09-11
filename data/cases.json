@@ -812,10 +812,12 @@
         {
       "id": "placeholder",
       "name": "Placeholder",
-      "price": 0.03,
+      "price": 4.50,
       "image": "images/cases/placeholder.png",
       "items": [
-        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 1, "image": "images/items/refined.png" }
+        { "name": "Stormy 13th Hour Antlers", "rarity": "mythical", "price": 15750.00, "weight": 1, "image": "images/items/s13thha.png" },
+        { "name": "Strange Professional Killstreak Unusual Festivized Collectors Mann Co. Supply Crate Key", "rarity": "mythical", "price": 23498.43, "weight": 1, "image": "images/items/key.png" }
+        { "name": "Mann Co. Supply Crate Key", "rarity": "legendary", "price": 2.25, "weight": 10000, "image": "images/items/key.png" }
       ]
     }
   ]
