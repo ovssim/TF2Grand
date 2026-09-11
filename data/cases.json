@@ -762,6 +762,31 @@
       ]
     },
         {
+      "id": "moonlight",
+      "name": "Moonlight (Big)",
+      "price": 650.00,
+      "image": "images/cases/moonlight.webp",
+      "items": [
+        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 75000, "image": "images/items/refined.png" },
+        { "name": "Eyes of Molten Mighty Mitre", "rarity": "mythical", "price": 174.67, "weight": 5050, "image": "images/items/eommm.png" },
+        { "name": "Neutron Star Reggalator", "rarity": "mythical", "price": 279.00, "weight": 4000, "image": "images/items/nsreg.png" },
+        { "name": "Ominous Stare Sophisticated Smoker", "rarity": "mythical", "price": 405.00, "weight": 3000, "image": "images/items/osss.png" },
+        { "name": "Otherworldly Weather Nasty Norsemann", "rarity": "mythical", "price": 567.00, "weight": 2000, "image": "images/items/ownn.png" },
+        { "name": "Galactic Gateway A Hat to Kill for", "rarity": "mythical", "price": 720.00, "weight": 1000, "image": "images/items/ggahtkf.png" },
+        { "name": "Cosmic Constellations Starlight Sorcerer", "rarity": "mythical", "price": 855.00, "weight": 1000, "image": "images/items/ccss.png" },
+        { "name": "Harvest Moon Napper's Respite", "rarity": "mythical", "price": 1215.00, "weight": 1000, "image": "images/items/hmnr.png" },
+        { "name": "Distant Drift Prehistoric Pullover", "rarity": "mythical", "price": 1575.00, "weight": 1000, "image": "images/items/ddppull.png" },
+        { "name": "The Eldritch Opening Burning Question", "rarity": "mythical", "price": 2250.00, "weight": 1000, "image": "images/items/teobq.png" },
+        { "name": "Knifestorm Fed-Fightin' Fedora", "rarity": "mythical", "price": 3375.00, "weight": 1000, "image": "images/items/kfff.png" },
+        { "name": "Cloudy Moon Blighted Beak", "rarity": "mythical", "price": 4950.00, "weight": 1000, "image": "images/items/cmbb.png" },
+        { "name": "Stormy 13th Hour Killer Exclusive", "rarity": "mythical", "price": 6750.00, "weight": 1050, "image": "images/items/s13thhke.png" },
+        { "name": "Cloudy Moon Crome Dome", "rarity": "mythical", "price": 7875.00, "weight": 1200, "image": "images/items/cmcd.png" },
+        { "name": "Harvest Moon Coffin Kit", "rarity": "mythical", "price": 12000.00, "weight": 1100, "image": "images/items/hmck.png" },
+        { "name": "Stormy 13th Hour Antlers", "rarity": "mythical", "price": 15750.00, "weight": 600, "image": "images/items/s13thha.png" }
+      ]
+    },
+
+        {
       "id": "placeholder",
       "name": "Placeholder",
       "price": 0.03,
