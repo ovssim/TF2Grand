@@ -327,7 +327,7 @@
         { "name": "Strange Frying Pan", "rarity": "strange", "price": 138.60, "weight": 250, "image": "images/items/fryingpan.png" },
         { "name": "Strange Australium Eyelander", "rarity": "strange", "price": 166.73, "weight": 150, "image": "images/items/aussieeyelander.png" },
         { "name": "Ventum Maris Outta Sight", "rarity": "mythical", "price": 243.00, "weight": 25, "image": "images/items/vmos.png" },
-        { "name": "Cloudy Moon Sober Stuntman", "rarity": "mythical", "price": 360.00, "weight": 25, "image": "images/items/mcss.webp" },
+        { "name": "Cloudy Moon Sober Stuntman", "rarity": "mythical", "price": 360.00, "weight": 25, "image": "images/items/cmss.webp" },
         { "name": "Burning Flames Prince Tavish's Crown", "rarity": "mythical", "price": 585.00, "weight": 10, "image": "images/items/bfptsc.png" },
         { "name": "Green Black Hole Hustler's Hallmark", "rarity": "mythical", "price": 675.00, "weight": 10, "image": "images/items/gbhhh.png" }
       ]
