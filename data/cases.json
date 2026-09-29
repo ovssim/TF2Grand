@@ -688,7 +688,7 @@
         { "name": "Ghastly Ghosts Taunt: Meet the Medic", "rarity": "mythical", "price": 126.00, "weight": 1500, "image": "images/items/ggtmtm.png" },
         { "name": "Strange Kritzkrieg", "rarity": "strange", "price": 156.68, "weight": 3000, "image": "images/items/kritzkrieg.png" },
         { "name": "Circling Heart Hong Kong Cone", "rarity": "mythical", "price": 387.00, "weight": 1400, "image": "images/items/chhkc.webp" },
-        { "name": "Cloudy Moon Medic Cap", "rarity": "mythical", "price": 900.00, "weight": 1200, "image": "images/items/cmmc.png" }
+        { "name": "Cloudy Moon Medic Cap", "rarity": "mythical", "price": 900.00, "weight": 1200, "image": "images/items/cmmc.webp" }
       ]
     },
 
