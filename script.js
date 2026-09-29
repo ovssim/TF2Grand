@@ -16,24 +16,28 @@ const PURE_TYPES = {
     id: "maxhead",
     name: "Max's Severed Head",
     value: 72.56,
+    rarity: "mythical",
     image: "images/items/maxhead.png"
   },
   earbuds: {
     id: "earbuds",
     name: "Earbuds",
     value: 18.72,
+    rarity: "rare",
     image: "images/items/earbuds.png"
   },
   key: {
     id: "key",
     name: "Mann Co. Supply Crate Key",
     value: 2.36,
+    rarity: "legendary",
     image: "images/items/key.png"
   },
   refined: {
     id: "refined",
     name: "Refined Metal",
     value: 0.03,
+    rarity: "common",
     image: "images/items/refined.png"
   }
 };
