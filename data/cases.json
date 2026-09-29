@@ -24,7 +24,7 @@
         { "name": "Steaming Katyusha", "rarity": "mythical", "price": 20.00, "weight": 50, "image": "images/items/steamkaty.png" },
         { "name": "Nuts n' Bolts Head Banger", "rarity": "mythical", "price": 20.09, "weight": 50, "image": "images/items/nnbhb.webp" },
         { "name": "Nuts n' Bolts Horror Shawl", "rarity": "mythical", "price": 20.09, "weight": 50, "image": "images/items/horrorshu.webp" },
-        { "name": "Purple Confetti Milkman", "rarity": "mythical", "price": 22.33, "weight": 50, "image": "images/items/pcmilkman.png" }
+        { "name": "Purple Confetti Milkman", "rarity": "mythical", "price": 22.33, "weight": 50, "image": "images/items/pcmilkman.webp" }
       ]
     },
         {
