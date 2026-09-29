@@ -815,7 +815,7 @@ function convertInventoryItem(index) {
 
   if (totalUnits <= 0) {
     siteAlert(
-      `${item.name} is worth ${itemValue.toFixed(2)} coins, but its 75% conversion value is too small to make 1 Refined.`
+      `${item.name} is worth ${itemValue.toFixed(2)} coins, but its 85% conversion value is too small to make 1 Refined.`
     );
     return;
   }
@@ -837,7 +837,7 @@ function convertInventoryItem(index) {
   siteAlert(
     `Converted ${item.name}.\n\n` +
     `Original value: ${itemValue.toFixed(2)} coins\n` +
-    `After 25% fee: ${convertibleValue.toFixed(2)} coins\n` +
+    `After 15% fee: ${convertibleValue.toFixed(2)} coins\n` +
     `Received: ${formatPureBreakdown(breakdown)}\n\n` +
     `Any leftover fractional value is discarded.`
   );
