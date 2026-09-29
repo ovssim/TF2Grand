@@ -568,7 +568,7 @@ function renderPureBalances() {
     const craftRecipe = PURE_CRAFT_RECIPES[id];
 
     entry.innerHTML = `
-      <img src="${pure.image}" alt="${pure.name}">
+      <img class="pure-balance-icon" src="${pure.image}" alt="${pure.name}" width="48" height="48">
       <span>${amount}</span>
       <div class="pure-balance-actions">
         ${craftRecipe ? '<button class="theme-btn pure-craft-btn" type="button">Craft Up</button>' : ''}
