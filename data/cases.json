@@ -776,7 +776,7 @@
         { "name": "Orbiting Fire The Danger", "rarity": "mythical", "price": 61.17, "weight": 12000, "image": "images/items/oftd.webp" },
         { "name": "Cosmic Constellations A Hat to Kill for", "rarity": "mythical", "price": 252.00, "weight": 8300, "image": "images/items/ccahtkf.png" },
         { "name": "Starstorm Slumber Sergant's Drill Hat", "rarity": "mythical", "price": 270.00, "weight": 3150, "image": "images/items/sssdh.png" },
-        { "name": "Cold Cosmos A Hat Outta Hell", "rarity": "mythical", "price": 450.00, "weight": 3000, "image": "images/items/ccahoh.webp" },
+        { "name": "Cold Cosmos Hat Outta Hell", "rarity": "mythical", "price": 450.00, "weight": 3000, "image": "images/items/ccahoh.webp" },
         { "name": "Otherworldly Weather Field Practice", "rarity": "mythical", "price": 540.00, "weight": 3000, "image": "images/items/owfp.png" },
         { "name": "Burning Flames Colonel Kringle", "rarity": "mythical", "price": 855.00, "weight": 3000, "image": "images/items/bfck.webp" },
         { "name": "Tropical Thrill Decorated Veteran", "rarity": "mythical", "price": 900.00, "weight": 2750, "image": "images/items/ttdv.webp" },
