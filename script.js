@@ -64,7 +64,7 @@ const PURE_CRAFT_RECIPES = {
 
 const PURE_CRAFT_ORDER = ["refined", "key", "earbuds", "maxhead"];
 
-const PURE_CONVERSION_RATE = 0.90;
+const PURE_CONVERSION_RATE = 0.85;
 const PURE_STORAGE_KEY = "pures";
 
 // Any fractional/excess value from Pure crafting or conversion is discarded.
