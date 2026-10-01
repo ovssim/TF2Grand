@@ -762,6 +762,21 @@
       ]
     },
        {
+      "id": "edo",
+      "name": "Edo (High)",
+      "price": 158.20,
+      "image": "images/cases/edo.webp",
+      "items": [
+        { "name": "Genuine Sharp Dresser", "rarity": "genuine", "price": 12.96, "weight": 50000, "image": "images/items/sharpdresser.png" },
+        { "name": "Kill-a-Watt Hong Kong Cone", "rarity": "mythical", "price": 162.00, "weight": 35000, "image": "images/items/killahong.png" },
+        { "name": "Death at Dusk", "rarity": "mythical", "price": 217.71, "weight": 7500, "image": "images/items/dadc.png" },
+        { "name": "Cloudy Moon", "rarity": "mythical", "price": 360.00, "weight": 5000, "image": "images/items/cmdm1.webp" },
+        { "name": "Bubbling Noh Mercy", "rarity": "mythical", "price": 1462.50, "weight": 2000, "image": "images/items/bnm.webp" },
+        { "name": "Knifestorm Samur-Eye", "rarity": "mythical", "price": 3150.00, "weight": 500, "image": "images/items/kse.webp" }
+      ]
+    },
+
+       {
       "id": "valor",
       "name": "Valor (HUGE)",
       "price": 192.80,
