@@ -488,7 +488,7 @@
         { "name": "Bill's Hat", "rarity": "legendary", "price": 6.98, "weight": 20000, "image": "images/items/billshat.png" },
         { "name": "Pyrovision Goggles", "rarity": "legendary", "price": 8.50, "weight": 5000, "image": "images/items/pyrovisiongoggles.png" },
         { "name": "Strange Bruiser's Bandanna", "rarity": "strange", "price": 10.35, "weight": 5000, "image": "images/items/bruisersbandanna.png" },
-        { "name": "Earbuds", "rarity": "legendary", "price": 15.65, "weight": 3000, "image": "images/items/earbuds.png" },
+        { "name": "Earbuds", "rarity": "legendary", "price": 14.65, "weight": 3000, "image": "images/items/earbuds.png" },
         { "name": "Tesla Coil Hustler's Hallmark", "rarity": "mythical", "price": 23.27, "weight": 3000, "image": "images/items/tchh.png" },
         { "name": "Bubbling Reggaelator", "rarity": "mythical", "price": 50.02, "weight": 2000, "image": "images/items/br.png" },
         { "name": "Icestruck Chill Chullo", "rarity": "mythical", "price": 100.26, "weight": 430, "image": "images/items/icc.png" },
