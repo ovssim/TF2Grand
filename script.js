@@ -1,6 +1,6 @@
 // =====================  GLOBAL STATE =====================
 let coins = parseFloat(localStorage.getItem("coins"));
-if (isNaN(coins) || coins < 0) coins = 20;
+if (isNaN(coins) || coins < 0) coins = 30;
 
 let inventory = JSON.parse(localStorage.getItem("inventory")) || [];
 let recentDrops = JSON.parse(localStorage.getItem("recentDrops")) || [];
@@ -15,7 +15,7 @@ const PURE_TYPES = {
   maxhead: {
     id: "maxhead",
     name: "Max's Severed Head",
-    value: 75.56,
+    value: 78.56,
     rarity: "mythical",
     image: "images/items/maxhead.png"
   },
@@ -29,7 +29,7 @@ const PURE_TYPES = {
   key: {
     id: "key",
     name: "Mann Co. Supply Crate Key",
-    value: 2.55,
+    value: 2.65,
     rarity: "legendary",
     image: "images/items/key.png"
   },
@@ -47,18 +47,18 @@ const PURE_TYPES = {
 const PURE_CRAFT_RECIPES = {
   key: {
     output: "key",
-    inputs: { refined: 79 },
-    label: "79 Refined → 1 Key"
+    inputs: { refined: 75 },
+    label: "75 Refined → 1 Key"
   },
   earbuds: {
     output: "earbuds",
-    inputs: { key: 7, refined: 74 },
-    label: "7 Keys + 74 Refined → 1 Earbuds"
+    inputs: { key: 7, refined: 64 },
+    label: "7 Keys + 64 Refined → 1 Earbuds"
   },
   maxhead: {
     output: "maxhead",
-    inputs: { earbuds: 3, key: 6, refined: 75 },
-    label: "3 Earbuds + 6 Keys + 75 Refined → 1 Max's Head"
+    inputs: { earbuds: 3, key: 6, refined: 55 },
+    label: "3 Earbuds + 6 Keys + 55 Refined → 1 Max's Head"
   }
 };
 
