@@ -1,6 +1,6 @@
 // =====================  GLOBAL STATE =====================
 let coins = parseFloat(localStorage.getItem("coins"));
-if (isNaN(coins) || coins < 0) coins = 30;
+if (isNaN(coins) || coins < 0) coins = 33;
 
 let inventory = JSON.parse(localStorage.getItem("inventory")) || [];
 let recentDrops = JSON.parse(localStorage.getItem("recentDrops")) || [];
