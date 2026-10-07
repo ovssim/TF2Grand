@@ -7,7 +7,7 @@ let recentDrops = JSON.parse(localStorage.getItem("recentDrops")) || [];
 let cases = [];
 let currentCase = null;
 
-let isSpinning = false;
+let isSpinning = true;
 
 // ===================== PURE SYSTEM =====================
 // Pure values use the site's existing coin values.
