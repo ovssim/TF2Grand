@@ -1418,7 +1418,7 @@ function spinToItem(winningItem) {
     (itemWidth - edgePadding);
 
   const jitter =
-    (Math.random() - 0.5) * 4;
+    (Math.random() - 0.5) * 5;
 
   const offset = -(
     winnerIndex * itemWidth
@@ -1473,7 +1473,7 @@ function spinToItem(winningItem) {
           );
 
         child.style.filter =
-          `grayscale(${(1 - factor) * 77}%) brightness(${0.6 + 0.4 * factor})`;
+          `grayscale(${(1 - factor) * 60}%) brightness(${0.6 + 0.4 * factor})`;
       });
 
     }, 30);
