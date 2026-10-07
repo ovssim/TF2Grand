@@ -1414,11 +1414,11 @@ function spinToItem(winningItem) {
     itemWidth * 0.1;
 
   const randomOffsetInsideItem =
-    (randomSpot - 0.3) *
+    (randomSpot - 0.5) *
     (itemWidth - edgePadding);
 
   const jitter =
-    (Math.random() - 0.5) * 7;
+    (Math.random() - 0.1) * 7;
 
   const offset = -(
     winnerIndex * itemWidth
