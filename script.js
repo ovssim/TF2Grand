@@ -7,7 +7,7 @@ let recentDrops = JSON.parse(localStorage.getItem("recentDrops")) || [];
 let cases = [];
 let currentCase = null;
 
-let isSpinning = true;
+let isSpinning = false;
 
 // ===================== PURE SYSTEM =====================
 // Pure values use the site's existing coin values.
@@ -298,14 +298,14 @@ function setRandomCaseNeonColor() {
 
 async function checkAdminPassword() {
 
-  const password = await sitePrompt("Enter Key:", "", "Trading Passkey");
+  const password = await sitePrompt("Enter Key:", "", "Passkey");
 
   if (password === null) {
     return false;
   }
 
   if (password !== ADMIN_PASSWORD) {
-    siteAlert("Incorrect Trading Passkey.");
+    siteAlert("Incorrect Passkey.");
     return false;
   }
 
@@ -808,7 +808,7 @@ function convertInventoryItem(index) {
     return;
   }
 
-  // 25% conversion fee: only 75% of the item's normal price becomes pure value.
+  // 15% conversion fee: only 85% of the item's normal price becomes pure value.
   const convertibleValue = itemValue * PURE_CONVERSION_RATE;
   const breakdown = calculatePureBreakdown(convertibleValue);
   const totalUnits = Object.values(breakdown).reduce((sum, n) => sum + n, 0);
@@ -1093,7 +1093,7 @@ function coinflipItem(index) {
 
   let flips = 0;
 
-  const totalFlips = 10;
+  const totalFlips = 16;
 
   const flipInterval =
     setInterval(() => {
@@ -1297,7 +1297,7 @@ function openCases(count) {
     return;
   }
 
-  isSpinning = true;
+  isSpinning = false;
 
   for (let i = 0; i < count; i++) {
 
