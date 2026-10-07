@@ -7,7 +7,7 @@ let recentDrops = JSON.parse(localStorage.getItem("recentDrops")) || [];
 let cases = [];
 let currentCase = null;
 
-let isSpinning = true;
+let isSpinning = false;
 
 // ===================== PURE SYSTEM =====================
 // Pure values use the site's existing coin values.
@@ -1297,7 +1297,7 @@ function openCases(count) {
     return;
   }
 
-  isSpinning = false;
+  isSpinning = true;
 
   for (let i = 0; i < count; i++) {
 
