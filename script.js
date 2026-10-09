@@ -1093,7 +1093,7 @@ function coinflipItem(index) {
 
   let flips = 0;
 
-  const totalFlips = 16;
+  const totalFlips = 26;
 
   const flipInterval =
     setInterval(() => {
