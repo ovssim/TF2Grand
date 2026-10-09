@@ -1497,7 +1497,7 @@ function spinToItem(winningItem) {
       } else {
 
         child.style.filter =
-          "grayscale(35%) brightness(0.6)";
+          "grayscale(20%) brightness(0.75)";
       }
     });
 
