@@ -1418,7 +1418,7 @@ function spinToItem(winningItem) {
     (itemWidth - edgePadding);
 
   const jitter =
-    (Math.random() - 0.1) * 9;
+    (Math.random() - 0.1) * 8;
 
   const offset = -(
     winnerIndex * itemWidth
@@ -1525,7 +1525,7 @@ function animateWinner(element) {
 
     if (growing) {
 
-      scale += 0.005;
+      scale += 0.004;
 
       if (scale >= 1.2) {
         growing = false;
@@ -1533,7 +1533,7 @@ function animateWinner(element) {
 
     } else {
 
-      scale -= 0.005;
+      scale -= 0.004;
 
       if (scale <= 1) {
         growing = true;
