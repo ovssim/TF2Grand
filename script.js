@@ -1,4 +1,4 @@
-// =====================  GLOBAL STATE =====================
+// =====================  GLOBAL STATE ===================== 1790
 let coins = parseFloat(localStorage.getItem("coins"));
 if (isNaN(coins) || coins < 0) coins = 33;
 
@@ -1787,7 +1787,7 @@ function waitForCases(cb) {
 
     setTimeout(
       () => waitForCases(cb),
-      150
+      80
     );
 
     return;
