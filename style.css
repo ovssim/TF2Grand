@@ -1100,13 +1100,13 @@ h1 {
 }
 
 #coin.tail {
-  background: #ff7777;
+  background: #00ff00;
 
   transform: rotateY(180deg);
 
   box-shadow:
-    0 0 15px #ff7777,
-    0 0 25px #ffaaaa;
+    0 0 15px #00ff00,
+    0 0 25px #ff4d4d;
 }
 
 /* =========================================================
