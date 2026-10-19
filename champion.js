@@ -2,20 +2,20 @@
    CHAMPION MODE
  */
 
-const CHAMPION_MAX_HP = 1000;
+const CHAMPION_MAX_HP = 777;
 
-const CHAMPION_CRIT_CHANCE = 0.14;
+const CHAMPION_CRIT_CHANCE = 0.05;
 const CHAMPION_CRIT_MULTIPLIER = 3;
 
 const CHAMPION_MISS_CHANCE = 0.1;
 
-const CHAMPION_MINI_CRIT_CHANCE = 0.22;
-const CHAMPION_MINI_CRIT_MULTIPLIER = 2;
+const CHAMPION_MINI_CRIT_CHANCE = 0.33;
+const CHAMPION_MINI_CRIT_MULTIPLIER = 1.33;
 
 
 
-const BOT_MIN_MULTIPLIER = 0.10;
-const BOT_MAX_MULTIPLIER = 1.5;
+const BOT_MIN_MULTIPLIER = 0.25;
+const BOT_MAX_MULTIPLIER = 1.75;
 
 
 
@@ -33,7 +33,7 @@ const CHAMPION_HP_BAR_LENGTH = 20;
 
 const BOT_ITEM_SEARCH_ATTEMPTS = 250;
 
-const BOT_MAX_ITEMS = 20;
+const BOT_MAX_ITEMS = 40;
 
 
 
@@ -207,8 +207,16 @@ const CHAMPION_MISS_PHRASES = [
 
     "completely whiffs the shot!",
     "fires wildly and misses!",
+    "completely whiffs the shot!",
+    "fires wildly and misses!",
+    "fires wildly and misses!",
     "forgot to reload!",
-    "didn't know how to use their weapon!"
+    "forgot to reload!",
+    "forgot to reload!",
+    "didn't know how to use their weapon!",
+    "was shit on by a seagull!",
+    "couldn't aim for shit",
+    "ate their weapon."
 
 ];
 
@@ -2510,7 +2518,7 @@ function championAttack(
     const baseDamage =
         randomInteger(
             10,
-            333
+            303
         );
 
 
