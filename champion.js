@@ -2,7 +2,7 @@
    CHAMPION MODE
  */
 
-const CHAMPION_MAX_HP = 777;
+const CHAMPION_MAX_HP = 125;
 
 const CHAMPION_CRIT_CHANCE = 0.05;
 const CHAMPION_CRIT_MULTIPLIER = 3;
@@ -48,27 +48,27 @@ const BOT_EXPENSIVE_ITEM_BIAS = 1.75;
 
 const CHAMPION_WEAPONS = [
 
-    "Force-a-Nature",
-    "Shortstop",
-    "Minigun",
-    "Shotgun",
-    "Sniper Rifle",
-    "Sentry",
-    "Huntsman",
-    "Syringe Gun",
-    "Loose Cannon",
-    "Frontier Justice",
-    "Awper Hand",
-    "Cow Mangler 5000",
-    "Cleaner's Carbine",
-    "Ambassador",
-    "Lugermorph",
-    "Panic Attack",
-    "Iron Curtain",
-    "Horseless Headless Horsemann's Headtaker",
-    "Direct Hit",
-    "✨Golden Frying Pan",
-    "Holy Mackerel"
+    "The Force-a-Nature",
+    "The Shortstop",
+    "The Minigun",
+    "The Shotgun",
+    "The Sniper Rifle",
+    "The Sentry",
+    "The Huntsman",
+    "The Syringe Gun",
+    "The Loose Cannon",
+    "The Frontier Justice",
+    "The Awper Hand",
+    "The Cow Mangler 5000",
+    "The Cleaner's Carbine",
+    "The Ambassador",
+    "The Lugermorph",
+    "The Panic Attack",
+    "The Iron Curtain",
+    "The Horseless Headless Horsemann's Headtaker",
+    "The Direct Hit",
+    "The ✨Golden Frying Pan",
+    "The Holy Mackerel"
 
 ];
 
@@ -76,109 +76,130 @@ const CHAMPION_WEAPONS = [
 
 const CHAMPION_DAMAGE_PHRASES = {
 
-    "Force-a-Nature": [
+    "The Force-a-Nature": [
         "blasts the enemy for",
-        "meatshots the enemy for"
+        "meatshots the enemy for",
+        "launches the opponent dealing"
     ],
 
-    "Shortstop": [
+    "The Shortstop": [
         "rapid-fires pellets for",
-        "chips away health with"
+        "chips away health dealing"
     ],
 
-    "Minigun": [
+    "The Minigun": [
         "shreds the enemy with",
         "bullets rain and deal"
     ],
 
-    "Holy Mackerel": [
+    "The Holy Mackerel": [
         "smacks the enemy for",
         "fish slaps dealing",
-        "gives a wet whack for"
+        "gives a wet whack for",
+        "chokes the opponents throat with the fish dealing",
+        "lets the fish box the enemy dealing"
     ],
 
-    "Shotgun": [
+    "The Shotgun": [
         "fires a blast for",
-        "lands a direct shot for"
+        "lands a direct shot for",
+        "slams the opponent with a slug dealing"
     ],
 
-    "Sniper Rifle": [
+    "The Sniper Rifle": [
         "takes aim and shoots for",
-        "pierces the enemy for"
+        "pierces the enemy for",
+        "blasts the enemy's head for"
     ],
 
-    "Sentry": [
+    "The Sentry": [
         "auto-locks and fires for",
-        "unleashes bullets for"
+        "unleashes bullets for",
+        "Beeps dealing"
     ],
 
-    "Huntsman": [
+    "The Huntsman": [
         "fires an arrow for",
-        "pins the enemy for"
+        "pins the enemy to a wall for",
+        "closes their eyes and shoots, and lands the shot dealing"
     ],
 
-    "Syringe Gun": [
+    "The Syringe Gun": [
         "fills the enemy with needles for",
-        "shoots fent dealing"
+        "shoots fent dealing",
+        "ignores the fight and chases the buzz dealing"
     ],
 
-    "Loose Cannon": [
+    "The Loose Cannon": [
         "fires an exploding cannonball for",
-        "double donks the enemy for"
+        "double donks the enemy for",
+        "beats the crap out of the enemy for"
     ],
 
-    "Frontier Justice": [
+    "The Frontier Justice": [
         "fires a vengeful blast for",
-        "retaliates for"
+        "retaliates for",
+        "shoots a solid shot for"
     ],
 
-    "Awper Hand": [
+    "The Awper Hand": [
         "headshots for",
-        "fires a charged shot for"
+        "fires a charged shot for",
+        "fires and turns the opponents head into red mist dealing"
     ],
 
-    "Cow Mangler 5000": [
+    "The Cow Mangler 5000": [
         "fires an exploding ray for",
-        "mangles the enemy for"
+        "mangles the enemy for",
+        "shoots a exploding mangler cow dealing"
     ],
 
-    "Cleaner's Carbine": [
+    "The Cleaner's Carbine": [
         "sprays bullets for",
-        "empties a mag into the enemy for"
+        "empties a mag into the enemy for",
+        "showers the enemy with bullets dealing"
     ],
 
-    "Ambassador": [
+    "The Ambassador": [
         "lands a flawless headshot for",
-        "fires a perfect shot for"
+        "fires a perfect shot for",
+        "aims carefully and shoots dealing"
     ],
 
-    "Lugermorph": [
+    "The Lugermorph": [
         "fires a stylish shot for",
-        "fires an accurate shot dealing"
+        "fires an accurate shot dealing",
+        "fires a vintage bullet dealing"
     ],
 
-    "Panic Attack": [
+    "The Panic Attack": [
         "fires wildly for",
-        "fires shot after shot dealing"
+        "fires shot after shot dealing",
+        "shoots a shell dealing"
     ],
 
-    "Iron Curtain": [
+    "The Iron Curtain": [
         "unleashes a wall of bullets for",
-        "riddles the enemy with bullets for"
+        "riddles the enemy with bullets for",
+        "fires madly into the opponent dealing"
     ],
 
-    "Horseless Headless Horsemann's Headtaker": [
+    "The Horseless Headless Horsemann's Headtaker": [
         "decapitates the enemy for",
-        "chops the enemy for"
+        "chops the enemy for",
+        "slashes at the enemy dealing"
     ],
 
-    "Direct Hit": [
+    "The Direct Hit": [
         "lands a direct rocket hit for",
-        "airshots the enemy for"
+        "airshots the enemy for",
+        "blows the enemy up dealing"
     ],
 
-    "✨Golden Frying Pan": [
-        "✨ OBLITERATES reality for"
+    "The ✨Golden Frying Pan": [
+        "✨ hits the opponent  for",
+        "✨ turns the opponent into GOLD for",
+        "✨ Stands menacingly dealing"
     ]
 
 };
@@ -205,6 +226,14 @@ const CHAMPION_MINI_CRIT_PHRASES = [
 
 const CHAMPION_MISS_PHRASES = [
 
+    "completely whiffs the shot!",
+    "fires wildly and misses!",
+    "completely whiffs the shot!",
+    "fires wildly and misses!",
+    "fires wildly and misses!",
+    "forgot to reload!",
+    "forgot to reload!",
+    "forgot to reload!",
     "completely whiffs the shot!",
     "fires wildly and misses!",
     "completely whiffs the shot!",
@@ -2517,8 +2546,8 @@ function championAttack(
 
     const baseDamage =
         randomInteger(
-            10,
-            303
+            1,
+            60
         );
 
 
