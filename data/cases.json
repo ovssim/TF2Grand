@@ -741,7 +741,7 @@
 
         {
       "id": "hellfire",
-      "name": "✵ Hellfire (Big)",
+      "name": "Hellfire (Big)",
       "price": 77.70,
       "image": "images/cases/hellfire.webp",
       "items": [
@@ -854,7 +854,7 @@
 
         {
       "id": "moonlight",
-      "name": "Moonlight (Big)",
+      "name": "✵ Moonlight (Big)",
       "price": 650.00,
       "image": "images/cases/moonlight.webp",
       "items": [
