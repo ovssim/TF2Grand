@@ -70,7 +70,7 @@
         { "name": "Strange Hat Chocolate", "rarity": "strange", "price": 1.97, "weight": 1371, "image": "images/items/hatchoco.png" },
         { "name": "Demoman's Fro", "rarity": "legendary", "price": 2.26, "weight": 1196, "image": "images/items/afro.png" },
         { "name": "Strange Egghead's Overalls", "rarity": "strange", "price": 19.89, "weight": 90, "image": "images/items/egghead.png" },
-        { "name": "Disco Beatdown Hat Chocolate", "rarity": "mythical", "price": 58.74, "weight": 30, "image": "images/items/unuhatchoco.png" },
+        { "name": "Disco Beatdown Hat Chocolate", "rarity": "mythical", "price": 58.74, "weight": 30, "image": "images/items/IMG_0520.webp" },
         { "name": "Collector's Dalokohs Bar", "rarity": "top", "price": 74.32, "weight": 12, "image": "images/items/cocbar.png" }
       ]
     },
@@ -95,8 +95,8 @@
         { "name": "Mann of the Seven Seas", "rarity": "legendary", "price": 7.03, "weight": 1000, "image": "images/items/sevenseas.png" },
         { "name": "Squid's Lid", "rarity": "legendary", "price": 12.50, "weight": 500, "image": "images/items/squidlid.png" },
         { "name": "Cap'n Calamari", "rarity": "legendary", "price": 29.46, "weight": 450, "image": "images/items/capncala.png" },
-        { "name": "Kill-a-Watt Sole Mate", "rarity": "mythical", "price": 41.04, "weight": 10, "image": "images/items/killwatsol.png" },
-        { "name": "Neutron Star Caribbean Conqueror", "rarity": "mythical", "price": 101.35, "weight": 10, "image": "images/items/neutconqu.png" },
+        { "name": "Kill-a-Watt Sole Mate", "rarity": "mythical", "price": 41.04, "weight": 10, "image": "images/items/IMG_0521.webp" },
+        { "name": "Neutron Star Caribbean Conqueror", "rarity": "mythical", "price": 101.35, "weight": 10, "image": "images/items/IMG_0522.webp" },
         { "name": "Circling Heart Neptune's Nightmare", "rarity": "mythical", "price": 212.41, "weight": 10, "image": "images/items/heartnep.webp" },
         { "name": "Burning Flames Cranial Carcharodon", "rarity": "top", "price": 504.00, "weight": 10, "image": "images/items/bfccarach.webp" },
         { "name": "Hat of Undeniable Wealth and Respect", "rarity": "top", "price": 953.79, "weight": 10, "image": "images/items/houwar.png" }
@@ -147,8 +147,8 @@
         { "name": "Moth Plague Horror Shawl", "rarity": "mythical", "price": 20.09, "weight": 1000, "image": "images/items/mphs.png" },
         { "name": "Dead Head", "rarity": "legendary", "price": 38.31, "weight": 150, "image": "images/items/deadhead.png" },
         { "name": "Haunted Wick Head Outta Hell", "rarity": "mythical", "price": 100.89, "weight": 30, "image": "images/items/hwhoh.png" },
-        { "name": "Tesla Coil Voodoo Juju (Slight Return)", "rarity": "top", "price": 162.00, "weight": 10, "image": "images/items/tcvjsr.png" },
-        { "name": "Flaming Lantern Wraith Wrap", "rarity": "top", "price": 288.00, "weight": 10, "image": "images/items/flaminglww.webp" }
+        { "name": "Tesla Coil Voodoo Juju (Slight Return)", "rarity": "top", "price": 162.00, "weight": 10, "image": "images/items/IMG_0523.webp" },
+        { "name": "Flaming Lantern Wraith Wrap", "rarity": "top", "price": 288.00, "weight": 10, "image": "images/items/IMG_0524.webp" }
       ]
     },
         {
@@ -177,11 +177,11 @@
         { "name": "Strange Terror-Antula", "rarity": "strange", "price": 4.12, "weight": 1330, "image": "images/items/terroranchula.png" },
         { "name": "Strange Mr. Quackers", "rarity": "strange", "price": 7.03, "weight": 1330, "image": "images/items/mrquackers.png" },
         { "name": "Aces High Hephaistos' Handcraft", "rarity": "mythical", "price": 23.23, "weight": 200, "image": "images/items/ahhh.webp" },
-        { "name": "White Lightning Highway Star", "rarity": "mythical", "price": 42.32, "weight": 200, "image": "images/items/wlhighwstar.png" },
+        { "name": "White Lightning Highway Star", "rarity": "mythical", "price": 42.32, "weight": 200, "image": "images/items/IMG_0526.png" },
         { "name": "Strange Lucky Cat Hat", "rarity": "strange", "price": 47.50, "weight": 100, "image": "images/items/luckycathat.png" },
-        { "name": "Ring of Fire Vampire Vanquisher", "rarity": "mythical", "price": 74.99, "weight": 300, "image": "images/items/rofvv.png" },
+        { "name": "Ring of Fire Vampire Vanquisher", "rarity": "mythical", "price": 74.99, "weight": 300, "image": "images/items/IMG_0527.webp" },
         { "name": "Celestial Starburst Tanker Top", "rarity": "mythical", "price": 108.85, "weight": 200, "image": "images/items/cstt.png" },
-        { "name": "Brain Drain Defragmenting Hard Hat 17%", "rarity": "top", "price": 131.02, "weight": 110, "image": "images/items/bddfhhet.png" }
+        { "name": "Brain Drain Defragmenting Hard Hat 17%", "rarity": "top", "price": 131.02, "weight": 110, "image": "images/items/IMG_0528.webp" }
       ]
     },
        {
@@ -241,7 +241,7 @@
         { "name": "Galactic Dust Taunt: Fresh Brewed Victory", "rarity": "mythical", "price": 11.46, "weight": 1572, "image": "images/items/gdtfbv.png" },
         { "name": "Gourdian Angel Yule Hog", "rarity": "mythical", "price": 16.06, "weight": 785, "image": "images/items/gayh.png" },
         { "name": "Bubbling Frontier Djustice", "rarity": "mythical", "price": 31.34, "weight": 259, "image": "images/items/bfdj.webp" },
-        { "name": "Miami Nights Fruit Shooter", "rarity": "mythical", "price": 54.93, "weight": 262, "image": "images/items/mnfs.png" },
+        { "name": "Miami Nights Fruit Shooter", "rarity": "mythical", "price": 54.93, "weight": 262, "image": "images/items/IMG_0530.webp" },
         { "name": "Collector's Dalokohs Bar", "rarity": "collector", "price": 74.33, "weight": 255, "image": "images/items/cocbar.png" },
         { "name": "Haunted Ghosts Demoman's Fro", "rarity": "top", "price": 146.85, "weight": 252, "image": "images/items/hgdsf.webp" }
       ]
@@ -298,8 +298,8 @@
         { "name": "Pallet of Crates", "rarity": "legendary", "price": 10.96, "weight": 1500, "image": "images/items/palletofcrates.png" },
         { "name": "Strange Battery Canteen", "rarity": "strange", "price": 16.07, "weight": 1000, "image": "images/items/batterycanteen.png" },
         { "name": "Vivid Plasma Letch's LED", "rarity": "mythical", "price": 43.62, "weight": 300, "image": "images/items/vplsl.webp" },
-        { "name": "Power Surge Tyrantium Helmet", "rarity": "mythical", "price": 92.94, "weight": 250, "image": "images/items/psth.png" },
-        { "name": "Roboactive Metal Slug", "rarity": "top", "price": 216.17, "weight": 100, "image": "images/items/rms.png" }
+        { "name": "Power Surge Tyrantium Helmet", "rarity": "mythical", "price": 92.94, "weight": 250, "image": "images/items/IMG_0531.webp" },
+        { "name": "Roboactive Metal Slug", "rarity": "top", "price": 216.17, "weight": 100, "image": "images/items/IMG_0532.webp" }
       ]
     },
    {
@@ -328,8 +328,8 @@
         { "name": "Strange Australium Eyelander", "rarity": "strange", "price": 166.73, "weight": 150, "image": "images/items/aussieeyelander.png" },
         { "name": "Ventum Maris Outta Sight", "rarity": "mythical", "price": 243.00, "weight": 25, "image": "images/items/vmos.png" },
         { "name": "Cloudy Moon Sober Stuntman", "rarity": "mythical", "price": 360.00, "weight": 25, "image": "images/items/mcss.webp" },
-        { "name": "Burning Flames Prince Tavish's Crown", "rarity": "top", "price": 585.00, "weight": 10, "image": "images/items/bfptsc.png" },
-        { "name": "Green Black Hole Hustler's Hallmark", "rarity": "top", "price": 675.00, "weight": 10, "image": "images/items/gbhhh.png" }
+        { "name": "Burning Flames Prince Tavish's Crown", "rarity": "top", "price": 585.00, "weight": 10, "image": "images/items/IMG_0533.webp" },
+        { "name": "Green Black Hole Hustler's Hallmark", "rarity": "top", "price": 675.00, "weight": 10, "image": "images/items/IMG_0534.webp" }
       ]
     },
       {
