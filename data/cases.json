@@ -771,7 +771,7 @@
         { "name": "Kill-a-Watt Hong Kong Cone", "rarity": "mythical", "price": 162.00, "weight": 35000, "image": "images/items/IMG_0514.webp" },
         { "name": "Nuts N' Bolts Handsome Devil", "rarity": "mythical", "price": 217.71, "weight": 7500, "image": "images/items/IMG_0516.webp" },
         { "name": "Vivid Plasma Onimann", "rarity": "mythical", "price": 360.00, "weight": 5000, "image": "images/items/IMG_0515.webp" },
-        { "name": "Bubbling Noh Mercy", "rarity": "mythical", "price": 1462.50, "weight": 2000, "image": "images/items/IMG_517.webp" },
+        { "name": "Bubbling Noh Mercy", "rarity": "mythical", "price": 1462.50, "weight": 2000, "image": "images/items/IMG_0517.webp" },
         { "name": "Knifestorm Samur-Eye", "rarity": "top", "price": 3150.00, "weight": 500, "image": "images/items/IMG_0518.webp" }
       ]
     },
