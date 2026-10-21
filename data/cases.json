@@ -823,7 +823,7 @@
       "items": [
         { "name": "Festive Flare Gun", "rarity": "legendary", "price": 5.23, "weight": 20005, "image": "images/items/IMG_0556.webp" },
         { "name": "Strange Festive Flamethrower", "rarity": "strange", "price": 51.29, "weight": 20000, "image": "images/items/IMG_0557.webp" },
-        { "name": "Collector's Lollichop", "rarity": "collectors", "price": 120.21, "weight": 20000, "image": "images/items/IMG_0558.webp" },
+        { "name": "Collector's Lollichop", "rarity": "collector", "price": 120.21, "weight": 20000, "image": "images/items/IMG_0558.webp" },
         { "name": "Strange Combustible Cutie", "rarity": "strange", "price": 186.98, "weight": 20000, "image": "images/items/IMG_0559.webp" },
         { "name": "Pyroland Daydream Candy Crown", "rarity": "top", "price": 625.00, "weight": 19995, "image": "images/items/IMG_0560.webp" }
       ]
