@@ -767,12 +767,12 @@
       "price": 158.20,
       "image": "images/cases/edo.webp",
       "items": [
-        { "name": "Genuine Sharp Dresser", "rarity": "genuine", "price": 12.96, "weight": 50000, "image": "images/items/sharpdresser.png" },
-        { "name": "Kill-a-Watt Hong Kong Cone", "rarity": "mythical", "price": 162.00, "weight": 35000, "image": "images/items/killahong.png" },
-        { "name": "Nuts N' Bolts Handsome Devil", "rarity": "mythical", "price": 217.71, "weight": 7500, "image": "images/items/dadc.png" },
-        { "name": "Vivid Plasma Onimann", "rarity": "mythical", "price": 360.00, "weight": 5000, "image": "images/items/cmdm1.webp" },
-        { "name": "Bubbling Noh Mercy", "rarity": "mythical", "price": 1462.50, "weight": 2000, "image": "images/items/bnm.webp" },
-        { "name": "Knifestorm Samur-Eye", "rarity": "top", "price": 3150.00, "weight": 500, "image": "images/items/kse.webp" }
+        { "name": "Genuine Sharp Dresser", "rarity": "genuine", "price": 12.96, "weight": 50000, "image": "images/items/IMG_0519.webp" },
+        { "name": "Kill-a-Watt Hong Kong Cone", "rarity": "mythical", "price": 162.00, "weight": 35000, "image": "images/items/IMG_0514.webp" },
+        { "name": "Nuts N' Bolts Handsome Devil", "rarity": "mythical", "price": 217.71, "weight": 7500, "image": "images/items/IMG_0516.webp" },
+        { "name": "Vivid Plasma Onimann", "rarity": "mythical", "price": 360.00, "weight": 5000, "image": "images/items/IMG_0515.webp" },
+        { "name": "Bubbling Noh Mercy", "rarity": "mythical", "price": 1462.50, "weight": 2000, "image": "images/items/IMG_517.webp" },
+        { "name": "Knifestorm Samur-Eye", "rarity": "top", "price": 3150.00, "weight": 500, "image": "images/items/IMG_0518.webp" }
       ]
     },
 
