@@ -720,11 +720,15 @@ h1 {
 /* ================= SPINNER RARITY COLORS ================= */
 
 .spinner-item.common::before {
-  background: #777;
+  background: #999999;
 }
 
 .spinner-item.rare::before {
   background: #4aa3ff;
+}
+
+.spinner-item.top::before {
+  background: #57f2db;
 }
 
 .spinner-item.strange::before {
@@ -744,15 +748,15 @@ h1 {
 }
 
 .spinner-item.genuine::before {
-  background: #4D7455;
+  background: #45ed58;
 }
 
 .spinner-item.vintage::before {
-  background: #476291;
+  background: #45aaed;
 }
 
 .spinner-item.collector::before {
-  background: #AA0000;
+  background: #f54242;
 }
 
 .spinner-item.haunted::before {
