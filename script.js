@@ -191,7 +191,7 @@ let pures = loadPures();
 
 // ===================== ADMIN PASSWORD =====================
 let adminMode = false;
-const ADMIN_PASSWORD = "zxc";
+const ADMIN_PASSWORD = "feign";
 
 
 // ===================== INIT =====================
