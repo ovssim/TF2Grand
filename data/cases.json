@@ -768,12 +768,12 @@
       "price": 100.00,
       "image": "images/cases/IMG_0555.webp",
       "items": [
-        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 75000, "image": "images/items/ref.png" },
+        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 75000, "image": "images/items/refined.png" },
         { "name": "Strange Corona Australius", "rarity": "strange", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0549.webp" },
         { "name": "Stellar Orbit Antarctic Eyewear", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0553.webp" },
         { "name": "Miami Nights Brotherhood of Arms", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0550.webp" },
-        { "name": "Refracting Fractals Pithy Professional", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0551.webp" },
-        { "name": "White Lightning Mean Captain", "rarity": "top", "price": 252.10, "weight": 5000, "image": "images/items/IMG_0552.webp" }
+        { "name": "Refracting Fractals Pithy Professional", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0552.webp" },
+        { "name": "White Lightning Mean Captain", "rarity": "top", "price": 252.10, "weight": 5000, "image": "images/items/IMG_0551.webp" }
       ]
     },
 
