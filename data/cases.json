@@ -876,6 +876,25 @@
         { "name": "Stormy 13th Hour Antlers", "rarity": "top", "price": 15750.00, "weight": 600, "image": "images/items/s13thha.webp" }
       ]
     },
+  {
+      "id": "highdream",
+      "name": "Highrollers Dream",
+      "price": 844.58,
+      "image": "images/cases/f.webp",
+      "items": [
+        { "name": "Strange Scorch Shot", "rarity": "strange", "price": 0.98, "weight": 2000, "image": "images/items/IMG_0562.webp" },
+        { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 5000, "image": "images/items/blizzardbritches.png" },
+        { "name": "Vicious Vortex Caribou Companion", "rarity": "mythical", "price": 243.00, "weight": 25000, "image": "images/items/IMG_0563.webp" },
+        { "name": "Time Warp Towering Titanium Pillar of Hats", "rarity": "Mythical", "price": 495.00, "weight": 20000, "image": "images/items/IMG_0564.webp" },
+        { "name": "The Ooze Steel Shako", "rarity": "mythical", "price": 495.00, "weight": 20000, "image": "images/items/IMG_0565.webp" },
+        { "name": "Antifreeze Backward Ballcap", "rarity": "mythical", "price": 945.00, "weight": 15000, "image": "images/items/IMG_0566.webp" },
+        { "name": "Darkblaze Hive Minder", "rarity": "mythical", "price": 1395.00, "weight": 6000, "image": "images/items/IMG_0567.webp" },
+        { "name": "Stormy 13th Hour Napper's Respite", "rarity": "mythical", "price": 1440.00, "weight": 4000, "image": "images/items/IMG_0568.webp" },
+        { "name": "Poisoned Shadow Prehistoric Pullover", "rarity": "mythical", "price": 1800.00, "weight": 1000, "image": "images/items/IMG_0569.webp" },
+        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "top", "price": 10625.00, "weight": 1000, "image": "images/items/IMG_0572.webp" },
+        { "name": "Spellbound Crone's Dome", "rarity": "top", "price": 14443.75, "weight": 1000, "image": "images/items/IMG_0570.webp" }
+      ]
+    },
 
         {
       "id": "placeholder",
