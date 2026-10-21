@@ -880,7 +880,7 @@
       "id": "highdream",
       "name": "Highrollers Dream",
       "price": 844.58,
-      "image": "images/cases/f.webp",
+      "image": "images/cases/IMG_0571.webp",
       "items": [
         { "name": "Strange Scorch Shot", "rarity": "strange", "price": 0.98, "weight": 2000, "image": "images/items/IMG_0562.webp" },
         { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 5000, "image": "images/items/blizzardbritches.png" },
