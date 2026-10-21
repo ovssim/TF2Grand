@@ -768,7 +768,7 @@
       "price": 100.00,
       "image": "images/cases/IMG_0555.webp",
       "items": [
-        { "name": "Refined Metal", "rarity": "f", "price": f.00, "weight": 75000, "image": "images/items/ref.png" },
+        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 75000, "image": "images/items/ref.png" },
         { "name": "Strange Corona Australius", "rarity": "strange", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0549.webp" },
         { "name": "Stellar Orbit Antarctic Eyewear", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0553.webp" },
         { "name": "Miami Nights Brotherhood of Arms", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0550.webp" },
