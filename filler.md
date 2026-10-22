@@ -29,3 +29,29 @@ basefiller
         { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.png" }
       ]
     },
+
+     {
+      "id": "f",
+      "name": "f",
+      "price": f,
+      "image": "images/cases/f.webp",
+      "items": [
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" },
+        { "name": "f", "rarity": "f", "price": f.00, "weight": f, "image": "images/items/f.webp" }
+      ]
+    },
+
