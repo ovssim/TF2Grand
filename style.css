@@ -731,6 +731,10 @@ h1 {
   background: #57f2db;
 }
 
+.spinner-item.voro::before {
+  background: #b53e65;
+}
+
 .spinner-item.strange::before {
   background: orange;
 }
@@ -952,6 +956,14 @@ h1 {
   box-shadow: 0 0 14px #57f2db;
 
   color: #57f2db;
+}
+
+.voro {
+  border: 2px solid #b53e65;
+
+  box-shadow: 0 0 16px #b53e65;
+
+  color: #b53e65;
 }
 
 .strange {
