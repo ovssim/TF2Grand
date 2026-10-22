@@ -851,6 +851,25 @@
         { "name": "Sunbeams Texas Slim Dome Shine", "rarity": "top", "price": 4599.25, "weight": 100, "image": "images/items/stsds.webp" }
       ]
     },
+    {
+      "id": "jewjuice",
+      "name": "Juicer (High",
+      "price": 300.00,
+      "image": "images/cases/IMG_0582.webp",
+      "items": [
+        { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 25000, "image": "images/items/refined.png" },
+        { "name": "Mann Co. Supply Crate Key", "rarity": "legendary", "price": 2.25, "weight": 25000, "image": "images/items/key.png" },
+        { "name": "Terror-Watt Team Captain", "rarity": "mythical", "price": 300.00, "weight": 24000, "image": "images/items/IMG_0573.webp" },
+        { "name": "Scorching Flames Coldsnap Cap", "rarity": "mythical", "price": 396.00, "weight": 6500, "image": "images/items/IMG_0574.webp" },
+        { "name": "Misty Skull Firewall Helmet", "rarity": "mythical", "price": 648.00, "weight": 7100, "image": "images/items/IMG_0575.webp" },
+        { "name": "Starlight Haze Cats Pajamas", "rarity": "mythical", "price": 792.00, "weight": 5300, "image": "images/items/IMG_0576.webp" },
+        { "name": "Burning Flames Brotherhood of Arms", "rarity": "mythical", "price": 1000.00, "weight": 5500, "image": "images/items/IMG_0577.webp" },
+        { "name": "Chiroptera Venenata Noble Nickle Amassment of Hats", "rarity": "mythical", "price": 1458.00, "weight": 950, "image": "images/items/IMG_0578.webp" },
+        { "name": "Sunbeams Pyromancer's Mask", "rarity": "mythical", "price": 1800.00, "weight": 200, "image": "images/items/IMG_0579.webp" },
+        { "name": "Misty Skull Master's Yellow Belt", "rarity": "top", "price": 2250.00, "weight": 300, "image": "images/items/IMG_0580.webp" },
+        { "name": "Scorching Flames Head Prize", "rarity": "top", "price": 3149.00, "weight": 150, "image": "images/items/IMG_0581.webp" }
+      ]
+    },
 
         {
       "id": "moonlight",
