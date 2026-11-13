@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#141014" name="theme-color"/>
+<meta content="TF2GRAND — a Team Fortress 2-inspired, play-money case and battle simulator." name="description"/>
+<title>TF2GRAND | Supply Depot</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="script.js"></script>
+<script defer="" src="champion.js"></script>
+<script defer="" src="blackjack-rewards.js"></script>
+<script defer="" src="casebattle.js"></script></head>
+<body>
+<a class="skip-link" href="#case-section">Skip to cases</a>
+<div aria-hidden="true" class="site-backdrop"></div>
+<header class="site-header">
+<div class="header-inner">
+<a aria-label="TF2GRAND home" class="brand" href="#top">
+<span aria-hidden="true" class="brand-mark poker-chip-mark"><span class="chip-inner">TF<span>2</span></span></span>
+<span class="brand-wordmark">TF2<span>GRAND</span><small>SUPPLY DEPOT · EST. 2026</small></span>
+</a>
+<nav aria-label="Main navigation" class="nav-links">
+<a class="active" href="#case-section">Cases</a>
+<a href="#inventory-section">Backpack</a><a href="#rewards-section">Rewards</a>
+<a href="#games-section">Games</a>
+<a href="#champion-section">Champion</a>
+<a href="#pure-currency-section">Pure</a>
+</nav>
+<div aria-label="Current virtual balance" class="header-wallet">
+<span class="wallet-label">WALLET</span>
+<div aria-live="polite" class="wallet-balance" id="coins">⛃ 20.00</div>
+</div>
+</div>
+</header>
+<main class="site-shell" id="top">
+<div class="notice-bar"><span class="notice-dot"></span> FREE-PLAY SIMULATOR <span class="notice-sep">/</span> VIRTUAL ITEMS &amp; CURRENCY ONLY <span class="notice-sep">/</span> FAN PROJECT, NOT AFFILIATED WITH VALVE</div>
+<section aria-label="Introduction and account controls" class="intro-grid">
+<div class="intro-copy">
+<div class="eyebrow">MANN CO. INSPIRED / CUSTOM CASE BATTLES</div>
+<h1>UNBOX YOUR<br/><em>NEXT LEGEND.</em></h1>
+<p>Unbox custom cases, battle aquatic rivals, play Blackjack and Case Battles, and level up your reward pathway.</p>
+<div class="intro-actions">
+<a class="primary-link" href="#case-section">EXPLORE CASES <span aria-hidden="true">↗</span></a>
+<a class="secondary-link" href="#games-section">VIEW GAME MODES</a>
+</div>
+</div>
+<div class="account-panel panel">
+<div class="panel-topline"><span class="label-caps">YOUR DEPOT</span><span class="mini-live"><span></span> LOCAL SAVE</span></div>
+<div class="account-stat-row"><div><span class="tiny-label">BACKPACK VALUE</span><strong id="backpack-value">⛃ 0.00</strong></div><div><span class="tiny-label">ITEMS OWNED</span><strong id="inventory-count">0</strong></div></div>
+<div class="wallet-controls" id="controls">
+<button class="theme-btn" id="add-coins-btn" type="button">+ ADD DEMO COINS</button>
+<button class="theme-btn" id="remove-coins-btn" type="button">− REMOVE COINS</button>
+<button class="theme-btn" id="admin-give-btn" type="button">TRADE SHOP</button>
+<button class="theme-btn secondary" id="toggle-inv-btn" type="button">ODDS &amp; FAIRNESS</button>
+<button class="theme-btn secondary" id="export-save-btn" type="button">↓ BACKUP SAVE</button>
+<button class="theme-btn secondary" id="import-save-btn" type="button">↑ IMPORT SAVE</button>
+<input accept=".json,application/json" hidden="" id="import-save-input" type="file"/>
+</div>
+<p class="panel-footnote">Everything is stored in this browser. No real deposits, withdrawals, or tradable items.</p>
+</div>
+</section>
+<section aria-labelledby="rewards-title" class="feature-section panel rewards-section" id="rewards-section">
+<div class="section-heading"><div><div class="eyebrow">02 / THE REWARD ROAD</div><h2 id="rewards-title">REWARD <span class="title-spark">PATHWAY</span></h2><p>Every virtual coin of case cost or game wager builds your XP. Higher levels require exponentially more experience; every 20 levels unlocks a stronger bonus case.</p></div><span class="section-counter">MILESTONE REWARDS</span></div>
+<div class="reward-summary">
+<div class="reward-level-disc"><span>LEVEL</span><strong id="reward-level">1</strong></div>
+<div class="reward-progress-wrap"><div class="reward-progress-copy"><strong id="reward-level-title">NEW RECRUIT</strong><span id="reward-xp-label">0 / 85 XP</span></div><div aria-label="Experience toward next level" aria-valuemax="85" aria-valuemin="0" aria-valuenow="0" class="reward-progress-track" id="reward-progress-track" role="progressbar"><div id="reward-progress-fill"></div></div><p>Earn 10 XP per ⛃ 1.00 spent on opening cases, item wagers, or coin wagers. Claim rewards at every fifth level.</p></div>
+<div class="reward-spend-summary"><span>ALL-TIME SPEND</span><strong id="reward-total-spent">⛃ 0.00</strong><small>virtual coins / item values</small></div>
+</div>
+<div class="reward-pathway-top"><h3>YOUR NEXT CHECKPOINTS</h3><span>COIN BONUSES EVERY 5 · BONUS CASES AT 20 / 40 / 60...</span></div>
+<div aria-live="polite" class="reward-milestones" id="reward-milestones"><div class="empty-small">Loading reward track...</div></div>
+<div class="reward-claim-message" id="reward-claim-message" role="status">Spend virtual currency to unlock the next reward.</div>
+</section>
+<section aria-labelledby="case-title" class="feature-section panel" id="case-section">
+<div class="section-heading"><div><div class="eyebrow">01 / THE ARMORY</div><h2 id="case-title">CASE OPENING <span class="title-spark">✳</span></h2><p>Find your next drop. Exact chances are based on each case's listed weights.</p></div><span class="section-counter" id="case-count-badge">LOADING CASES</span></div>
+<div class="case-toolbar">
+<div class="toolbar-search-wrap"><label class="sr-only" for="case-search">Search cases</label><input autocomplete="off" class="site-input" id="case-search" placeholder="Search case names..." type="search"/></div>
+<label class="sr-only" for="case-order">Sort cases</label>
+<select class="site-select" id="case-order"><option value="price-asc">Price: Low → High</option><option value="price-desc">Price: High → Low</option><option value="name">Name: A → Z</option></select>
+</div>
+<div class="case-picker-area"><div class="picker-label">SELECTED CASE</div><div class="custom-dropdown"><button aria-controls="case-select-options" aria-expanded="false" id="case-select-display" type="button"><span class="picker-placeholder">Loading case library...</span></button><div aria-label="Available cases" id="case-select-options" role="listbox"></div></div></div>
+<div class="case-stage">
+<div class="case-art"><div aria-hidden="true" class="case-art-grid"></div><div aria-hidden="true" class="case-art-orbit"></div><img alt="Selected case" id="case-image" loading="eager" src=""/><span class="art-caption">CLASSIFIED GOODS / HANDLE WITH CARE</span></div>
+<div class="case-details"><div class="label-caps accent">SUPPLY CRATE #<span id="case-current-index">001</span></div><h3 id="case-name">Loading cases...</h3><p id="case-description">Select a case to inspect its potential rewards and open it.</p><div class="case-stat-pair"><div><span class="tiny-label">POTENTIAL DROPS</span><strong id="case-item-count">—</strong></div><div><span class="tiny-label">TOP ITEM VALUE</span><strong id="case-top-value">—</strong></div></div><button class="cta-btn" disabled="" id="open-btn" type="button"><span>OPEN CASE</span><b id="case-open-price">⛃ —</b></button><button aria-expanded="false" class="text-btn" id="show-case-items-btn" type="button">VIEW ALL POTENTIAL DROPS <span aria-hidden="true">⌄</span></button></div>
+</div>
+<div class="case-drop-grid" hidden="" id="case-items-list"></div>
+<div class="spinner-area"><div class="spinner-label-row"><span class="label-caps">UNBOXING REEL</span><span class="spinner-instruction">STOP ON THE CENTER LINE</span></div><div id="spinner-wrapper"><div id="spinner-container"><div id="spinner-strip"></div></div></div><div aria-live="polite" id="winner-name" role="status"><span class="winner-idle">YOUR NEXT DROP AWAITS</span></div></div>
+</section>
+<section aria-labelledby="inventory-title" class="feature-section" id="inventory-section">
+<div class="section-heading"><div><div class="eyebrow">02 / YOUR COLLECTION</div><h2 id="inventory-title">BACKPACK</h2><p>Manage your loot, favorite rare finds, or scrap items for coins.</p></div><span class="section-counter" id="inventory-total-label">0 ITEMS</span></div>
+<div class="inventory-toolbar panel"><label class="sr-only" for="inventory-search">Search backpack</label><input class="site-input" id="inventory-search" placeholder="Search items..." type="search"/><label class="sr-only" for="inventory-rarity">Filter by rarity</label><select class="site-select" id="inventory-rarity"><option value="all">All qualities</option><option value="favorites">★ Favorites</option><option value="unusual">Unusual / Mythical</option><option value="strange">Strange</option><option value="legendary">Legendary</option><option value="other">Other</option></select><button class="theme-btn" id="sort-inv-btn" type="button">PRICE: HIGH ↓</button><button class="theme-btn" id="refresh-inventory-btn" type="button">↻ REFRESH</button><button class="theme-btn danger" id="sell-all-btn" type="button">SCRAP UNLOCKED</button></div>
+<div aria-live="polite" class="item-grid" id="inventory"></div>
+</section>
+<section aria-labelledby="pure-title" class="feature-section panel" id="pure-currency-section"><div class="section-heading"><div><div class="eyebrow">03 / CURRENCY WORKSHOP</div><h2 id="pure-title">PURE STORAGE</h2><p>Convert inventory items into Pure. Craft tiers or withdraw them into the backpack.</p></div><span class="section-counter">85% ITEM CONVERSION</span></div><div class="pure-grid" id="pure-balances"></div><p class="panel-footnote">Pure is virtual. Item conversions apply a 15% fee, rounded down to whole units. Recipes use this simulator's custom values.</p></section>
+<section aria-labelledby="games-title" class="feature-section" id="games-section"><div class="section-heading"><div><div class="eyebrow">04 / THE FLOOR</div><h2 id="games-title">GAME MODES</h2><p>Choose a mode using the tabs below. Every match uses virtual TF2 items and coins.</p></div></div>
+<div aria-label="Game mode" class="mode-switcher" role="tablist">
+<button aria-controls="coinflip-section" aria-selected="true" class="mode-tab active" data-game-tab="coinflip" id="tab-coinflip" role="tab" tabindex="0"><span class="mode-tab-symbol">◉</span> COINFLIP <small>50/50 DUEL</small></button>
+<button aria-controls="upgrader-section" aria-selected="false" class="mode-tab" data-game-tab="upgrader" id="tab-upgrader" role="tab" tabindex="-1"><span class="mode-tab-symbol">↗</span> UPGRADER <small>RISK &amp; REWARD</small></button><button aria-controls="blackjack-section" aria-selected="false" class="mode-tab" data-game-tab="blackjack" id="tab-blackjack" role="tab" tabindex="-1"><span class="mode-tab-symbol">♠</span> BLACKJACK <small>BEAT THE DEALER</small></button>
+<button aria-controls="casebattle-section" aria-selected="false" class="mode-tab" data-game-tab="casebattle" id="tab-casebattle" role="tab" tabindex="-1"><span class="mode-tab-symbol">▣</span> CASE BATTLE <small>GROUP UNBOXING</small></button><button aria-controls="champion-section" aria-selected="false" class="mode-tab" data-game-tab="champion" id="tab-champion" role="tab" tabindex="-1"><span class="mode-tab-symbol">⚔</span> CHAMPION <small>FIGHT FISHBOT</small></button>
+</div>
+<div class="games-grid">
+<section aria-labelledby="tab-coinflip" class="panel game-mode-panel coinflip-mode" data-mode="coinflip" id="coinflip-section" role="tabpanel">
+<div class="game-mode-header"><div><div class="eyebrow">THE DUEL / HEADS OR TAILS</div><h3>COINFLIP <span class="mode-light">ARENA</span></h3><p>Stake one or more backpack items. FishBot matches your stake with a reward worth 75–125% of its value. Win and keep your stake plus the reward; lose and forfeit your stake.</p></div><span class="game-tag">50% WIN CHANCE</span></div>
+<div class="coinflip-arena">
+<div class="coinflip-combatant player-combatant"><div class="coinflip-ring"><span aria-hidden="true">★</span></div><div class="coinflip-duelist-name">YOU <small>CHALLENGER</small></div><div class="coinflip-duelist-value" id="coinflip-wager-value">⛃ 0.00</div><div class="coinflip-stakes-caption">YOUR WAGER <span id="coinflip-wager-count">0 ITEMS</span></div><div class="duel-items" id="coinflip-selected-items"><div class="duel-empty">Select items below</div></div></div>
+<div class="coinflip-animation-station"><div class="duel-odds"><span>50%</span><small>VS</small><span>50%</span></div><div id="coin-container"><div aria-label="Spinning coin" id="coin"><div class="head"><strong>★</strong><span>WIN</span></div><div class="tail"><strong>✕</strong><span>LOSE</span></div></div></div><div class="coinflip-live-status" id="coinflip-status" role="status">SELECT YOUR WAGER</div><button class="cta-btn compact" disabled="" id="coinflip-btn" type="button">◉ FLIP THE COIN</button><p class="tiny-fairness">Browser-generated 50/50 result · virtual rewards only</p></div>
+<div class="coinflip-combatant bot-combatant"><div class="coinflip-ring"><span aria-hidden="true">🐟</span></div><div class="coinflip-duelist-name"><span id="coinflip-rival-name">FISHBOT</span><small>OPPONENT</small></div><div class="coinflip-duelist-value" id="coinflip-bot-value">⛃ 0.00</div><div class="coinflip-stakes-caption">MATCHING REWARDS <span id="coinflip-bot-count">0 ITEMS</span></div><div class="duel-items" id="coinflip-bot-items"><div class="duel-empty">FishBot awaits a wager</div></div></div>
+</div>
+<div class="coinflip-inventory-panel"><div class="wager-side-head"><div><h4>YOUR BACKPACK</h4><p>Click items to add or remove them from your wager. Favorites and Pure are protected.</p></div><span id="coinflip-selection-label">0 SELECTED</span></div><div class="coinflip-items-controls"><input aria-label="Search coinflip items" class="site-input" id="coinflip-search" placeholder="Search your available items..." type="search"/><button class="theme-btn" id="coinflip-clear-btn" type="button">CLEAR WAGER</button></div><select aria-label="Selected coinflip item (compatibility)" hidden="" id="coinflip-select"></select><div class="duel-inventory-grid" id="coinflip-item-list"></div></div>
+</section>
+<section aria-labelledby="tab-upgrader" class="panel game-mode-panel upgrader-mode" data-mode="upgrader" hidden="" id="upgrader-section" role="tabpanel">
+<div class="game-mode-header"><div><div class="eyebrow">THE MACHINE / PICK YOUR LUCK</div><h3>ITEM <span class="mode-light">UPGRADER</span></h3><p>Choose wager items and a target prize. The orange arc is the winning area; drag it anywhere on the ring. The pointer spins and stops at the actual random result.</p></div><span class="game-tag">95% RETURN FACTOR</span></div>
+<div class="upgrade-stage">
+<div class="upgrade-stage-side"><div class="stage-meta">YOUR DEPOSIT <span id="upgrade-wager-count">0 ITEMS</span></div><div class="stage-amount" id="upgrade-wager-total">⛃ 0.00</div><div class="upgrade-selected-preview" id="upgrade-wager-preview"><div class="duel-empty">No wager selected</div></div></div>
+<div class="upgrade-dial-station"><div aria-label="Winning arc start position" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="upgrade-circle neutral" id="upgrade-circle" role="slider" tabindex="0"><div class="upgrade-dial-inner"><strong id="upgrade-circle-text">0.00%</strong><span>WIN CHANCE</span><small id="upgrade-value">0.00 ⛃ → 0.00 ⛃</small></div><div aria-hidden="true" id="upgrade-pointer-rotor"><span class="upgrade-pointer-tip">▼</span></div></div><div class="upgrade-chance-label" id="upgrade-chance">CHANCE: 0.00%</div><label class="upgrade-zone-label" for="upgrade-zone-slider">WIN ZONE POSITION <strong id="upgrade-zone-value">0%</strong></label><input class="upgrade-zone-slider" id="upgrade-zone-slider" max="100" min="0" step="0.1" type="range" value="0"/><p class="upgrade-zone-help">Drag the arc or use the slider to move the winning segment. Its size is fixed by your odds.</p></div>
+<div class="upgrade-stage-side"><div class="stage-meta">TARGET REWARDS <span id="upgrade-target-count">0 ITEMS</span></div><div class="stage-amount" id="upgrade-target-total">⛃ 0.00</div><div class="upgrade-selected-preview" id="upgrade-target-preview"><div class="duel-empty">No target selected</div></div></div>
+</div>
+<div hidden="" id="chance-bar"><div id="chance-fill"></div></div><div hidden="" id="upgrade-circle-fill"></div><div hidden="" id="upgrade-bar"><div id="upgrade-fill"></div></div>
+<div class="upgrade-result-status" id="upgrade-result-status" role="status">Select your items to calculate a chance.</div>
+<button class="cta-btn upgrade-action" disabled="" id="upgrade-btn" type="button">⚡ ATTEMPT UPGRADE</button>
+<div class="upgrade-inventory-panels" id="upgrader-ui"><div class="upgrader-side"><div class="wager-side-head"><h4>YOUR INVENTORY</h4><button class="small-link" id="load-wager-btn" type="button">↻ REFRESH</button></div><input aria-label="Search upgrader wager items" class="site-input" id="upgrade-wager-search" placeholder="Search your items..." type="search"/><div class="upgrade-list" id="wager-list"></div></div><div class="upgrader-side"><div class="wager-side-head"><h4>SELECT REWARD ITEMS</h4><button class="small-link" id="load-target-btn" type="button">↻ REFRESH</button></div><div class="upgrade-target-tools"><input aria-label="Search upgrader rewards" class="site-input" id="upgrade-target-search" placeholder="Search rewards..." type="search"/><select aria-label="Sort target items" class="site-select" id="upgrade-target-sort"><option value="price-desc">PRICE ↓</option><option value="price-asc">PRICE ↑</option></select></div><div class="upgrade-list" id="target-list"></div></div></div>
+</section>
+<section aria-labelledby="tab-blackjack" class="panel game-mode-panel blackjack-mode" data-mode="blackjack" hidden="" id="blackjack-section" role="tabpanel">
+<div class="game-mode-header"><div><div class="eyebrow">21 / THE DEEP-SEA TABLE</div><h3>BLACK<span class="mode-light">JACK</span> <span class="bj-suit">♠</span></h3><p>Wager coins, backpack items, or both. Beat the dealer without going over 21. A win returns your stake plus coin winnings and matched item rewards.</p></div><span class="game-tag">DEALER STANDS ON 17</span></div>
+<div class="blackjack-table">
+<div class="bj-table-felt">
+<div class="bj-hand-head"><span class="bj-person-tag">THE DEALER <strong id="bj-dealer-name">LOBSTER LARRY</strong></span><span class="bj-hand-score" id="bj-dealer-score">—</span></div>
+<div class="bj-playing-cards" id="bj-dealer-cards"><div class="bj-table-placeholder">Dealer cards appear here</div></div>
+<div class="bj-center-status" id="bj-status" role="status">PLACE YOUR WAGER TO BEGIN</div>
+<div class="bj-playing-cards" id="bj-player-cards"><div class="bj-table-placeholder">Your cards appear here</div></div>
+<div class="bj-hand-head bj-bottom-hand"><span class="bj-person-tag">THE CHALLENGER <strong>YOU</strong></span><span class="bj-hand-score" id="bj-player-score">—</span></div>
+</div>
+<div class="bj-wager-controls">
+<div class="bj-bet-summary"><div><span class="tiny-label">COINS AT STAKE</span><label class="sr-only" for="bj-coin-bet">Wager virtual coins</label><div class="bj-coin-input-row"><input class="site-input" id="bj-coin-bet" min="0" placeholder="0.00" step="0.01" type="number" value="0"/><button class="theme-btn secondary" id="bj-max-coins" type="button">MAX</button></div></div><div><span class="tiny-label">ITEMS AT STAKE</span><strong id="bj-item-bet-value">⛃ 0.00</strong><small id="bj-item-count">0 ITEMS</small></div><div><span class="tiny-label">TOTAL WAGER</span><strong id="bj-total-bet-value">⛃ 0.00</strong></div></div>
+<div class="bj-game-buttons"><button class="cta-btn" id="bj-deal" type="button">♠ DEAL CARDS</button><button class="theme-btn" disabled="" id="bj-hit" type="button">+ HIT</button><button class="theme-btn" disabled="" id="bj-stand" type="button">◼ STAND</button></div>
+<div class="bj-current-wager" id="bj-current-wager"><div class="empty-small">Select wager items from below or enter coins.</div></div>
+<p class="bj-rules">Blackjack pays 3:2 coin profit; other wins pay 1:1. On wins, item wagers are returned with bonus items worth approximately 75–125% of the wager value. Ties return the original stake. Four-deck shuffled shoe; dealer stands on soft 17.</p>
+</div>
+</div>
+<div class="bj-inventory-panel"><div class="wager-side-head"><div><h4>SELECT ITEMS TO WAGER</h4><p>Favorite and Pure items are protected. Your wager is removed only after you deal.</p></div><span id="bj-selected-label">0 SELECTED</span></div><div class="coinflip-items-controls"><input aria-label="Search blackjack wager items" class="site-input" id="bj-search" placeholder="Search your backpack..." type="search"/><button class="theme-btn" id="bj-clear" type="button">CLEAR ITEMS</button></div><div class="duel-inventory-grid" id="bj-item-list"></div></div>
+</section>
+<section aria-labelledby="tab-casebattle" class="panel game-mode-panel casebattle-mode" data-mode="casebattle" hidden="" id="casebattle-section" role="tabpanel">
+<div class="game-mode-header"><div><div class="eyebrow">THE VAULT / BOT SHOWDOWN</div><h3>CASE <span class="mode-light">BATTLES</span></h3><p>Build a sequence of any cases, including duplicates. Each participant automatically opens the same case each round. Highest unboxed value wins — unless Cursed is enabled.</p></div><span class="game-tag">SIMULATED BOTS · VIRTUAL COINS</span></div>
+<div class="cb-setup" id="cb-setup">
+<div class="cb-options">
+<div class="cb-options-header"><h4>MATCH SETTINGS</h4><span class="cb-step-label">01 / CHOOSE THE FORMAT</span></div>
+<div class="cb-options-grid">
+<div class="cb-field"><label for="cb-mode">BATTLE FORMAT</label><select class="site-select" id="cb-mode"><option value="regular">Regular — You vs bots</option><option value="team2">Teams — You + 1 vs 2</option><option value="team3">Teams — You + 2 vs 3</option></select></div>
+<div class="cb-field" id="cb-bots-field"><label for="cb-bots">BOT OPPONENTS</label><select class="site-select" id="cb-bots"><option value="1">1 BOT</option><option value="2">2 BOTS</option><option value="3">3 BOTS</option><option value="4">4 BOTS</option><option value="5">5 BOTS</option></select></div>
+</div>
+<div class="cb-modifier-row">
+<label class="cb-modifier"><input id="cb-shared" type="checkbox"/><span class="cb-modifier-icon">◎</span><span><strong>SHARED</strong><small>Regular: split the total loot value between everyone. Teams: winner's team splits its payout.</small></span></label>
+<label class="cb-modifier"><input id="cb-cursed" type="checkbox"/><span class="cb-modifier-icon">☠</span><span><strong>CURSED</strong><small>Lowest total value wins, instead of highest.</small></span></label>
+</div>
+<div class="cb-rules"><span>▣ Each case costs its usual price once per round</span><span>◉ Each participant receives an independent weighted roll</span><span>⛃ Payouts are virtual coins, not physical items</span></div>
+</div>
+<div class="cb-case-builder">
+<div class="cb-options-header"><h4>ADD CASES</h4><span class="cb-step-label">02 / BUILD YOUR ROUNDS</span></div>
+<div class="cb-case-controls"><input aria-label="Search cases for battle" class="site-input" id="cb-case-search" placeholder="Search your custom cases..." type="search"/><label for="cb-add-qty">ADD EACH</label><input aria-label="Number of copies to add" class="site-input" id="cb-add-qty" min="1" step="1" type="number" value="1"/></div>
+<div aria-label="Available cases" class="cb-case-catalog" id="cb-case-catalog"></div>
+</div>
+<div class="cb-lineup-builder">
+<div class="cb-options-header"><h4>CASE LINEUP <span id="cb-round-count">0 ROUNDS</span></h4><button class="theme-btn secondary" id="cb-clear" type="button">CLEAR</button></div>
+<p class="cb-lineup-help">Cases open from left to right, in order. Add duplicates or reorder any round below.</p>
+<div class="cb-queue" id="cb-queue"><div class="empty-small">Add a case above to begin.</div></div>
+<div class="cb-entry-footer"><div><span>ENTRY COST</span><strong id="cb-cost">⛃ 0.00</strong><small>Deducted when battle starts</small></div><div><span>CHALLENGERS</span><strong id="cb-participants">YOU + 1 BOT</strong><small id="cb-team-preview">REGULAR · FREE-FOR-ALL</small></div></div>
+<div class="cb-start-row"><label class="cb-fast-label"><input id="cb-fast" type="checkbox"/> FAST ANIMATIONS</label><button class="cta-btn" disabled="" id="cb-start" type="button">⚔ START CASE BATTLE</button></div>
+</div>
+</div>
+<div class="cb-arena" hidden="" id="cb-arena">
+<div class="cb-arena-head"><div><span class="eyebrow">LIVE CASE BATTLE</span><h4 id="cb-round-label">ROUND 1 OF 1</h4><span id="cb-current-case">PREPARING...</span></div><div class="cb-arena-tags"><span id="cb-format-tag">REGULAR</span><span id="cb-modifier-tags">STANDARD</span></div></div>
+<div class="cb-team-totals" hidden="" id="cb-team-totals"></div>
+<div class="cb-players" id="cb-players"></div>
+<div class="cb-arena-progress"><div class="cb-progress-track"><div id="cb-progress-fill"></div></div><span id="cb-progress-label">0 / 0 ROUNDS</span></div>
+<div class="cb-history-block"><h4>ROUND HISTORY</h4><div class="cb-history" id="cb-history"></div></div>
+<div class="cb-result" hidden="" id="cb-result"><h3 id="cb-result-heading">BATTLE FINISHED</h3><p id="cb-result-description"></p><div id="cb-result-breakdown"></div><button class="cta-btn compact" id="cb-again" type="button">SET UP ANOTHER BATTLE</button></div>
+<p class="cb-running-note" id="cb-running-note">Cases open automatically. Leaving or refreshing during a battle cancels it and refunds the entry cost on your next visit.</p>
+</div>
+</section>
+
+<section aria-labelledby="tab-champion" class="feature-section panel champion-section game-mode-panel" data-mode="champion" hidden="" id="champion-section" role="tabpanel"><div class="section-heading"><div><div class="eyebrow">05 / THE ARENA</div><h2 id="champion-title">⚔ CHAMPION MODE</h2><p>Secure the throne. Stake items and virtual coins against the infamous FishBot.</p></div><span class="section-counter">PVE DUEL</span></div>
+<div class="champion-layout" id="champion-menu">
+<div class="champion-wager-box"><div class="champion-box-title"><h3>YOUR WAGER</h3><strong id="champion-wager-value">0.00 ⛃</strong></div><div class="champion-coin-wager"><label class="sr-only" for="champion-coin-input">Coins to wager</label><input class="site-input" id="champion-coin-input" min="0" placeholder="Coin amount" step="0.01" type="number"/><button class="theme-btn" id="champion-add-coins" type="button">SET COINS</button></div><div class="champion-item-wager"><div class="wager-side-head"><h4>ITEM WAGER</h4><button class="small-link" id="champion-refresh-inventory" type="button">↻ REFRESH</button></div><div class="champion-scroll-area" id="champion-item-list"></div></div><div id="champion-selected-wager"><div class="wager-side-head"><h4>SELECTED</h4></div><div id="champion-selected-items"><div class="empty-small">No wager selected.</div></div></div><button class="cta-btn" id="champion-start-btn" type="button">CHALLENGE FISHBOT <span>⚔</span></button></div>
+<div class="champion-preview"><div aria-hidden="true" class="champion-art"><span>VS</span><div class="champion-avatar player-avatar">🏆</div><div class="champion-avatar bot-avatar">🐟</div></div><h3>THE RULES OF THE ARENA</h3><p>Each fighter has 125 HP. Take turns attacking with random TF2 weapons. Critical hits, mini-crits, and misses keep the battle unpredictable.</p><div class="champion-rules"><div><strong>125</strong><span>STARTING HP</span></div><div><strong>5%</strong><span>CRIT CHANCE</span></div><div><strong>10%</strong><span>MISS CHANCE</span></div></div><div hidden="" id="champion-bot-preview"><div class="wager-side-head"><h4>🐟 FISHBOT'S WAGER</h4><strong id="champion-bot-value">0.00 ⛃</strong></div><div class="champion-scroll-area" id="champion-bot-items"></div></div></div>
+</div>
+<div hidden="" id="champion-battle">
+<div class="arena-stage">
+<div class="arena-fighter arena-player"><div class="arena-hp-overline"><span>CHAMPION HP</span><strong id="champion-player-hp-text">125 / 125 HP</strong></div><div class="arena-hp-ring player"><svg aria-hidden="true" viewbox="0 0 180 180"><circle class="arena-hp-base" cx="90" cy="90" r="76"></circle><circle class="arena-hp-progress" cx="90" cy="90" id="champion-player-ring" r="76"></circle></svg><div class="arena-hp-core">🏆<small>YOU</small></div></div><h3>CHAMPION</h3><div class="arena-coin-value" id="champion-battle-player-stake">0.00 ⛃</div><div class="sr-only" id="champion-player-hp-bar"></div></div>
+<div class="arena-combat-center"><span class="arena-round-caption">⚔ THE ARENA ⚔</span><div class="arena-vs">VS</div><div id="champion-battle-status" role="status">Preparing battle...</div><div aria-live="polite" id="champion-battle-log"></div></div>
+<div class="arena-fighter arena-bot"><div class="arena-hp-overline"><span>FISHBOT HP</span><strong id="champion-bot-hp-text">125 / 125 HP</strong></div><div class="arena-hp-ring bot"><svg aria-hidden="true" viewbox="0 0 180 180"><circle class="arena-hp-base" cx="90" cy="90" r="76"></circle><circle class="arena-hp-progress" cx="90" cy="90" id="champion-bot-ring" r="76"></circle></svg><div class="arena-hp-core">🐟<small>FISHBOT</small></div></div><h3 id="champion-arena-bot-name">FISHBOT</h3><div class="arena-coin-value" id="champion-battle-bot-stake">0.00 ⛃</div><div class="sr-only" id="champion-bot-hp-bar"></div></div>
+</div>
+<div class="arena-wager-panels"><div class="arena-wager-panel"><div class="arena-wager-heading"><h4>🏆 YOUR WAGER</h4><span id="champion-player-stake-count">0 ITEMS</span></div><div class="arena-wager-item-grid" id="champion-player-battle-items"></div></div><div class="arena-wager-panel"><div class="arena-wager-heading"><h4>🐟 FISHBOT'S WAGER</h4><span id="champion-bot-stake-count">0 ITEMS</span></div><div class="arena-wager-item-grid" id="champion-bot-battle-items"></div></div></div>
+</div>
+<div hidden="" id="champion-result"><h3 id="champion-result-title">VICTORY</h3><p id="champion-result-message"></p><div id="champion-result-winnings"></div><button class="cta-btn compact" id="champion-close-result" type="button">CONTINUE</button></div>
+</section></div>
+</section>
+<section class="feature-section" id="drops-section"><div class="section-heading"><div><div class="eyebrow">06 / HALL OF FINDS</div><h2>LATEST TOP DROPS</h2><p>Your eight most valuable recent case-opening rewards.</p></div></div><div class="item-grid" id="top-drops"></div></section>
+</main>
+<div class="overlay" hidden="" id="admin-give-panel"><div aria-labelledby="admin-give-title" aria-modal="true" class="overlay-card shop-modal" role="dialog"><div id="admin-give-header"><div><div class="eyebrow">TRADE TERMINAL</div><h2 id="admin-give-title">DEMO ITEM SHOP</h2></div><button aria-label="Close trade shop" class="modal-close" id="admin-give-close" type="button">×</button></div><p>Purchase items with virtual coins. No real-world trading occurs.</p><label class="sr-only" for="trade-search">Search shop items</label><input class="site-input" id="trade-search" placeholder="Search all items..." type="search"/><div id="admin-give-items"></div></div></div>
+<div class="overlay" hidden="" id="pure-convert-modal"><div aria-modal="true" class="overlay-card" id="pure-convert-box" role="dialog"><button aria-label="Close" class="modal-close" id="pure-convert-close" type="button">×</button><h2 id="pure-convert-title">CONVERT ITEM</h2><p id="pure-convert-details"></p><div id="pure-convert-options"></div></div></div>
+<footer class="site-footer" id="contributors"><div class="footer-inner"><div><span class="footer-brand">✦ TF2GRAND</span><p>Created by ovff · A community-inspired, free-play TF2 simulation.</p></div><div class="footer-disclaimer"><strong>SIMULATOR NOTICE</strong><p>Virtual-only entertainment. No real-money deposits, withdrawals, prizes, or genuine TF2 item transfers. Custom drop rates may differ greatly from Valve's. The game uses local browser randomness; it is not cryptographically provably fair. Do not use simulated outcomes to predict real gambling results.</p></div></div></footer>
+</body>
+</html>
