@@ -1,3 +1,25 @@
 [
-  { "name": "Aviator Assassin", "rarity": "legendary", "price": 0.03, "image": "images/items/avassassin.png" }
+  { "name": "Frozen Icefall Universal Translator", "rarity": "mythical", "price": 1063.13, "image": "images/items/IMG_0923.webp" },
+  { "name": "Burning Flames Coldsnap Cap", "rarity": "mythical", "price": 413.44, "image": "images/items/IMG_0922.webp" },
+  { "name": "Scorching Flames Dark Falkirk Helm", "rarity": "mythical", "price": 354.38, "image": "images/items/IMG_0921.webp" },
+  { "name": "Scorching Flames Ludicrously Lunatic Lunon Fedora", "rarity": "mythical", "price": 264.60, "image": "images/items/IMG_0920.webp" },
+  { "name": "Charging Catalyst Taunt: Unleashed Rage", "rarity": "mythical", "price": 212.62, "image": "images/items/IMG_0919.webp" },
+  { "name": "Twilight Snowfall Blizzard Bonnet", "rarity": "mythical", "price": 101.01, "image": "images/items/IMG_0918.webp" },
+  { "name": "Marigold Ritual Taunt: The Schadenfruede", "rarity": "mythical", "price": 76.41, "image": "images/items/IMG_0917.webp" },
+  { "name": "Time Warp Hat with No Name", "rarity": "mythical", "price": 3420.00, "image": "images/items/IMG_0916.webp" },
+  { "name": "Chiroptera Venenata Cotton Head", "rarity": "mythical", "price": 5899.5, "image": "images/items/IMG_0915.webp" },
+  { "name": "Arcana Nanobalaclava", "rarity": "mythical", "price": 5320.00, "image": "images/items/IMG_0914.webp" },
+  { "name": "Ghastly Ghosts Jr Team Captain", "rarity": "mythical", "price": 6502.54, "image": "images/items/IMG_0913.webp" },
+  { "name": "Strange Hellfire Warhood", "rarity": "mythical", "price": 1700.01, "image": "images/items/IMG_0912.webp" },
+  { "name": "Spellbound Demonic Dome", "rarity": "mythical", "price": 15480, "image": "images/items/IMG_0911.webp" },
+  { "name": "Collector's Professional Killstreak Conniver's Kunai", "rarity": "collector", "price": 335.30, "image": "images/items/kunai.png" },
+  { "name": "Strange Professional Killstreak Batsaber", "rarity": "strange", "price": 423.30, "image": "images/items/IMG_0600.webp" },
+  { "name": "Arcana Brimmed Bootlegger", "rarity": "top", "price": 9430.33, "image": "images/items/IMG_0910.webp" },
+  { "name": "Antifreeze Front Runner", "rarity": "mythical", "price": 1179.93, "image": "images/items/IMG_0909.webp" },
+  { "name": "Sulphurous Bedouin Bandana", "rarity": "voro", "price": 12930, "image": "images/items/IMG_0908.webp" },
+  { "name": "Strange Divine Sunlight Summer Shades", "rarity": "top", "price": 6983.88, "image": "images/items/IMG_0907.webp" },
+  { "name": "Strange Hot Professional Killstreak Minigun", "rarity": "mythical", "price": 1200, "image": "images/items/IMG_0906.webp" },
+  { "name": "Cool Professional Killstreak Scattergun", "rarity": "mythical", "price": 1354.36, "image": "images/items/IMG_0905.webp" },
+  { "name": "Tesla Coil Power Spike", "rarity": "mythical", "price": 853.93, "image": "images/items/IMG_0904.webp" },
+  { "name": "Strange Isotopic Rocket Launcher", "rarity": "mythical", "price": 1390, "image": "images/items/IMG_0903.webp" }
 ]
