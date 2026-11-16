@@ -722,7 +722,7 @@
   "image": "images/cases/81666E01-1FC3-4F4A-83EC-7518542DACCF.png",
   "items": [
     {  "name": "Strange Cloak and Dagger",  "rarity": "strange",  "price": 0.91,  "weight": 40000, "image":  "images/items/IMG_1026.webp", "paint": "" },
-    {  "name": "'‬ユージン Ｖ Ｉ Ｎ Ｄ Ｉ Ｃ Ｔ Ｉ Ｏ Ｎ ヒンクル'",  "rarity": "strange",  "price": 16.53,  "weight": 14000, "image":  "images/items/kunai.png", "paint": "#FF69B4" },
+    {  "name": "'‬ Ｖ Ｉ Ｎ Ｄ Ｉ Ｃ Ｔ Ｉ Ｏ Ｎ '",  "rarity": "strange",  "price": 16.53,  "weight": 14000, "image":  "images/items/kunai.png", "paint": "#FF69B4" },
     {  "name": "'shooting ster'",  "rarity": "strange",  "price": 20.73,  "weight": 7000, "image":  "images/items/IMG_1023.png", "paint": "#729E42" },
     {  "name": "'Harbillicus'",  "rarity": "strange",  "price": 27.51,  "weight": 14000, "image":  "images/items/IMG_1027.webp", "paint": "#E7B53B" },
     {  "name": "'Goose-A-Cheeker'",  "rarity": "strange",  "price": 56.20,  "weight": 8000, "image":  "images/items/IMG_1024.png", "paint": "#7D4071" },
