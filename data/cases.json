@@ -715,6 +715,23 @@
         { "name": "Collector's Rocket Jumper", "rarity": "collector", "price": 1050.00, "weight": 1000, "image": "images/items/rocketjumper.png" }
       ]
     },
+     {
+  "id": "searav",
+  "name": "Searavioli",
+  "price": 53.85,
+  "image": "images/cases/81666E01-1FC3-4F4A-83EC-7518542DACCF.png",
+  "items": [
+    {  "name": "Strange Cloak and Dagger",  "rarity": "strange",  "price": 0.91,  "weight": 40000, "image":  "images/items/IMG_1026.webp", "paint": "" },
+    {  "name": "`‬ユージン Ｖ Ｉ Ｎ Ｄ Ｉ Ｃ Ｔ Ｉ Ｏ Ｎ ヒンクル`",  "rarity": "strange",  "price": 16.53,  "weight": 14000, "image":  "images/items/kunai.png", "paint": "#FF69B4" },
+    {  "name": "`shooting ster`",  "rarity": "strange",  "price": 20.73,  "weight": 7000, "image":  "images/items/IMG_1023.png", "paint": "#729E42" },
+    {  "name": "`Harbillicus`",  "rarity": "strange",  "price": 27.51,  "weight": 14000, "image":  "images/items/IMG_1027.webp", "paint": "#E7B53B" },
+    {  "name": "`Goose-A-Cheeker`",  "rarity": "strange",  "price": 56.20,  "weight": 8000, "image":  "images/items/IMG_1024.png", "paint": "#7D4071" },
+    {  "name": "Miami Nights Slo-Poke",  "rarity": "mythical",  "price": 70.46,  "weight": 8000, "image":  "images/items/IMG_1028.webp", "paint": "" },
+    {  "name": "Strange Professional Killstreak Australium Rocket Launcher",  "rarity": "strange",  "price": 185.11,  "weight": 4000, "image":  "images/items/IMG_1025.png", "paint": "#7D4071" },
+    {  "name": "`I Love Upward`",  "rarity": "mythical",  "price": 729,  "weight": 2000, "image":  "images/items/IMG_1029.webp", "paint": "#E6E6E6" },
+    {  "name": "`Vancouver Housing`",  "rarity": "strange",  "price": 494.74,  "weight": 3000, "image":  "images/items/IMG_1030.webp", "paint": "#E7B53B" }
+  ]
+},
         {
       "id": "cityboysbelongings",
       "name": "City Boy's Belongings (Big)",
