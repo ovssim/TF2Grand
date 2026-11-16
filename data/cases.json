@@ -952,6 +952,34 @@
         { "name": "Spellbound Crone's Dome", "rarity": "mythical", "price": 14443.75, "weight": 1000, "image": "images/items/IMG_0570.webp" }
       ]
     },
+  {
+      "id": "hugeearner",
+      "name": "High Stakes VIP (High)",
+      "price": 2079.70,
+      "image": "images/cases/B1AC5590-AAD2-4C69-AB34-D9A3DBD026AA.png",
+      "items": [
+        {  "name": "Orbiting Planets Ground Control",  "rarity": "mythical",  "price": 49.58,  "weight": 27000, "image":  "images/items/IMG_1003.webp", "paint": "" },
+        {  "name": "Overclocked Black Watch",  "rarity": "mythical",  "price": 119.38,  "weight": 10000, "image":  "images/items/IMG_1004.webp", "paint": "" },
+        {  "name": "Collector's Trickster's Turnout Gear",  "rarity": "collector",  "price": 300,  "weight": 19000, "image":  "images/items/IMG_1005.webp", "paint": "" },
+        {  "name": "Starstorm Slumber Prehistoric Pullover",  "rarity": "mythical",  "price": 675,  "weight": 6000, "image":  "images/items/IMG_1006.webp", "paint": "#141414" },
+        {  "name": "Neutron Star Killer Exclusive",  "rarity": "mythical",  "price": 675,  "weight": 7000, "image":  "images/items/IMG_1007.webp", "paint": "#D8BED8" },
+        {  "name": "Collector's Bigg Mann on Campus",  "rarity": "collector",  "price": 775,  "weight": 8000, "image":  "images/items/IMG_1008.webp", "paint": "" },
+        {  "name": "Death Daggers Legendary Lid",  "rarity": "mythical",  "price": 3375,  "weight": 4000, "image":  "images/items/IMG_1009.webp", "paint": "" },
+        {  "name": "Knifestorm Field Practice",  "rarity": "mythical",  "price": 3375,  "weight": 3500, "image":  "images/items/IMG_1010.webp", "paint": "#2D2D24" },
+        {  "name": "Scorching Flames Noh Mercy",  "rarity": "mythical",  "price": 4500,  "weight": 3000, "image":  "images/items/IMG_1011.webp", "paint": "" },
+        {  "name": "Galactic Gateway Bedouin Bandana",  "rarity": "mythical",  "price": 4500,  "weight": 3500, "image":  "images/items/IMG_1012.webp", "paint": "" },
+        {  "name": "The Eldritch Opening Lucky Cat Hat",  "rarity": "mythical",  "price": 4950,  "weight": 1000, "image":  "images/items/IMG_1013.webp", "paint": "" },
+        {  "name": "Stormy 13th Hour Rotation Sensation",  "rarity": "mythical",  "price": 6750,  "weight": 1000, "image":  "images/items/IMG_1014.webp", "paint": "" },
+        {  "name": "Darkblaze Potassium Bonnet",  "rarity": "mythical",  "price": 6750,  "weight": 1000, "image":  "images/items/IMG_1015.webp", "paint": "#E7B53B" },
+        {  "name": "Hellfire Tough Stuff Muffs",  "rarity": "mythical",  "price": 7875,  "weight": 1000, "image":  "images/items/IMG_1016.webp", "paint": "" },
+        {  "name": "Bonzo The All-Gnawing Pencil Pusher",  "rarity": "mythical",  "price": 9000,  "weight": 1000, "image":  "images/items/IMG_1017.webp", "paint": "" },
+        {  "name": "Arcana Whirly Warrior",  "rarity": "mythical",  "price": 11250,  "weight": 1000, "image":  "images/items/IMG_1018.webp", "paint": "" },
+        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 1000,  "weight": 1000, "image":  "images/items/1019", "paint": "" },
+        {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 1000, "image":  "images/items/IMG_1020.webp", "paint": "#141414" },
+        {  "name": "Arcana Virtual Viewfinder",  "rarity": "mythical",  "price": 36000,  "weight": 1000, "image":  "images/items/IMG_1021.webp", "paint": "#32CD32" }
+      ]
+    },
+
 
         {
       "id": "placeholder",
