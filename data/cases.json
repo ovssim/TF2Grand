@@ -391,7 +391,7 @@
         { "name": "Strange Australium Flame Thrower", "rarity": "strange", "price": 49.92, "weight": 1000, "image": "images/items/aussieflame.png" },
         { "name": "Combustible Cutie", "rarity": "legendary", "price": 56.96, "weight": 750, "image": "images/items/combustiblecutie.png" },
         { "name": "Soulful Slice Seared Sorcerer", "rarity": "mythical", "price": 294.57, "weight": 150, "image": "images/items/sfsss.png" },
-        { "name": "Burning Flames Flamboyant Flamenco", "rarity": "mythical", "price": 855.00, "weight": 50, "image": "images/items/IMG_0547.webp" }
+        { "name": "Burning Flames Flamboyant Flamenco", "rarity": "mythical", "price": 855.00, "weight": 50, "image": "images/items/IMG_1054.webp" }
       ]
     },
     {
@@ -1016,7 +1016,7 @@
         {  "name": "Arcana Whirly Warrior",  "rarity": "mythical",  "price": 11250,  "weight": 1000, "image":  "images/items/IMG_1018.webp", "paint": "" },
         {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 1000,  "weight": 800, "image":  "images/items/IMG_1019.webp", "paint": "" },
         {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 800, "image":  "images/items/IMG_1020.webp", "paint": "#141414" },
-        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 2320,  "weight": 200, "image":  "images/items/1019", "paint": "#141414", "spell": "Sinister Staining"},
+        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 2320,  "weight": 200, "image":  "images/items/IMG_1019.webp", "paint": "#141414", "spell": "Sinister Staining"},
         {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 200, "image":  "images/items/IMG_1020.webp", "paint": "#141414", "spell": "Die Job" },
         {  "name": "Arcana Virtual Viewfinder",  "rarity": "mythical",  "price": 36000,  "weight": 1000, "image":  "images/items/IMG_1021.webp", "paint": "#32CD32" }
       ]
