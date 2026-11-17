@@ -125,7 +125,7 @@ Leave unused properties empty or omit them entirely.
 
 
 [
-  { "name": "", "rarity": "", "price": , "image": "images/items/webp", "paint": "#" },
+  { "name": "", "rarity": "", "price": , "image": "images/items/webp", "paint": "", “spell”: “”, “sheen”: “” },
   { "name": "", "rarity": "", "price": , "image": "images/items/webp", "paint": "#" },
   { "name": "", "rarity": "", "price": , "image": "images/items/webp", "paint": "#" },
   { "name": "", "rarity": "", "price": , "image": "images/items/webp", "paint": "#" },
