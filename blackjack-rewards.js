@@ -18,6 +18,14 @@ const AQUATIC_BOTS = Object.freeze([
     "emoji": "🌌"
   },
   {
+    "name": "Piglin",
+    "emoji": "🐷"
+  },
+  {
+    "name": "zenith",
+    "emoji": "🪫"
+  },
+  {
     "name": "Its Shrimple",
     "emoji": "🦐"
   },
@@ -26,8 +34,8 @@ const AQUATIC_BOTS = Object.freeze([
     "emoji": "🐈‍⬛"
   },
   {
-    "name": "Milk Bag",
-    "emoji": "🐮"
+    "name": "Milk Bags",
+    "emoji": "🫧"
   },
   {
     "name": "24/7 Painted Hats",
