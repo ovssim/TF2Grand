@@ -14,6 +14,14 @@ const AQUATIC_BOTS = Object.freeze([
     "emoji": "🦞"
   },
   {
+    "name": "Frostbyte",
+    "emoji": "💎"
+  },
+  {
+    "name": "MentalHerbs",
+    "emoji": "🌾"
+  },
+  {
     "name": "Estrella",
     "emoji": "🌌"
   },
