@@ -1,0 +1,131 @@
+:root{--dash-bg:#15171a;--dash-panel:#1c1f24;--dash-border:#2c3037}body{background:var(--dash-bg)!important}.site-backdrop{display:none!important}.site-header{background:#191b20!important;border-bottom:1px solid var(--dash-border);box-shadow:none!important}.site-header .nav-links{display:none}.grand-sidebar{position:fixed;top:82px;bottom:12px;left:12px;z-index:10;width:202px;overflow:auto;background:var(--dash-panel);border:1px solid var(--dash-border);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:3px}.grand-sidebar a{display:flex;align-items:center;gap:12px;padding:10px 12px;color:#adb2ba;text-decoration:none;border-radius:7px;font-size:13px;font-weight:600}.grand-sidebar a span{width:20px;text-align:center;font-size:18px}.grand-sidebar a.current,.grand-sidebar a:hover{background:#34302a;color:#f5c76d}.site-shell{max-width:none!important;margin-left:236px!important;width:calc(100% - 260px)!important}.grand-page-off{display:none!important}.grand-home{margin:24px 0}.home-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.home-header span{font-size:11px;color:#999;letter-spacing:.12em}.home-header h2{font-size:24px;margin:5px 0}.home-header button{background:#282c32;color:#dedede;border:1px solid #3c4149;border-radius:8px;padding:10px;cursor:pointer}.home-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.home-tiles a{position:relative;overflow:hidden;min-height:140px;border:1px solid #ffffff12;border-radius:12px;background:linear-gradient(125deg,#22242a,var(--tile));display:flex;align-items:flex-end;padding:20px;color:white;text-decoration:none}.home-tiles a:first-child,.home-tiles a:nth-child(2){min-height:165px}.home-tiles strong{position:relative;font-size:19px}.tile-art{position:absolute;right:15%;top:3%;font-size:106px;line-height:1;color:#fff6;transform:rotate(-12deg)}.panel,.game-mode-panel{border-radius:12px!important;box-shadow:none!important}.grand-performance #smissmas-snow,.grand-performance .smissmas-lights{display:none!important}.grand-performance .weapon-fx,.grand-performance .grand-rarity-card{animation:none!important;filter:none!important;box-shadow:none!important}.grand-performance *{backdrop-filter:none!important}.weapon-fx{animation:weapon-shine 3.6s ease-in-out infinite;will-change:auto}@keyframes weapon-shine{0%,100%{filter:none}45%{filter:drop-shadow(0 0 4px var(--fx-a)) brightness(1.12)}65%{filter:drop-shadow(0 0 5px var(--fx-b)) brightness(1.2)}}#target-list[data-virtual]{display:block!important;overflow-anchor:none;padding:0!important}.virtual-target-grid{display:grid;gap:0 8px;grid-auto-rows:158px}.virtual-target-grid .upgrade-item{height:150px!important;min-height:0!important;overflow:hidden}.virtual-target-grid .upgrade-item img{width:100%!important;height:90px!important;object-fit:contain}.image-failed{opacity:.65;object-fit:contain}.smissmas{--dash-bg:#191e1c;--dash-panel:#222923;--dash-border:#39463b}@media(max-width:800px){.grand-sidebar{position:sticky;top:0;bottom:auto;width:auto;margin:8px;flex-direction:row;overflow-x:auto;padding:5px;z-index:30}.grand-sidebar a{white-space:nowrap;padding:8px}.site-shell{margin:0 auto!important;width:calc(100% - 24px)!important}.home-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.home-tiles a{min-height:112px;padding:12px}.tile-art{font-size:74px}.home-tiles strong{font-size:15px}}@media(prefers-reduced-motion:reduce){.weapon-fx{animation:none!important}}
+/* TF2GRAND layout refinement */
+html{--grand-type:system-ui,-apple-system,'Segoe UI',sans-serif}html[data-grand-font="condensed"]{--grand-type:'Arial Narrow','Roboto Condensed','Liberation Sans Narrow',Arial,sans-serif}html[data-grand-font="industrial"]{--grand-type:Impact,'Arial Black',sans-serif}html[data-grand-font="classic"]{--grand-type:Georgia,'Times New Roman',serif}body,button,input,select,textarea{font-family:var(--grand-type)!important}input,textarea,select{min-width:0;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}textarea{resize:vertical}h1,h2,h3,h4,p,.section-heading,.game-mode-header{overflow-wrap:break-word;min-width:0} .grand-sidebar a{border-left:3px solid transparent}.grand-sidebar a.grand-game-link{border-left-color:var(--link-accent)}.grand-sidebar a.grand-game-link.current{background:color-mix(in srgb,var(--link-accent) 17%,#1c1f24);color:var(--link-accent)}.grand-sidebar a.grand-game-link:hover{color:var(--link-accent)}
+/* Remove duplicate horizontal game navigation while keeping buttons in the DOM for original JS tab routing. */
+#games-section>.mode-switcher{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;pointer-events:none!important}#games-section>.section-heading{display:none!important}
+.grand-profile-hidden{display:none!important}.grand-profile{margin-top:24px}.grand-profile-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px}.grand-profile-tabs button{background:#24272d;color:#c9ccd1;border:1px solid #3b3e46;border-radius:8px;padding:11px 20px;cursor:pointer;font-weight:700}.grand-profile-tabs button.active{color:#f3d087;background:#3c3427;border-color:#987b43}.grand-profile-content>.feature-section{margin:0!important;max-width:100%}.grand-home-settings{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grand-home-settings label{font-size:12px;color:#aaa}.grand-home-settings select{background:#282c32;color:#eee;border:1px solid #454952;border-radius:8px;padding:9px}.grand-mode-wins{margin-top:24px;padding:16px;border:1px solid #3a3d45;border-radius:12px;background:#191c22}.grand-mode-wins-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.grand-mode-wins h4{font-size:14px;letter-spacing:.08em;margin:0}.grand-mode-wins-head span{font-size:10px;color:#989ca6}.grand-win-line{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #ffffff12;padding:10px 0;font-size:13px}.grand-win-line span{overflow-wrap:anywhere}.grand-win-line strong{white-space:nowrap;color:#e5c47c}.grand-wins-empty{color:#a2a6ad;font-size:13px}
+.wallet-balance{font-variant-numeric:tabular-nums;will-change:color,text-shadow}.grand-wallet-gain{animation:grand-gain-glow 1.1s ease-out}.grand-wallet-loss{animation:grand-loss-glow 1.1s ease-out}@keyframes grand-gain-glow{0%,100%{color:inherit;text-shadow:none}20%{color:#79f1a7;text-shadow:0 0 15px #3fd67a,0 0 25px #32ae6555}}@keyframes grand-loss-glow{0%,100%{color:inherit;text-shadow:none}20%{color:#ff8686;text-shadow:0 0 15px #e84c58,0 0 25px #c4314555}}
+/* Lightweight monochrome repeating TF-style outline; diagonal and subtly moving. */
+.grand-tf-pattern{position:fixed;inset:-180px;pointer-events:none;z-index:-1;opacity:.24;transform:rotate(-13deg);background-image:url('images/tf2-outline-pattern.svg');background-size:240px 240px;background-repeat:repeat;animation:grand-drift 240s linear infinite}.site-shell,.grand-sidebar,.site-header{position:relative;z-index:1}.site-header{position:sticky}.grand-sidebar{position:fixed}@keyframes grand-drift{from{background-position:0 0}to{background-position:240px -240px}}.grand-performance .grand-tf-pattern{animation:none}.smissmas .grand-tf-pattern{opacity:.12}@media(max-width:800px){.grand-sidebar{position:sticky}.grand-home-settings{justify-content:flex-end}.grand-profile-tabs button{flex:1;padding:10px 8px}.grand-tf-pattern{opacity:.13}}@media(prefers-reduced-motion:reduce){.grand-tf-pattern,.grand-wallet-gain,.grand-wallet-loss{animation:none!important}}
+
+/* Second backpack overview directly beneath case opening. */
+.grand-case-backpack{margin-top:28px;padding:22px;border:1px solid var(--dash-border);background:var(--dash-panel);border-radius:12px}
+.grand-case-backpack-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.grand-case-backpack-heading h3{font-size:24px;margin:4px 0 6px}
+.grand-case-backpack-heading p,.grand-case-backpack-footnote{color:#9da4ad;font-size:13px;margin:0}
+.grand-case-backpack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.grand-case-backpack-grid>.item-card,.grand-case-backpack-grid>.inventory-item{cursor:pointer}
+.grand-case-backpack-grid button{pointer-events:none}
+.grand-case-backpack-footnote{margin-top:14px}
+@media(max-width:650px){.grand-case-backpack{padding:14px}.grand-case-backpack-heading{align-items:flex-start;flex-direction:column}.grand-case-backpack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Stability / unified account / responsive navigation */
+.grand-profile-tabs{display:none!important}.grand-profile-hidden{display:block!important}
+.grand-profile-content{display:grid;gap:22px;min-width:0}.grand-profile-content>.feature-section{display:block!important;min-width:0;width:100%;box-sizing:border-box}
+.grand-case-backpack-grid .item-card-actions button{pointer-events:auto!important}.grand-case-backpack-grid .favorite-btn{pointer-events:auto!important}
+.grand-case-backpack-grid>.item-card{cursor:default!important}
+.site-header{position:relative!important;z-index:50!important;width:100%;box-sizing:border-box}
+.header-inner{min-width:0;flex-wrap:wrap;gap:10px}
+.grand-sidebar{top:92px!important;z-index:25!important;box-sizing:border-box}
+.site-shell{min-width:0!important;box-sizing:border-box!important}
+.game-mode-panel,.feature-section,.panel,.game-mode-header,.section-heading{min-width:0;max-width:100%;box-sizing:border-box}
+#games-section>.game-tabs,.game-tabs,.game-mode-tabs{display:none!important}
+@media(max-width:1050px){.grand-sidebar{position:relative!important;top:auto!important;left:auto!important;bottom:auto!important;width:calc(100% - 24px)!important;margin:10px 12px!important;display:flex;flex-direction:row;overflow-x:auto;white-space:nowrap;z-index:2!important}.grand-sidebar a{flex:0 0 auto}.site-shell{margin:0 auto!important;width:calc(100% - 24px)!important;max-width:100%!important}.header-inner{padding:12px!important}}
+@media(min-width:1051px){.site-shell{margin-left:236px!important;width:calc(100% - 260px)!important}.grand-sidebar{position:fixed!important}}
+@media(max-width:650px){.grand-profile-content{gap:14px}.reward-summary,.rewards-extra-grid,.upgrade-inventory-panels{min-width:0;max-width:100%}.grand-sidebar{margin-top:0!important}}
+.grand-reward-reel{position:fixed;inset:0;z-index:100000;background:#080a0ce8;display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+.grand-reward-reel-panel{background:#1b1d22;border:1px solid #5a4b32;border-radius:14px;padding:22px;max-width:850px;width:100%;text-align:center;box-shadow:0 24px 90px #000a}
+.grand-reward-reel-panel h3{font-size:20px;margin:0 0 20px;overflow-wrap:anywhere}
+.grand-reel-viewport{height:150px;position:relative;overflow:hidden;border:1px solid #4d4d52;background:#101216;border-radius:9px}
+.grand-reel-track{display:flex;width:max-content;gap:0;will-change:transform}
+.grand-reel-tile{width:158px;height:148px;flex:none;box-sizing:border-box;padding:9px;display:flex;flex-direction:column;justify-content:center;align-items:center;border-right:1px solid #41434b;gap:6px}
+.grand-reel-tile img{height:90px;width:110px;object-fit:contain}
+.grand-reel-tile span{font-size:11px;line-height:1.25;max-width:100%;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.grand-reel-marker{position:absolute;left:50%;top:0;bottom:0;width:3px;transform:translateX(-50%);background:#eec476;box-shadow:0 0 10px #eec476;pointer-events:none}
+.grand-reel-status{font-weight:700;margin:16px 0}
+
+/* TF2GRAND item sheen + spell visibility patch */
+.grand-effect-card { position:relative; isolation:isolate; --fx-a:#9e6cff; --fx-b:#54e3b5; }
+.grand-effect-card .weapon-fx {
+  position:relative; z-index:1;
+  animation:grand-visible-fx 3.8s ease-in-out infinite !important;
+  filter:drop-shadow(0 0 5px var(--fx-a)) drop-shadow(0 0 2px var(--fx-b));
+}
+.grand-effect-card.grand-has-sheen {
+  box-shadow:inset 0 0 0 1px var(--fx-a), 0 0 9px -3px var(--fx-a) !important;
+}
+.grand-effect-card.grand-has-spell {
+  background-image:linear-gradient(125deg,transparent 12%,color-mix(in srgb,var(--fx-b) 18%,transparent) 50%,transparent 85%) !important;
+  background-size:220% 220%;
+  animation:grand-spell-sweep 7s linear infinite !important;
+}
+.grand-effect-card.grand-double-effect {box-shadow:inset 0 0 0 1px var(--fx-a),0 0 12px -2px var(--fx-b) !important;}
+@keyframes grand-visible-fx {
+  0%,100% {filter:drop-shadow(0 0 4px var(--fx-a)) brightness(1.03)}
+  50% {filter:drop-shadow(0 0 10px var(--fx-a)) drop-shadow(0 0 5px var(--fx-b)) brightness(1.18)}
+}
+@keyframes grand-spell-sweep {from{background-position:100% 100%}to{background-position:0 0}}
+/* Performance mode still shows effects; animation is disabled to save resources. */
+.grand-performance .grand-effect-card .weapon-fx {
+  animation:none !important;
+  filter:drop-shadow(0 0 6px var(--fx-a)) !important;
+}
+.grand-performance .grand-effect-card.grand-has-sheen {
+  box-shadow:inset 0 0 0 1px var(--fx-a) !important;
+}
+.grand-performance .grand-effect-card.grand-has-spell {animation:none !important;}
+@media(prefers-reduced-motion:reduce){
+  .grand-effect-card .weapon-fx,.grand-effect-card.grand-has-spell{animation:none !important}
+}
+
+/* TF2GRAND — image-level TF2-inspired sheen/spell tints (not just card borders).
+   Designed for transparent PNG and WebP thumbnails; no extra downloads. */
+.grand-effect-card {position:relative!important; isolation:isolate; --grand-sheen-color:transparent;--grand-spell-color:transparent;}
+.grand-effect-card .weapon-fx {
+  position:relative!important;
+  z-index:1;
+  filter:drop-shadow(0 0 6px var(--fx-a)) saturate(1.5) contrast(1.07)!important;
+  animation:grand-image-pulse 3.7s ease-in-out infinite!important;
+}
+.grand-effect-card.grand-has-sheen .weapon-fx {
+  filter:sepia(.28) saturate(2.1) drop-shadow(0 0 9px var(--grand-sheen-color))!important;
+}
+.grand-effect-card.grand-has-spell .weapon-fx {
+  filter:saturate(1.8) drop-shadow(0 0 10px var(--grand-spell-color))!important;
+}
+/* A translucent color wash tints the actual visible thumbnail region.
+   Uses a layer over the image without requiring pixel editing or external assets. */
+.grand-effect-card.grand-has-sheen::after,
+.grand-effect-card.grand-has-spell::after {
+  content:'';position:absolute;inset:3px 3px 22px;z-index:2;
+  pointer-events:none;border-radius:inherit;
+  background:linear-gradient(120deg,transparent 18%,var(--grand-sheen-color) 43%,transparent 67%);
+  opacity:.32;mix-blend-mode:screen;
+  background-size:240% 100%;
+  animation:grand-tint-sweep 4.8s ease-in-out infinite!important;
+}
+.grand-effect-card.grand-has-spell::after {
+  background:radial-gradient(ellipse at 55% 42%,var(--grand-spell-color),transparent 65%);
+  opacity:.33;mix-blend-mode:color-dodge;
+  animation:grand-spell-breathe 3.4s ease-in-out infinite!important;
+}
+.grand-effect-card.grand-double-effect::after {
+  background:linear-gradient(115deg,transparent 10%,var(--grand-sheen-color) 45%,transparent 70%),radial-gradient(ellipse,var(--grand-spell-color),transparent 70%);
+  background-size:240% 100%,100% 100%;
+  opacity:.45;mix-blend-mode:screen;
+  animation:grand-tint-sweep 4.8s ease-in-out infinite!important;
+}
+.grand-fx-swatch {
+  position:absolute;z-index:5;right:4px;top:4px;
+  font:700 8px/1.3 system-ui,sans-serif;letter-spacing:.06em;
+  color:#fff;background:linear-gradient(100deg,var(--fx-a),var(--fx-b));
+  border:1px solid #ffffff88;border-radius:4px;padding:2px 4px;
+  text-shadow:0 1px 3px #000,0 0 3px #000;
+  pointer-events:none;max-width:calc(100% - 8px);
+}
+@keyframes grand-tint-sweep {0%{background-position:180% 0,center}100%{background-position:-130% 0,center}}
+@keyframes grand-spell-breathe {0%,100%{opacity:.19}50%{opacity:.5}}
+@keyframes grand-image-pulse {0%,100%{opacity:1}50%{opacity:.94}}
+.grand-performance .grand-effect-card .weapon-fx {animation:none!important;}
+.grand-performance .grand-effect-card::after {animation:none!important;opacity:.34!important;}
+@media(prefers-reduced-motion:reduce){.grand-effect-card .weapon-fx,.grand-effect-card::after{animation:none!important}}
