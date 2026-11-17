@@ -1014,7 +1014,7 @@
         {  "name": "Hellfire Tough Stuff Muffs",  "rarity": "mythical",  "price": 7875,  "weight": 1000, "image":  "images/items/IMG_1016.webp", "paint": "" },
         {  "name": "Bonzo The All-Gnawing Pencil Pusher",  "rarity": "mythical",  "price": 9000,  "weight": 1000, "image":  "images/items/IMG_1017.webp", "paint": "" },
         {  "name": "Arcana Whirly Warrior",  "rarity": "mythical",  "price": 11250,  "weight": 1000, "image":  "images/items/IMG_1018.webp", "paint": "" },
-        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 1000,  "weight": 800, "image":  "images/items/1019", "paint": "" },
+        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 1000,  "weight": 800, "image":  "images/items/IMG_1019.webp", "paint": "" },
         {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 800, "image":  "images/items/IMG_1020.webp", "paint": "#141414" },
         {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 2320,  "weight": 200, "image":  "images/items/1019", "paint": "#141414", "spell": "Sinister Staining"},
         {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 200, "image":  "images/items/IMG_1020.webp", "paint": "#141414", "spell": "Die Job" },
