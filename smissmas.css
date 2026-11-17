@@ -1,0 +1,26 @@
+.smissmas-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;font-size:12px;color:var(--muted)}
+#smissmas-toggle{background:transparent;color:var(--muted);border:1px solid var(--panel-edge);border-radius:20px;padding:5px 11px;font:inherit;white-space:nowrap}
+.smissmas-lights,#smissmas-snow{display:none}
+html.smissmas{--bg:#1e1917;--bg-2:#251e1b;--panel:#302824;--panel-2:#382e28;--panel-edge:#59483d;--text:#f4e9d8;--muted:#c2b2a2;--faint:#9c8b7c;--hot:#efc17b;--hot-2:#c89253;--cyan:#a6cfbc;--red:#cf7770;--shadow:0 12px 36px #100a0840;--radius:16px}
+.smissmas body{background:radial-gradient(ellipse at 80% 0%,#493526 0%,transparent 48%),radial-gradient(ellipse at 0% 35%,#253b32 0%,transparent 38%),#1e1917}
+.smissmas .site-backdrop{background:none}
+.smissmas .site-header{background:#251e1bed;border-color:#65503d}
+.smissmas .smissmas-banner{color:#efc17b}
+.smissmas .smissmas-lights{display:block;height:12px;background:linear-gradient(#62513d,#62513d) center top/100% 1px no-repeat;position:relative;overflow:hidden;white-space:nowrap;text-align:center;pointer-events:none}
+.smissmas-lights i{display:inline-block;width:7px;height:9px;margin:0 13px;border-radius:2px 2px 50% 50%;background:var(--bulb);box-shadow:0 0 9px var(--bulb);vertical-align:top}
+.smissmas .brand-wordmark>span{color:#efc17b}.smissmas .brand-wordmark small:after{content:' • ❄';color:#efc17b}
+.smissmas .panel,.smissmas #case-section,.smissmas #games-section .game-mode-panel{background:linear-gradient(145deg,#342a24,#241e1b);border-color:#59483d;box-shadow:var(--shadow)}
+.smissmas :is(.mode-switcher,.reward-summary,.reward-milestone,.coinflip-combatant,.bot-combatant,.arena-fighter,.arena-bot,.arena-combat-center,.champion-wager-box,.champion-preview,.ex-player-tile){background:linear-gradient(145deg,#3a3029,#27211e);border-color:#59483d}
+.smissmas :is(.nav-links a:hover,.nav-links a.active,.mode-tab.active){background:#345447;color:#f4e9d8;border-color:#709481;box-shadow:inset 0 -2px #a6cfbc}
+.smissmas .mode-tab{color:#d4c6b7}.smissmas .mode-tab:hover{background:#44392f}
+.smissmas :is(.cta-btn,.primary-link){background:linear-gradient(110deg,#f1ce91,#d9a35e);border-color:#f4d7a5;color:#302219;box-shadow:0 3px 0 #91633d,0 5px 18px #eac17b20}
+.smissmas :is(.cta-btn,.primary-link):hover{box-shadow:0 4px 0 #91633d,0 8px 20px #eac17b35}
+.smissmas :is(.theme-btn,.secondary-link,.ex-btn:not(.red):not(.red-crown):not(.gold),.ex-tile:not(.good):not(.bad)){background:#3d342c;border-color:#6b5847;color:#f4e9d8;border-radius:9px}
+.smissmas :is(.site-input,.site-select,.ex-panel input,.ex-panel select){background:#211c19;border-color:#6b5847;color:#f4e9d8}
+.smissmas :is(.section-counter,.game-tag){background:#34544750;border-color:#587361;color:#c3d9c8}
+.smissmas .intro-copy:after{border-color:#efc17b25;box-shadow:0 0 60px #efc17b0a}
+.smissmas .site-footer{border-color:#59483d;background:#211b18}
+.smissmas #smissmas-snow{display:block;position:fixed;inset:0;z-index:90;pointer-events:none;overflow:hidden}
+#smissmas-snow span{position:absolute;top:-15px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;background:#fff5df;opacity:var(--o);animation:smissmas-fall var(--d) linear var(--delay) infinite}
+@keyframes smissmas-fall{to{transform:translate3d(35px,calc(100vh + 30px),0)}}
+@media(prefers-reduced-motion:reduce){#smissmas-snow{display:none!important}}
