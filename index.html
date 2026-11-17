@@ -64,7 +64,7 @@
 <button class="theme-btn secondary" id="import-save-btn" type="button">↑ IMPORT SAVE</button>
 <input accept=".json,application/json" hidden="" id="import-save-input" type="file"/>
 </div>
-<p class="panel-footnote">Everything is stored in this browser. No real deposits, withdrawals, or tradable items.</p>
+<p class="panel-footnote">Make your day.</p>
 </div>
 </section>
 <section aria-labelledby="rewards-title" class="feature-section panel rewards-section" id="rewards-section">
@@ -74,7 +74,7 @@
 <div class="reward-progress-wrap"><div class="reward-progress-copy"><strong id="reward-level-title">NEW RECRUIT</strong><span id="reward-xp-label">0 / 85 XP</span></div><div aria-label="Experience toward next level" aria-valuemax="85" aria-valuemin="0" aria-valuenow="0" class="reward-progress-track" id="reward-progress-track" role="progressbar"><div id="reward-progress-fill"></div></div><p>Earn 10 XP per ⛃ 1.00 spent on opening cases, item wagers, or coin wagers. Claim rewards at every level.</p></div>
 <div class="reward-spend-summary"><span>ALL-TIME SPEND</span><strong id="reward-total-spent">⛃ 0.00</strong><small> coins / item values</small></div>
 </div>
-<div class="reward-pathway-top"><h3>YOUR NEXT MILESTONES</h3><span>COIN BONUSES · BONUS CASES EVERY 10 LEVELS</span></div>
+<div class="reward-pathway-top"><h3>YOUR NEXT MILESTONES</h3><span>COIN BONUSES · BONUS CASES</span></div>
 <div aria-live="polite" class="reward-milestones" id="reward-milestones"><div class="empty-small">Loading reward track...</div></div>
 <div class="reward-claim-message" id="reward-claim-message" role="status">Spend currency to unlock the next reward.</div>
 </section>
@@ -116,7 +116,7 @@
 <div class="coinflip-inventory-panel"><div class="wager-side-head"><div><h4>YOUR BACKPACK</h4><p>Click items to add or remove them from your wager. Favorites and Pure are protected.</p></div><span id="coinflip-selection-label">0 SELECTED</span></div><div class="coinflip-items-controls"><input aria-label="Search coinflip items" class="site-input" id="coinflip-search" placeholder="Search your available items..." type="search"/><button class="theme-btn" id="coinflip-clear-btn" type="button">CLEAR WAGER</button></div><select aria-label="Selected coinflip item (compatibility)" hidden="" id="coinflip-select"></select><div class="duel-inventory-grid" id="coinflip-item-list"></div></div>
 </section>
 <section aria-labelledby="tab-upgrader" class="panel game-mode-panel upgrader-mode" data-mode="upgrader" hidden="" id="upgrader-section" role="tabpanel">
-<div class="game-mode-header"><div><div class="eyebrow">THE MACHINE</div><h3>ITEM <span class="mode-light">UPGRADER</span></h3><p>Choose wager items and a target prize. The orange arc is the winning area; drag it anywhere on the ring. The pointer spins and stops at the actual random result.</p></div><span class="game-tag">95% RETURN FACTOR</span></div>
+<div class="game-mode-header"><div><div class="eyebrow">THE MACHINE</div><h3>ITEM <span class="mode-light">UPGRADER</span></h3><p>Choose wager items and a target prize. The arc is the winning area; drag it anywhere on the ring. The pointer spins and stops at a random result.</p></div><span class="game-tag">95% RETURN FACTOR</span></div>
 <div class="upgrade-stage">
 <div class="upgrade-stage-side"><div class="stage-meta">YOUR DEPOSIT <span id="upgrade-wager-count">0 ITEMS</span></div><div class="stage-amount" id="upgrade-wager-total">⛃ 0.00</div><div class="upgrade-selected-preview" id="upgrade-wager-preview"><div class="duel-empty">No wager selected</div></div></div>
 <div class="upgrade-dial-station"><div aria-label="Winning arc start position" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="upgrade-circle neutral" id="upgrade-circle" role="slider" tabindex="0"><div class="upgrade-dial-inner"><strong id="upgrade-circle-text">0.00%</strong><span>WIN CHANCE</span><small id="upgrade-value">0.00 ⛃ → 0.00 ⛃</small></div><div aria-hidden="true" id="upgrade-pointer-rotor"><span class="upgrade-pointer-tip">▼</span></div></div><div class="upgrade-chance-label" id="upgrade-chance">CHANCE: 0.00%</div><label class="upgrade-zone-label" for="upgrade-zone-slider">WIN ZONE POSITION <strong id="upgrade-zone-value">0%</strong></label><input class="upgrade-zone-slider" id="upgrade-zone-slider" max="100" min="0" step="0.1" type="range" value="0"/><p class="upgrade-zone-help">Drag the arc or use the slider to move the winning segment. Its size is fixed by your odds.</p></div>
@@ -206,5 +206,5 @@
 <div class="overlay" hidden="" id="admin-give-panel"><div aria-labelledby="admin-give-title" aria-modal="true" class="overlay-card shop-modal" role="dialog"><div id="admin-give-header"><div><div class="eyebrow">TRADE TERMINAL</div><h2 id="admin-give-title">DEMO ITEM SHOP</h2></div><button aria-label="Close trade shop" class="modal-close" id="admin-give-close" type="button">×</button></div><p>Purchase items with coins.</p><label class="sr-only" for="trade-search">Search shop items</label><input class="site-input" id="trade-search" placeholder="Search all items..." type="search"/><div id="admin-give-items"></div></div></div>
 <div class="overlay" hidden="" id="pure-convert-modal"><div aria-modal="true" class="overlay-card" id="pure-convert-box" role="dialog"><button aria-label="Close" class="modal-close" id="pure-convert-close" type="button">×</button><h2 id="pure-convert-title">CONVERT ITEM</h2><p id="pure-convert-details"></p><div id="pure-convert-options"></div></div></div>
 <footer class="site-footer" id="contributors"><div class="footer-inner"><div><span class="footer-brand">✦ TF2GRAND</span><p>Created by ovff · A community-inspired Casino.</p></div><div class="footer-disclaimer"><strong>NOTICE</strong><p>If you are struggling with gambling problems, seek help. Do not use our outcomes to predict real gambling results.</p></div></div></footer>
-<section id="grand-bots" class="grand-bots-panel" hidden aria-label="Bot profiles"><div class="grand-bots-head"><h2>OTHER NETWORK</h2><button id="grand-bots-close" type="button">Close</button></div><p>Green: active · Yellow: connection unstable. </p><div id="grand-bots-list" class="grand-bots-list"></div></section></body>
+<section id="grand-bots" class="grand-bots-panel" hidden aria-label="Bot profiles"><div class="grand-bots-head"><h2>OTHER NETWORK</h2><button id="grand-bots-close" type="button">Close</button></div><p>Green: connection secure · Yellow: connection unstable. </p><div id="grand-bots-list" class="grand-bots-list"></div></section></body>
 </html>
