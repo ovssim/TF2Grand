@@ -40,5 +40,12 @@
   { "name": "Infernal Flames Taunt: The Schadenfreude", "rarity": "mythical", "price": 467.05, "image": "images/items/IMG_1037.webp", "paint": "" },
   { "name": "Scorching Flames Ye Olde Baker Boy", "rarity": "mythical", "price": 408, "image": "images/items/IMG_1038.webp", "paint": "#E6E6E6" },
   { "name": "Cold Cosmo Detective", "rarity": "mythical", "price": 173.4, "image": "images/items/IMG_1039.webp", "paint": "#141414" },
+  { "name": "Normal Frying Pan", "rarity": "common", "price": 4621.54, "image": "images/items/fryingpan.png", "paint": "", "spell": "", "sheen": "" },
+  { "name": "Vintage Big Kill", "rarity": "rare", "price": 1564.01, "image": "images/items/webp", "paint": "", "spell": "Exorcism", "sheen": "" },
+  { "name": "Normal Black Rose", "rarity": "commln", "price": 1422.99, "image": "images/items/webp", "paint": "", "spell": "", "sheen": "" },
+  { "name": "Strange Professional Killstreak Australium Knife", "rarity": "strange", "price": 61.73, "image": "images/items/IMG_1045.png", "paint": "", "spell": "", "sheen": "Hot Rod" },
+  { "name": "Strange Professional Killstreak Australium Black Box", "rarity": "strange", "price": 60.3, "image": "images/items/IMG_1047.png", "paint": "", "spell": "", "sheen": "Mandarin" },
+  { "name": "Strange Professional Killstreak Australium Tomislav", "rarity": "strange", "price": 67.69, "image": "images/items/IMG_1044.webp", "paint": "", "spell": "", "sheen": "Agonizing Emerald" },
+  { "name": "Strange Professional Killstreak Australium Sticky Bomb Launcher", "rarity": "strange", "price": 70.43, "image": "images/items/IMG_1048.png", "paint": "", "spell": "", "sheen": "Team Shine" },
   { "name": "Strange Isotopic Rocket Launcher", "rarity": "mythical", "price": 1390, "image": "images/items/IMG_0903.webp" }
 ]
