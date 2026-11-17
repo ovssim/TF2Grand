@@ -4,9 +4,42 @@ const KEY='tf2grand_bot_ledger_v1';
 // EDIT BOT DESCRIPTIONS HERE IN GITHUB. Changes are visible to all visitors.
 // Keep bot names exactly as they appear in AQUATIC_BOTS.
 const BOT_DESCRIPTIONS = Object.freeze({
-  'FishBot': 'The original fish in the casino.',
-  'Terry the Lobster': 'A crustacean with a taste for high stakes.',
-  'Its Shrimple': 'Keeping things shrimple.',
+  'FishBot': 'The original fish in the casino. The first Bot, the best bot.',
+  'Terry the Lobster': 'Has a taste for gambling, also tastes good. needs some salt though.',
+  'Its Shrimple': 'Lets keep things shrimple. I. TOOK. YOUR. CASH.',
+  'Frostbyte': 'No, I`m not a money hungry goblin, just bored.',
+  'MentalHerbs': 'Wow, checking up on me? What an honor.',
+  'Estrella': '``Um, how about something like, I`am just lucky?..``',
+  'Барсик': 'Ваш любимый бот — к выполнению задачи готов!',
+  'Milk Bag': 'Pretty big win? I Love big things.',
+  '24/7 Painted Hats': 'Selling painted hats! Send me an offer!',
+  'Sovi': 'I`M NOT GAY!!',
+  'Mahoraga': 'With this treasure I summon...',
+  'Great White': 'Taking Great Bites from your Balance since the start!',
+  'Anchovi Ace': 'I flopping owned your balance pretty boy!',
+  'bean': 'Nice one, I`m down for another game anytime.',
+  'Big Man Fred': 'hehe, big man he he.',
+  'doomzics': 'Damn bro, better luck next time 😂!',
+  'mufat': 'I absolutely wasted you! I mean, look at you!',
+  'ShrimpStacked': 'My stacks are taller than you, any excuses? I am the best!',
+  'Crab Rangoon': 'Crabby bets, crappy bets. It`s all talk.',
+  'Turkey': 'Yeni bir arabayla Yemen`e sürdüm; şimdi bu lanet şeyi havaya uçuracağım.',
+  'Foster': 'Have a nice stay. Down to slide a couple to a struggler?',
+  'King': 'Backpack.tf account status: Banned. Reason: Suspected Scammer alt/fence',
+  'dastard(ly)': 'Hit big once and I`ll hit big again.',
+  'Winston': 'Thats right, its in the name. I WIN!',
+  'Pootis': 'Poot! Poot!',
+  'Mack': 'I hate Mackenzie.',
+  'Mackenzie': 'I hate Mack.',
+  'William': 'Did I steal your money? Ahh sorry mate, You`ll win it back next time.',
+  'Nicole': 'I mean, its mine now.',
+  'простак': 'Ты никудышный игрок',
+  'Tide Turner': 'FRAYYYDOMMMM! HAA HAA!! Oh blimey go and cry some more to your motha!',
+  'grug': 'ryhmes with grug.',
+  'Irislayla': 'The person reading this is very sexy.'
+  
+
+  
   // 'Great White': 'Add your own description here',
 });
 const $=id=>document.getElementById(id);
