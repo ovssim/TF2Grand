@@ -5,16 +5,22 @@
 'use strict';
 
 const AQUATIC_BOTS = Object.freeze([
-  {name:'FishBot',emoji:'🐟'}, {name:'Lobster Larry',emoji:'🦞'},
-  {name:'Clawbert',emoji:'🦀'}, {name:'Krilliam',emoji:'🦐'},
-  {name:'OctoByte',emoji:'🐙'}, {name:'Captain Clam',emoji:'🐚'},
-  {name:'Puffer Punk',emoji:'🐡'}, {name:'Manta Ace',emoji:'🌊'},
-  {name:'ReefRunner',emoji:'🪸'}, {name:'Angler Ace',emoji:'🐟'},
-  {name:'Squid Kid',emoji:'🦑'}, {name:'Eel Deal',emoji:'⚡'},
-  {name:'Barnacle Bill',emoji:'⚓'}, {name:'The Lobsterman',emoji:'🦞'},
-  {name:'ShrimpStack',emoji:'🦐'}, {name:'Crab Commander',emoji:'🦀'},
-  {name:'Jelly Jester',emoji:'🪼'}, {name:'Great White',emoji:'🦈'},
-  {name:'Tide Tyrant',emoji:'🌊'}, {name:'Coral Crusher',emoji:'🪸'}
+  {name:'FishBot',emoji:'🐟'}, {name:'Terry the Lobster',emoji:'🦞'},
+  {name:'Estrella',emoji:'🌌'}, {name:'Its Shrimple',emoji:'🦐'},
+  {name:'Барсик',emoji:'🐈‍⬛'}, {name:'Milk Bag',emoji:'🐮'},
+  {name:'24/7 Painted Hats',emoji:'🎨'}, {name:'Sovi',emoji:'🎱'},
+  {name:'Mahoraga',emoji:'☸️'}, {name:'Anchovi Ace',emoji:'🎣'},
+  {name:'bean',emoji:'🫘'}, {name:'Big Man Fred',emoji:'🫚'},
+  {name:'doomzics',emoji:'🚷'}, {name:'mufat',emoji:'💾'},
+  {name:'ShrimpStacked',emoji:'🦐'}, {name:'Crab Rangoon',emoji:'⛰️'},
+  {name:'Jellyfish Jumper',emoji:'🪼'}, {name:'Great White',emoji:'🦈'},
+  {name:'Turkey',emoji:'🇹🇷'}, {name:'Foster',emoji:'📼'}, 
+  {name:'King',emoji:'🪎'}, {name:'dastard(ly)',emoji:'🎞️'}, 
+  {name:'Winston',emoji:'⛽️'}, {name:'Pootis',emoji:'🐥'}, 
+  {name:'Mack',emoji:'🌭'}, {name:'Mackenzie' ,emoji:'🍉'}, 
+  {name:'William',emoji:'🌝'}, {name:'Nicole',emoji:'🦦'}, 
+  {name:'grug',emoji:'🧖🏾‍♂️'}, {name:'простак',emoji:'🍒'}, 
+  {name:'Tide Turner',emoji:'⚙️'}, {name:'Irislayla',emoji:'💖'}
 ]);
 function getRandomAquaticBot(exclude='') {
   const choices=AQUATIC_BOTS.filter(entry=>entry.name!==exclude);
