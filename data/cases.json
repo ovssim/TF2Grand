@@ -98,7 +98,7 @@
         { "name": "Kill-a-Watt Sole Mate", "rarity": "mythical", "price": 41.04, "weight": 10, "image": "images/items/IMG_0521.webp" },
         { "name": "Neutron Star Caribbean Conqueror", "rarity": "mythical", "price": 101.35, "weight": 10, "image": "images/items/IMG_0522.webp" },
         { "name": "Circling Heart Neptune's Nightmare", "rarity": "mythical", "price": 212.41, "weight": 10, "image": "images/items/heartnep.webp" },
-        { "name": "Burning Flames Cranial Carcharodon", "rarity": "mythical", "price": 504.00, "weight": 10, "image": "images/items/bfccarach.webp" },
+        { "name": "Burning Flames Cranial Carcharodon", "rarity": "mythical", "price": 504.00, "weight": 10, "image": "images/items/bfccarach.webp", "paint": "#B8383B" },
         { "name": "Hat of Undeniable Wealth and Respect", "rarity": "legendary", "price": 953.79, "weight": 10, "image": "images/items/houwar.png" }
       ]
      },
@@ -145,7 +145,7 @@
         { "name": "Haunted Hat", "rarity": "legendary", "price": 8.51, "weight": 1000, "image": "images/items/hauntedhat.png" },
         { "name": "Deep-Sea Devourer Taunt: Scaredy Cat", "rarity": "mythical", "price": 15.10, "weight": 1100, "image": "images/items/dsdtsc.png" },
         { "name": "Moth Plague Horror Shawl", "rarity": "mythical", "price": 20.09, "weight": 1000, "image": "images/items/mphs.png" },
-        { "name": "Dead Head", "rarity": "legendary", "price": 38.31, "weight": 150, "image": "images/items/deadhead.png" },
+        { "name": "Dead Head", "rarity": "legendary", "price": 38.31, "weight": 150, "image": "images/items/deadhead.png", "paint": "#18233D" },
         { "name": "Haunted Wick Head Outta Hell", "rarity": "mythical", "price": 100.89, "weight": 30, "image": "images/items/hwhoh.png" },
         { "name": "Tesla Coil Voodoo Juju (Slight Return)", "rarity": "mythical", "price": 162.00, "weight": 10, "image": "images/items/IMG_0523.webp" },
         { "name": "Flaming Lantern Wraith Wrap", "rarity": "mythical", "price": 288.00, "weight": 10, "image": "images/items/IMG_0524.webp" }
@@ -269,7 +269,7 @@
         { "name": "Haunted Chicken Kiev", "rarity": "haunted", "price": 51.02, "weight": 500, "image": "images/items/kiev.png" },
         { "name": "Potassium Bonnet", "rarity": "legendary", "price": 65.53, "weight": 250, "image": "images/items/potassiumbonnet.png" },
         { "name": "Burly Beast", "rarity": "legendary", "price": 93.50, "weight": 100, "image": "images/items/burlybeast.png" },
-        { "name": "Scorching Flames Potassium Bonnet", "rarity": "mythical", "price": 4500.00, "weight": 10, "image": "images/items/sfpb.webp" }
+        { "name": "Scorching Flames Potassium Bonnet", "rarity": "mythical", "price": 4500.00, "weight": 10, "image": "images/items/sfpb.webp", "paint": "#E7B53B" }
       ]
     },
     {
@@ -362,7 +362,7 @@
         { "name": "Potassium Bonnet", "rarity": "legendary", "price": 65.53, "weight": 900, "image": "images/items/potassiumbonnet.png" },
         { "name": "Collector's Sandvich", "rarity": "collector", "price": 120.53, "weight": 60, "image": "images/items/sandvich.png" },
         { "name": "Purple Energy Bread Heads", "rarity": "mythical", "price": 900.00, "weight": 30, "image": "images/items/pebhs.webp" },
-        { "name": "Bonzo the All-Gnawing Whoopee Cap", "rarity": "mythical", "price": 2250.00, "weight": 10, "image": "images/items/IMG_0931.webp" }
+        { "name": "Bonzo the All-Gnawing Whoopee Cap", "rarity": "mythical", "price": 2250.00, "weight": 10, "image": "images/items/IMG_0931.webp", "paint": "#2F4F4F" }
         ]
         }, 
         {
@@ -413,7 +413,7 @@
         { "name": "Potassium Bonnet", "rarity": "legendary", "price": 65.53, "weight": 1000, "image": "images/items/potassiumbonnet.png" },
         { "name": "Neutron Star Bloke's Bucket Hat", "rarity": "mythical", "price": 68.13, "weight": 950, "image": "images/items/IMG_0935.webp" },
         { "name": "Circling TF Logo Merc's Mohawk", "rarity": "mythical", "price": 70.49, "weight": 900, "image": "images/items/IMG_0936.webp" },
-        { "name": "It's a Mystery to Everyone Hellmet", "rarity": "mythical", "price": 93.00, "weight": 750, "image": "images/items/tsamteh.png" },
+        { "name": "It's a Mystery to Everyone Hellmet", "rarity": "mythical", "price": 93.00, "weight": 750, "image": "images/items/tsamteh.png", "paint": "#7E7E7E" },
         { "name": "Tesla Coil Peacenik's Ponytail", "rarity": "mythical", "price": 142.06, "weight": 200, "image": "images/items/IMG_0937.webp" },
         { "name": "Green Energy Baseball Bill's Sport Shine", "rarity": "mythical", "price": 567.00, "weight": 100, "image": "images/items/IMG_0938.webp" }
       ]
@@ -482,7 +482,16 @@
       "items": [
         { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 10960, "image": "images/items/refined.png" },
         { "name": "Alien Swarm Parasite", "rarity": "legendary", "price": 0.30, "weight": 10000, "image": "images/items/alienswarmparasite.png" },
-        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 10000, "image": "images/items/ghastlierestgibus.png" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#E6E6E6" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#141414" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#E7B53B" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#BCDDB3" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#CF7336" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#694D3A" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#483838" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#5885A2" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#424F3B" },
+        { "name": "Ghastlierest Gibus", "rarity": "legendary", "price": 1.46, "weight": 1000, "image": "images/items/ghastlierestgibus.png", "paint": "#E9967A" },
         { "name": "Mann Co. Supply Crate Key", "rarity": "legendary", "price": 2.25, "weight": 10000, "image": "images/items/key.png" },
         { "name": "Upgrade to Premium Gift", "rarity": "legendary", "price": 5.00, "weight": 20000, "image": "images/items/utpg.png" },
         { "name": "Bill's Hat", "rarity": "legendary", "price": 6.98, "weight": 20000, "image": "images/items/billshat.png" },
@@ -493,9 +502,9 @@
         { "name": "Bubbling Reggaelator", "rarity": "mythical", "price": 50.02, "weight": 2000, "image": "images/items/IMG_0950.webp" },
         { "name": "Icestruck Chill Chullo", "rarity": "mythical", "price": 100.26, "weight": 430, "image": "images/items/icc.png" },
         { "name": "Green Energy Caribou Companion", "rarity": "mythical", "price": 171.00, "weight": 300, "image": "images/items/IMG_0951.webp" },
-        { "name": "Miami Nights Crome Dome", "rarity": "mythical", "price": 333.00, "weight": 200, "image": "images/items/IMG_0952.webp" },
-        { "name": "Burning Flames Galvanized Gibus", "rarity": "mythical", "price": 432.00, "weight": 100, "image": "images/items/IMG_0953.webp" },
-        { "name": "Viridescent Peeper Patriot Peak", "rarity": "mythical", "price": 855.00, "weight": 10, "image": "images/items/vppp.png" }
+        { "name": "Miami Nights Crome Dome", "rarity": "mythical", "price": 333.00, "weight": 200, "image": "images/items/IMG_0952.webp", "paint": "#D8BED8" },
+        { "name": "Burning Flames Galvanized Gibus", "rarity": "mythical", "price": 432.00, "weight": 100, "image": "images/items/IMG_0953.webp", "#E6E6E6" },
+        { "name": "Viridescent Peeper Patriot Peak", "rarity": "mythical", "price": 855.00, "weight": 10, "image": "images/items/vppp.png", "paint": "#E6E6E6" }
       ]
     },
     {
@@ -508,12 +517,12 @@
         { "name": "Steaming Bloke's Bucket", "rarity": "mythical", "price": 21.64, "weight": 1400, "image": "images/items/sbb.png" },
         { "name": "Sunbeams Elf Esteem", "rarity": "mythical", "price": 36.90, "weight": 1000, "image": "images/items/IMG_0954.webp" },
         { "name": "Cloud 9 Hustler's Hallmark", "rarity": "mythical", "price": 81.00, "weight": 750, "image": "images/items/IMG_0955.webp" },
-        { "name": "Circling TF Logo Brigade Helmet", "rarity": "mythical", "price": 130.00, "weight": 500, "image": "images/items/IMG_0956.webp" },
+        { "name": "Circling TF Logo Brigade Helmet", "rarity": "mythical", "price": 130.00, "weight": 500, "image": "images/items/IMG_0956.webp", "paint", "#E7B53B" },
         { "name": "Sunbeams a Rather Festive Tree", "rarity": "mythical", "price": 162.00, "weight": 500, "image": "images/items/IMG_0957.webp" },
         { "name": "Molten Mallard Killer's Kabuto", "rarity": "mythical", "price": 270.00, "weight": 400, "image": "images/items/IMG_0958.webp" },
         { "name": "Catastrophic Companions", "rarity": "legendary", "price": 325.00, "weight": 250, "image": "images/items/catastrophiccompanions.png" },
-        { "name": "Cauldron Bubbles Salty Dog", "rarity": "mythical", "price": 810.00, "weight": 129, "image": "images/items/IMG_0959.webp" },
-        { "name": "Frostbite Brotherhood of Arms", "rarity": "mythical", "price": 2250.00, "weight": 71, "image": "images/items/IMG_0960.webp" }
+        { "name": "Cauldron Bubbles Salty Dog", "rarity": "mythical", "price": 810.00, "weight": 129, "image": "images/items/IMG_0959.webp", "paint": "#32CD32" },
+        { "name": "Frostbite Brotherhood of Arms", "rarity": "mythical", "price": 2250.00, "weight": 71, "image": "images/items/IMG_0960.webp", "paint": "#E6E6E6" }
       ]
     },
        {
@@ -536,22 +545,22 @@
         { "name": "Circling Heart Pyro's Beanie", "rarity": "mythical", "price": 97.75, "weight": 800, "image": "images/items/IMG_0961.webp" },
         { "name": "Blizzardy Storm Chill Chullo", "rarity": "mythical", "price": 146.56, "weight": 600, "image": "images/items/IMG_0962.webp" },
         { "name": "Nightmarrish Storm Reindoonibeanie", "rarity": "mythical", "price": 297.00, "weight": 400, "image": "images/items/nsrdh.png" },
-        { "name": "Hellspawned Horns Prehistoric Pullover", "rarity": "mythical", "price": 495.00, "weight": 200, "image": "images/items/hshpp.png" }
+        { "name": "Hellspawned Horns Prehistoric Pullover", "rarity": "mythical", "price": 495.00, "weight": 200, "image": "images/items/hshpp.png", "paint": "#5885A2" }
       ]
     },
 
     {
       "id": "crush",
       "name": "Crush (High)",
-      "price": 14.60,
+      "price": 15.60,
       "image": "images/cases/crush.png",
       "items": [
-        { "name": "Strange AWPer Hand", "rarity": "strange", "price": 64.28, "weight": 2000, "image": "images/items/awper.png" },
+        { "name": "Strange Professional Killstreak AWPer Hand", "rarity": "strange", "price": 164.28, "weight": 2000, "image": "images/items/awper.png", "sheen": "Agonizing Emerald" },
         { "name": "Über Blaze Battle Boonie", "rarity": "mythical", "price": 22.06, "weight": 2000, "image": "images/items/ubbb.png" },
-        { "name": "Ghosts of Smissmas Time Brain Interface", "rarity": "mythical", "price": 30.13, "weight": 5000, "image": "images/items/gostbi.png" },
+        { "name": "Ghosts of Smissmas Time Brain Interface", "rarity": "mythical", "price": 30.13, "weight": 5000, "image": "images/items/gostbi.png", "paint": "#2D2D24"},
         { "name": "Shining Stag El Fiestibrero", "rarity": "mythical", "price": 33.34, "weight": 2000, "image": "images/items/ssef.png" },
         { "name": "Audiophile Undercover Brolly", "rarity": "mythical", "price": 33.75, "weight": 2000, "image": "images/items/IMG_0963.webp" },
-        { "name": "Mint Frost Citizen Cane", "rarity": "mythical", "price": 40.00, "weight": 2000, "image": "images/items/mfcc.png" },
+        { "name": "Mint Frost Citizen Cane", "rarity": "mythical", "price": 40.00, "weight": 2000, "image": "images/items/mfcc.png", "paint": "#BCDDB3" },
         { "name": "Strange Pop-Eyes", "rarity": "strange", "price": 11.05, "weight": 85000, "image": "images/items/popeyes.png" }
       ]
     },
@@ -561,12 +570,16 @@
       "price": 17.43,
       "image": "images/cases/dime.png",
       "items": [
-        { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 17000, "image": "images/items/bedouinbandana.png" },
+        { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 5000, "image": "images/items/bedouinbandana.png", "paint": "#141414" },
+        { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 6000, "image": "images/items/bedouinbandana.png", "paint": "E6E6E6" },
+        { "name": "Strange Bedouin Bandana", "rarity": "strange", "price": 31.33, "weight": 6000, "image": "images/items/bedouinbandana.png" },
         { "name": "Bruisers Bandanna", "rarity": "legendary", "price": 0.29, "weight": 65000, "image": "images/items/bruisersbandanna.png" },
         { "name": "Genuine Doublecross Comm", "rarity": "genuine", "price": 6.12, "weight": 4500, "image": "images/items/doublecrosscomm.png" },
         { "name": "Villain's Veil", "rarity": "legendary", "price": 0.27, "weight": 4600, "image": "images/items/villainviel.png" },
-        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 8450, "image": "images/items/deadhead.png" },
-        { "name": "Frostfire Bedouin Bandana", "rarity": "mythical", "price": 1085.00, "weight": 450, "image": "images/items/nnbb.png" }
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 2000, "image": "images/items/deadhead.png", "paint": "#141414" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 3450, "image": "images/items/deadhead.png", "paint": "#E6E6E6"},
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 98.44, "weight": 3000, "image": "images/items/deadhead.png", "paint": "#803020" },
+        { "name": "Frostfire Bedouin Bandana", "rarity": "mythical", "price": 1085.00, "weight": 450, "image": "images/items/nnbb.png", "paint": "#2D2D24" }
       ]
     },
         {
@@ -576,12 +589,12 @@
       "image": "images/cases/fivejp.webp",
       "items": [
         { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 95000, "image": "images/items/refined.png" },
-        { "name": "Blizzardy Storm Punk's Pomp", "rarity": "mythical", "price": 94.22, "weight": 1000, "image": "images/items/IMG_0546.webp" },
+        { "name": "Blizzardy Storm Punk's Pomp", "rarity": "mythical", "price": 94.22, "weight": 1000, "image": "images/items/IMG_0546.webp", "paint": "#E6E6E6" },
         { "name": "Jellyfish Hunter Alakablamicon", "rarity": "mythical", "price": 119.47, "weight": 1000, "image": "images/items/jfha.png" },
         { "name": "Holiday Horns Breach and Bomb", "rarity": "mythical", "price": 234.74, "weight": 1000, "image": "images/items/hhbab.png" },
         { "name": "Green Energy Infernal Impaler", "rarity": "mythical", "price": 297.00, "weight": 1000, "image": "images/items/IMG_0535.webp" },
         { "name": "Spectrum Inferno Hunter in Darkness", "rarity": "mythical", "price": 585.00, "weight": 500, "image": "images/items/sihid.png" },
-        { "name": "Burning Flames Hong Kong Cone", "rarity": "mythical", "price": 1260.00, "weight": 500, "image": "images/items/IMG_0536.webp" }
+        { "name": "Burning Flames Hong Kong Cone", "rarity": "mythical", "price": 1260.00, "weight": 500, "image": "images/items/IMG_0536.webp", "paint": "#141414" }
       ]
     },
     {
@@ -634,9 +647,9 @@
         { "name": "Eyes of Molten Nasty Norsemann", "rarity": "mythical", "price": 49.58, "weight": 3350, "image": "images/items/eomnn.png" },
         { "name": "Summer Hat", "rarity": "legendary", "price": 60.62, "weight": 20000, "image": "images/items/summerhat.png" },
         { "name": "Flip-Flops", "rarity": "legendary", "price": 67.08, "weight": 5000, "image": "images/items/flipflop.png" },
-        { "name": "Cloud 9 Cranial Carcharodon", "rarity": "mythical", "price": 153.00, "weight": 1000, "image": "images/items/IMG_0969.webp" },
+        { "name": "Cloud 9 Cranial Carcharodon", "rarity": "mythical", "price": 153.00, "weight": 1000, "image": "images/items/IMG_0969.webp", "paint": "#FF69B4" },
         { "name": "Blazing Fireworks Hawaiian Hunter", "rarity": "mythical", "price": 200.00, "weight": 500, "image": "images/items/IMG_0970.webp" },
-        { "name": "Death at Dusk Brimmed Bootlegger", "rarity": "mythical", "price": 540.00, "weight": 500, "image": "images/items/IMG_0540.webp" },
+        { "name": "Death at Dusk Brimmed Bootlegger", "rarity": "mythical", "price": 540.00, "weight": 500, "image": "images/items/IMG_0540.webp", "paint": "#483838" },
         { "name": "Burning Flames Texas Slim Dome Shine", "rarity": "mythical", "price": 720.00, "weight": 150, "image": "images/items/IMG_0971.webp" }
       ]
     },
@@ -659,7 +672,7 @@
         { "name": "Second Opinion", "rarity": "legendary", "price": 34.67, "weight": 4999, "image": "images/items/secondopinion.png" },
         { "name": "Strange A Brush with Death", "rarity": "strange", "price": 38.17, "weight": 7499 , "image": "images/items/abrushwithdeath.png" },
         { "name": "Strange Professional Killstreak Huntsman", "rarity": "strange", "price": 118.43, "weight": 5249, "image": "images/items/huntsman.png" },
-        { "name": "Severed Serration A Hat to Kill For", "rarity": "mythical", "price": 67.50, "weight": 4999, "image": "images/items/ahtkfss.png" },
+        { "name": "Severed Serration A Hat to Kill For", "rarity": "mythical", "price": 67.50, "weight": 4999, "image": "images/items/ahtkfss.png", "paint": "#7D4071" },
         { "name": "Flaming Lantern Ze Goggles", "rarity": "mythical", "price": 103.80, "weight": 4385, "image": "images/items/IMG_0973.webp" },
         { "name": "Burning Flames Warhood", "rarity": "mythical", "price": 200.00, "weight": 759, "image": "images/items/IMG_0974.webp" },
         { "name": "Scorching Flames Glasgow Great Helm", "rarity": "mythical", "price": 450.00, "weight": 549, "image": "images/items/IMG_0975.webp" },
@@ -684,10 +697,10 @@
         { "name": "Arachne's Web Oktoberfester", "rarity": "mythical", "price": 25.65, "weight": 5000, "image": "images/items/awo.png" },
         { "name": "Medimedes", "rarity": "legendary", "price": 36.69, "weight": 4500, "image": "images/items/medimedes.png" },
         { "name": "Collector's Blutsauger", "rarity": "collector", "price": 54.24, "weight": 2000, "image": "images/items/blutsauger.png" },
-        { "name": "Dead Presidents Coldfront Commander", "rarity": "mythical", "price": 57.46, "weight": 2000, "image": "images/items/dpcc.webp" },
+        { "name": "Dead Presidents Coldfront Commander", "rarity": "mythical", "price": 57.46, "weight": 2000, "image": "images/items/dpcc.webp", "paint": "#3B1F23" },
         { "name": "Ghastly Ghosts Taunt: Meet the Medic", "rarity": "mythical", "price": 126.00, "weight": 1500, "image": "images/items/IMG_0978.webp" },
-        { "name": "Strange Kritzkrieg", "rarity": "strange", "price": 156.68, "weight": 3000, "image": "images/items/kritzkrieg.png" },
-        { "name": "Circling Heart Hong Kong Cone", "rarity": "mythical", "price": 387.00, "weight": 1400, "image": "images/items/chhkc.webp" },
+        { "name": "Strange Professional Killstreak Kritzkrieg", "rarity": "strange", "price": 196.68, "weight": 3000, "image": "images/items/kritzkrieg.png", "sheen": "Deadly Daffodil" },
+        { "name": "Circling Heart Hong Kong Cone", "rarity": "mythical", "price": 387.00, "weight": 1400, "image": "images/items/chhkc.webp", "paint": "FF69B4" },
         { "name": "Cloudy Moon Medic Cap", "rarity": "mythical", "price": 900.00, "weight": 1200, "image": "images/items/cmmc.webp" }
       ]
     },
@@ -722,14 +735,14 @@
   "image": "images/cases/81666E01-1FC3-4F4A-83EC-7518542DACCF.png",
   "items": [
     {  "name": "Strange Cloak and Dagger",  "rarity": "strange",  "price": 0.91,  "weight": 40000, "image":  "images/items/IMG_1026.webp", "paint": "" },
-    {  "name": "'‬Ｖ Ｉ Ｎ Ｄ Ｉ Ｃ Ｔ Ｉ Ｏ Ｎ'",  "rarity": "strange",  "price": 16.53,  "weight": 14000, "image":  "images/items/kunai.png", "paint": "#FF69B4" },
-    {  "name": "'shooting ster'",  "rarity": "strange",  "price": 20.73,  "weight": 7000, "image":  "images/items/IMG_1023.png", "paint": "#729E42" },
-    {  "name": "'Harbillicus'",  "rarity": "strange",  "price": 27.51,  "weight": 14000, "image":  "images/items/IMG_1027.webp", "paint": "#E7B53B" },
-    {  "name": "'Goose-A-Cheeker'",  "rarity": "strange",  "price": 56.20,  "weight": 8000, "image":  "images/items/IMG_1024.png", "paint": "#7D4071" },
+    {  "name": "'‬Ｖ Ｉ Ｎ Ｄ Ｉ Ｃ Ｔ Ｉ Ｏ Ｎ'",  "rarity": "strange",  "price": 16.53,  "weight": 14000, "image":  "images/items/kunai.png", "sheen": "Hot Rod" },
+    {  "name": "'shooting ster'",  "rarity": "strange",  "price": 20.73,  "weight": 7000, "image":  "images/items/IMG_1023.png", "sheen": "Mean Green" },
+    {  "name": "'Harbillicus'",  "rarity": "strange",  "price": 27.51,  "weight": 14000, "image":  "images/items/IMG_1027.webp", "sheen": "Mandarin" },
+    {  "name": "'Goose-A-Cheeker'",  "rarity": "strange",  "price": 56.20,  "weight": 8000, "image":  "images/items/IMG_1024.png", "sheen": "Villainous Violet" },
     {  "name": "Miami Nights Slo-Poke",  "rarity": "mythical",  "price": 70.46,  "weight": 8000, "image":  "images/items/IMG_1028.webp", "paint": "" },
-    {  "name": "Strange Professional Killstreak Australium Rocket Launcher",  "rarity": "strange",  "price": 185.11,  "weight": 4000, "image":  "images/items/IMG_1025.png", "paint": "#7D4071" },
-    {  "name": "'I Love Upward'",  "rarity": "mythical",  "price": 729,  "weight": 2000, "image":  "images/items/IMG_1029.webp", "paint": "#E6E6E6" },
-    {  "name": "'Vancouver Housing'",  "rarity": "strange",  "price": 494.74,  "weight": 3000, "image":  "images/items/IMG_1030.webp", "paint": "#E7B53B" }
+    {  "name": "Strange Professional Killstreak Australium Rocket Launcher",  "rarity": "strange",  "price": 185.11,  "weight": 4000, "image":  "images/items/IMG_1025.png", "sheen": "Deadly Daffodil" },
+    {  "name": "'I Love Upward'",  "rarity": "mythical",  "price": 1255.55,  "weight": 2000, "image":  "images/items/IMG_1029.webp", "paint": "#E6E6E6", "spell": "Spectral Spectrum" },
+    {  "name": "'Vancouver Housing'",  "rarity": "strange",  "price": 494.74,  "weight": 3000, "image":  "images/items/IMG_1030.webp", "sheen": "Villainous Violet" }
   ]
 },
         {
@@ -751,8 +764,8 @@
         { "name": "Dead Presidents Death Racer", "rarity": "mythical", "price": 117.00, "weight": 3750, "image": "images/items/dpdr.webp" },
         { "name": "Pumpkin Moon Fried Batter", "rarity": "mythical", "price": 252.00, "weight": 3750, "image": "images/items/pmfb.png" },
         { "name": "Normal Bat", "rarity": "common", "price": 277.21, "weight": 3500, "image": "images/items/bat.png" },
-        { "name": "Pumpkin Moon Bottle Cap", "rarity": "mythical", "price": 396.00, "weight": 2500, "image": "images/items/IMG_0541.webp" },
-        { "name": "Audiophile Brimmed Bootlegger", "rarity": "mythical", "price": 540.00, "weight": 2000, "image": "images/items/IMG_0542.webp" }
+        { "name": "Pumpkin Moon Bottle Cap", "rarity": "mythical", "price": 396.00, "weight": 2500, "image": "images/items/IMG_0541.webp", "paint": "#CF7336" },
+        { "name": "Audiophile Brimmed Bootlegger", "rarity": "mythical", "price": 540.00, "weight": 2000, "image": "images/items/IMG_0542.webp", "paint": "#32CD32" }
       ]
     },
 
@@ -770,11 +783,13 @@
         { "name": "Voodoo Juju", "rarity": "legendary", "price": 23.41, "weight": 6000, "image": "images/items/voodoojuju.png" },
         { "name": "Elemental Taunt: Conga", "rarity": "mythical", "price": 59.72, "weight": 5150, "image": "images/items/emttc.png" },
         { "name": "Dragonflies' Lucent Taunt: Kazotsky Kick", "rarity": "mythical", "price": 90.00, "weight": 4650, "image": "images/items/dltkk.png" },
-        { "name": "Strange Dead Head", "rarity": "strange", "price": 106.46, "weight": 3600, "image": "images/items/deadhead.png" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 106.46, "weight": 1200, "image": "images/items/deadhead.png", "paint": "#141414" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 106.46, "weight": 1200, "image": "images/items/deadhead.png", "paint": "#E6E6E6" },
+        { "name": "Strange Dead Head", "rarity": "strange", "price": 106.46, "weight": 1200, "image": "images/items/deadhead.png", "paint": "#3B1F23" },
         { "name": "Galactic Dust Commonwealth Commando", "rarity": "mythical", "price": 198.00, "weight": 2900, "image": "images/items/gfcc.png" },
-        { "name": "Scorching Flames Thousand-Yard Stare", "rarity": "mythical", "price": 405.00, "weight": 2100, "image": "images/items/IMG_0548.webp" },
+        { "name": "Scorching Flames Thousand-Yard Stare", "rarity": "mythical", "price": 405.00, "weight": 2100, "image": "images/items/IMG_0548.webp", "paint": "#E6E6E6" },
         { "name": "Burning Flames Burning Question", "rarity": "mythical", "price": 900.00, "weight": 1520, "image": "images/items/IMG_0543.webp" },
-        { "name": "Galactic Dust Cranial Cowl", "rarity": "mythical", "price": 1575.00, "weight": 1230, "image": "images/items/gdcc.png" },
+        { "name": "Galactic Dust Cranial Cowl", "rarity": "mythical", "price": 1575.00, "weight": 1230, "image": "images/items/gdcc.png", "paint": "#141414" },
         { "name": "Burning Flames Pyromancer's Mask", "rarity": "mythical", "price": 2475.00, "weight": 250, "image": "images/items/IMG_0544.webp" }
       ]
     },
@@ -787,10 +802,10 @@
       "items": [
         { "name": "Refined Metal", "rarity": "legendary", "price": 0.03, "weight": 75000, "image": "images/items/refined.png" },
         { "name": "Strange Corona Australis", "rarity": "strange", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0549.webp" },
-        { "name": "Stellar Orbit Antarctic Eyewear", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0553.webp" },
+        { "name": "Stellar Orbit Antarctic Eyewear", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0553.webp", "paint": "#E6E6E6" },
         { "name": "Miami Nights Brotherhood of Arms", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0550.webp" },
         { "name": "Refracting Fractals Pithy Professional", "rarity": "mythical", "price": 250.00, "weight": 5000, "image": "images/items/IMG_0552.webp" },
-        { "name": "White Lightning Mean Captain", "rarity": "mythical", "price": 252.10, "weight": 5000, "image": "images/items/IMG_0551.webp" }
+        { "name": "White Lightning Mean Captain", "rarity": "mythical", "price": 252.10, "weight": 5000, "image": "images/items/IMG_0551.webp", "paint": "#2D2D24" }
       ]
     },
 
@@ -801,7 +816,7 @@
       "image": "images/cases/IMG_0554.webp",
       "items": [
         { "name": "Genuine Sharp Dresser", "rarity": "genuine", "price": 12.96, "weight": 50000, "image": "images/items/IMG_0519.webp" },
-        { "name": "Kill-a-Watt Hong Kong Cone", "rarity": "mythical", "price": 162.00, "weight": 35000, "image": "images/items/IMG_0514.webp" },
+        { "name": "Kill-a-Watt Hong Kong Cone", "rarity": "mythical", "price": 162.00, "weight": 35000, "image": "images/items/IMG_0514.webp", "paint": "#E7B53B"},
         { "name": "Nuts N' Bolts Handsome Devil", "rarity": "mythical", "price": 217.71, "weight": 7500, "image": "images/items/IMG_0516.webp" },
         { "name": "Vivid Plasma Onimann", "rarity": "mythical", "price": 360.00, "weight": 5000, "image": "images/items/IMG_0515.webp" },
         { "name": "Bubbling Noh Mercy", "rarity": "mythical", "price": 1462.50, "weight": 2000, "image": "images/items/IMG_0517.webp" },
@@ -815,21 +830,21 @@
       "price": 192.80,
       "image": "images/cases/valor.webp",
       "items": [
-        { "name": "Ocean Swirl Airdog", "rarity": "mythical", "price": 31.45, "weight": 11000, "image": "images/items/ocad.png" },
-        { "name": "Terror-Watt Head Hedge", "rarity": "mythical", "price": 33.75, "weight": 11000, "image": "images/items/terwhh.png" },
+        { "name": "Ocean Swirl Airdog", "rarity": "mythical", "price": 31.45, "weight": 11000, "image": "images/items/ocad.png", "paint": "#5885A2" },
+        { "name": "Terror-Watt Head Hedge", "rarity": "mythical", "price": 33.75, "weight": 11000, "image": "images/items/terwhh.png", "paint": "#729E42" },
         { "name": "Midnight Frostfall Impact Impaler", "rarity": "mythical", "price": 38.81, "weight": 12000, "image": "images/items/mffii.png" },
         { "name": "Twinkling Fireworks Undercover Brolly", "rarity": "mythical", "price": 54.72, "weight": 12000, "image": "images/items/IMG_0511.webp" },
         { "name": "Chromatic Blaze Eliminator's Safeguard", "rarity": "mythical", "price": 58.18, "weight": 13000, "image": "images/items/cbes.png" },
         { "name": "Miami Nights Polar Charger", "rarity": "mythical", "price": 59.62, "weight": 5000, "image": "images/items/mnpc.png" },
         { "name": "Orbiting Fire The Danger", "rarity": "mythical", "price": 61.17, "weight": 12000, "image": "images/items/oftd.webp" },
-        { "name": "Cosmic Constellations A Hat to Kill for", "rarity": "mythical", "price": 252.00, "weight": 8300, "image": "images/items/ccahtkf.png" },
+        { "name": "Cosmic Constellations A Hat to Kill for", "rarity": "mythical", "price": 252.00, "weight": 8300, "image": "images/items/ccahtkf.png", "paint": "#654740"},
         { "name": "Starstorm Slumber Sergant's Drill Hat", "rarity": "mythical", "price": 270.00, "weight": 3150, "image": "images/items/sssdh.png" },
-        { "name": "Cold Cosmos Hat Outta Hell", "rarity": "mythical", "price": 450.00, "weight": 3000, "image": "images/items/ccahoh.webp" },
-        { "name": "Otherworldly Weather Field Practice", "rarity": "mythical", "price": 540.00, "weight": 3000, "image": "images/items/owfp.png" },
+        { "name": "Cold Cosmos Hat Outta Hell", "rarity": "mythical", "price": 450.00, "weight": 3000, "image": "images/items/ccahoh.webp", "paint": "#7D4071" },
+        { "name": "Otherworldly Weather Field Practice", "rarity": "mythical", "price": 540.00, "weight": 3000, "image": "images/items/owfp.png", "paint": "#51384A" },
         { "name": "Burning Flames Colonel Kringle", "rarity": "mythical", "price": 855.00, "weight": 3000, "image": "images/items/IMG_0509.webp" },
-        { "name": "Tropical Thrill Decorated Veteran", "rarity": "mythical", "price": 900.00, "weight": 2750, "image": "images/items/ttdv.webp" },
-        { "name": "Darkblaze Anger", "rarity": "mythical", "price": 2700.00, "weight": 750, "image": "images/items/IMG_0483.webp" },
-        { "name": "Poisoned Shadows Hong Kong Cone", "rarity": "mythical", "price": 14625.00, "weight": 50, "image": "images/items/pshkc.webp" }
+        { "name": "Tropical Thrill Decorated Veteran", "rarity": "mythical", "price": 900.00, "weight": 2750, "image": "images/items/ttdv.webp", "paint": "#141414" },
+        { "name": "Darkblaze Anger", "rarity": "mythical", "price": 2700.00, "weight": 750, "image": "images/items/IMG_0483.webp", "paint": "#2D2D24" },
+        { "name": "Poisoned Shadows Hong Kong Cone", "rarity": "mythical", "price": 14625.00, "weight": 50, "image": "images/items/pshkc.webp", "paint": "#7D4071", "spell": "Chromatic Corruption" }
       ]
     },
       {
@@ -862,9 +877,9 @@
         { "name": "Haunted Ghosts Crown of the Old Kingdom", "rarity": "mythical", "price": 305.76, "weight":9000, "image": "images/items/hgcotok.webp" },
         { "name": "Strange Burly Beast", "rarity": "strange", "price": 325.00, "weight": 7000, "image": "images/items/burlybeast.png" },
         { "name": "Haunted Ghosts Wandering Wraith", "rarity": "mythical", "price": 679.33, "weight": 4000, "image": "images/items/hgww.webp" },
-        { "name": "Frostbite Swagman's Swatter", "rarity": "mythical", "price": 945.55, "weight": 2000, "image": "images/items/fsswatter.webp" },
+        { "name": "Frostbite Swagman's Swatter", "rarity": "mythical", "price": 945.55, "weight": 2000, "image": "images/items/fsswatter.webp", "paint": "#384248" },
         { "name": "Misty Skull Liquidators Lid", "rarity": "mythical", "price": 1652.00, "weight": 250, "image": "images/items/msll.png" },
-        { "name": "Nightmarish Storm Demonic Dome", "rarity": "mythical", "price": 3304.01, "weight": 150, "image": "images/items/nsdd.png" },
+        { "name": "Nightmarish Storm Demonic Dome", "rarity": "mythical", "price": 3304.01, "weight": 150, "image": "images/items/nsdd.png", "paint": "#CF7336" },
         { "name": "Sunbeams Texas Slim Dome Shine", "rarity": "mythical", "price": 4599.25, "weight": 100, "image": "images/items/stsds.webp" }
       ]
     },
@@ -917,12 +932,12 @@
         { "name": "Terror-Watt Team Captain", "rarity": "mythical", "price": 300.00, "weight": 24000, "image": "images/items/IMG_0573.webp" },
         { "name": "Scorching Flames Coldsnap Cap", "rarity": "mythical", "price": 396.00, "weight": 6500, "image": "images/items/IMG_0574.webp" },
         { "name": "Misty Skull Firewall Helmet", "rarity": "mythical", "price": 648.00, "weight": 7100, "image": "images/items/IMG_0575.webp" },
-        { "name": "Starlight Haze Cats Pajamas", "rarity": "mythical", "price": 792.00, "weight": 5300, "image": "images/items/IMG_0576.webp" },
+        { "name": "Starlight Haze Cats Pajamas", "rarity": "mythical", "price": 792.00, "weight": 5300, "image": "images/items/IMG_0576.webp", "paint": "#141414" },
         { "name": "Burning Flames Brotherhood of Arms", "rarity": "mythical", "price": 1000.00, "weight": 5500, "image": "images/items/IMG_0577.webp" },
         { "name": "Chiroptera Venenata Noble Nickle Amassment of Hats", "rarity": "mythical", "price": 1458.00, "weight": 950, "image": "images/items/IMG_0578.webp" },
         { "name": "Sunbeams Pyromancer's Mask", "rarity": "mythical", "price": 1800.00, "weight": 200, "image": "images/items/IMG_0579.webp" },
         { "name": "Misty Skull Master's Yellow Belt", "rarity": "mythical", "price": 2250.00, "weight": 300, "image": "images/items/IMG_0580.webp" },
-        { "name": "Scorching Flames Head Prize", "rarity": "mythical", "price": 3149.00, "weight": 150, "image": "images/items/IMG_0581.webp" }
+        { "name": "Scorching Flames Head Prize", "rarity": "mythical", "price": 3149.00, "weight": 150, "image": "images/items/IMG_0581.webp", "paint": "#32CD32" }
       ]
     },
 
@@ -944,8 +959,8 @@
         { "name": "The Eldritch Opening Burning Question", "rarity": "mythical", "price": 2250.00, "weight": 1000, "image": "images/items/IMG_0980.webp" },
         { "name": "Knifestorm Fed-Fightin' Fedora", "rarity": "mythical", "price": 3375.00, "weight": 1000, "image": "images/items/kfff.webp" },
         { "name": "Cloudy Moon Blighted Beak", "rarity": "mythical", "price": 4950.00, "weight": 1000, "image": "images/items/cmbb.webp" },
-        { "name": "Stormy 13th Hour Killer Exclusive", "rarity": "mythical", "price": 6750.00, "weight": 1050, "image": "images/items/s13thhke.webp" },
-        { "name": "Cloudy Moon Crome Dome", "rarity": "mythical", "price": 7875.00, "weight": 1200, "image": "images/items/cmcd.webp" },
+        { "name": "Stormy 13th Hour Killer Exclusive", "rarity": "mythical", "price": 6750.00, "weight": 1050, "image": "images/items/s13thhke.webp", "paint": "#2D2D24" },
+        { "name": "Cloudy Moon Crome Dome", "rarity": "mythical", "price": 7875.00, "weight": 1200, "image": "images/items/cmcd.webp", "paint": "#7E7E7E" },
         { "name": "Harvest Moon Coffin Kit", "rarity": "mythical", "price": 12000.00, "weight": 1100, "image": "images/items/hmck.png" },
         { "name": "Stormy 13th Hour Antlers", "rarity": "mythical", "price": 15750.00, "weight": 600, "image": "images/items/s13thha.webp" }
       ]
@@ -957,16 +972,20 @@
       "image": "images/cases/IMG_0571.webp",
       "items": [
         { "name": "Strange Scorch Shot", "rarity": "strange", "price": 0.98, "weight": 2000, "image": "images/items/IMG_0562.webp" },
-        { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 5000, "image": "images/items/blizzardbritches.png" },
+        { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 1000, "image": "images/items/blizzardbritches.png", "paint": "#141414" },
+        { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 1000, "image": "images/items/blizzardbritches.png", "paint": "#E6E6E6" },
+        { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 1000, "image": "images/items/blizzardbritches.png", "paint": "#2D2D24" },
+        { "name": "Strange Blizzard Britches", "rarity": "strange", "price": 9.90, "weight": 1000, "image": "images/items/blizzardbritches.png", "paint": "#32CD32" },
         { "name": "Vicious Vortex Caribou Companion", "rarity": "mythical", "price": 243.00, "weight": 25000, "image": "images/items/IMG_0563.webp" },
         { "name": "Time Warp Towering Titanium Pillar of Hats", "rarity": "Mythical", "price": 495.00, "weight": 20000, "image": "images/items/IMG_0564.webp" },
         { "name": "The Ooze Steel Shako", "rarity": "mythical", "price": 495.00, "weight": 20000, "image": "images/items/IMG_0565.webp" },
-        { "name": "Antifreeze Backward Ballcap", "rarity": "mythical", "price": 945.00, "weight": 15000, "image": "images/items/IMG_0566.webp" },
+        { "name": "Antifreeze Backward Ballcap", "rarity": "mythical", "price": 945.00, "weight": 15000, "image": "images/items/IMG_0566.webp", "paint": "#32CD32" },
         { "name": "Darkblaze Hive Minder", "rarity": "mythical", "price": 1395.00, "weight": 6000, "image": "images/items/IMG_0567.webp" },
         { "name": "Stormy 13th Hour Napper's Respite", "rarity": "mythical", "price": 1440.00, "weight": 4000, "image": "images/items/IMG_0568.webp" },
-        { "name": "Poisoned Shadow Prehistoric Pullover", "rarity": "mythical", "price": 1800.00, "weight": 1000, "image": "images/items/IMG_0569.webp" },
+        { "name": "Poisoned Shadow Prehistoric Pullover", "rarity": "mythical", "price": 1800.00, "weight": 1000, "image": "images/items/IMG_0569.webp", "paint": "#7D4071" },
         { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 1000, "image": "images/items/IMG_0572.webp" },
-        { "name": "Spellbound Crone's Dome", "rarity": "mythical", "price": 14443.75, "weight": 1000, "image": "images/items/IMG_0570.webp" }
+        { "name": "Spellbound Crone's Dome", "rarity": "mythical", "price": 14443.75, "weight": 800, "image": "images/items/IMG_0570.webp" },
+        { "name": "Spellbound Crone's Dome", "rarity": "mythical", "price": 21654.75, "weight": 200, "image": "images/items/IMG_0570.webp", "paint": "#E6E6E6", "spell": "Die Job"  }
       ]
     },
   {
@@ -991,8 +1010,10 @@
         {  "name": "Hellfire Tough Stuff Muffs",  "rarity": "mythical",  "price": 7875,  "weight": 1000, "image":  "images/items/IMG_1016.webp", "paint": "" },
         {  "name": "Bonzo The All-Gnawing Pencil Pusher",  "rarity": "mythical",  "price": 9000,  "weight": 1000, "image":  "images/items/IMG_1017.webp", "paint": "" },
         {  "name": "Arcana Whirly Warrior",  "rarity": "mythical",  "price": 11250,  "weight": 1000, "image":  "images/items/IMG_1018.webp", "paint": "" },
-        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 1000,  "weight": 1000, "image":  "images/items/1019", "paint": "" },
-        {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 1000, "image":  "images/items/IMG_1020.webp", "paint": "#141414" },
+        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 1000,  "weight": 800, "image":  "images/items/1019", "paint": "" },
+        {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 800, "image":  "images/items/IMG_1020.webp", "paint": "#141414" },
+        {  "name": "Bonzo The All-Gnawing Hong Kong Cone",  "rarity": "mythical",  "price": 2320,  "weight": 200, "image":  "images/items/1019", "paint": "#141414", "spell": "Sinister Staining"},
+        {  "name": "Spellbound War Pig",  "rarity": "mythical",  "price": 15750,  "weight": 200, "image":  "images/items/IMG_1020.webp", "paint": "#141414", "spell": "Die Job" },
         {  "name": "Arcana Virtual Viewfinder",  "rarity": "mythical",  "price": 36000,  "weight": 1000, "image":  "images/items/IMG_1021.webp", "paint": "#32CD32" }
       ]
     },
