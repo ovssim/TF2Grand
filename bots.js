@@ -11,7 +11,7 @@ const BOT_DESCRIPTIONS = Object.freeze({
   'MentalHerbs': 'Wow, checking up on me? What an honor.',
   'Estrella': "'Um, how about something like, I am just lucky?..'",
   'Барсик': 'Ваш любимый бот — к выполнению задачи готов!',
-  'Milk Bag': 'Pretty big win? I Love big things.',
+  'Milk Bag': 'Pretty big win? I love BIG things.',
   '24/7 Painted Hats': 'Selling painted hats! Send me an offer!',
   'Sovi': "I'M NOT GAY!!",
   'Mahoraga': 'M: With this treasure I summon...',
