@@ -983,7 +983,11 @@
         { "name": "Darkblaze Hive Minder", "rarity": "mythical", "price": 1395.00, "weight": 6000, "image": "images/items/IMG_0567.webp" },
         { "name": "Stormy 13th Hour Napper's Respite", "rarity": "mythical", "price": 1440.00, "weight": 4000, "image": "images/items/IMG_0568.webp" },
         { "name": "Poisoned Shadow Prehistoric Pullover", "rarity": "mythical", "price": 1800.00, "weight": 1000, "image": "images/items/IMG_0569.webp", "paint": "#7D4071" },
-        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 1000, "image": "images/items/IMG_0572.webp" },
+        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 200, "image": "images/items/IMG_0572.webp", "sheen": "Team Shine" },
+        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 200, "image": "images/items/IMG_0572.webp", "sheen": "Villainous Violet"  },
+        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 200, "image": "images/items/IMG_0572.webp", "sheen": "Agonizing Emerald" },
+        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 200, "image": "images/items/IMG_0572.webp", "sheen": "Mandarin"},
+        { "name": "Strange Professional Killstreak Golden Pan", "rarity": "strange", "price": 10625.00, "weight": 200, "image": "images/items/IMG_0572.webp", "sheen": "Deadly Daffodil },
         { "name": "Spellbound Crone's Dome", "rarity": "mythical", "price": 14443.75, "weight": 800, "image": "images/items/IMG_0570.webp" },
         { "name": "Spellbound Crone's Dome", "rarity": "mythical", "price": 21654.75, "weight": 200, "image": "images/items/IMG_0570.webp", "paint": "#E6E6E6", "spell": "Die Job"  }
       ]
