@@ -8,7 +8,7 @@ const PERSONALITIES=Object.freeze({
   'Its Shrimple': 'aggressive',
   'Frostbyte': 'cautious',
   'MentalHerbs': 'balanced',
-  'Estrella': 'unpredictable',
+  'Estrella': 'aggressive',
   'Барсик': 'cautious',
   'Milk Bag': 'high-roller',
   '24/7 Painted Hats': 'balanced',
