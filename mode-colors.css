@@ -1,0 +1,14 @@
+.mode-tab[data-game-tab="coinflip"], #coinflip-section{--mode-accent:#D9AD58;--mode-shadow:color-mix(in srgb,#D9AD58 72%,#161218);}
+.mode-tab[data-game-tab="upgrader"], #upgrader-section{--mode-accent:#D75D65;--mode-shadow:color-mix(in srgb,#D75D65 72%,#161218);}
+.mode-tab[data-game-tab="blackjack"], #blackjack-section{--mode-accent:#4DA77C;--mode-shadow:color-mix(in srgb,#4DA77C 72%,#161218);}
+.mode-tab[data-game-tab="casebattle"], #casebattle-section{--mode-accent:#9875D5;--mode-shadow:color-mix(in srgb,#9875D5 72%,#161218);}
+.mode-tab[data-game-tab="champion"], #champion-section{--mode-accent:#D98547;--mode-shadow:color-mix(in srgb,#D98547 72%,#161218);}
+.mode-tab[data-game-tab="roulette"], #roulette-section{--mode-accent:#BB4657;--mode-shadow:color-mix(in srgb,#BB4657 72%,#161218);}
+.mode-tab[data-game-tab="jackpot"], #jackpot-section{--mode-accent:#DAB968;--mode-shadow:color-mix(in srgb,#DAB968 72%,#161218);}
+.mode-tab[data-game-tab="mines"], #mines-section{--mode-accent:#4DA9A8;--mode-shadow:color-mix(in srgb,#4DA9A8 72%,#161218);}
+.mode-tab[data-game-tab="tower"], #tower-section{--mode-accent:#648FD7;--mode-shadow:color-mix(in srgb,#648FD7 72%,#161218);}
+.mode-tab[data-game-tab="mvm"], #mvm-section{--mode-accent:#8796A6;--mode-shadow:color-mix(in srgb,#8796A6 72%,#161218);}
+.smissmas #games-section .game-mode-panel{border-color:color-mix(in srgb,var(--mode-accent) 48%,#59483d);background:linear-gradient(145deg,color-mix(in srgb,var(--mode-accent) 10%,#342a24),#241e1b);}
+.smissmas .mode-switcher .mode-tab.active{color:var(--mode-accent);border-color:var(--mode-accent);box-shadow:inset 0 -3px var(--mode-accent);}
+.ex-panel h3{color:var(--mode-accent)} .ex-panel .ex-btn:not(.red):not(.black):not(.gold):not(.red-crown):not(.black-crown){border-color:var(--mode-accent)}
+.grand-quality-icon{position:absolute;top:7px;left:7px;z-index:5;color:var(--grand-rarity);font-size:13px;line-height:1;text-shadow:0 1px 3px #000;pointer-events:none;}
